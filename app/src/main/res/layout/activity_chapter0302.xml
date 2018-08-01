@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tiny.demo.firstlinecode.kfysts.chapter03.Chapter0302Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_test_01"
+            style="@style/btn_style_lower"
+            android:text="开始动画"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <TextView
+                android:id="@+id/view1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:background="@color/font_red"
+                android:gravity="center"
+                android:text="View动画"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_test_02"
+            style="@style/btn_style_lower"
+            android:text="开始属性动画"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <TextView
+                android:id="@+id/view2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:background="@color/font_red"
+                android:gravity="center"
+                android:text="属性动画"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_test_03"
+            style="@style/btn_style_lower"
+            android:text="改变LayoutParams"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <TextView
+                android:id="@+id/view3"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:background="@color/gray_color"
+                android:gravity="center"
+                android:text="改变LayoutParams"/>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_toRightOf="@id/view3"
+                android:background="@color/font_red"
+                android:gravity="center"
+                android:text="改变LayoutParams"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_test_04"
+            style="@style/btn_style_lower"
+            android:text="动画实现View的拖动"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <com.tiny.demo.firstlinecode.kfysts.chapter03.view.AnimationTestView
+                android:id="@+id/view4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:background="@color/font_red"
+                android:gravity="center"
+                android:text="动画实现View的拖动"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

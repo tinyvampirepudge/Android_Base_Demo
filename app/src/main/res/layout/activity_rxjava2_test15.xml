@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".rxjava2.blog2.Rxjava2Test15Activity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_test12"
+                style="@style/btn_style_lower"
+                android:text="call()"
+                />
+
+            <Button
+                android:id="@+id/btn_test13"
+                style="@style/btn_style_lower"
+                android:text="takeWhile()"
+                />
+
+            <Button
+                android:id="@+id/btn_test14"
+                style="@style/btn_style_lower"
+                android:text="skipWhile()"
+                />
+
+            <Button
+                android:id="@+id/btn_test15"
+                style="@style/btn_style_lower"
+                android:text="takeUntil()"
+                />
+
+            <Button
+                android:id="@+id/btn_test16"
+                style="@style/btn_style_lower"
+                android:text="skipUntil()"
+                />
+
+            <Button
+                android:id="@+id/btn_test17"
+                style="@style/btn_style_lower"
+                android:text="sequenceEqual()"
+                />
+
+            <Button
+                android:id="@+id/btn_test18"
+                style="@style/btn_style_lower"
+                android:text="contains()"
+                />
+
+            <Button
+                android:id="@+id/btn_test19"
+                style="@style/btn_style_lower"
+                android:text="ieEmpty()"
+                />
+
+            <Button
+                android:id="@+id/btn_test20"
+                style="@style/btn_style_lower"
+                android:text="amb()"
+                />
+
+            <Button
+                android:id="@+id/btn_test21"
+                style="@style/btn_style_lower"
+                android:text="defaultIfEmpty()"
+                />
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_percent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tiny.demo.firstlinecode.ui.view.PercentLayoutActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.percent.PercentFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:background="#66ef5350">
+
+            <Button
+                android:layout_gravity="left|top"
+                android:text="Button 1"
+                app:layout_heightPercent="30%"
+                app:layout_widthPercent="30%"
+                />
+
+            <Button
+                android:layout_gravity="right|top"
+                android:text="Button 2"
+                app:layout_heightPercent="30%"
+                app:layout_widthPercent="30%"
+                />
+
+            <Button
+                android:layout_gravity="center"
+                android:text="Button 3"
+                app:layout_heightPercent="30%"
+                app:layout_widthPercent="30%"
+                />
+
+            <Button
+                android:layout_gravity="left|bottom"
+                android:text="Button 4"
+                app:layout_heightPercent="30%"
+                app:layout_widthPercent="30%"
+                />
+
+            <Button
+                android:layout_gravity="right|bottom"
+                android:text="Button 5"
+                app:layout_heightPercent="30%"
+                app:layout_widthPercent="30%"
+                />
+
+        </android.support.percent.PercentFrameLayout>
+
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="#99009966">
+
+            <TextView
+                android:layout_alignParentLeft="true"
+                android:background="#ef5350"
+                android:gravity="center"
+                android:text="text1"
+                app:layout_heightPercent="30%"
+                app:layout_widthPercent="30%"
+                />
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:background="#ef5350"
+                android:gravity="center"
+                android:text="text2"
+                app:layout_heightPercent="30%"
+                app:layout_widthPercent="30%"
+                />
+
+            <TextView
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="#ef5350"
+                android:gravity="center"
+                android:text="text3"
+                app:layout_heightPercent="30%"
+                app:layout_widthPercent="30%"
+                />
+
+        </android.support.percent.PercentRelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

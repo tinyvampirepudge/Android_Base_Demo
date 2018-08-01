@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tiny.demo.firstlinecode.test.view.TestActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_test_utils"
+                style="@style/btn_style_lower"
+                android:text="工具类测试"
+                />
+
+            <Button
+                android:id="@+id/btn_test_chLayout"
+                style="@style/btn_style_lower"
+                android:text="chLayout test"
+                />
+
+            <Button
+                android:id="@+id/btn_test_listview"
+                style="@style/btn_style_lower"
+                android:text="listview test"
+                />
+
+            <Button
+                android:id="@+id/btn_templates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="templates test"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btn_templates5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="templates test5"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btn_test_image_loader"
+                style="@style/btn_style_lower"
+                android:text="image loader test"
+                />
+
+            <Button
+                android:id="@+id/btn_test_date_picker_adapter"
+                style="@style/btn_style_lower"
+                android:text="date_picker_adapter"
+                />
+
+            <Button
+                android:id="@+id/btn_test_click_proxy"
+                style="@style/btn_style_lower"
+                android:text="Click Proxy"
+                />
+
+            <Button
+                android:id="@+id/btn_test_full_screen"
+                style="@style/btn_style_lower"
+                android:text="自动生成的全屏的Activity"
+                />
+
+            <Button
+                android:id="@+id/btn_test_shadow"
+                style="@style/btn_style_lower"
+                android:text="shadow测试"
+                />
+
+            <Button
+                android:id="@+id/btn_test_floating"
+                style="@style/btn_style_lower"
+                android:text="悬停布局"
+                />
+
+            <Button
+                android:id="@+id/btn_test_toast_on_sub_thread"
+                style="@style/btn_style_lower"
+                android:text="子线程弹Toast"
+                />
+
+            <Button
+                android:id="@+id/btn_test_enum_with_switchcase"
+                style="@style/btn_style_lower"
+                android:text="enum和switch case配合使用"
+                />
+
+            <Button
+                android:id="@+id/btn_test_start_activity_in_sub_thread"
+                style="@style/btn_style_lower"
+                android:text="子线程启动Activity"
+                />
+
+            <Button
+                android:id="@+id/btn_test_httpUrl"
+                style="@style/btn_style_lower"
+                android:text="uri httpUrl相关"
+                />
+
+            <Button
+                android:id="@+id/btn_test_async_2_sync"
+                style="@style/btn_style_lower"
+                android:text="异步转同步 FutureTask"
+                />
+
+            <Button
+                android:id="@+id/btn_test_sync_2_async"
+                style="@style/btn_style_lower"
+                android:text="异步转同步 Callable"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

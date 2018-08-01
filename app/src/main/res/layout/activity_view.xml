@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tiny.demo.firstlinecode.view.ViewActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_view_dispatch_touch_event"
+                style="@style/btn_style_lower"
+                android:text="view事件分发"
+                />
+
+            <Button
+                android:id="@+id/btn_dialog"
+                style="@style/btn_style_lower"
+                android:text="Dialog 相关"
+                />
+
+            <Button
+                android:id="@+id/btn_view_drag"
+                style="@style/btn_style_lower"
+                android:text="Drag"
+                />
+
+            <Button
+                android:id="@+id/btn_view_drag1"
+                style="@style/btn_style_lower"
+                android:text="Drag ViewHelper实现"
+                />
+
+            <Button
+                android:id="@+id/btn_view_drag3"
+                style="@style/btn_style_lower"
+                android:text="Drag3"
+                />
+
+            <Button
+                android:id="@+id/btn_view_drag4"
+                style="@style/btn_style_lower"
+                android:text="Drag4 ViewDragHelper"
+                />
+
+            <Button
+                android:id="@+id/btn_view_drag5"
+                style="@style/btn_style_lower"
+                android:text="Drag5 github"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

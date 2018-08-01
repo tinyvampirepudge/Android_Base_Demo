@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+    "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>0</key>
+        <dict>
+            <key>北京市</key>
+            <dict>
+                <key>0</key>
+                <dict>
+                    <key>北京市</key>
+                    <array>
+                        <string>东城区</string>
+                        <string>西城区</string>
+                        <string>朝阳区</string>
+                        <string>丰台区</string>
+                        <string>石景山区</string>
+                        <string>海淀区</string>
+                        <string>门头沟区</string>
+                        <string>房山区</string>
+                        <string>通州区</string>
+                        <string>顺义区</string>
+                        <string>昌平区</string>
+                        <string>大兴区</string>
+                        <string>怀柔区</string>
+                        <string>平谷区</string>
+                        <string>密云县</string>
+                        <string>延庆县</string>
+                    </array>
+                </dict>
+            </dict>
+        </dict>
+    </dict>
+</plist>

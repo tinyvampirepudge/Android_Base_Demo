@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 第二层投影渐变色 -->
+    <item
+        >
+        <shape android:shape="rectangle">
+            <!-- from top to bottom -->
+            <gradient
+                android:angle="270"
+                android:centerColor="#1A000000"
+                android:centerX="0.5"
+                android:centerY="0.5"
+                android:endColor="#00000000"
+                android:startColor="#33000000"
+                android:type="radial"
+                />
+            <!-- 4dp渐变 后2dp为10%透明度到完全透明 -->
+            <corners
+                android:radius="5dp"/>
+        </shape>
+    </item>
+
+    <!-- 第三层数据显示 -->
+    <item
+        android:bottom="10dp"
+        android:left="10dp"
+        android:right="10dp"
+        android:top="10dp"
+        >
+        <shape android:shape="rectangle">
+            <solid android:color="#ffffff"/>
+            <corners android:radius="5dp"/>
+        </shape>
+    </item>
+</layer-list>

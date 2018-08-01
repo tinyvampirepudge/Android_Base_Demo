@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_space_15"
+        android:paddingRight="@dimen/activity_space_15"
+        tools:context="com.tiny.demo.firstlinecode.smarttoast.SmartToastActivity"
+        >
+
+        <Button
+            android:id="@+id/btn_smart_toast_test1"
+            style="@style/btn_style_lower"
+            android:text="默认布局，默认位置"
+            />
+
+        <Button
+            android:id="@+id/btn_smart_toast_test2"
+            style="@style/btn_style_lower"
+            android:text="顶部显示"
+            />
+
+        <Button
+            android:id="@+id/btn_smart_toast_test3"
+            style="@style/btn_style_lower"
+            android:text="屏幕中央显示"
+            />
+
+        <Button
+            android:id="@+id/btn_smart_toast_test4"
+            style="@style/btn_style_lower"
+            android:text="指定位置显示"
+            />
+
+        <Button
+            android:id="@+id/btn_smart_toast_test5"
+            style="@style/btn_style_lower"
+            android:text="Long Toast"
+            />
+
+        <Button
+            android:id="@+id/btn_smart_toast_test6"
+            style="@style/btn_style_lower"
+            android:text="Long Toast at top"
+            />
+
+        <Button
+            android:id="@+id/btn_smart_toast_test7"
+            style="@style/btn_style_lower"
+            android:text="Long Toast in center"
+            />
+
+        <Button
+            android:id="@+id/btn_smart_toast_test8"
+            style="@style/btn_style_lower"
+            android:text="Long Toast at location"
+            />
+
+        <Button
+            android:id="@+id/btn_smart_toast_test9"
+            style="@style/btn_style_lower"
+            android:text="dismiss"
+            />
+    </LinearLayout>
+</ScrollView>

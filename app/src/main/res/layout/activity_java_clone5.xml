@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tiny.demo.firstlinecode.javareference.copy.JavaCloneActivity2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/txt_style_normal"
+            android:text="深复制 List类型\n"
+            />
+
+        <TextView
+            style="@style/txt_style_normal"
+            android:text="源数据："
+            />
+
+        <TextView
+            android:id="@+id/txt1"
+            style="@style/txt_style_normal"
+            android:text=""
+            />
+
+        <Button
+            android:id="@+id/btn_java_clone_2"
+            style="@style/btn_style_lower"
+            android:text="修改copy过的数据"/>
+
+        <TextView
+            style="@style/txt_style_normal"
+            android:text="修改结果："
+            />
+
+        <TextView
+            android:id="@+id/txt2"
+            style="@style/txt_style_normal"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.tiny.demo.firstlinecode.materialdesign.MaterialDesignActivity"
+    tools:openDrawer="start">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--
+            这里给ToolBar添加父布局AppBarLayout, 是因为CoordinatorLayout是个帧布局，下方的RecyclerView
+            将上方的ToolBar给挡住了。
+            传统情况下，使用偏移是唯一的解决方法，让recyclerView向下偏移toolBar的高度即可。
+            这里我们使用更加巧妙的方法：AppBarLayout. 它实际上是给垂直方向的LinearLayout。
+            解决问题的方法是两步：第一步，将ToolBar嵌套到AppBarLayout中；第二步，给RecyclerView指定
+            一个布局行为。app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            另外：虽然此时解决了遮挡问题，但是没有对滚动事件做任何处理，体现不出MaterialDesign的优势。
+            当AppBarLayout接受到滚动事件的时候，它内部的子控件其实是可以指定如何去影响这些事件的，
+            通过app:layout_scrollFlags属性就能实现。
+            scroll表示当RecyclerView向上滚动的时候，ToolBar会跟着一起向上滚动并实现隐藏；
+            enterAlways表示当RecyclerView向下滚动的时候，ToolBar会跟着一起向下滚动并重新显示；
+            snap表示当ToolBar还没有完全隐藏或显示的时候，会根据当前滚动的距离，自动选择是隐藏还是显示。
+            -->
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_scrollFlags="snap|enterAlways|scroll"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                >
+                <!--
+                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                 由于ToolBar现在使用的是Activity默认的淡色主题，ToolBar内部的各项元素就会使用深色，
+                 比方说字体就会变为黑色，效果就会很差。之前单独使用ActionBar时的文字是白色的，这里如果变成黑色，
+                 就会显得很难看。所以设置这行代码的目的就是为了让ToolBar单独使用深色主题。
+                 -->
+                <!--
+                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                 此时ToolBar的主题单独设置为深色，但是又出现了新的问题，如果ToolBar中有菜单按钮，那么弹出的
+                 菜单项也会变成深色主题，这样就再次变得十分难看，于是这里使用popupTheme属性单独将菜单项的主题
+                 指定为淡色主题。
+                -->
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            app:srcCompat="@drawable/ic_done"
+            app:elevation="8dp"
+            />
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu">
+
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>

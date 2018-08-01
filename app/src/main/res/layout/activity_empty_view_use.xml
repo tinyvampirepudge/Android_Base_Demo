@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tiny.demo.firstlinecode.brvah.EmptyViewUseActivity">
+
+    <com.tiny.demo.firstlinecode.common.view.TitleBarLayout
+        android:id="@+id/title_bar_brvah_empty"
+        style="@style/title_bar_style"
+        xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        titlebar:bottom_line_visiable="true"
+        titlebar:center_text="EmptyViewUseActivity"
+        titlebar:center_type="text_view"
+        titlebar:left_image="@drawable/back"
+        titlebar:left_type="image_button"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="20dp"
+            android:src="@drawable/reset_icon"
+            app:backgroundTint="@color/color_light_blue"
+            />
+    </FrameLayout>
+
+</LinearLayout>

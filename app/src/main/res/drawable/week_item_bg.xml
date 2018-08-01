@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  autor：OrandNot
+  ~  email：orandnot@qq.com
+  ~  time: 2016 - 1 - 13
+  ~
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/gray_dddddd" android:state_selected="true"/>
+    <item android:drawable="@color/white"/>
+
+</selector>

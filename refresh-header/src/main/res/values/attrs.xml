@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<attr name="srlPrimaryColor" format="color"/>-->
+    <!--<attr name="srlAccentColor" format="color"/>-->
+
+    <!--<attr name="srlShadowColor" format="color"/>-->
+    <!--<attr name="srlShadowRadius" format="dimension"/>-->
+
+    <declare-styleable name="PhoenixHeader">
+        <attr name="phPrimaryColor" format="color" />
+        <attr name="phAccentColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="TaurusHeader">
+        <attr name="thPrimaryColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="WaveSwipeHeader">
+        <attr name="wshPrimaryColor" format="color" />
+        <attr name="wshAccentColor" format="color" />
+        <attr name="wshShadowColor" format="color" />
+        <attr name="wshShadowRadius" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="MaterialHeader">
+        <attr name="mhPrimaryColor" format="color" />
+        <attr name="mhShadowColor" format="color" />
+        <attr name="mhShadowRadius" format="dimension"/>
+        <attr name="mhShowBezierWave" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="MountanScenceView">
+        <attr name="msvPrimaryColor" format="color" />
+        <attr name="msvViewportHeight" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="FunGameHeader">
+        <attr name="fgvMaskTopText" format="string" />
+        <attr name="fgvMaskBottomText" format="string" />
+        <attr name="fgvTopTextSize" format="dimension" />
+        <attr name="fgvBottomTextSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="FunGameView">
+        <attr name="fgvBackColor" format="color" />
+        <attr name="fgvLeftColor" format="color" />
+        <attr name="fgvMiddleColor" format="color" />
+        <attr name="fgvRightColor" format="color" />
+        <attr name="fgvTextLoading" format="string" />
+        <attr name="fgvTextLoadingFinished" format="string" />
+        <attr name="fgvTextGameOver" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="FunGameHitBlockHeader">
+        <attr name="fgvBlockHorizontalNum" format="integer" />
+        <attr name="fgvBallSpeed" format="dimension">
+            <!--<enum name="low" value="1.5dp" />-->
+            <!--<enum name="medium" value="3dp" />-->
+            <!--<enum name="fast" value="4.5dp" />-->
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="StoreHouseHeader">
+        <attr name="shhText" format="string" />
+        <attr name="shhLineWidth" format="dimension" />
+        <attr name="shhDropHeight" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="DropboxHeader">
+        <attr name="dhDrawable1" format="reference" />
+        <attr name="dhDrawable2" format="reference" />
+        <attr name="dhDrawable3" format="reference" />
+    </declare-styleable>
+
+</resources>

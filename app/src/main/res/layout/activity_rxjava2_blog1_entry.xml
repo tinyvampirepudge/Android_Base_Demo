@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".rxjava2.blog1.Rxjava2Blog1EntryActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_first"
+                style="@style/btn_style_lower"
+                android:text="基本使用"
+                />
+
+            <Button
+                android:id="@+id/btn_second"
+                style="@style/btn_style_lower"
+                android:text="线程控制"
+                />
+
+            <Button
+                android:id="@+id/btn_fourth"
+                style="@style/btn_style_lower"
+                android:text="操作符——flatmap"
+                />
+
+            <Button
+                android:id="@+id/btn_fifth"
+                style="@style/btn_style_lower"
+                android:text="操作符——zip"
+                />
+
+            <Button
+                android:id="@+id/btn_sixth"
+                style="@style/btn_style_lower"
+                android:text="Backpressure"
+                />
+
+            <Button
+                android:id="@+id/btn_seventh"
+                style="@style/btn_style_lower"
+                android:text="Flow and Subscriber"
+                />
+
+            <Button
+                android:id="@+id/btn_eighth"
+                style="@style/btn_style_lower"
+                android:text="backPressure策略"
+                />
+
+            <Button
+                android:id="@+id/btn_ninth"
+                style="@style/btn_style_lower"
+                android:text="响应式拉取"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

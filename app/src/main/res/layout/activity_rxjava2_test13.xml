@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".rxjava2.blog2.Rxjava2Test13Activity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_test14"
+                style="@style/btn_style_lower"
+                android:text="delay()"
+                />
+
+            <Button
+                android:id="@+id/btn_test15"
+                style="@style/btn_style_lower"
+                android:text="doOnEach()"
+                />
+
+            <Button
+                android:id="@+id/btn_test16"
+                style="@style/btn_style_lower"
+                android:text="doOnNext()"
+                />
+
+            <Button
+                android:id="@+id/btn_test17"
+                style="@style/btn_style_lower"
+                android:text="doAfterNext()"
+                />
+
+            <Button
+                android:id="@+id/btn_test18"
+                style="@style/btn_style_lower"
+                android:text="doOnComplete()"
+                />
+
+            <Button
+                android:id="@+id/btn_test19"
+                style="@style/btn_style_lower"
+                android:text="doOnError()"
+                />
+
+            <Button
+                android:id="@+id/btn_test20"
+                style="@style/btn_style_lower"
+                android:text="doOnSubscribe()"
+                />
+
+            <Button
+                android:id="@+id/btn_test21"
+                style="@style/btn_style_lower"
+                android:text="doOnDispose()"
+                />
+
+            <Button
+                android:id="@+id/btn_test22"
+                style="@style/btn_style_lower"
+                android:text="doOnLifecycle()"
+                />
+
+            <Button
+                android:id="@+id/btn_test23"
+                style="@style/btn_style_lower"
+                android:text="doOnTerminate()"
+                />
+
+            <Button
+                android:id="@+id/btn_test24"
+                style="@style/btn_style_lower"
+                android:text="doAfterTerminate()"
+                />
+
+            <Button
+                android:id="@+id/btn_test25"
+                style="@style/btn_style_lower"
+                android:text="doFinally()"
+                />
+
+            <Button
+                android:id="@+id/btn_test26"
+                style="@style/btn_style_lower"
+                android:text="doErrorReturn()"
+                />
+
+            <Button
+                android:id="@+id/btn_test27"
+                style="@style/btn_style_lower"
+                android:text="onErrorResumeNext()"
+                />
+
+            <Button
+                android:id="@+id/btn_test28"
+                style="@style/btn_style_lower"
+                android:text="onExceptionResumeNext()"
+                />
+
+            <Button
+                android:id="@+id/btn_test29"
+                style="@style/btn_style_lower"
+                android:text="retry()"
+                />
+
+            <Button
+                android:id="@+id/btn_test30"
+                style="@style/btn_style_lower"
+                android:text="retryUntil()"
+                />
+
+            <Button
+                android:id="@+id/btn_test31"
+                style="@style/btn_style_lower"
+                android:text="retryWhen()"
+                />
+
+            <Button
+                android:id="@+id/btn_test32"
+                style="@style/btn_style_lower"
+                android:text="repeat()"
+                />
+
+            <Button
+                android:id="@+id/btn_test33"
+                style="@style/btn_style_lower"
+                android:text="repeatWhen()"
+                />
+
+            <Button
+                android:id="@+id/btn_test34"
+                style="@style/btn_style_lower"
+                android:text="subscribeOn()"
+                />
+
+            <Button
+                android:id="@+id/btn_test35"
+                style="@style/btn_style_lower"
+                android:text="observeOn()"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

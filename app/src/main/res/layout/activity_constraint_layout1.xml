@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#11ff0000"
+    tools:context="com.tiny.demo.firstlinecode.uicomponents.constraintlayout.ConstraintLayout1Activity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="140dp"
+            android:layout_height="86dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:background="#fd3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="12dp"
+            android:text="码云拉克觉得烦；拉第三方；拉屎；看代码发牢骚快递费；按理说打开"
+            android:textColor="#000"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toRightOf="@id/tv1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv1"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="12dp"
+            android:text="8分钟前"
+            android:textColor="#333"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv1"
+            app:layout_constraintLeft_toRightOf="@id/tv1"
+            />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/font_red"
+            android:gravity="center"
+            android:text="tv1"
+            android:textColor="#333"
+            android:textSize="50sp"
+            app:layout_constraintTop_toBottomOf="@id/tv1"
+            />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/font_red"
+            android:gravity="center"
+            android:text="tv2"
+            android:textColor="#333"
+            android:textSize="50sp"
+            app:layout_constraintTop_toBottomOf="@id/tv3"
+            />
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/font_red"
+            android:gravity="center"
+            android:text="tv3"
+            android:textColor="#333"
+            android:textSize="50sp"
+            app:layout_constraintTop_toBottomOf="@id/tv4"
+            />
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

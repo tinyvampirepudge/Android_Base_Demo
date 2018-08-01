@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tiny.demo.firstlinecode.thinkinjava.annotation.AnnotationActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_anno_blog"
+            style="@style/btn_style_lower"
+            android:text="blog示例"
+            />
+
+        <Button
+            android:id="@+id/btn_anno_otto"
+            style="@style/btn_style_lower"
+            android:text="otto子线程发送消息"
+            app:layout_constraintTop_toBottomOf="@id/btn_anno_blog"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

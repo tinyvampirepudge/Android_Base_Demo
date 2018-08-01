@@ -1,0 +1,27 @@
+ext {//定义所有project公用参数
+
+    android = [
+            compileSdk: 27,
+            buildTools: "27.0.3",
+            minSdk    : 19,
+            minLimitSdk: 19,//限制低版本用户安装
+            targetSdk : 27,
+    ]
+
+    dependencies = [
+            // App dependencies
+            junit                : '4.12',
+            espresso             : '2.2.2',
+            supportLibraryVersion: '27.1.1',
+            supportPercentVersion: '25.3.1',
+            butterknife          : '8.8.1',
+            gson                 : '2.7',
+            retrofit             : '2.4.0',
+            rxjava               : '1.1.6',
+            rxandroid            : '1.2.1',
+            loggingInterceptor   : '3.1.0',
+            stetho               : '1.4.2',
+            guavaVersion         : '18.0',
+            leakcanary           : '1.5.4'
+    ]
+}

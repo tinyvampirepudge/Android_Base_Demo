@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_test1"
+                style="@style/btn_style_lower"
+                android:text="基本使用1"
+                />
+
+            <Button
+                android:id="@+id/btn_test2"
+                style="@style/btn_style_lower"
+                android:text="引以为傲的链式调用"
+                />
+
+            <Button
+                android:id="@+id/btn_test3"
+                style="@style/btn_style_lower"
+                android:text="ObservableEmitter不发送onComplete或onError"
+                />
+
+            <Button
+                android:id="@+id/btn_test4"
+                style="@style/btn_style_lower"
+                android:text="ObservableEmitter发送多个onComplete"
+                />
+
+            <Button
+                android:id="@+id/btn_test5"
+                style="@style/btn_style_lower"
+                android:text="ObservableEmitter发送多个onError,crash"
+                />
+
+            <Button
+                android:id="@+id/btn_test6"
+                style="@style/btn_style_lower"
+                android:text="ObservableEmitter发送onError和onComplete互斥1"
+                />
+
+            <Button
+                android:id="@+id/btn_test7"
+                style="@style/btn_style_lower"
+                android:text="ObservableEmitter发送onError和onComplete互斥2"
+                />
+
+            <Button
+                android:id="@+id/btn_test8"
+                style="@style/btn_style_lower"
+                android:text="Disposable 让下游不再接收事件"
+                />
+
+
+            <Button
+                android:id="@+id/btn_test9"
+                style="@style/btn_style_lower"
+                android:text="subscribe()"
+                />
+
+            <Button
+                android:id="@+id/btn_test10"
+                style="@style/btn_style_lower"
+                android:text="subscribe(onNext) "
+                />
+
+            <Button
+                android:id="@+id/btn_test11"
+                style="@style/btn_style_lower"
+                android:text="subscribe(onNext, onError) "
+                />
+
+            <Button
+                android:id="@+id/btn_test12"
+                style="@style/btn_style_lower"
+                android:text="subscribe(onNext, onError, onComplete) "
+                />
+
+            <Button
+                android:id="@+id/btn_test13"
+                style="@style/btn_style_lower"
+                android:text="subscribe(onNext, onError, onComplete, onSubscribe) "
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="activity_space_15">15dp</dimen>
+    <dimen name="title_bar_height">50dp</dimen>
+
+    <!--窗口/activity左右间距-->
+    <dimen name="win_lr_space">@dimen/activity_space_15</dimen>
+    <!-- dialog中的content，paddingTop和paddingBottom的值 start -->
+    <dimen name="dialog_pad_top_bottom">30dp</dimen>
+    <!-- dialog中的content，paddingTop和paddingBottom的值 end -->
+
+    <!--字体设置开始-->
+    <dimen name="font_10">10sp</dimen>
+    <dimen name="font_12">12sp</dimen>
+    <dimen name="font_13">13sp</dimen>
+    <dimen name="font_14">14sp</dimen>
+    <dimen name="font_15">15sp</dimen>
+    <dimen name="font_16">16sp</dimen>
+    <dimen name="font_18">18sp</dimen>
+    <dimen name="font_20">20sp</dimen>
+    <!--字体设置结束-->
+
+    <!-- SmartRefreshLayout start -->
+    <dimen name="app_bar_height">240dp</dimen><!--180dp-->
+    <dimen name="text_margin">16dp</dimen>
+
+    <dimen name="division_line">0.5dp</dimen>
+
+    <dimen name="padding_common">10dp</dimen>
+    <dimen name="padding_common_h">15dp</dimen>
+    <dimen name="padding_common_v">10dp</dimen>
+    <dimen name="padding_common_d">5dp</dimen>
+
+    <dimen name="textsize_small">12sp</dimen>
+    <dimen name="textsize_content">14sp</dimen>
+    <dimen name="textsize_titlesmall">16sp</dimen>
+    <dimen name="textsize_title">17sp</dimen>
+    <dimen name="textsize_titlelarge">19sp</dimen>
+    <dimen name="textsize_titlebar">20sp</dimen>
+    <!-- SmartRefreshLayout end -->
+</resources>

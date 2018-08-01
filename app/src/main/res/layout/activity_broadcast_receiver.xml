@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_broadcast_receiver"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tiny.demo.firstlinecode.broadcastreceiver.BroadcastReceiverActivity">
+
+    <Button
+        android:id="@+id/btn_send_broadcast"
+        style="@style/btn_style_lower"
+        android:text="发送自定义界面"/>
+
+    <Button
+        android:id="@+id/btn_local_broadcast"
+        style="@style/btn_style_lower"
+        android:text="本地广播界面"/>
+
+    <Button
+        android:id="@+id/btn_force_offline"
+        style="@style/btn_style_lower"
+        android:text="强制下线功能"/>
+
+</LinearLayout>

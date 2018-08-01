@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tiny.demo.firstlinecode.view.dialog.DialogDemoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_standard_dialog"
+                style="@style/btn_style_lower"
+                android:text="standard dialog"
+                />
+
+            <Button
+                android:id="@+id/btn_custom_dialog"
+                style="@style/btn_style_lower"
+                android:text="custom dialog"
+                />
+
+            <Button
+                android:id="@+id/btn_standard_alert_dialog"
+                style="@style/btn_style_lower"
+                android:text="standard dialog"
+                />
+
+            <Button
+                android:id="@+id/btn_custom_alert_dialog"
+                style="@style/btn_style_lower"
+                android:text="custom dialog"
+                />
+
+            <Button
+                android:id="@+id/btn_fragment_dialog"
+                style="@style/btn_style_lower"
+                android:text="fragment dialog"
+                />
+
+            <Button
+                android:id="@+id/btn_fragment_dialog_single_list1"
+                style="@style/btn_style_lower"
+                android:text="fragment dialog simple list1"
+                />
+
+            <Button
+                android:id="@+id/btn_fragment_dialog_simple_list2"
+                style="@style/btn_style_lower"
+                android:text="fragment dialog simple list2"
+                />
+
+            <Button
+                android:id="@+id/btn_fragment_dialog_list_single_choice"
+                style="@style/btn_style_lower"
+                android:text="fragment dialog list single choice"
+                />
+
+            <Button
+                android:id="@+id/btn_fragment_dialog_list_multi_choice"
+                style="@style/btn_style_lower"
+                android:text="fragment dialog list multi choice"
+                />
+
+            <Button
+                android:id="@+id/btn_fragment_dialog_custom_view"
+                style="@style/btn_style_lower"
+                android:text="fragment dialog custom view"
+                />
+
+            <Button
+                android:id="@+id/btn_activity_dialog"
+                style="@style/btn_style_lower"
+                android:text="Dialog类型的Activity"
+                />
+
+            <Button
+                android:id="@+id/btn_fragment_dialog_notice"
+                style="@style/btn_style_lower"
+                android:text="DialogFragment的回调传递给Activity"
+                />
+
+            <!-- 全屏显示对话框或将其显示为嵌入式片段 -->
+            <Button
+                android:id="@+id/btn_fragment_dialog_custom"
+                style="@style/btn_style_lower"
+                android:text="全屏显示对话框或将其显示为嵌入式片段"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

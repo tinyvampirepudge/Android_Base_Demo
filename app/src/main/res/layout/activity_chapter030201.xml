@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tiny.demo.firstlinecode.kfysts.chapter03.Chapter030201Activity">
+    <com.tiny.demo.firstlinecode.kfysts.chapter03.view.AnimationTestView
+        android:id="@+id/view4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:background="@color/font_red"
+        android:gravity="center"
+        android:text="动画实现View的拖动"/>
+</android.support.constraint.ConstraintLayout>

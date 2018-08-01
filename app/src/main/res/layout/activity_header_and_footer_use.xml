@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tiny.demo.firstlinecode.brvah.HeaderAndFooterUseActivity">
+
+    <com.tiny.demo.firstlinecode.common.view.TitleBarLayout
+        android:id="@+id/title_bar_brvah_header_and_footer"
+        style="@style/title_bar_style"
+        xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        titlebar:bottom_line_visiable="true"
+        titlebar:center_text="HeaderAndFooter Use"
+        titlebar:center_type="text_view"
+        titlebar:left_image="@drawable/back"
+        titlebar:left_type="image_button"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tiny.demo.firstlinecode.kfysts.chapter04.Chapter0401Activity">
+
+    <com.tiny.demo.firstlinecode.kfysts.chapter04.ui.CircleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#000"
+        android:padding="10dp"
+        app:circle_color="@color/app_phone_status_bar"
+        />
+
+</LinearLayout>

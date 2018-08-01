@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    >
+
+    <EditText
+        android:id="@+id/content_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/content_edit_text_hint"
+        />
+
+    <Button
+        android:id="@+id/write_to_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/write_to"
+        />
+
+</LinearLayout>

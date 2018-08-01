@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_uil"
+                style="@style/btn_style_lower"
+                android:text="universal-image-loader"
+                />
+
+            <ImageView
+                android:id="@+id/img_uil"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <Button
+                android:id="@+id/btn_glide"
+                style="@style/btn_style_lower"
+                android:text="glide"
+                />
+
+            <ImageView
+                android:id="@+id/img_glide"
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

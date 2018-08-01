@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FLC小米版</string>
+    <string name="data_base_provider">com.tiny.demo.firstlinecode.xiaomi.provider</string>
+    <string name="file_provider">com.tiny.demo.firstlinecode.xiaomi.camera</string>
+</resources>

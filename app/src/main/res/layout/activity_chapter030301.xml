@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tiny.demo.firstlinecode.kfysts.chapter03.Chapter030301Activity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn"
+            style="@style/btn_style_lower"
+            android:text="开始动画"
+            />
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/tv"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:text="我是内容"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@color/gray_color"/>
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

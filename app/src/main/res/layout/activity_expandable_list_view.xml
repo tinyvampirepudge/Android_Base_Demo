@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout
+    android:id="@+id/refreshLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:srlEnableFooterFollowWhenLoadFinished="true"
+    app:srlEnableScrollContentWhenLoaded="true"
+    tools:context="com.tiny.demo.firstlinecode.ui.view.ExpandableListViewActivity">
+
+    <ExpandableListView
+        android:id="@+id/list_train"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:childDivider="@null"
+        android:divider="@null"
+        android:groupIndicator="@null"
+        android:scrollbars="none"
+        android:visibility="visible"/>
+
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

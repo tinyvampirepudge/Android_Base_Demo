@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.dependencies.supportLibraryVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}
+
+//修改jar名字+将制定jar生成的地方
+task makeJar(type: Copy) {
+    //删除存在的
+    delete 'build/libs/tinymodule.jar'
+    //设置copy的文件
+    from('build/intermediates/bundles/release/')
+    //打进jar包后的文件目录
+    into('build/libs/')
+    //将classes.jar仿佛build/libs/目录下
+    //include, exclude参数来设置过滤
+    //(我们只关心classes.jar这个文件)
+    include('classes.jar')
+    //重命名
+    rename ('classes.jar', 'tinymodule.jar')
+}
+
+makeJar.dependsOn(build)

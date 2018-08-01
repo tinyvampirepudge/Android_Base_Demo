@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_test1"
+            style="@style/btn_style_lower"
+            android:text="默认实现：上下游工作在同一线程"
+            />
+
+        <Button
+            android:id="@+id/btn_test2"
+            style="@style/btn_style_lower"
+            android:text="上下游工作在不同线程"
+            />
+
+        <Button
+            android:id="@+id/btn_test3"
+            style="@style/btn_style_lower"
+            android:text="request的正确使用——init"
+            />
+
+        <Button
+            android:id="@+id/btn_test4"
+            style="@style/btn_style_lower"
+            android:text="request的正确使用——start"
+            />
+
+        <Button
+            android:id="@+id/btn_test5"
+            style="@style/btn_style_lower"
+            android:text="Flowable默认水缸的大小为128——验证下"
+            />
+
+    </LinearLayout>
+</ScrollView>

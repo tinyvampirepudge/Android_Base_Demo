@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tiny.demo.firstlinecode.sourcecode.AndroidSourceCodeDesignPatternActivity">
+
+    <Button
+        android:id="@+id/btn_six_principle_of_object_oriented"
+        style="@style/btn_style_lower"
+        android:text="Chapter1 面向对象的六大原则"
+        />
+
+</android.support.constraint.ConstraintLayout>

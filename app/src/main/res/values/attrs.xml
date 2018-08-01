@@ -1,0 +1,76 @@
+<resources>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference"/>
+        <attr name="metaButtonBarButtonStyle" format="reference"/>
+    </declare-styleable>
+
+    <!-- 限制最高高度的view -->
+    <declare-styleable name="MaxHeightView">
+        <attr name="mhv_HeightRatio" format="reference|float"/>
+        <attr name="mhv_HeightDimen" format="reference|dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircleIndicator">
+        <attr name="ci_width" format="dimension"/>
+        <attr name="ci_height" format="dimension"/>
+        <attr name="ci_margin" format="dimension"/>
+        <attr name="ci_animator" format="reference"/>
+        <attr name="ci_animator_reverse" format="reference"/>
+        <attr name="ci_drawable" format="reference"/>
+        <attr name="ci_drawable_unselected" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="Flier_titlebar">
+        <attr name="back_ground" format="color|reference"/>
+        <attr name="text_color" format="color|reference"/>
+        <attr name="left_type">
+            <enum name="none" value="0"/>
+            <enum name="image_button" value="1"/>
+            <enum name="text_view" value="2"/>
+        </attr>
+        <attr name="left_image" format="reference"/>
+        <attr name="left_text" format="string"/>
+        <attr name="left_text_drawable" format="reference"/>
+        <attr name="left_text_drawable_padding" format="dimension"/>
+        <attr name="center_type">
+            <enum name="none" value="0"/>
+            <enum name="image_view" value="1"/>
+            <enum name="text_view" value="2"/>
+            <enum name="text_view_marquee" value="3"/>
+        </attr>
+        <attr name="center_text" format="string"/>
+        <attr name="center_sub_text" format="reference"/>
+        <attr name="center_image" format="reference"/>
+        <attr name="right_type">
+            <enum name="none" value="0"/>
+            <enum name="image_view" value="1"/>
+            <enum name="text_view" value="2"/>
+            <enum name="layout" value="3"/>
+            <enum name="view" value="3"/>
+            <enum name="red_pot_text_view" value="4"/>
+        </attr>
+        <attr name="right_text" format="string"/>
+        <attr name="right_image" format="reference"/>
+        <attr name="right_text_color" format="color|reference"/>
+        <attr name="right_text_drawable" format="reference"/>
+        <attr name="right_text_drawable_padding" format="dimension"/>
+        <attr name="right_view" format="reference"/>
+        <attr name="bottom_line_visiable" format="boolean"/>
+        <attr name="bottom_shadow_visible" format="boolean"/>
+        <attr name="bottom_line_drawable" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="Custom_Round_Image_View">
+        <attr name="radius" format="dimension"/>
+        <attr name="left_top_radius" format="dimension"/>
+        <attr name="right_top_radius" format="dimension"/>
+        <attr name="right_bottom_radius" format="dimension"/>
+        <attr name="left_bottom_radius" format="dimension"/>
+    </declare-styleable>
+
+</resources>

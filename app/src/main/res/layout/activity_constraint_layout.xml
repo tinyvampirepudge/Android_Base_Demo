@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tiny.demo.firstlinecode.uicomponents.constraintlayout.ConstraintLayoutActivity">
+
+    <Button
+        android:id="@+id/btn_test1"
+        style="@style/btn_style_lower"
+        android:text="初步使用"
+        />
+
+    <Button
+        android:id="@+id/btn_test2"
+        style="@style/btn_style_lower"
+        android:text="RelativeLayout布局实现剩余空间分配"
+        app:layout_constraintTop_toBottomOf="@id/btn_test1"
+        />
+
+    <Button
+        android:id="@+id/btn_test3"
+        style="@style/btn_style_lower"
+        android:text="与RelativeLayout对比"
+        app:layout_constraintTop_toBottomOf="@id/btn_test2"
+        />
+
+</android.support.constraint.ConstraintLayout>

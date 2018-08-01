@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/background_dialog"
+              android:gravity="center"
+              android:orientation="vertical"
+              android:paddingLeft="1dp"
+              android:paddingRight="1dp">
+
+    <TextView
+        android:id="@+id/txt_dialog_base"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:text="--"
+        android:textColor="@color/font_main_1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <View
+        android:id="@+id/line_dialog_base_top"
+        style="@style/h_line_1dp"/>
+
+    <RelativeLayout
+        android:id="@+id/layout_container_dialog_base"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="100dp"
+        >
+
+    </RelativeLayout>
+
+    <View style="@style/h_line_1dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/btn_dialog_base_cancel"
+            android:layout_width="0dip"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/dialog_button_selector"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/font_main_1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+
+        <View
+            android:id="@+id/interval_line_dialog_base"
+            style="@style/v_line_1dp"/>
+
+        <TextView
+            android:id="@+id/btn_dialog_base_ok"
+            android:layout_width="0dip"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/dialog_button_selector"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="#2371e9"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</LinearLayout>

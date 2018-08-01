@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tiny.demo.firstlinecode.view.drag.DragActivity5">
+
+    <com.tiny.demo.firstlinecode.view.drag.DragerViewLayout
+        android:id="@+id/drager_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/view_drager_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#654321"
+            android:gravity="center"
+            android:padding="10dp"
+            android:tag="one"
+            android:text="我是炸弹"
+            android:textColor="#ffffff" />
+
+    </com.tiny.demo.firstlinecode.view.drag.DragerViewLayout>
+
+</RelativeLayout>

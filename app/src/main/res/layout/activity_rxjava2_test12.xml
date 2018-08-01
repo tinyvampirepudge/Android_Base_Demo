@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".rxjava2.blog2.Rxjava2Test12Activity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_test1"
+                style="@style/btn_style_lower"
+                android:text="concat()"
+                />
+
+            <Button
+                android:id="@+id/btn_test2"
+                style="@style/btn_style_lower"
+                android:text="concatArray()"
+                />
+
+            <Button
+                android:id="@+id/btn_test3"
+                style="@style/btn_style_lower"
+                android:text="merge()"
+                />
+
+            <Button
+                android:id="@+id/btn_test4"
+                style="@style/btn_style_lower"
+                android:text="mergeArray()"
+                />
+
+            <Button
+                android:id="@+id/btn_test5"
+                style="@style/btn_style_lower"
+                android:text="concatArray() with onError"
+                />
+
+            <Button
+                android:id="@+id/btn_test6"
+                style="@style/btn_style_lower"
+                android:text="mergeArray() with onError"
+                />
+
+            <Button
+                android:id="@+id/btn_test7"
+                style="@style/btn_style_lower"
+                android:text="concatArrayDelayError() &amp; mergeArrayDelayError()"
+                />
+
+            <Button
+                android:id="@+id/btn_test8"
+                style="@style/btn_style_lower"
+                android:text="zip()"
+                />
+
+            <Button
+                android:id="@+id/btn_test9"
+                style="@style/btn_style_lower"
+                android:text="combineLatest() &amp; combineLatestDelayError()"
+                />
+
+            <Button
+                android:id="@+id/btn_test10"
+                style="@style/btn_style_lower"
+                android:text="reduce()"
+                />
+
+            <Button
+                android:id="@+id/btn_test11"
+                style="@style/btn_style_lower"
+                android:text="collect()"
+                />
+
+            <Button
+                android:id="@+id/btn_test12"
+                style="@style/btn_style_lower"
+                android:text="startWith() &amp; startWithArray()"
+                />
+
+            <Button
+                android:id="@+id/btn_test13"
+                style="@style/btn_style_lower"
+                android:text="count()"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

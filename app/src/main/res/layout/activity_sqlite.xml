@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tiny.demo.firstlinecode.storage.SQLiteActivity">
+
+    <LinearLayout
+        android:id="@+id/activity_sqlite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_sqlite_create"
+            style="@style/btn_style_lower"
+            android:text="create database"/>
+
+        <Button
+            android:id="@+id/btn_sqlite_add"
+            style="@style/btn_style_lower"
+            android:text="add database"/>
+
+        <Button
+            android:id="@+id/btn_sqlite_updage"
+            style="@style/btn_style_lower"
+            android:text="update database"/>
+
+        <Button
+            android:id="@+id/btn_sqlite_delete"
+            style="@style/btn_style_lower"
+            android:text="delete database"/>
+
+        <Button
+            android:id="@+id/btn_sqlite_query"
+            style="@style/btn_style_lower"
+            android:text="query database"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="下面是使用SQL语句进行操作"
+            />
+
+        <Button
+            android:id="@+id/btn_sql_add"
+            style="@style/btn_style_lower"
+            android:text="add database by sql"/>
+
+        <Button
+            android:id="@+id/btn_sql_updage"
+            style="@style/btn_style_lower"
+            android:text="update database by sql"/>
+
+        <Button
+            android:id="@+id/btn_sql_delete"
+            style="@style/btn_style_lower"
+            android:text="delete database by sql"/>
+
+        <Button
+            android:id="@+id/btn_sql_query"
+            style="@style/btn_style_lower"
+            android:text="query database by sql"/>
+
+    </LinearLayout>
+
+</ScrollView>

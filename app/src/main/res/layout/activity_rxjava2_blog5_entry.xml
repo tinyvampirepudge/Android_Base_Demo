@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".rxjava2.blog5.Rxjava2Blog5EntryActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_test1"
+                style="@style/btn_style_lower"
+                android:text="防止按钮重复点击"
+                />
+
+            <Button
+                android:id="@+id/btn_test2"
+                style="@style/btn_style_lower"
+                android:text="点击的多次监听"
+                />
+
+            <Button
+                android:id="@+id/btn_test3"
+                style="@style/btn_style_lower"
+                android:text="获取验证码倒计时"
+                />
+
+            <Button
+                android:id="@+id/btn_test4"
+                style="@style/btn_style_lower"
+                />
+
+            <Button
+                android:id="@+id/btn_test5"
+                style="@style/btn_style_lower"
+                />
+
+            <Button
+                android:id="@+id/btn_test6"
+                style="@style/btn_style_lower"
+                />
+
+            <Button
+                android:id="@+id/btn_test7"
+                style="@style/btn_style_lower"
+                />
+
+            <Button
+                android:id="@+id/btn_test8"
+                style="@style/btn_style_lower"
+                />
+
+            <Button
+                android:id="@+id/btn_test9"
+                style="@style/btn_style_lower"
+                />
+
+            <Button
+                android:id="@+id/btn_test10"
+                style="@style/btn_style_lower"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

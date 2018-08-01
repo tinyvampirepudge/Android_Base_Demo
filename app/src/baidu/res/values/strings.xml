@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FLC百度版</string>
+    <string name="data_base_provider">com.tiny.demo.firstlinecode.baidu.provider</string>
+    <string name="file_provider">com.tiny.demo.firstlinecode.baidu.camera</string>
+</resources>

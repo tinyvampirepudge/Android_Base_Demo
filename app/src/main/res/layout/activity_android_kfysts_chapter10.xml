@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tiny.demo.firstlinecode.kfysts.chapter10.AndroidKfystsChapter10Activity">
+
+    <Button
+        android:id="@+id/btn_test1"
+        style="@style/btn_style_lower"
+        android:text="RuntimeException: Can't create handler inside thread that has not called Looper.prepare();"
+        />
+
+    <Button
+        android:id="@+id/btn_test2"
+        style="@style/btn_style_lower"
+        android:text="ThreadLocal"
+        app:layout_constraintTop_toBottomOf="@id/btn_test1"
+        />
+
+    <Button
+        android:id="@+id/btn_test3"
+        style="@style/btn_style_lower"
+        android:text="子线程创建Looper"
+        app:layout_constraintTop_toBottomOf="@id/btn_test2"
+        />
+
+</android.support.constraint.ConstraintLayout>

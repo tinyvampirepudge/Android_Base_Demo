@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    android:id="@+id/activity_activty"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tiny.demo.firstlinecode.activity.ActivityReferedActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_intent"
+            style="@style/btn_style_lower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Intent"/>
+
+        <Button
+            android:id="@+id/btn_activity_lifecycle"
+            style="@style/btn_style_lower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="LifecycleActivity"/>
+
+        <Button
+            android:id="@+id/btn_launcher_mode"
+            style="@style/btn_style_lower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="launcher_mode"/>
+
+        <Button
+            android:id="@+id/btn_activity_stack_manager"
+            style="@style/btn_style_lower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="利用Activity Stack Manager一键退出程序"/>
+
+        <Button
+            android:id="@+id/start_activity"
+            style="@style/btn_style_lower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="activity正确的启动方式"/>
+
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

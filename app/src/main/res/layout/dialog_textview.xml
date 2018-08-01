@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:orientation="vertical"
+              android:paddingLeft="1dp"
+              android:paddingRight="1dp">
+
+    <com.tiny.demo.firstlinecode.common.view.MaxHeightView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mhv_HeightDimen="300dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/layout_dialog_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="25dp">
+
+                <TextView
+                    android:id="@+id/txt_desc1_dialog_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textColor="@color/font_main_1"
+                    android:textSize="16sp"
+                    tools:text="打发第三"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_desc2_dialog_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="--"
+                    android:textColor="#999"
+                    android:textSize="16sp"
+                    />
+            </LinearLayout>
+        </ScrollView>
+    </com.tiny.demo.firstlinecode.common.view.MaxHeightView>
+
+</LinearLayout>

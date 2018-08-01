@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="menu_split">#dddddd</color>
+    <color name="font_main_1">#333333</color>
+    <color name="font_red">#f0523c</color>
+
+    <!--辅助文字颜色-->
+    <color name="font_assist_1">#999999</color>
+    <color name="font_assist_2">#666666</color>
+    <color name="font_assist_3">#dddddd</color>
+
+    <color name="black_trans_10">#19000000</color>
+    <color name="black_trans_15">#25000000</color>
+    <color name="black_trans_20">#33000000</color>
+    <color name="black_trans_30">#48000000</color>
+    <color name="black_trans_35">#59000000</color>
+    <color name="white_trans_80">#ccffffff</color>
+    <color name="white_trans_50">#80ffffff</color>
+    <color name="white_trans_30">#55ffffff</color>
+    <color name="white_trans_20">#33ffffff</color>
+    <color name="white_trans_10">#16ffffff</color>
+
+    <color name="blue_2371e9">#2371e9</color>
+
+    <color name="point_pink">#e4007f</color>
+
+    <!--手机任务栏背景颜色-->
+    <color name="app_phone_status_bar">#2371e9</color>
+    <color name="pure_white">#ffffffff</color>
+
+    <!-- item的背景选择器中点击之后的颜色 -->
+    <color name="item_select_color">#f5f5f5</color>
+    <color name="black">#000</color>
+
+    <!--activity主背景颜色-->
+    <color name="at_bg_1">#edeff0</color>
+    <color name="font_blue_2371e9">#2371e9</color>
+
+    <color name="colorItem">#af6fe1</color>
+    <color name="colorTopItem">#d1bc1d</color>
+
+    <color name="color_f9faff">#f9faff</color>
+    <color name="transparent">#00000000</color>
+    <color name="blue_3d4eae">@color/blue_2371e9</color>
+
+    <color name="gray_dddddd">#dddddd</color>
+
+    <color name="color_light_blue">#00DDB6</color>
+    <color name="txt_color">#48495F</color>
+    <color name="item_bg">#FFFFFF</color>
+    <color name="bg">#F0F0F0</color>
+    <color name="spinner_bg">#333244</color>
+    <color name="new_text_color">#555771</color>
+    <color name="white_text_color">#F0F0F0</color>
+    <color name="gray_color">#4b4b58</color>
+    <color name="hard_color">#48495f</color>
+    <color name="clickspan_color">#00ddb6</color>
+    <color name="dull_blue">#3B4BBF</color>
+
+    <!-- SmartRefreshLayout start -->
+    <color name="colorPrimarySmart">#33aaff</color>
+    <color name="colorPrimaryDarkSmart">#2299ee</color>
+    <color name="colorPrimaryOverlaySmart">#cc0094ff</color>
+    <color name="colorAccentSmart">#FF4081</color>
+
+    <color name="colorTextTitle">#333333</color>
+    <color name="colorTextContent">#444444</color>
+    <color name="colorTextAssistant">#888888</color>
+
+    <color name="colorBackgroud">#FFFFFF</color>
+    <color name="colorBackgroudDark">#f2f2f2</color>
+    <color name="colorDivison">#33aaaaaa</color>
+    <!-- SmartRefreshLayout end -->
+
+
+    <color name="item_pressed_color">#CCCCCC</color>
+    <color name="item_activated_color">#77CEEE</color>
+</resources>

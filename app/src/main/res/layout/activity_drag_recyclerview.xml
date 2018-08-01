@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.tiny.demo.firstlinecode.common.view.TitleBarLayout
+        android:id="@+id/title_bar_zixuan_edit"
+        style="@style/title_bar_style"
+        xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        titlebar:bottom_line_visiable="true"
+        titlebar:center_text="我的自选"
+        titlebar:center_type="text_view"
+        titlebar:left_text="取消"
+        titlebar:left_type="text_view"
+        titlebar:right_text="完成"
+        titlebar:right_type="text_view"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="238"
+            android:paddingLeft="26dp"
+            android:text="股票名称"
+            android:textColor="@color/font_assist_1"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="230"
+            android:gravity="center"
+            android:text="置顶"
+            android:textColor="@color/font_assist_1"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="160"
+            android:gravity="right"
+            android:text="移动"
+            android:textColor="@color/font_assist_1"
+            android:textSize="13sp"
+            />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_drag"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/txt_check_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:drawableLeft="@drawable/ic_optional_select_box"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:text="全选"
+            android:textColor="@color/font_main_1"
+            android:textSize="16sp"
+            />
+
+        <RelativeLayout
+            android:id="@+id/layout_delete"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_space_15"
+            android:background="@drawable/bg_red_gradient"
+            android:text="">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/ic_delete_icon"
+                android:drawablePadding="6dp"
+                android:text="删除"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_launcher_mode_single_instance"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".activity.launcher_mode.LauncherModeSingleInstanceActivity">
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="LauncherModeSingleTaskActivity"
+        />
+
+    <Button
+        android:id="@+id/btn1"
+        style="@style/btn_style"
+        android:text="standard"
+        />
+
+    <Button
+        android:id="@+id/btn2"
+        style="@style/btn_style"
+        android:text="single top"
+        />
+
+    <Button
+        android:id="@+id/btn3"
+        style="@style/btn_style"
+        android:text="single task"
+        />
+
+    <Button
+        android:id="@+id/btn4"
+        style="@style/btn_style"
+        android:text="single instance"
+        />
+
+    <Button
+        android:id="@+id/btn5"
+        style="@style/btn_style"
+        android:text="一键退出应用"
+        />
+</LinearLayout>

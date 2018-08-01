@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <!--<dbname value="BookStoreLitePal"></dbname>-->
+
+    <!--<version value="2"></version>-->
+
+    <!--<list>-->
+        <!--<mapping class="com.tiny.demo.firstlinecode.storage.litepal.Book"></mapping>-->
+        <!--<mapping class="com.tiny.demo.firstlinecode.storage.litepal.Category"></mapping>-->
+        <!--<mapping class="com.tiny.demo.firstlinecode.storage.litepal.BeanLitePal"></mapping>-->
+    <!--</list>-->
+
+    <dbname value="cool_weather"></dbname>
+
+    <version value="1"></version>
+
+    <list>
+        <mapping class="com.tiny.demo.firstlinecode.coolweather.db.Province"></mapping>
+        <mapping class="com.tiny.demo.firstlinecode.coolweather.db.City"></mapping>
+        <mapping class="com.tiny.demo.firstlinecode.coolweather.db.County"></mapping>
+    </list>
+</litepal>

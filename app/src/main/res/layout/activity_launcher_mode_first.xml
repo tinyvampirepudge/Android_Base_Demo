@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tiny.demo.firstlinecode.kfysts.chapter01.activity.LauncherModeFirstActivity">
+
+    <Button
+        android:id="@+id/btn_test1"
+        style="@style/btn_style_lower"
+        android:text="默认的标准模式"/>
+
+    <Button
+        android:id="@+id/btn_test2"
+        style="@style/btn_style_lower"
+        android:text="通过flag来使用singleTask模式"/>
+
+    <Button
+        android:id="@+id/btn_test3"
+        style="@style/btn_style_lower"
+        android:text="taskAffinity相关"/>
+
+</LinearLayout>

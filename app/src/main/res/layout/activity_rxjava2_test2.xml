@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:id="@+id/btn_test1"
+        style="@style/btn_style_lower"
+        android:text="默认线程"
+        />
+
+    <Button
+        android:id="@+id/btn_test2"
+        style="@style/btn_style_lower"
+        android:text="子线程发送，主线程接收"
+        />
+
+    <Button
+        android:id="@+id/btn_test3"
+        style="@style/btn_style_lower"
+        android:text="发送线程多起切换，接收线程多次切换"
+        />
+
+    <Button
+        android:id="@+id/btn_test4"
+        style="@style/btn_style_lower"
+        android:text="接收线程多次切换，打印结果"
+        />
+
+    <Button
+        android:id="@+id/btn_test5"
+        style="@style/btn_style_lower"
+        android:text="实战retrofit请求"
+        />
+
+    <Button
+        android:id="@+id/btn_test6"
+        style="@style/btn_style_lower"
+        android:text="绑定activity生命周期，单个请求"
+        />
+
+    <Button
+        android:id="@+id/btn_test7"
+        style="@style/btn_style_lower"
+        android:text="绑定activity生命周期，多个请求"
+        />
+
+    <Button
+        android:id="@+id/btn_test8"
+        style="@style/btn_style_lower"
+        android:text="读取数据库"
+        />
+
+</LinearLayout>

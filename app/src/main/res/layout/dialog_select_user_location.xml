@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="205dp"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/txt_cancel_dialog_location"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="@dimen/activity_space_15"
+            android:paddingRight="15dp"
+            android:text="取消"
+            android:textColor="@color/blue_2371e9"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/txt_ok_dialog_location"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="@dimen/activity_space_15"
+            android:text="确定"
+            android:textColor="@color/blue_2371e9"
+            android:textSize="14sp"/>
+    </RelativeLayout>
+
+    <View
+        style="@style/h_line_1px"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="169dp"
+        android:background="@drawable/white_selector"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.tiny.demo.firstlinecode.customview.pickerview.LoopView
+            android:id="@+id/loopview_province"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            />
+
+        <com.tiny.demo.firstlinecode.customview.pickerview.LoopView
+            android:id="@+id/loopview_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

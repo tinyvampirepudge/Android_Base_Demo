@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="colors_array">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+    </array>
+    <array name="colors_array_adapter">
+        <item>Red Adapter</item>
+        <item>Blue Adapter</item>
+        <item>Green Adapter</item>
+    </array>
+    <string-array name="toppings">
+        <item>Onion</item>
+        <item>Lettuce</item>
+        <item>Tomato</item>
+        <item>Banana</item>
+        <item>Apple</item>
+        <item>Nut</item>
+    </string-array>
+
+    <string-array name="permissions">
+        <item>@string/permission_white_external_hint</item>
+        <item>@string/permission_read_phone_hint</item>
+    </string-array>
+
+    <string-array name="tabLayoutTitles">
+        <item>酸汤肥牛</item>
+        <item>宫保鸡丁</item>
+        <item>鱼香肉丝</item>
+        <item>手撕包菜</item>
+        <item>小鸡炖蘑菇</item>
+        <item>西红柿牛腩</item>
+        <item>小炒肉</item>
+    </string-array>
+
+    <string-array name="bravhHomeTitle">
+        <item>Animation</item>
+        <item>MultipleItem</item>
+        <item>Header/Footer</item>
+        <item>PullToRefresh</item>
+        <item>Section</item>
+        <item>EmptyView</item>
+        <item>DragAndSwipe</item>
+        <item>ItemClick</item>
+        <item>ExpandableItem</item>
+        <item>DataBinding</item>
+        <item>UpFetchData</item>
+    </string-array>
+</resources>

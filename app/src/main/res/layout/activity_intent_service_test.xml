@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tiny.demo.firstlinecode.service.intentservice.IntentServiceTestActivity">
+
+    <Button
+        android:id="@+id/btn_test_1"
+        style="@style/btn_style_lower"
+        android:text="普通Service"
+        />
+
+    <Button
+        android:id="@+id/btn_test_2"
+        style="@style/btn_style_lower"
+        android:text="IntentService"
+        />
+
+</LinearLayout>

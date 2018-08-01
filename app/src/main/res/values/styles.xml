@@ -1,0 +1,192 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.MaterialDesign" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- 这两行代码配合布局中的android:fitsSystemWindows="true"属性，可以实现statusbar的颜色跟随下放布局颜色变化 -->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <!-- CoolWeather -->
+    <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppThemeNoActionBar.FullScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--透明对话框dialog  dialog style-->
+    <style name="transparentFrameWindowStyleFull" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/dialog_win_share</item>
+    </style>
+
+    <style name="up_down_menu_animstyle">
+        <item name="android:windowEnterAnimation">@anim/dialog_upper_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/dialog_down_out_anim</item>
+    </style>
+
+    <style name="DialogActivityStyle" parent="Theme.AppCompat.Light.Dialog">
+
+    </style>
+
+    <style name="AppStartFullScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--<style name="AppStartFullScreen" parent="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <!--<item name="windowActionBar">false</item>-->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/Animation</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+    </style>
+
+    <style name="Animation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_right_out</item>
+    </style>
+
+    <style name="FullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/Animation</item>
+    </style>
+
+    <!-- 看盘tablayout end -->
+    <style name="MyTabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="tabSelectedTextColor">@color/app_phone_status_bar</item>
+        <item name="tabTextColor">@color/black</item>
+        <item name="tabTextAppearance">@style/MyTabLayoutTextAppearance</item>
+        <item name="tabIndicatorColor">@color/blue_2371e9</item>
+    </style>
+
+    <!-- 修改tablayout字体大小 -->
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="bg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/bg</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="tweetName">
+        <item name="android:textColor">@color/hard_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <!--<item name="android:textStyle">bold</item>-->
+        <item name="android:shadowColor">#44000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="tweetText">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColorLink">#888888</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="tweetDate">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#FFCCCCCC</item>
+    </style>
+
+    <style name="empty_img">
+        <item name="android:layout_width">@dimen/def_height</item>
+        <item name="android:layout_height">@dimen/def_height</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <!-- Smart Refresh Layout start -->
+    <!-- Base application theme. -->
+
+    <style name="AppThemeBaseSmart" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimarySmart</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkSmart</item>
+        <item name="colorAccent">@color/colorAccentSmart</item>
+        <item name="android:divider">@drawable/ic_list_divider</item>
+        <item name="android:dividerHeight">@dimen/division_line</item>
+        <item name="android:listDivider">@drawable/ic_list_divider</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back_white_24dp</item>
+        <item name="styleLoadingLayout">@style/LoadingLayoutStyle</item>
+    </style>
+
+    <style name="LoadingLayoutStyle" parent="LoadingLayout.Style">
+        <item name="llEmptyImage">@drawable/ic_empty</item>
+        <item name="llErrorImage">@drawable/ic_error</item>
+        <item name="llLoadingResId">@layout/common_loading</item>
+    </style>
+
+    <style name="AppThemeSmart" parent="AppThemeBaseSmart">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="AppTheme.Toolbar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+
+    <style name="txt_style_normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingLeft">@dimen/activity_space_15</item>
+        <item name="android:paddingRight">@dimen/activity_space_15</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:textColor">@color/font_main_1</item>
+        <item name="android:textSize">@dimen/font_14</item>
+    </style>
+
+    <!-- Smart Refresh Layout end -->
+
+
+</resources>

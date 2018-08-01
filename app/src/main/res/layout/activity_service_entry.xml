@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tiny.demo.firstlinecode.service.ServiceEntryActivity">
+
+    <Button
+        android:id="@+id/btn_service_1"
+        style="@style/btn_style_lower"
+        android:text="service常用代码"
+        />
+
+    <Button
+        android:id="@+id/btn_service_2"
+        style="@style/btn_style_lower"
+        android:text="service start 测试"
+        />
+
+    <Button
+        android:id="@+id/btn_service_3"
+        style="@style/btn_style_lower"
+        android:text="service bind测试"
+        />
+
+    <Button
+        android:id="@+id/btn_service_4"
+        style="@style/btn_style_lower"
+        android:text="IntentService 和 Service 测试"
+        />
+
+</LinearLayout>

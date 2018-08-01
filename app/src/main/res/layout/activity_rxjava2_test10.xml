@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".rxjava2.blog2.Rxjava2Test10Activity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_test1"
+                style="@style/btn_style_lower"
+                android:text="基本操作"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                android:text="创建操作符："/>
+
+            <Button
+                android:id="@+id/btn_test2"
+                style="@style/btn_style_lower"
+                android:text="create()"
+                />
+
+            <Button
+                android:id="@+id/btn_test3"
+                style="@style/btn_style_lower"
+                android:text="just(T item)"
+                />
+
+            <Button
+                android:id="@+id/btn_test4"
+                style="@style/btn_style_lower"
+                android:text="From操作符：fromArray()"
+                />
+
+            <Button
+                android:id="@+id/btn_test5"
+                style="@style/btn_style_lower"
+                android:text="From操作符：fromCallable()"
+                />
+
+            <Button
+                android:id="@+id/btn_test6"
+                style="@style/btn_style_lower"
+                android:text="From操作符：fromFuture()"
+                />
+
+            <Button
+                android:id="@+id/btn_test7"
+                style="@style/btn_style_lower"
+                android:text="From操作符：fromIterable()"
+                />
+
+            <Button
+                android:id="@+id/btn_test8"
+                style="@style/btn_style_lower"
+                android:text="defer()"
+                />
+
+            <Button
+                android:id="@+id/btn_test9"
+                style="@style/btn_style_lower"
+                android:text="timer()"
+                />
+
+            <Button
+                android:id="@+id/btn_test10"
+                style="@style/btn_style_lower"
+                android:text="interval()"
+                />
+
+            <Button
+                android:id="@+id/btn_test11"
+                style="@style/btn_style_lower"
+                android:text="intervalRange()"
+                />
+
+            <Button
+                android:id="@+id/btn_test12"
+                style="@style/btn_style_lower"
+                android:text="range()"
+                />
+
+            <Button
+                android:id="@+id/btn_test13"
+                style="@style/btn_style_lower"
+                android:text="rangeLong()"
+                />
+
+            <Button
+                android:id="@+id/btn_test14"
+                style="@style/btn_style_lower"
+                android:text="empty()"
+                />
+
+            <Button
+                android:id="@+id/btn_test15"
+                style="@style/btn_style_lower"
+                android:text="never()"
+                />
+
+            <Button
+                android:id="@+id/btn_test16"
+                style="@style/btn_style_lower"
+                android:text="error()"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

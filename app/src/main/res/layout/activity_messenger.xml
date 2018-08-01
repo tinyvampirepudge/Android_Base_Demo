@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.tiny.demo.firstlinecode.kfysts.chapter02.messenger.MessengerActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:paddingBottom="4dip"
+        android:text="@string/messenger_service_binding"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <Button
+        android:id="@+id/bind"
+        style="@style/btn_style_lower"
+        android:text="@string/bind_service">
+
+        <requestFocus/>
+    </Button>
+
+    <Button
+        android:id="@+id/send_msg"
+        style="@style/btn_style_lower"
+        android:text="给服务端发送消息">
+    </Button>
+
+    <Button
+        android:id="@+id/unbind"
+        style="@style/btn_style_lower"
+        android:text="@string/unbind_service">
+    </Button>
+
+    <TextView
+        android:id="@+id/callback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="0"
+        android:gravity="center_horizontal"
+        android:paddingTop="4dip"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+</LinearLayout>

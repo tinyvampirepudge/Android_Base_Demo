@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_cme_for"
+        style="@style/btn_style_lower"
+        android:text="for循环遍历list并删除"/>
+
+    <Button
+        android:id="@+id/btn_cme_foreach"
+        style="@style/btn_style_lower"
+        android:text="foreach遍历list并删除"/>
+
+    <Button
+        android:id="@+id/btn_cme_for_delete"
+        style="@style/btn_style_lower"
+        android:text="for遍历list记录下index，然后再删除"/>
+
+    <Button
+        android:id="@+id/btn_cme_iterator"
+        style="@style/btn_style_lower"
+        android:text="迭代器遍历list并删除"/>
+
+    <Button
+        android:id="@+id/btn_cme_mutil_thread_bug"
+        style="@style/btn_style_lower"
+        android:text="多线程下删除的bug"/>
+
+    <Button
+        android:id="@+id/btn_cme_mutil_thread_result"
+        style="@style/btn_style_lower"
+        android:text="多线程下删除的解决方式"/>
+</LinearLayout>

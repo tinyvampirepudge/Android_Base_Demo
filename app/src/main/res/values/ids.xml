@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="title_bar_bottom" type="id"/>
+    <item name="title_bar_center_title" type="id"/>
+
+    <item name="imageloader_uri" type="id"/>
+</resources>

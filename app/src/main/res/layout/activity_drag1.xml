@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tiny.demo.firstlinecode.view.drag.DragActivity1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.tiny.demo.firstlinecode.view.drag.DragView
+            android:id="@+id/drag_view_view_helper"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:background="#ef5350"
+            >
+
+        </com.tiny.demo.firstlinecode.view.drag.DragView>
+
+        <Button
+            android:id="@+id/btn_reset_pos_drag_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:background="#009966"
+            />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

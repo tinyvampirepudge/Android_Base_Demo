@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_service"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tiny.demo.firstlinecode.service.ServiceActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_start_service"
+            style="@style/btn_style_lower"
+            android:text="start service"/>
+
+        <Button
+            android:id="@+id/btn_stop_service"
+            style="@style/btn_style_lower"
+            android:text="stop service"/>
+
+        <Button
+            android:id="@+id/btn_bind_service"
+            style="@style/btn_style_lower"
+            android:text="bind service"/>
+
+        <Button
+            android:id="@+id/btn_unbind_service"
+            style="@style/btn_style_lower"
+            android:text="unbind service"/>
+
+        <Button
+            android:id="@+id/btn_start_intent_service"
+            style="@style/btn_style_lower"
+            android:text="start intent service"/>
+
+        <Button
+            android:id="@+id/btn_start_download"
+            style="@style/btn_style_lower"
+            android:layout_marginTop="30dp"
+            android:text="start download"/>
+
+    </LinearLayout>
+
+</ScrollView>

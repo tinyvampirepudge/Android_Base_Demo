@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tiny.demo.firstlinecode.kfysts.chapter02.contentprovider.ContentProviderTestActivity">
+
+    <Button
+        android:id="@+id/btn_check_book"
+        style="@style/btn_style_lower"
+        android:text="查询Book表"/>
+
+    <Button
+        android:id="@+id/btn_check_user"
+        style="@style/btn_style_lower"
+        android:text="查询User表"/>
+</LinearLayout>

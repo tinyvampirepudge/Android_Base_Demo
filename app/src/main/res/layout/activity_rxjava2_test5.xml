@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_test1"
+            style="@style/btn_style_lower"
+            android:text="不适用backPressure,无限发送，会oom"
+            />
+
+        <Button
+            android:id="@+id/btn_test2"
+            style="@style/btn_style_lower"
+            android:text="上游无限发送，然后onNext中sleep2秒，均在默认的主线程"
+            />
+
+        <Button
+            android:id="@+id/btn_test3"
+            style="@style/btn_style_lower"
+            android:text="上游无限发送，然后onNext中sleep2秒，主线程发送，子线程接收"
+            />
+
+        <Button
+            android:id="@+id/btn_test4"
+            style="@style/btn_style_lower"
+            android:text="filter"
+            />
+
+        <Button
+            android:id="@+id/btn_test5"
+            style="@style/btn_style_lower"
+            android:text="sample"
+            />
+    </LinearLayout>
+</ScrollView>

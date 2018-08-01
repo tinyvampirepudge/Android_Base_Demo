@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tiny.demo.firstlinecode.kfysts.AndroidKfystsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_chapter_01"
+            style="@style/btn_style_lower"
+            android:text="第一章 Activity的生命周期和启动模式"/>
+
+        <Button
+            android:id="@+id/btn_chapter_02"
+            style="@style/btn_style_lower"
+            android:text="第二章 IPC机制"/>
+
+        <Button
+            android:id="@+id/btn_chapter_03"
+            style="@style/btn_style_lower"
+            android:text="第三章 View事件体系"/>
+
+        <Button
+            android:id="@+id/btn_chapter_04"
+            style="@style/btn_style_lower"
+            android:text="第四章 View的工作原理"/>
+
+        <Button
+            android:id="@+id/btn_chapter_08"
+            style="@style/btn_style_lower"
+            android:text="第八章 理解Window和WindowManager"/>
+
+        <Button
+            android:id="@+id/btn_chapter_09"
+            style="@style/btn_style_lower"
+            android:text="第九章 四大组件的工作过程"/>
+
+        <Button
+            android:id="@+id/btn_chapter_10"
+            style="@style/btn_style_lower"
+            android:text="第十章 Android的消息机制"/>
+
+        <Button
+            android:id="@+id/btn_chapter_11"
+            style="@style/btn_style_lower"
+            android:text="第十一章 Android的线程和线程池"/>
+
+        <Button
+            android:id="@+id/btn_chapter_12"
+            style="@style/btn_style_lower"
+            android:text="第十二章 Bitmap的加载和Cache"/>
+    </LinearLayout>
+</ScrollView>

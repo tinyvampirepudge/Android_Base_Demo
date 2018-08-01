@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tiny.demo.firstlinecode.kfysts.chapter02.AndroidKfystsChapter02Activity">
+
+    <Button
+        android:id="@+id/btn_test1"
+        style="@style/btn_style_lower"
+        android:text="多进程"
+        />
+
+    <Button
+        android:id="@+id/btn_test2"
+        style="@style/btn_style_lower"
+        android:text="binder and aidl"
+        />
+
+    <Button
+        android:id="@+id/btn_test3"
+        style="@style/btn_style_lower"
+        android:text="IPC by Bundle (Intent)"
+        />
+
+    <Button
+        android:id="@+id/btn_test4"
+        style="@style/btn_style_lower"
+        android:text="IPC by file sharing"
+        />
+
+    <Button
+        android:id="@+id/btn_test5"
+        style="@style/btn_style_lower"
+        android:text="IPC by Messenger"
+        />
+
+    <Button
+        android:id="@+id/btn_test6"
+        style="@style/btn_style_lower"
+        android:text="IPC by AIDL"
+        />
+
+    <Button
+        android:id="@+id/btn_test7"
+        style="@style/btn_style_lower"
+        android:text="IPC by ContentProvider"
+        />
+
+    <Button
+        android:id="@+id/btn_test8"
+        style="@style/btn_style_lower"
+        android:text="IPC by Socket"
+        />
+
+    <Button
+        android:id="@+id/btn_test9"
+        style="@style/btn_style_lower"
+        android:text="Binder Pool"
+        />
+</LinearLayout>

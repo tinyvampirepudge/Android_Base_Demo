@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tiny.demo.firstlinecode.kfysts.chapter03.Chapter0301Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_test_01"
+            style="@style/btn_style_lower"
+            android:text="VelocityTracker"/>
+
+        <com.tiny.demo.firstlinecode.kfysts.chapter03.view.TestButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:background="@color/font_red"
+            android:gravity="center"
+            android:text="VelocityTracker"
+            android:textSize="10dp"
+            />
+
+        <Button
+            android:id="@+id/btn_test_02"
+            style="@style/btn_style_lower"
+            android:text="GestureDetector"/>
+
+        <com.tiny.demo.firstlinecode.kfysts.chapter03.view.GestureDetectorTestButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:background="@color/font_red"
+            android:gravity="center"
+            android:text="GestureDetector"
+            android:textSize="10dp"
+            />
+
+        <Button
+            android:id="@+id/btn_test_03"
+            style="@style/btn_style_lower"
+            android:text="Scroller"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

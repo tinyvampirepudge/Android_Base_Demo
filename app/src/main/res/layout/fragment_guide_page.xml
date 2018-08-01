@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/guide_page_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/guide_page_1" />
+
+    <LinearLayout
+            android:id="@+id/guide_page_layout"
+            android:layout_width="match_parent"
+            android:layout_height="192dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            >
+
+        <TextView
+                android:id="@+id/guide_page_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="品牌升级"
+                android:layout_marginTop="35dp"
+                android:textSize="31sp"
+                android:textColor="#354853"
+                />
+
+        <TextView
+                android:id="@+id/guide_page_sutitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textSize="19sp"
+                android:text="品牌升级 炒股服务更上一层"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:textColor="#3e85af"
+                />
+
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/guide_page_skip"
+            android:layout_width="119dp"
+            android:layout_height="32dp"
+            android:text="开始体验"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:textColor="#3e85af"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="43dp"
+            android:background="@drawable/shape_guide_start"
+            />
+
+</RelativeLayout>

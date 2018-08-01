@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.tiny.demo.firstlinecode"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 请求网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 监听网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 监听开机启动 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <!-- 获取wifi地址 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+    <!-- 电话 -->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+    <!-- 震动权限，通知到来时 -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <!-- 存储卡权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!-- 手机状态权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <!-- 悬浮窗权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <!-- aidl -->
+    <permission
+        android:name="com.tiny.demo.firstlinecode.aidl.AIDL_SERVICE"
+        android:protectionLevel="normal"/>
+
+    <!-- manual aidl -->
+    <permission
+        android:name="com.tiny.demo.firstlinecode.aidl.MANUAL_AIDL_SERVICE"
+        android:protectionLevel="normal"/>
+
+    <!-- AIDL权限校验 -->
+    <permission
+        android:name="com.tiny.demo.firstlinecode.permission.ACCESS_BOOK_SERVICE"
+        android:protectionLevel="normal"/>
+
+    <uses-permission android:name="com.tiny.demo.firstlinecode.permission.ACCESS_BOOK_SERVICE"/>
+
+    <application
+        android:name=".app.FLCApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".guide.SplashActivity"
+            android:theme="@style/AppStartFullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".guide.GuidePageActivity"
+            android:theme="@style/FullScreenTheme">
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".activity.intent.IntentActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_intent"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity android:name=".activity.intent.CustomActionActivity">
+            <intent-filter>
+                <action android:name="com.tiny.demo.firstlinecode.ACTION_START"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.tiny.demo.firstlinecode.CUSOM_CATEGORY"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.intent.ActionViewActivity">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:scheme="http"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.activity_lifecycle.NormalActivity">
+        </activity>
+        <activity android:name=".activity.activity_lifecycle.Normal2Activity">
+        </activity>
+        <activity android:name=".activity.activity_lifecycle.LifecycleActivity">
+        </activity>
+        <activity
+            android:name=".activity.launcher_mode.LauncherModeStandardActivity"
+            android:launchMode="standard">
+        </activity>
+        <activity
+            android:name=".activity.launcher_mode.LauncherModeSingleTopActivity"
+            android:launchMode="singleTop">
+        </activity>
+        <activity
+            android:name=".activity.launcher_mode.LauncherModeSingleTaskActivity"
+            android:launchMode="singleTask">
+        </activity>
+        <activity
+            android:name=".activity.launcher_mode.LauncherModeSingleInstanceActivity"
+            android:launchMode="singleInstance">
+        </activity>
+        <activity android:name=".activity.launcher_mode.LauncherModeActivity">
+        </activity>
+        <activity android:name=".activity.ActivityReferedActivity">
+        </activity>
+        <activity android:name=".activity.StartActivity">
+        </activity>
+        <activity android:name=".ui.view.UiActivity">
+        </activity>
+        <activity android:name=".ui.view.PercentLayoutActivity">
+        </activity>
+        <activity android:name=".adaptive.AdaptiveActivity">
+        </activity>
+        <activity android:name=".ui.view.ListViewActivity">
+        </activity>
+        <activity android:name=".ui.view.RecyclerViewVerticalActivity">
+        </activity>
+        <activity android:name=".ui.view.RecyclerViewHorizontalActivity">
+        </activity>
+        <activity android:name=".ui.view.RecyclerViewFlowActivity">
+        </activity>
+        <activity android:name=".ui.view.RecycleViewGridActivity">
+        </activity>
+        <activity android:name=".fragment.FragmentActivity">
+        </activity>
+        <activity android:name=".staticmanager.StaticManagerActivity">
+        </activity>
+        <activity android:name=".fragment.NewsContentActivity">
+        </activity>
+        <activity android:name=".broadcastreceiver.BroadcastReceiverActivity">
+        </activity>
+
+        <receiver
+            android:name=".broadcastreceiver.BootCompletedReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".broadcastreceiver.SendCustomBroadcastActivity">
+        </activity>
+
+        <receiver
+            android:name=".broadcastreceiver.MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="100">
+                <action android:name="com.tiny.firstlinecode.broadcasttest.MY_BROADCAST"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".broadcastreceiver.LocalBroadcastActivity">
+        </activity>
+        <activity
+            android:name=".broadcastreceiver.LoginActivity"
+            android:label="@string/title_activity_login">
+        </activity>
+        <activity android:name=".storage.StorageActivity">
+        </activity>
+        <activity android:name=".storage.FilePersistentActivity">
+        </activity>
+        <activity android:name=".stetho.StethoActivity">
+        </activity>
+        <activity android:name=".storage.SharedPreferencesActivity">
+        </activity>
+        <activity
+            android:name=".storage.SQLiteActivity"
+            android:label="Sqlite">
+        </activity>
+        <activity
+            android:name=".storage.LitePalActivity"
+            android:label="Litepal">
+        </activity>
+        <activity
+            android:name=".provider.ContentProviderActivity"
+            android:label="内容提供者">
+        </activity>
+        <activity
+            android:name=".permission.PermissionActivity"
+            android:label="运行时权限">
+        </activity>
+        <activity
+            android:name=".provider.ContactActivity"
+            android:label="联系人列表">
+        </activity>
+
+        <provider
+            android:name=".provider.DataBaseProvider"
+            android:authorities="@string/data_base_provider"
+            android:enabled="true"
+            android:exported="true">
+        </provider>
+
+        <activity
+            android:name=".notification.NotificationActivity"
+            android:label="发送通知">
+        </activity>
+        <activity
+            android:name=".notification.ReceiveNoticeActivity"
+            android:label="接受消息的activity">
+        </activity>
+        <activity
+            android:name=".camera.CameraAlbumActivity"
+            android:label="摄像头和相册">
+        </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="@string/file_provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
+        <activity
+            android:name=".audio.AudioActivity"
+            android:label="播放音频">
+        </activity>
+        <activity
+            android:name=".video.VideoActivity"
+            android:label="播放视频">
+        </activity>
+        <activity
+            android:name=".network.HttpUrlConnectionActivity"
+            android:label="HttpUrlConnection">
+        </activity>
+        <activity
+            android:name=".network.OkHttpActivity"
+            android:label="okHttp">
+        </activity>
+        <activity
+            android:name=".network.XmlParseActivity"
+            android:label="xml解析">
+        </activity>
+        <activity
+            android:name=".network.JsonParseActivity"
+            android:label="json解析">
+        </activity>
+        <activity
+            android:name=".service.ServiceActivity"
+            android:label="ServiceActivity">
+        </activity>
+
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+        <service
+            android:name=".service.MyIntentService"
+            android:exported="false">
+        </service>
+        <service
+            android:name=".service.DownloadService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity
+            android:name=".service.DownloadActivity"
+            android:label="DownloadActivity">
+        </activity>
+        <activity
+            android:name=".materialdesign.MaterialDesignActivity"
+            android:label="MaterialDesign"
+            android:theme="@style/AppTheme.MaterialDesign">
+        </activity>
+        <activity
+            android:name=".materialdesign.FruitDetailActivity"
+            android:label="FruitDetailActivity"
+            android:theme="@style/AppTheme.MaterialDesign">
+        </activity>
+        <activity
+            android:name=".coolweather.CoolWeatherActivity"
+            android:label="CoolWeatherActivity"
+            android:theme="@style/AppThemeNoActionBar">
+        </activity>
+        <activity
+            android:name=".coolweather.WeatherDetailActivity"
+            android:label="WeatherDetailActivity"
+            android:theme="@style/AppThemeNoActionBar.FullScreen">
+        </activity>
+
+        <service
+            android:name=".coolweather.service.AutoUpdateService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity
+            android:name=".view.dispatchevent.ViewDispatchTouchEventActivity"
+            android:label="View事件分发">
+        </activity>
+        <activity
+            android:name=".svg.SvgToTextViewActivity"
+            android:label="动态设置svg">
+        </activity>
+        <activity
+            android:name=".parser.ActivityParser"
+            android:label="Android解析相关">
+        </activity>
+        <activity android:name=".ui.view.ViewFlipperActivity">
+        </activity>
+        <activity
+            android:name=".oom.OOMActivity"
+            android:label="Android oom相关">
+        </activity>
+        <activity
+            android:name=".test.view.ListviewHSVActivity"
+            android:label="ListviewHSVActivity">
+        </activity>
+        <activity
+            android:name=".test.view.ListViewTestActivity"
+            android:label="ListViewTestActivity">
+        </activity>
+        <activity
+            android:name=".test.view.TestActivity"
+            android:label="TestActivity">
+        </activity>
+        <activity
+            android:name=".templates.temp1.view.MvpTestActivity"
+            android:label="MvpTestActivity">
+        </activity>
+        <activity
+            android:name=".view.dialog.DialogDemoActivity"
+            android:label="Dialog相关示例（Google官网）">
+        </activity>
+        <activity
+            android:name=".view.dialog.DialogActivity"
+            android:label="Dialog类型的Activity"
+            android:theme="@style/DialogActivityStyle">
+        </activity>
+        <activity
+            android:name=".view.drag.DragActivity"
+            android:label="Dragging">
+        </activity>
+        <activity
+            android:name=".view.ViewActivity"
+            android:label="View总入口">
+        </activity>
+        <activity android:name=".view.drag.DragActivity1">
+        </activity>
+        <activity android:name=".view.drag.DragActivity3">
+        </activity>
+        <activity android:name=".view.drag.DragActivity4">
+        </activity>
+        <activity android:name=".view.drag.DragActivity5">
+        </activity>
+        <activity android:name=".templates.template5.view.MvpTest5Actiity">
+        </activity>
+        <activity
+            android:name=".sourcecode.chapter1.imageloader.ImageLoaderActivity"
+            android:label="ImageLoader设计优化">
+        </activity>
+        <activity android:name=".sourcecode.AndroidSourceCodeDesignPatternActivity">
+        </activity>
+        <activity android:name=".sourcecode.chapter1.Chapter1Activity">
+        </activity>
+        <activity
+            android:name=".unittest.AndroidTestActivity"
+            android:label="Android测试相关入口"/>
+        <activity
+            android:name=".unittest.UITestActivity"
+            android:label="Android UI测试"/>
+        <activity
+            android:name=".unittest.EspressoActivity1"
+            android:label="Android自动化测试 Toast"/>
+        <activity
+            android:name=".unittest.EspressoActivity2"
+            android:label="Android自动化测试 ViewAction"/>
+        <activity
+            android:name=".unittest.EspressoActivity3"
+            android:label="Android自动化测试 Intent"/>
+        <activity
+            android:name=".unittest.OtherActivity"
+            android:label="Android自动化测试 Intent 调往的页面"/>
+        <activity
+            android:name=".unittest.EspressoActivity4"
+            android:label="Android自动化测试 AdapterView"/>
+        <activity
+            android:name=".test.view.ImageLoaderTestActivity"
+            android:label="图片加载库测试"/>
+        <activity
+            android:name=".designpattern.DesignPatternActivity"
+            android:label="大话设计模式"/>
+        <activity
+            android:name=".designpattern.chapter06.DecorateActivity"
+            android:label="装饰模式"/>
+        <activity
+            android:name=".designpattern.chapter21.SingletonActivity"
+            android:label="单例模式"/>
+        <activity
+            android:name=".designpattern.chapter13.BuilderActivity"
+            android:label="构建者模式"/>
+        <activity
+            android:name=".designpattern.chapter01.SimpleFactoryActivity"
+            android:label="简单工厂模式"/>
+        <activity
+            android:name=".ui.view.DragRecyclerViewActivity"
+            android:label="RecyclerView拖拽排序、置顶"/>
+        <activity
+            android:name=".ui.swipe.SwipeDeleteRecyclerViewActivity"
+            android:label="RecyclerView侧拉删除，自定义"/>
+        <activity
+            android:name=".handler.HandlerEntryActivity"
+            android:label="Handler相关操作的入口"/>
+        <activity
+            android:name=".handler.HandlerActivity"
+            android:label="Handler常见的几种使用方式"/>
+        <activity
+            android:name=".handler.DifferentThreadCommunicationActivity"
+            android:label="子线程间发送消息"/>
+        <activity
+            android:name=".javareference.JavaReferenceActivity"
+            android:label="Java相关"/>
+        <activity
+            android:name=".javareference.ConcurrentModificationExceptionActivity"
+            android:label="Java并发修改异常"/>
+        <activity
+            android:name=".uicomponents.UIComponentsActivity"
+            android:label="Android常用组件"/>
+        <activity
+            android:name=".uicomponents.tablayout.TabLayoutActivity"
+            android:label="TabLayout + ViewPager + Fragment"/>
+        <activity
+            android:name=".uicomponents.bottomnaviview.BottomNavigationViewActivity"
+            android:label="BottomNavigationView"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".test.view.DatePickerActivity"
+            android:label="WeekGridAdapter:王宇峰是个大傻逼。"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".leakcanary.LeakCanaryActivity"
+            android:label="内存泄露——LeakCanary">
+        </activity>
+        <activity
+            android:name=".brvah.BaseRecyclerViewAdapterHelperActivity"
+            android:label="BaseRecyclerViewAdapterHelper"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".brvah.AnimationUseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".brvah.MultipleItemUseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".brvah.HeaderAndFooterUseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".brvah.PullToRefreshUseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".brvah.SectionUseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".brvah.EmptyViewUseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".brvah.ItemDragAndSwipeUseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".brvah.ItemClickActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".brvah.ExpandableUseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".brvah.DataBindingUseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".brvah.UpFetchUseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".refresh.view.SmartRefreshHomeActivity"
+            android:label="SmartRefresh Demo"
+            android:theme="@style/AppThemeSmart">
+        </activity>
+        <activity
+            android:name=".ui.view.RecyclerViewMultiItemActivity1"
+            android:label="RecyclerView Multiple Item"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".ui.view.RecyclerViewMultiItemBravhActivity"
+            android:label="RecyclerView Multiple Item by Bravh"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".smarttoast.SmartToastActivity"
+            android:label="Smart Toast"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".javareference.copy.JavaCloneActivity1"
+            android:label="Java Clone Object">
+        </activity>
+        <activity
+            android:name=".javareference.copy.JavaCloneActivity2"
+            android:label="Java Clone List">
+        </activity>
+        <activity
+            android:name=".javareference.copy.JavaCloneActivity3"
+            android:label="Java Clone Map">
+        </activity>
+        <activity android:name=".javareference.copy.JavaCloneActivity4">
+        </activity>
+        <activity android:name=".javareference.copy.JavaCloneActivity5">
+        </activity>
+        <activity android:name=".javareference.copy.JavaCloneActivity6">
+        </activity>
+        <activity
+            android:name=".javareference.copy.JavaCloneActivity7"
+            android:label="Java序列化和反序列化。">
+        </activity>
+        <activity
+            android:name=".javareference.JavaDeepCopyActivity"
+            android:label="Java深复制浅复制入口"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".javareference.JavaBasisActivity"
+            android:label="Java基础相关"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".javareference.SingletonActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".refresh.view.using.BasicUsingRvActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSmart">
+        </activity>
+        <activity
+            android:name=".refresh.FragmentActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSmart">
+        </activity>
+        <activity
+            android:name=".refresh.view.using.BasicUsingSvActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSmart">
+        </activity>
+        <activity android:name=".ui.view.ExpandableListViewActivity">
+        </activity>
+        <activity android:name=".test.view.ClickProxyTestActivity">
+        </activity>
+        <activity android:name=".uicomponents.constraintlayout.ConstraintLayoutActivity">
+        </activity>
+        <activity android:name=".uicomponents.constraintlayout.ConstraintLayout1Activity">
+        </activity>
+        <activity android:name=".uicomponents.constraintlayout.ConstraintLayout2Activity">
+        </activity>
+        <activity android:name=".uicomponents.constraintlayout.RelativeActivity">
+        </activity>
+
+        <service
+            android:name=".app.InitializeService"
+            android:exported="false">
+        </service>
+
+        <activity android:name=".thinkinjava.ThingInJavaActivity">
+        </activity>
+        <activity android:name=".thinkinjava.annotation.AnnotationActivity">
+        </activity>
+        <activity
+            android:name=".uicomponents.viewpager.ViewPagerPageTransformerActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".uicomponents.viewpager.loop.LoopViewPagerActivity">
+        </activity>
+        <activity android:name=".view.imageview.ImageViewRoundActivity">
+        </activity>
+        <activity android:name=".view.imageview.ImageViewEntryActivity">
+        </activity>
+        <activity android:name=".view.imageview.ImageViewCropActivity">
+        </activity>
+        <activity android:name=".handler.HandlerThreadActivity">
+        </activity>
+        <activity android:name=".service.ServiceEntryActivity">
+        </activity>
+        <activity android:name=".service.ServiceStartActivity">
+        </activity>
+
+        <service
+            android:name=".service.TestOneService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".service.ServiceBindAActivity">
+        </activity>
+        <activity android:name=".service.ServiceBindBActivity">
+        </activity>
+
+        <service
+            android:name=".service.TestTwoService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".service.intentservice.IntentServiceTestActivity">
+        </activity>
+
+        <service
+            android:name=".service.intentservice.TestService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+        <service
+            android:name=".service.intentservice.TestIntentService"
+            android:enabled="true"
+            android:exported="true"/>
+
+        <activity android:name=".kfysts.chapter01.intent.IntentEntryActivity">
+        </activity>
+        <activity android:name=".kfysts.chapter01.activity.LauncherModeFirstActivity">
+        </activity>
+        <activity android:name=".kfysts.AndroidKfystsActivity">
+        </activity>
+        <activity
+            android:name=".kfysts.chapter01.AndroidKfystsChapter01Activity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_android_kfysts_chapter01"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name=".kfysts.chapter01.activity.LauncherModeSecondActivity"
+            android:configChanges="screenLayout"
+            android:launchMode="standard">
+        </activity>
+        <activity
+            android:name=".kfysts.chapter01.activity.ActivityStackAActivity"
+            android:label="ActivityStackAActivity"
+            android:taskAffinity="com.wjz.task1">
+        </activity>
+        <activity
+            android:name=".kfysts.chapter01.activity.ActivityStackBActivity"
+            android:label="ActivityStackBActivity"
+            android:taskAffinity="com.wjz.task1">
+        </activity>
+        <activity
+            android:name=".kfysts.chapter01.activity.ActivityStackCActivity"
+            android:label="ActivityStackCActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.wjz.task2">
+        </activity>
+        <activity
+            android:name=".kfysts.chapter01.activity.ActivityStackDActivity"
+            android:label="ActivityStackDActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.wjz.task2">
+        </activity>
+        <activity android:name=".kfysts.chapter02.AndroidKfystsChapter02Activity">
+        </activity>
+        <activity android:name=".kfysts.chapter02.Chapter02FirstActivity">
+        </activity>
+        <activity
+            android:name=".kfysts.chapter02.Chapter02SecondActivity"
+            android:process=":remote">
+        </activity>
+        <activity
+            android:name=".kfysts.chapter02.Chapter02ThirdActivity"
+            android:process="com.tiny.demo.firstlinecode.remote">
+        </activity>
+        <activity android:name=".kfysts.chapter02.MultipleProcessActivity">
+        </activity>
+
+        <service
+            android:name=".kfysts.chapter02.aidl.BookManagerService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+
+                <!-- 必须以包名作为前缀，后面的字符任意 -->
+                <action android:name="com.tiny.demo.firstlinecode.IBookManager"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name=".kfysts.chapter02.aidl.manual.BookManagerManualService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+
+                <!-- 必须以包名作为前缀，后面的字符任意 -->
+                <action android:name="com.tiny.demo.firstlinecode.manual.IBookManagerManual"/>
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".kfysts.chapter02.file.Chapter02FileSharingActivity"
+            android:configChanges="screenLayout"
+            android:process=":remote">
+        </activity>
+        <activity android:name=".kfysts.chapter02.messenger.MessengerActivity">
+        </activity>
+
+        <service
+            android:name=".kfysts.chapter02.messenger.MessengerService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="Messenger IPC"
+            android:process=":remote">
+            <intent-filter>
+
+                <!-- 必须以包名作为前缀，后面的字符任意 -->
+                <action android:name="com.tiny.demo.firstlinecode.IPC_BY_MESSENGER"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".kfysts.chapter02.aidl.Book1ManagerActivity">
+        </activity>
+
+        <service
+            android:name=".kfysts.chapter02.aidl.Book1ManagerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.tiny.demo.firstlinecode.AIDL.Book1ManagerService"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".kfysts.chapter02.contentprovider.ContentProviderTestActivity">
+        </activity>
+
+        <provider
+            android:name=".kfysts.chapter02.contentprovider.BookContentProvider"
+            android:authorities="com.tiny.demo.firstlinecode.book.provider"
+            android:permission="com.tiny.demo.firstlinecode.PROVIDER"
+            android:process=":provider">
+        </provider>
+
+        <activity
+            android:name=".test.view.FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity android:name=".test.view.ShadowTestActivity">
+        </activity>
+        <activity android:name=".kfysts.chapter02.socket.SocketIPCActivity">
+        </activity>
+
+        <service
+            android:name=".kfysts.chapter02.socket.TCPServerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.tiny.demo.firstlinecode.IPC.Socket"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name=".kfysts.chapter02.binderpool.BinderPoolService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":binderpool">
+        </service>
+
+        <activity android:name=".kfysts.chapter02.binderpool.BinderPoolActivity">
+        </activity>
+        <activity android:name=".kfysts.chapter03.AndroidKfystsChapter03Activity">
+        </activity>
+        <activity android:name=".kfysts.chapter03.Chapter0301Activity">
+        </activity>
+        <activity android:name=".kfysts.chapter03.Chapter0302Activity">
+        </activity>
+        <activity android:name=".kfysts.chapter03.Chapter0303Activity">
+        </activity>
+        <activity android:name=".kfysts.chapter03.Chapter030201Activity">
+        </activity>
+        <activity android:name=".kfysts.chapter03.Chapter030301Activity">
+        </activity>
+        <activity android:name=".kfysts.chapter03.Chapter030302Activity">
+        </activity>
+        <activity android:name=".kfysts.chapter03.Chapter0304Activity">
+        </activity>
+        <activity android:name=".kfysts.chapter03.Chapter0305Activity">
+        </activity>
+        <activity android:name=".kfysts.chapter03.Chapter030501Activity">
+        </activity>
+        <activity android:name=".test.view.floating.FloatingActivity">
+        </activity>
+        <activity android:name=".test.view.floating.NestedScrollingActivity">
+        </activity>
+        <activity
+            android:name=".kfysts.chapter04.AndroidKfystsChapter04Activity"
+            android:label="View的工作原理">
+        </activity>
+        <activity
+            android:name=".kfysts.chapter04.Chapter0401Activity"
+            android:label="继承View重写onDraw方法">
+        </activity>
+        <activity android:name=".kfysts.chapter04.Chapter0402Activity">
+        </activity>
+        <activity
+            android:name=".kfysts.chapter10.AndroidKfystsChapter10Activity"
+            android:label="第十章 Android的消息机制">
+        </activity>
+        <activity
+            android:name=".kfysts.chapter11.AndroidKfystsChapter11Activity"
+            android:label="第十一章 Android的线程和线程池">
+        </activity>
+
+        <service android:name=".kfysts.chapter11.AndroidKfystsChapter11Activity$LocalIntentService"/>
+
+        <activity
+            android:name=".kfysts.chapter08.AndroidKfystsChapter08Activity"
+            android:label="第八章 理解Window和WindowManager">
+        </activity>
+        <activity
+            android:name=".kfysts.chapter09.AndroidKfystsChapter09Activity"
+            android:label="第九章 四大组件的工作过程">
+        </activity>
+
+        <receiver
+            android:name=".kfysts.chapter09.MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.receiver.LAUNCH"/>
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".kfysts.chapter12.AndroidKfystsChapter12Activity"
+            android:label="第十二章 Bitmap的加载和Cache">
+        </activity>
+        <activity
+            android:name=".kfysts.chapter12.AndroidKfystsChapter121Activity"
+            android:label="照片墙">
+        </activity>
+        <activity
+            android:name=".test.view.UtilsTestActivity"
+            android:label="工具类测试">
+        </activity>
+        <activity android:name=".rxjava2.Rxjava2EntryActivity">
+        </activity>
+        <activity android:name=".rxjava2.blog1.Rxjava2Blog1EntryActivity">
+        </activity>
+        <activity
+            android:name=".rxjava2.blog1.activity.Rxjava2Test1Activity"
+            android:label="基本使用">
+        </activity>
+        <activity android:name=".rxjava2.blog1.activity.Rxjava2Test2Activity">
+        </activity>
+        <activity android:name=".rxjava2.blog1.activity.Rxjava2Test3Activity"/>
+        <activity android:name=".rxjava2.blog1.activity.Rxjava2Test4Activity">
+        </activity>
+        <activity android:name=".rxjava2.blog1.activity.Rxjava2Test5Activity">
+        </activity>
+        <activity android:name=".rxjava2.blog1.activity.Rxjava2Test6Activity">
+        </activity>
+        <activity android:name=".rxjava2.blog1.activity.Rxjava2Test7Activity">
+        </activity>
+        <activity android:name=".rxjava2.blog1.activity.Rxjava2Test8Activity">
+        </activity>
+        <activity
+            android:name=".storage.GreedDaoTestActivity"
+            android:label="GreedDao基本使用"/>
+        <activity android:name=".rxjava2.blog2.Rxjava2Blog2EntryActivity">
+        </activity>
+        <activity
+            android:name=".rxjava2.blog2.Rxjava2Test10Activity"
+            android:label="创建操作符">
+        </activity>
+        <activity
+            android:name=".rxjava2.blog2.Rxjava2Test11Activity"
+            android:label="转换操作符">
+        </activity>
+        <activity
+            android:name=".rxjava2.blog2.Rxjava2Test12Activity"
+            android:label="组合操作符">
+        </activity>
+        <activity
+            android:name=".rxjava2.blog2.Rxjava2Test13Activity"
+            android:label="功能操作符">
+        </activity>
+        <activity
+            android:name=".rxjava2.blog2.Rxjava2Test14Activity"
+            android:label="过滤操作符">
+        </activity>
+        <activity
+            android:name=".rxjava2.blog2.Rxjava2Test15Activity"
+            android:label="条件操作符">
+        </activity>
+        <activity
+            android:name=".rxjava2.blog3.Rxjava2Blog3EntryActivity"
+            android:label="RxJava/RxAndroid 使用实例实践">
+        </activity>
+        <activity
+            android:name=".rxjava2.blog4.Rxjava2Blog4EntryActivity"
+            android:label="扔物线：给 Android 开发者的 RxJava 详解">
+        </activity>
+        <activity
+            android:name=".rxjava2.blog5.Rxjava2Blog5EntryActivity"
+            android:label="RxBinding使用场景">
+        </activity>
+        <activity android:name=".rxjava2.blog5.VerifyCodeActivity">
+        </activity>
+        <activity
+            android:name=".bitmap.BitmapActivity"
+            android:label="Bitmap相关">
+        </activity>
+        <activity
+            android:name=".bitmap.largeimageview.LargeImageViewActivity"
+            android:label="Android 高清加载巨图方案 拒绝压缩图片">
+        </activity>
+    </application>
+
+</manifest>

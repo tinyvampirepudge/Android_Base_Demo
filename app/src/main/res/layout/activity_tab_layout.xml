@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.tiny.demo.firstlinecode.common.view.TitleBarLayout
+        android:id="@+id/title_tabLayout"
+        style="@style/title_bar_style"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        titlebar:bottom_line_visiable="true"
+        titlebar:center_text="TabLayout"
+        titlebar:center_type="text_view"
+        titlebar:left_image="@drawable/selector_nav_back"
+        titlebar:left_type="image_button"/>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        style="@style/MyTabLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        app:tabBackground="@color/color_f9faff"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="2dp"
+        app:tabPaddingEnd="15dp"
+        app:tabPaddingStart="15dp"
+        app:tabMode="scrollable"
+        >
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>
