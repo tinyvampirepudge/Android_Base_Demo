@@ -16,9 +16,12 @@ out/
 # Gradle files
 .gradle/
 build/
+<<<<<<< HEAD
 gradle-app.setting
 !gradle-wrapper.jar
 gradle.properties
+=======
+>>>>>>> Initial commit
 
 # Local configuration file (sdk path, etc)
 local.properties
