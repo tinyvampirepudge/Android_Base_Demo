@@ -302,6 +302,12 @@
             />
 
         <Button
+            android:id="@+id/btn_lambda"
+            style="@style/btn_style_lower"
+            android:text="Lambda相关"
+            />
+
+        <Button
             android:id="@+id/btn_test"
             style="@style/btn_style_lower"
             android:text="test 相关"

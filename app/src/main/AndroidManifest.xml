@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.tiny.demo.firstlinecode"
-          xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.tiny.demo.firstlinecode">
 
     <!-- 请求网络权限 -->
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -947,6 +947,8 @@
         <activity
             android:name=".bitmap.largeimageview.LargeImageViewActivity"
             android:label="Android 高清加载巨图方案 拒绝压缩图片">
+        </activity>
+        <activity android:name=".lambda.LambdaActivity">
         </activity>
     </application>
 

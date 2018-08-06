@@ -33,6 +33,7 @@ import com.tiny.demo.firstlinecode.fragment.FragmentActivity;
 import com.tiny.demo.firstlinecode.handler.HandlerEntryActivity;
 import com.tiny.demo.firstlinecode.javareference.JavaReferenceActivity;
 import com.tiny.demo.firstlinecode.kfysts.AndroidKfystsActivity;
+import com.tiny.demo.firstlinecode.lambda.LambdaActivity;
 import com.tiny.demo.firstlinecode.leakcanary.LeakCanaryActivity;
 import com.tiny.demo.firstlinecode.materialdesign.MaterialDesignActivity;
 import com.tiny.demo.firstlinecode.network.HttpUrlConnectionActivity;
@@ -336,6 +337,9 @@ public class MainActivity extends BaseActivity
 
         //Bitmap相关
         findViewById(R.id.btn_bitmap).setOnClickListener(v -> BitmapActivity.actionStart(mContext));
+
+        //lambda相关
+        findViewById(R.id.btn_lambda).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, LambdaActivity.class)));
 
         //test的数据都放在这里面
         findViewById(R.id.btn_test).setOnClickListener(v -> {
