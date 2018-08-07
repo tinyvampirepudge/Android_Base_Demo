@@ -350,6 +350,8 @@ public class MainActivity extends BaseActivity
             SmartToast.show("进入test页面");
             TestActivity.actionStart(mContext);
         });
+
+        //就是想提交下代码
     }
 
     @Override
