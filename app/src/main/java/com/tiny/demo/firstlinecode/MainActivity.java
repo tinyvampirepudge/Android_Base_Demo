@@ -45,6 +45,7 @@ import com.tiny.demo.firstlinecode.oom.OOMActivity;
 import com.tiny.demo.firstlinecode.parser.ActivityParser;
 import com.tiny.demo.firstlinecode.permission.PermissionActivity;
 import com.tiny.demo.firstlinecode.provider.ContentProviderActivity;
+import com.tiny.demo.firstlinecode.proxy.ProxyActivity;
 import com.tiny.demo.firstlinecode.refresh.view.SmartRefreshHomeActivity;
 import com.tiny.demo.firstlinecode.rxjava2.Rxjava2EntryActivity;
 import com.tiny.demo.firstlinecode.service.ServiceEntryActivity;
@@ -340,6 +341,9 @@ public class MainActivity extends BaseActivity
 
         //lambda相关
         findViewById(R.id.btn_lambda).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, LambdaActivity.class)));
+
+        //proxy
+        findViewById(R.id.btn_proxy).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ProxyActivity.class)));
 
         //test的数据都放在这里面
         findViewById(R.id.btn_test).setOnClickListener(v -> {

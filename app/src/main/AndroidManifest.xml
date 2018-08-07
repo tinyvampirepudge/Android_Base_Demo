@@ -950,6 +950,8 @@
         </activity>
         <activity android:name=".lambda.LambdaActivity">
         </activity>
+        <activity android:name=".proxy.ProxyActivity">
+        </activity>
     </application>
 
 </manifest>
