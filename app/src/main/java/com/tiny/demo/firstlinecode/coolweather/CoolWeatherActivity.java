@@ -3,6 +3,7 @@ package com.tiny.demo.firstlinecode.coolweather;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatDelegate;
 
@@ -12,13 +13,14 @@ import com.tiny.demo.firstlinecode.R;
 public class CoolWeatherActivity extends BaseActivity {
 
     //允许xml布局文件中的某个view的background使用vector
-    static{
+    static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     }
 
-    public static void actionStart(Context context) {
+    public static void actionStart(Context context, Bundle bundle) {
         Intent intent = new Intent();
         intent.setClass(context, CoolWeatherActivity.class);
+        intent.putExtra("extra", bundle);
         context.startActivity(intent);
     }
 
