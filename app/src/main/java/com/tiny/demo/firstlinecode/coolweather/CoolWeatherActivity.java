@@ -17,10 +17,9 @@ public class CoolWeatherActivity extends BaseActivity {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     }
 
-    public static void actionStart(Context context, Bundle bundle) {
+    public static void actionStart(Context context) {
         Intent intent = new Intent();
         intent.setClass(context, CoolWeatherActivity.class);
-        intent.putExtra("extra", bundle);
         context.startActivity(intent);
     }
 
