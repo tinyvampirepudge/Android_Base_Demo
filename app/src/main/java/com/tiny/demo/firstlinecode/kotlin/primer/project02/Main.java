@@ -11,7 +11,7 @@ import com.tiny.demo.firstlinecode.kotlin.primer.project02.object.Test;
  */
 public class Main {
     public static void main(String[] args) {
-        UtilsKt.echo("hello");
+        UtilsDemo.echo("hello");
 
         //调用匿名内部类
         Test.INSTANCE.sayMessage("hello kotlin by java");
