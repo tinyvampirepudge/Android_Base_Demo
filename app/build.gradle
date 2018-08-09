@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao' // apply plugin
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdk
@@ -295,4 +297,8 @@ dependencies {
     api 'com.jakewharton.rxbinding2:rxbinding-design:2.1.1'
     api 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.1.1'
     api 'com.jakewharton.rxbinding2:rxbinding-leanback-v17:2.1.1'
+
+    //kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "org.jetbrains.anko:anko-common:$anko_version"
 }

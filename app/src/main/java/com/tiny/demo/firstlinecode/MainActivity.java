@@ -33,6 +33,7 @@ import com.tiny.demo.firstlinecode.fragment.FragmentActivity;
 import com.tiny.demo.firstlinecode.handler.HandlerEntryActivity;
 import com.tiny.demo.firstlinecode.javareference.JavaReferenceActivity;
 import com.tiny.demo.firstlinecode.kfysts.AndroidKfystsActivity;
+import com.tiny.demo.firstlinecode.kotlin.KotlinEntryActivity;
 import com.tiny.demo.firstlinecode.lambda.LambdaActivity;
 import com.tiny.demo.firstlinecode.leakcanary.LeakCanaryActivity;
 import com.tiny.demo.firstlinecode.materialdesign.MaterialDesignActivity;
@@ -344,6 +345,9 @@ public class MainActivity extends BaseActivity
 
         //proxy
         findViewById(R.id.btn_proxy).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ProxyActivity.class)));
+
+        //kotlin
+        findViewById(R.id.btn_kotlin).setOnClickListener(v -> KotlinEntryActivity.actionStart(mContext));
 
         //test的数据都放在这里面
         findViewById(R.id.btn_test).setOnClickListener(v -> {

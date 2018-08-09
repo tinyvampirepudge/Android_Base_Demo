@@ -314,6 +314,12 @@
             />
 
         <Button
+            android:id="@+id/btn_kotlin"
+            style="@style/btn_style_lower"
+            android:text="kotlin"
+            />
+
+        <Button
             android:id="@+id/btn_test"
             style="@style/btn_style_lower"
             android:text="test 相关"
