@@ -25,4 +25,9 @@
         style="@style/btn_style_lower"
         android:text="Java 单例实现"/>
 
+    <Button
+        android:id="@+id/btn_java_reflect"
+        style="@style/btn_style_lower"
+        android:text="Java 反射基础知识"/>
+
 </LinearLayout>

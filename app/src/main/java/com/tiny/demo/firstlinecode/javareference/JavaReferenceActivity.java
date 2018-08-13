@@ -1,12 +1,15 @@
 package com.tiny.demo.firstlinecode.javareference;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
+import com.tiny.demo.firstlinecode.javareference.reflect.JavaReflectActivity;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -22,6 +25,8 @@ public class JavaReferenceActivity extends BaseActivity {
     Button btnJavaDeepCopy;
     @BindView(R.id.btn_java_basis)
     Button btnJavaBasis;
+    @BindView(R.id.btn_java_reflect)
+    Button btnJavaReflect;
 
     @Override
     protected int setContentLayout() {
@@ -57,5 +62,17 @@ public class JavaReferenceActivity extends BaseActivity {
                 activitySwitch(SingletonActivity.class);
                 break;
         }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
+
+    @OnClick(R.id.btn_java_reflect)
+    public void onViewClicked() {
+        JavaReflectActivity.actionStart(this, null);
     }
 }

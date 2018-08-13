@@ -754,7 +754,10 @@
         <activity
             android:name=".kotlin.KotlinEntryActivity"
             android:label="Kotlin" />
-        <activity android:name=".kotlin.primer.project06.KotlinConstructorActivity"></activity>
+        <activity android:name=".kotlin.primer.project06.KotlinConstructorActivity" />
+        <activity
+            android:name=".javareference.reflect.JavaReflectActivity"
+            android:label="Java 反射基础知识" />
     </application>
 
 </manifest>
