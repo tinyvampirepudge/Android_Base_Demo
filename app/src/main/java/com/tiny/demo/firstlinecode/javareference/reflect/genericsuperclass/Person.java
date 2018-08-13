@@ -1,4 +1,4 @@
-package com.tiny.demo.firstlinecode.javareference.reflect;
+package com.tiny.demo.firstlinecode.javareference.reflect.genericsuperclass;
 
 /**
  * desc
