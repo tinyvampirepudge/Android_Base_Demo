@@ -13,9 +13,14 @@ fun main(args: Array<String>): Unit {
     val thread = Thread({ -> println("Kotlin中Lambda基本写法") })
     thread.start()
 
-    // 如果方法体空实现，用Unit表示，也可以不写
+    // Lambda的返回值是自动推断的。
+    // 如果方法体没有返回值，也没有方法体的话用Unit表示
     val thread0 = Thread({ -> Unit })
     thread0.start()
+
+    // 下面方法无返回值，最后打印的就是kotlin.Unit
+    val s = { x: String, y: String -> println(x + y) }
+    println(s("王蛋蛋", "的芭比"))
 
     // 如果Lambda没有参数，可以省略箭头符号
     val thread1 = Thread({ println("如果Lambda没有参数，可以省略箭头符号") })
