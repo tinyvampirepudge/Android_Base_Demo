@@ -2,10 +2,21 @@ package com.tiny.demo.firstlinecode.javareference.reflect;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
+import com.tiny.demo.firstlinecode.javareference.reflect.type.GenericArrayTypeTest;
+import com.tiny.demo.firstlinecode.javareference.reflect.type.ParameterizedTypeTest;
+import com.tiny.demo.firstlinecode.javareference.reflect.type.TypeVariableTest;
+import com.tiny.demo.firstlinecode.javareference.reflect.type.WildcardTypeTest;
+
+import java.lang.reflect.ParameterizedType;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * @Description: Java反射相关知识
@@ -26,4 +37,5 @@ public class JavaReflectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_java_reflect);
     }
+
 }

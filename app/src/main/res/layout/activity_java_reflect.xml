@@ -6,4 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".javareference.reflect.JavaReflectActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnParameterizedType"
+                style="@style/btn_style_lower"
+                android:text="ParameterizedType" />
+
+            <Button
+                android:id="@+id/btnTypeVariable"
+                style="@style/btn_style_lower"
+                android:text="TypeVariable" />
+
+            <Button
+                android:id="@+id/btnGenericArrayType"
+                style="@style/btn_style_lower"
+                android:text="ParameterizedType" />
+
+            <Button
+                android:id="@+id/btnWildcardType"
+                style="@style/btn_style_lower"
+                android:text="WildcardType" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
