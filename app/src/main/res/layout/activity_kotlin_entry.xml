@@ -6,4 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".kotlin.KotlinEntryActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_test_01"
+                style="@style/btn_style_lower"
+                android:text="主构造函数" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
