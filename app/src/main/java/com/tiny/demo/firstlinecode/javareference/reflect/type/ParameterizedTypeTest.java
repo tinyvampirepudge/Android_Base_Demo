@@ -27,7 +27,8 @@ public class ParameterizedTypeTest {
      *
      * @param args
      */
-    Map<String, String> map;
+//    Map<String, String> map;
+    DanDan<Integer, String> map;
 
     public static void main(String[] args) throws Exception {
         Field f = ParameterizedTypeTest.class.getDeclaredField("map");
@@ -40,5 +41,9 @@ public class ParameterizedTypeTest {
             System.out.println(type);
         }
         System.out.println(pType.getOwnerType());                                   // null
+    }
+
+    public static class DanDan<K, V> {
+
     }
 }
