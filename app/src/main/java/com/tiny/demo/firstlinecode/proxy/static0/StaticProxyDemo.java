@@ -1,7 +1,9 @@
 package com.tiny.demo.firstlinecode.proxy.static0;
 
 /**
- * 调用
+ * 静态代理
+ * <p>
+ * https://www.jianshu.com/p/6f6bb2f0ece9
  *
  * @author wangjianzhou@qding.me
  * @version APP版本号（以修改为准）$version$
@@ -11,7 +13,7 @@ package com.tiny.demo.firstlinecode.proxy.static0;
  * modify content:
  */
 public class StaticProxyDemo {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         RealSubject subject = new RealSubject();
         SubjectProxy proxy = new SubjectProxy(subject);
         proxy.request();
