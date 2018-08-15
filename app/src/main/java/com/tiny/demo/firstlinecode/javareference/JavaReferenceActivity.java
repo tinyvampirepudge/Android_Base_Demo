@@ -6,6 +6,7 @@ import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
+import com.tiny.demo.firstlinecode.javareference.clazz.ClazzActivity;
 import com.tiny.demo.firstlinecode.javareference.reflect.JavaReflectActivity;
 
 import butterknife.BindView;
@@ -27,6 +28,10 @@ public class JavaReferenceActivity extends BaseActivity {
     Button btnJavaBasis;
     @BindView(R.id.btn_java_reflect)
     Button btnJavaReflect;
+    @BindView(R.id.btn_java_singleton)
+    Button btnJavaSingleton;
+    @BindView(R.id.btn_java_clazz)
+    Button btnJavaClazz;
 
     @Override
     protected int setContentLayout() {
@@ -74,5 +79,10 @@ public class JavaReferenceActivity extends BaseActivity {
     @OnClick(R.id.btn_java_reflect)
     public void onViewClicked() {
         JavaReflectActivity.actionStart(this, null);
+    }
+
+    @OnClick(R.id.btn_java_clazz)
+    public void onViewJavaClazzClicked() {
+        ClazzActivity.Companion.actionStart(this, null);
     }
 }

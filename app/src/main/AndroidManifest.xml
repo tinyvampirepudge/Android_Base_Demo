@@ -758,6 +758,9 @@
         <activity
             android:name=".javareference.reflect.JavaReflectActivity"
             android:label="Java 反射基础知识" />
+        <activity
+            android:name=".javareference.clazz.ClazzActivity"
+            android:label="Java Class 相关知识" />
     </application>
 
 </manifest>

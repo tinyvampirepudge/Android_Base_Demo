@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -8,26 +7,31 @@
     <Button
         android:id="@+id/btn_java_concurrent_modification_exception"
         style="@style/btn_style_lower"
-        android:text="Java并发修改异常"/>
+        android:text="Java并发修改异常" />
 
     <Button
         android:id="@+id/btn_java_deep_copy"
         style="@style/btn_style_lower"
-        android:text="Java深复制浅复制相关"/>
+        android:text="Java深复制浅复制相关" />
 
     <Button
         android:id="@+id/btn_java_basis"
         style="@style/btn_style_lower"
-        android:text="Java基础精选"/>
+        android:text="Java基础精选" />
 
     <Button
         android:id="@+id/btn_java_singleton"
         style="@style/btn_style_lower"
-        android:text="Java 单例实现"/>
+        android:text="Java 单例实现" />
 
     <Button
         android:id="@+id/btn_java_reflect"
         style="@style/btn_style_lower"
-        android:text="Java 反射基础知识"/>
+        android:text="Java 反射基础知识" />
+
+    <Button
+        android:id="@+id/btn_java_clazz"
+        style="@style/btn_style_lower"
+        android:text="Java Class相关" />
 
 </LinearLayout>
