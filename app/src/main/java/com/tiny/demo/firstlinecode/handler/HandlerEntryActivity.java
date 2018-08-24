@@ -1,7 +1,9 @@
 package com.tiny.demo.firstlinecode.handler;
 
+import android.os.Handler;
 import android.widget.Button;
 
+import com.example.tiny.tinymodule.util.ThreadUtils;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 
@@ -48,5 +50,22 @@ public class HandlerEntryActivity extends BaseActivity {
     @OnClick(R.id.btn_handler_thread)
     public void onHandlerThreadClicked() {
         activitySwitch(HandlerThreadActivity.class);
+    }
+
+    /**
+     * Handler最常见的崩溃
+     * java.lang.RuntimeException: Can't create handler inside thread that has not called Looper.prepare()
+     */
+    @OnClick(R.id.btn_handler_error)
+    public void onHandlerErrorClicked() {
+        ThreadUtils.logCurrThreadName("111");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Handler handler = new Handler();
+
+                ThreadUtils.logCurrThreadName("222");
+            }
+        }).start();
     }
 }
