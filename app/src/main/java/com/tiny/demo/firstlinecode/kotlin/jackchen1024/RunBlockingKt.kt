@@ -1,12 +1,9 @@
-package com.tiny.demo.firstlinecode.kotlin.official.coroutines
+package com.tiny.demo.firstlinecode.kotlin.jackchen1024
 
 import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.delay
 import kotlinx.coroutines.experimental.launch
 import kotlinx.coroutines.experimental.runBlocking
-import java.lang.String.format
-import java.util.*
-import java.util.concurrent.TimeUnit
 
 /**
  * @Description: runBlocking函数: 使用纯的Kotlin的协程代码来实现上面的 阻塞+非阻塞 的例子（不用Thread）。

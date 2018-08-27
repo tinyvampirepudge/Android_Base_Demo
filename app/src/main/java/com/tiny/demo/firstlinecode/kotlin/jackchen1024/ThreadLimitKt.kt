@@ -1,10 +1,9 @@
-package com.tiny.demo.firstlinecode.kotlin.official.coroutines
+package com.tiny.demo.firstlinecode.kotlin.jackchen1024
 
 import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.delay
 import kotlinx.coroutines.experimental.launch
 import kotlinx.coroutines.experimental.runBlocking
-import kotlin.concurrent.thread
 
 /**
  * @Description: $desc$

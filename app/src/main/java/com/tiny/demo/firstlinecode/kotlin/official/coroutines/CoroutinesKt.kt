@@ -41,9 +41,3 @@ fun launchTest() {
     Thread.sleep(2000L)
     println("Stop")
 }
-
-fun asyncTest() {
-    async {
-
-    }
-}
