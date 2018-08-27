@@ -66,7 +66,7 @@ fun finallyCacheDemo2() = runBlocking {
                 delay(500L)
             }
         } finally {
-            run(NonCancellable) {
+            withContext(NonCancellable) {
                 println("I'm running finally")
                 delay(1000L)
                 println("And I've delayed for 1 sec ?")
