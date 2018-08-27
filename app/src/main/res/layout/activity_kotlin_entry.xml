@@ -20,6 +20,11 @@
                 style="@style/btn_style_lower"
                 android:text="主构造函数" />
 
+            <Button
+                android:id="@+id/btn_test_02"
+                style="@style/btn_style_lower"
+                android:text="协程" />
+
         </LinearLayout>
     </ScrollView>
 

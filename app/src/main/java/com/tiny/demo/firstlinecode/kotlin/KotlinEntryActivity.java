@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.kotlin.primer.project06.KotlinConstructorActivity;
+import com.tiny.demo.firstlinecode.kotlin.primer.project14.CoroutinesActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,5 +39,11 @@ public class KotlinEntryActivity extends AppCompatActivity {
     @OnClick(R.id.btn_test_01)
     public void onViewClicked() {
         startActivity(new Intent(this, KotlinConstructorActivity.class));
+    }
+
+
+    @OnClick(R.id.btn_test_02)
+    public void onViewCoroutinesClicked() {
+        startActivity(new Intent(this, CoroutinesActivity.class));
     }
 }

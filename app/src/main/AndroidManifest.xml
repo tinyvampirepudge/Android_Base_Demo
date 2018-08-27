@@ -761,6 +761,9 @@
         <activity
             android:name=".javareference.clazz.ClazzActivity"
             android:label="Java Class 相关知识" />
+        <activity
+            android:name=".kotlin.primer.project14.CoroutinesActivity"
+            android:label="协程" />
     </application>
 
 </manifest>
