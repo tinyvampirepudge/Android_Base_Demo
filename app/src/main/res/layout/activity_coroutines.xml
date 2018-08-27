@@ -33,6 +33,11 @@
                 android:onClick="test3"
                 android:text="使用Kotlin代码的协程，发起Get请求，处理返回数据" />
 
+            <Button
+                style="@style/btn_style_lower"
+                android:onClick="test4"
+                android:text="重置文本" />
+
             <TextView
                 android:id="@+id/mContent"
                 android:layout_width="match_parent"

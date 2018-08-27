@@ -32,4 +32,8 @@ class CoroutinesActivity : AppCompatActivity() {
             displayContent(mContent)
         }
     }
+
+    fun test4(v: View) {
+        mContent.text = null
+    }
 }
