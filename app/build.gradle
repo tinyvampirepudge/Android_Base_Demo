@@ -62,16 +62,16 @@ android {
     }
 
     buildTypes {
-        debug {
-            // 显示Log
-            buildConfigField "boolean", "LOG_DEBUG", "false"
-            minifyEnabled false
-            zipAlignEnabled false
-            shrinkResources false
-
-            //给测试版本的appid添加后缀。
-//            applicationIdSuffix ".debug"
-        }
+//        debug {
+//            // 显示Log
+//            buildConfigField "boolean", "LOG_DEBUG", "false"
+//            minifyEnabled false
+//            zipAlignEnabled false
+//            shrinkResources false
+//
+//            //给测试版本的appid添加后缀。
+////            applicationIdSuffix ".debug"
+//        }
         release {
             // 不显示Log
             buildConfigField "boolean", "LOG_DEBUG", "false"
