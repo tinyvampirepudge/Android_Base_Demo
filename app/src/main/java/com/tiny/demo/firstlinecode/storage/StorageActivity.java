@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
+import com.tiny.demo.firstlinecode.storage.database.SqliteUpgradeActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -63,5 +64,9 @@ public class StorageActivity extends BaseActivity {
     @OnClick(R.id.btn_greendao)
     public void onBtnThirdClicked() {
         startActivity(new Intent(this, GreedDaoTestActivity.class));
+    }
+    @OnClick(R.id.btn_storage_sqlite_upgrade)
+    public void onBtnSqliteUpgradeClicked() {
+        startActivity(new Intent(this, SqliteUpgradeActivity.class));
     }
 }

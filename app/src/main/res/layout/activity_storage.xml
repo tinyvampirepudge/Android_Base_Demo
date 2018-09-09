@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_storage"
     android:layout_width="match_parent"
@@ -14,32 +13,36 @@
 
     <Button
         style="@style/btn_style_lower"
-        android:text="数据持久化存储"/>
+        android:text="数据持久化存储" />
 
     <Button
         android:id="@+id/btn_storage_file"
         style="@style/btn_style_lower"
-        android:text="文件存储"/>
+        android:text="文件存储" />
 
     <Button
         android:id="@+id/btn_storage_shared_preferences"
         style="@style/btn_style_lower"
-        android:text="SharedPreferences存储的三种方式"/>
+        android:text="SharedPreferences存储的三种方式" />
 
     <Button
         android:id="@+id/btn_storage_sqlite"
         style="@style/btn_style_lower"
-        android:text="SQLite存储"/>
+        android:text="SQLite存储" />
+
+    <Button
+        android:id="@+id/btn_storage_sqlite_upgrade"
+        style="@style/btn_style_lower"
+        android:text="SQLite升级" />
 
     <Button
         android:id="@+id/btn_storage_litepal"
         style="@style/btn_style_lower"
-        android:text="LitePal存储"/>
+        android:text="LitePal存储" />
 
     <Button
         android:id="@+id/btn_greendao"
         style="@style/btn_style_lower"
-        android:text="GreenDao基本使用"
-        />
+        android:text="GreenDao基本使用" />
 
 </LinearLayout>
