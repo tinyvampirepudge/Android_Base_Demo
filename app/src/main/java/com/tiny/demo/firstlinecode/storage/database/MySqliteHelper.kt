@@ -18,8 +18,10 @@ const val sqlite_name = "MySqliteHelper.db"
 internal class MySqliteHelper(context: Context, version: Int) : SQLiteOpenHelper(context, sqlite_name, null, version) {
     val TAG = "MySqliteHelper"
 
+    val TABLE_NAME = "Test"
+
     //  创建语句
-    val sqlCreate = "create table Test (" +
+    val sqlCreate = "create table $TABLE_NAME (" +
             "id integer primary key autoincrement, " +
             "author text, " +
             "price real, " +
@@ -29,6 +31,11 @@ internal class MySqliteHelper(context: Context, version: Int) : SQLiteOpenHelper
             "ver3 text, " +
             "ver4 text, " +
             "ver5 text)"
+
+    // 新增字段，数据库版本升级为2
+    // sqlite 不支持一次增加多列，只能一次增加一列。
+    val sqlsV2 = arrayOf("alter table ${TABLE_NAME} add column age VARCHAR(255)",
+            "alter table ${TABLE_NAME} add column gender VARCHAR(255)")
 
     override fun onCreate(db: SQLiteDatabase?) {
         Log.e(TAG, "onCreate")
@@ -40,6 +47,9 @@ internal class MySqliteHelper(context: Context, version: Int) : SQLiteOpenHelper
         // 1 升级到 2
         if (oldVersion < 2) {
             Log.e(TAG, "onUpgrade 1~2")
+            sqlsV2.forEach {
+                db?.execSQL(it)
+            }
         }
 
         // 2 升级到 3
