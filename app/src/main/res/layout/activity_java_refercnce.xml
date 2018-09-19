@@ -34,4 +34,9 @@
         style="@style/btn_style_lower"
         android:text="Java Class相关" />
 
+    <Button
+        android:id="@+id/btn_java_concurrent_thread"
+        style="@style/btn_style_lower"
+        android:text="Java 并发" />
+
 </LinearLayout>

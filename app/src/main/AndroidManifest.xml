@@ -764,7 +764,8 @@
         <activity
             android:name=".kotlin.primer.project14.CoroutinesActivity"
             android:label="协程" />
-        <activity android:name=".storage.database.SqliteUpgradeActivity"></activity>
+        <activity android:name=".storage.database.SqliteUpgradeActivity" />
+        <activity android:name=".javareference.thread.ConcurrentThreadTestActivity" />
     </application>
 
 </manifest>

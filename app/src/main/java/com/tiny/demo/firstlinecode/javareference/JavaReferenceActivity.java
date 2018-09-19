@@ -8,6 +8,7 @@ import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.javareference.clazz.ClazzActivity;
 import com.tiny.demo.firstlinecode.javareference.reflect.JavaReflectActivity;
+import com.tiny.demo.firstlinecode.javareference.thread.ConcurrentThreadTestActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -84,5 +85,10 @@ public class JavaReferenceActivity extends BaseActivity {
     @OnClick(R.id.btn_java_clazz)
     public void onViewJavaClazzClicked() {
         ClazzActivity.Companion.actionStart(this, null);
+    }
+
+    @OnClick(R.id.btn_java_concurrent_thread)
+    public void onViewJavaConcurrentThreadClicked() {
+        ConcurrentThreadTestActivity.actionStart(this);
     }
 }
