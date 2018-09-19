@@ -15,6 +15,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,6 +35,8 @@ public class ConcurrentThreadTestActivity extends AppCompatActivity {
     Button btnJavaCallableFuture;
     @BindView(R.id.btn_java_callable_futureTask)
     Button btnJavaCallableFutureTask;
+    @BindView(R.id.btn_java_callable_futureTask1)
+    Button btnJavaCallableFutureTask1;
 
     public static void actionStart(Context context) {
         Intent starter = new Intent(context, ConcurrentThreadTestActivity.class);
@@ -49,6 +52,7 @@ public class ConcurrentThreadTestActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_java_callable_future)
     public void onBtnJavaCallableFutureClicked() {
+        // Callable + Future + ExecutorService
         ThreadUtils.logCurrThreadName(TAG + "  main start");
         ExecutorService executorService = Executors.newCachedThreadPool();
         Task task = new Task();
@@ -91,6 +95,54 @@ public class ConcurrentThreadTestActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_java_callable_futureTask)
     public void onBtnJavaCallableFutureTaskClicked() {
+        // Callable + FutureTask + ExecutorService
+        ThreadUtils.logCurrThreadName(TAG + "  main start");
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        Task task = new Task();
+        FutureTask<Integer> futureTask = new FutureTask<>(task);
+        executorService.submit(futureTask);
+        executorService.shutdown();
 
+        ThreadUtils.logCurrThreadName(TAG + "  main 111");
+
+        try {
+            LogUtils.e(TAG, "task执行结果:" + futureTask.get());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        for (int i = 0; i < 10; i++) {
+            ThreadUtils.logCurrThreadName(TAG + "  main 222:" + i);
+        }
+
+        ThreadUtils.logCurrThreadName(TAG + "  main 主线程任务执行完毕");
+    }
+
+    @OnClick(R.id.btn_java_callable_futureTask1)
+    public void onViewClicked() {
+        // Callable + FutureTask + Thread
+        ThreadUtils.logCurrThreadName(TAG + "  main start");
+        Task task = new Task();
+        FutureTask<Integer> futureTask = new FutureTask<>(task);
+        Thread thread = new Thread(futureTask);
+        thread.start();
+
+        ThreadUtils.logCurrThreadName(TAG + "  main 111");
+
+        try {
+            LogUtils.e(TAG, "task执行结果:" + futureTask.get());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        for (int i = 0; i < 10; i++) {
+            ThreadUtils.logCurrThreadName(TAG + "  main 222:" + i);
+        }
+
+        ThreadUtils.logCurrThreadName(TAG + "  main 主线程任务执行完毕");
     }
 }
