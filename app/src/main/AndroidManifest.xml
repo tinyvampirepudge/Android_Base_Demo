@@ -52,6 +52,9 @@
 
     <uses-permission android:name="com.tiny.demo.firstlinecode.permission.ACCESS_BOOK_SERVICE" />
 
+    <!-- 华为桌面角标修改 https://developer.huawei.com/consumer/cn/devunion/download/badge.pdf -->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+
     <application
         android:name=".app.FLCApplication"
         android:allowBackup="true"
@@ -764,8 +767,15 @@
         <activity
             android:name=".kotlin.primer.project14.CoroutinesActivity"
             android:label="协程" />
-        <activity android:name=".storage.database.SqliteUpgradeActivity" />
-        <activity android:name=".javareference.thread.ConcurrentThreadTestActivity" />
+        <activity
+            android:name=".storage.database.SqliteUpgradeActivity"
+            android:label="数据库升级" />
+        <activity
+            android:name=".javareference.thread.ConcurrentThreadTestActivity"
+            android:label="多线程测试" />
+        <activity
+            android:name=".launcherbadge.LaunchBadgeActivity"
+            android:label="桌面角标适配" />
     </application>
 
 </manifest>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_main"
@@ -25,21 +24,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="cool weather"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_static_manager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="static管理类的bug"/>
+            android:text="static管理类的bug" />
 
         <Button
             android:id="@+id/btn_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Activity 相关"/>
+            android:text="Activity 相关" />
 
         <Button
             android:id="@+id/btn_common_view"
@@ -47,14 +46,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="常用控件，listview,recyclerview,viewfipper"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_adaptive"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="布局适配"/>
+            android:text="布局适配" />
 
         <Button
             android:id="@+id/btn_fragment"
@@ -62,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="fragment"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_broadcast_receiver"
@@ -70,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="broad_receiver"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_handler"
@@ -78,14 +77,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="handler相关"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_storage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="数据存储"/>
+            android:text="数据存储" />
 
         <Button
             android:id="@+id/btn_stetho"
@@ -93,49 +92,49 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="stetho测试"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_content_provider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="内容提供器"/>
+            android:text="内容提供器" />
 
         <Button
             android:id="@+id/btn_permission"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="运行时权限"/>
+            android:text="运行时权限" />
 
         <Button
             android:id="@+id/btn_notification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="发送通知"/>
+            android:text="发送通知" />
 
         <Button
             android:id="@+id/btn_camera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="调用相机"/>
+            android:text="调用相机" />
 
         <Button
             android:id="@+id/btn_audio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="播放音频"/>
+            android:text="播放音频" />
 
         <Button
             android:id="@+id/btn_video"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="播放视频"/>
+            android:text="播放视频" />
 
         <Button
             android:id="@+id/btn_http_url_conn"
@@ -143,7 +142,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="HttpUrlConnection"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_ok_http"
@@ -151,7 +150,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="OkHttp"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_xml_parse"
@@ -159,7 +158,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="xml解析"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_json_parse"
@@ -167,7 +166,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="json解析"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_service"
@@ -175,7 +174,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="service"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_material_design"
@@ -183,7 +182,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="material design"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_svg_to_textview"
@@ -191,7 +190,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="svg设置"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_parser"
@@ -199,7 +198,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Android解析相关"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_oom"
@@ -207,7 +206,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Android oom 相关"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_view"
@@ -215,115 +214,102 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="view 相关"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_android_source_code_design_pattern"
             style="@style/btn_style_lower"
-            android:text="Android源码设计模式解析与实战"
-            />
+            android:text="Android源码设计模式解析与实战" />
 
         <Button
             android:id="@+id/btn_android_test"
             style="@style/btn_style_lower"
-            android:text="android自动化测试 相关"
-            />
+            android:text="android自动化测试 相关" />
 
         <Button
             android:id="@+id/btn_design_pattern"
             style="@style/btn_style_lower"
-            android:text="大话设计模式"
-            />
+            android:text="大话设计模式" />
 
         <Button
             android:id="@+id/btn_java_reference"
             style="@style/btn_style_lower"
-            android:text="java 相关"
-            />
+            android:text="java 相关" />
 
         <Button
             android:id="@+id/btn_ui_components"
             style="@style/btn_style_lower"
-            android:text="UI组件"
-            />
+            android:text="UI组件" />
 
         <Button
             android:id="@+id/btn_leak_canary_test"
             style="@style/btn_style_lower"
-            android:text="内存泄漏测试"
-            />
+            android:text="内存泄漏测试" />
 
         <Button
             android:id="@+id/btn_brvah"
             style="@style/btn_style_lower"
-            android:text="BaseRecyclerViewAdapterHelper"
-            />
+            android:text="BaseRecyclerViewAdapterHelper" />
 
         <Button
             android:id="@+id/btn_smart_refresh"
             style="@style/btn_style_lower"
-            android:text="SmartRefreshLayout"
-            />
+            android:text="SmartRefreshLayout" />
 
         <Button
             android:id="@+id/btn_smart_toast"
             style="@style/btn_style_lower"
-            android:text="SmartToast"
-            />
+            android:text="SmartToast" />
 
         <Button
             android:id="@+id/btn_think_in_java"
             style="@style/btn_style_lower"
-            android:text="Think In Java"
-            />
+            android:text="Think In Java" />
 
         <Button
             android:id="@+id/btn_image_view_round_corner"
             style="@style/btn_style_lower"
-            android:text="ImageView圆角直角"
-            />
+            android:text="ImageView圆角直角" />
 
         <Button
             android:id="@+id/btn_android_kfysts"
             style="@style/btn_style_lower"
-            android:text="Android 开发艺术探索 任玉刚"
-            />
+            android:text="Android 开发艺术探索 任玉刚" />
 
         <Button
             android:id="@+id/btn_rxjava2"
             style="@style/btn_style_lower"
-            android:text="rxjava2"
-            />
+            android:text="rxjava2" />
 
         <Button
             android:id="@+id/btn_bitmap"
             style="@style/btn_style_lower"
-            android:text="Bitmap相关"
-            />
+            android:text="Bitmap相关" />
 
         <Button
             android:id="@+id/btn_lambda"
             style="@style/btn_style_lower"
-            android:text="Lambda相关"
-            />
+            android:text="Lambda相关" />
 
         <Button
             android:id="@+id/btn_proxy"
             style="@style/btn_style_lower"
-            android:text="proxy"
-            />
+            android:text="proxy" />
 
         <Button
             android:id="@+id/btn_kotlin"
             style="@style/btn_style_lower"
-            android:text="kotlin"
-            />
+            android:text="kotlin" />
+
+        <Button
+            android:id="@+id/btn_launch_badge"
+            style="@style/btn_style_lower"
+            android:text="桌面角标适配" />
 
         <Button
             android:id="@+id/btn_test"
             style="@style/btn_style_lower"
-            android:text="test 相关"
-            />
+            android:text="test 相关" />
 
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

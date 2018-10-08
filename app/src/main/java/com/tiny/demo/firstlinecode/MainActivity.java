@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.coder.zzq.smartshow.toast.SmartToast;
 import com.google.gson.Gson;
 import com.tiny.demo.firstlinecode.activity.ActivityReferedActivity;
+import com.tiny.demo.firstlinecode.activity.StartActivity;
 import com.tiny.demo.firstlinecode.activity.activity_stack_manager.ActivityCollector;
 import com.tiny.demo.firstlinecode.adaptive.AdaptiveActivity;
 import com.tiny.demo.firstlinecode.audio.AudioActivity;
@@ -35,6 +36,7 @@ import com.tiny.demo.firstlinecode.javareference.JavaReferenceActivity;
 import com.tiny.demo.firstlinecode.kfysts.AndroidKfystsActivity;
 import com.tiny.demo.firstlinecode.kotlin.KotlinEntryActivity;
 import com.tiny.demo.firstlinecode.lambda.LambdaActivity;
+import com.tiny.demo.firstlinecode.launcherbadge.LaunchBadgeActivity;
 import com.tiny.demo.firstlinecode.leakcanary.LeakCanaryActivity;
 import com.tiny.demo.firstlinecode.materialdesign.MaterialDesignActivity;
 import com.tiny.demo.firstlinecode.network.HttpUrlConnectionActivity;
@@ -348,6 +350,9 @@ public class MainActivity extends BaseActivity
 
         //kotlin
         findViewById(R.id.btn_kotlin).setOnClickListener(v -> KotlinEntryActivity.actionStart(mContext));
+
+        // 桌面角标适配
+        findViewById(R.id.btn_launch_badge).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, LaunchBadgeActivity.class)));
 
         //test的数据都放在这里面
         findViewById(R.id.btn_test).setOnClickListener(v -> {
