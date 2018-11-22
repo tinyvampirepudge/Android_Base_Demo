@@ -13,9 +13,15 @@ import android.view.View;
 
 import com.tiny.demo.firstlinecode.activity.activity_stack_manager.ActivityCollector;
 import com.tiny.demo.firstlinecode.broadcastreceiver.LoginActivity;
+import com.tiny.demo.firstlinecode.common.utils.AppUtils;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
 
+import java.util.concurrent.TimeUnit;
+
 import butterknife.ButterKnife;
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 
 /**
  * Created by 87959 on 2017/3/7.
@@ -25,6 +31,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     public Context mContext;
     private OfflineReceiver offlineReceiver;
     protected final String TAG = this.getClass().getSimpleName();
+    private Disposable disposable;
 
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
@@ -43,6 +50,36 @@ public abstract class BaseActivity extends AppCompatActivity {
         ActivityCollector.addActivity(this);
         buildContentView();
         contentView.postDelayed(() -> initViewData(), 300);
+
+
+
+        /**
+         * 每隔一段时间就会发送一个事件，这个事件是从0开始，不断增1的数字。
+         */
+        Observable.interval(4, TimeUnit.SECONDS)
+                .subscribe(new Observer<Long>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        disposable = d;
+                        LogUtils.e(TAG, "onSubscribe");
+                    }
+
+                    @Override
+                    public void onNext(Long aLong) {
+                        Boolean result = AppUtils.isAppInBackgroundInternal(mContext,"com.tiny.demo.firstlinecode");
+                        LogUtils.e(TAG,"onNext 是否运行在后台："+result);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        LogUtils.e(TAG, "onError:" + e.toString());
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        LogUtils.e(TAG, "onComplete");
+                    }
+                });
     }
 
     protected abstract int setContentLayout();
@@ -58,6 +95,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (disposable!=null){
+            disposable.dispose();
+        }
         ActivityCollector.removeActivity(this);
     }
 

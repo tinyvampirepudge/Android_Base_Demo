@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Build;
+import android.text.TextUtils;
 
 import java.util.List;
 
@@ -16,34 +18,35 @@ public class AppUtils {
 
     /**
      * 判断程序是否在运行
+     *
      * @param context
      * @param packageName
      * @return 栈顶Activity
      */
-    public static String isAppRunning(Context context, String packageName){
+    public static String isAppRunning(Context context, String packageName) {
         ActivityManager activityManager = (ActivityManager) context.getSystemService(context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningTaskInfo> runningTaskInfos = activityManager.getRunningTasks(200);
-        for (ActivityManager.RunningTaskInfo info : runningTaskInfos){
+        for (ActivityManager.RunningTaskInfo info : runningTaskInfos) {
             if (info.topActivity.getPackageName().equals(packageName)
-                    && info.baseActivity.getPackageName().equals(packageName)){
+                    && info.baseActivity.getPackageName().equals(packageName)) {
                 return info.topActivity.getClassName();
             }
         }
         return null;
     }
 
-    public static boolean isServiceRunning(Context context, String serviceName){
+    public static boolean isServiceRunning(Context context, String serviceName) {
         ActivityManager activityManager = (ActivityManager) context.getSystemService(context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningServiceInfo> serviceInfos = activityManager.getRunningServices(1000);
-        for (ActivityManager.RunningServiceInfo info : serviceInfos){
-            if (info.service.getClassName().equals(serviceName)){
+        for (ActivityManager.RunningServiceInfo info : serviceInfos) {
+            if (info.service.getClassName().equals(serviceName)) {
                 return true;
             }
         }
         return false;
     }
 
-    public static void startApp(Context context, String packageName){
+    public static void startApp(Context context, String packageName) {
         try {
             PackageManager packageManager = context.getPackageManager();
             Intent intent = packageManager.getLaunchIntentForPackage(packageName);
@@ -53,7 +56,7 @@ public class AppUtils {
         }
     }
 
-    public static void resumeActivityFromBackground(Context context, String className){
+    public static void resumeActivityFromBackground(Context context, String className) {
         try {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_MAIN);
@@ -86,6 +89,7 @@ public class AppUtils {
 
     /**
      * 获取app版本号
+     *
      * @param context
      * @return
      * @throws Exception
@@ -94,6 +98,39 @@ public class AppUtils {
         PackageManager packageManager = context.getPackageManager();
         PackageInfo packInfo = packageManager.getPackageInfo(context.getPackageName(), 0);
         return packInfo.versionCode;
+    }
+
+
+    /**
+     * 是否在后台运行
+     * @param context   上下文
+     * @param pkgName   包名
+     * @return
+     */
+    public static boolean isAppInBackgroundInternal(Context context, String pkgName) {
+        if (TextUtils.isEmpty(pkgName)) {
+            return false;
+        }
+        ActivityManager manager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+            List<ActivityManager.RunningAppProcessInfo> runningProcesses = manager.getRunningAppProcesses();
+            if (!ListUtils.isEmpty(runningProcesses)) {
+                for (ActivityManager.RunningAppProcessInfo runningProcess : runningProcesses) {
+                    if (runningProcess.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
+                        return false;
+                    }
+                }
+            }
+        } else {
+            List<ActivityManager.RunningTaskInfo> task = manager.getRunningTasks(1);
+            if (!ListUtils.isEmpty(task)) {
+                ComponentName info = task.get(0).topActivity;
+                if (null != info) {
+                    return !pkgName.equals(info.getPackageName());
+                }
+            }
+        }
+        return true;
     }
 
 }
