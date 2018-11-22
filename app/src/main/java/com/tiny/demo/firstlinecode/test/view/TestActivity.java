@@ -70,6 +70,12 @@ public class TestActivity extends BaseActivity {
             startActivity(new Intent(mContext, MvpTest5Actiity.class));
         });
 
+        findViewById(R.id.btn_test_auto_size_text_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AutoSizeTextViewActivity.actionStart(mContext);
+            }
+        });
     }
 
     @Override

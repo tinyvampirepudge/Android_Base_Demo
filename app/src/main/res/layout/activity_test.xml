@@ -122,6 +122,12 @@
                 android:text="异步转同步 Callable"
                 />
 
+            <Button
+                android:id="@+id/btn_test_auto_size_text_view"
+                style="@style/btn_style_lower"
+                android:text="AutoSizeTextView"
+                />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

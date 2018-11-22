@@ -776,6 +776,7 @@
         <activity
             android:name=".launcherbadge.LaunchBadgeActivity"
             android:label="桌面角标适配" />
+        <activity android:name=".test.view.AutoSizeTextViewActivity"></activity>
     </application>
 
 </manifest>
