@@ -2,7 +2,9 @@ package com.tiny.demo.firstlinecode.test.view;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Looper;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -329,5 +331,22 @@ public class TestActivity extends BaseActivity {
             e.printStackTrace();
             throw new RuntimeException("网络访问错误");
         }
+    }
+
+    @OnClick(R.id.btn_test_go_to_settings)
+    public void onViewGoToSettingsClicked() {
+        switchSettingActivity(mContext);
+    }
+
+    /**
+     * 跳转应用信息页面，跳转应用设置页面
+     * @param context
+     */
+    public void switchSettingActivity(Context context) {
+        Intent intent = new Intent();
+        intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        Uri uri = Uri.fromParts("package", context.getPackageName(), null);
+        intent.setData(uri);
+        context.startActivity(intent);
     }
 }

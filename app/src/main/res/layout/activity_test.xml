@@ -128,6 +128,12 @@
                 android:text="AutoSizeTextView"
                 />
 
+            <Button
+                android:id="@+id/btn_test_go_to_settings"
+                style="@style/btn_style_lower"
+                android:text="进入设置页面"
+                />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
