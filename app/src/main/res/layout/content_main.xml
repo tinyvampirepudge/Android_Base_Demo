@@ -229,7 +229,7 @@
         <Button
             android:id="@+id/btn_design_pattern"
             style="@style/btn_style_lower"
-            android:text="大话设计模式" />
+            android:text="设计模式" />
 
         <Button
             android:id="@+id/btn_java_reference"

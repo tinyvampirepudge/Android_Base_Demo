@@ -51,8 +51,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         buildContentView();
         contentView.postDelayed(() -> initViewData(), 300);
 
-
-
         /**
          * 每隔一段时间就会发送一个事件，这个事件是从0开始，不断增1的数字。
          */

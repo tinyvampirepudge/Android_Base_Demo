@@ -309,7 +309,7 @@ public class MainActivity extends BaseActivity
         //Android测试相关
         findViewById(R.id.btn_android_test).setOnClickListener(v -> startActivity(new Intent(mContext, AndroidTestActivity.class)));
 
-        //大话设计模式
+        //设计模式
         findViewById(R.id.btn_design_pattern).setOnClickListener(v -> startActivity(new Intent(mContext, DesignPatternActivity.class)));
 
         //java相关

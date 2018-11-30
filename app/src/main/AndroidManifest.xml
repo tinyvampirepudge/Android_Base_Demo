@@ -335,18 +335,18 @@
             android:label="图片加载库测试" />
         <activity
             android:name=".designpattern.DesignPatternActivity"
-            android:label="大话设计模式" />
+            android:label="设计模式" />
         <activity
-            android:name=".designpattern.chapter06.DecorateActivity"
+            android:name=".designpattern.talkbig.chapter06.DecorateActivity"
             android:label="装饰模式" />
         <activity
-            android:name=".designpattern.chapter21.SingletonActivity"
+            android:name=".designpattern.talkbig.chapter21.SingletonActivity"
             android:label="单例模式" />
         <activity
-            android:name=".designpattern.chapter13.BuilderActivity"
+            android:name=".designpattern.talkbig.chapter13.BuilderActivity"
             android:label="构建者模式" />
         <activity
-            android:name=".designpattern.chapter01.SimpleFactoryActivity"
+            android:name=".designpattern.talkbig.chapter01.SimpleFactoryActivity"
             android:label="简单工厂模式" />
         <activity
             android:name=".ui.view.DragRecyclerViewActivity"
@@ -776,7 +776,18 @@
         <activity
             android:name=".launcherbadge.LaunchBadgeActivity"
             android:label="桌面角标适配" />
-        <activity android:name=".test.view.AutoSizeTextViewActivity"></activity>
+        <activity android:name=".test.view.AutoSizeTextViewActivity" />
+        <activity
+            android:name=".designpattern.talkbig.TalkBigDesignPatternActivity"
+            android:label="大化设计模式" />
+        <activity
+            android:name=".designpattern.practice.DesignPatternPracticeActivity"
+            android:label="设计模式实战" />
+        <activity
+            android:name=".designpattern.practice.observer.ObserverPracticeActivity"
+            android:label="观察者模式实战" />
+        <activity android:name=".designpattern.practice.observer.ObserverLoginActivity"
+            android:label="观察者模式实战——登录页面"/>
     </application>
 
 </manifest>
