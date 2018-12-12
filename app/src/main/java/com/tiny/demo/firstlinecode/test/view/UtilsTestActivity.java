@@ -10,6 +10,7 @@ import com.tiny.demo.firstlinecode.MainActivity;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.common.utils.ActivityInfoUtils;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,6 +28,7 @@ public class UtilsTestActivity extends AppCompatActivity {
     Button btnTest1;
     @BindView(R.id.btn_test_2)
     Button btnTest2;
+    private int count = 1;
 
     public static void actionStart(Context context) {
         Intent starter = new Intent(context, UtilsTestActivity.class);
@@ -49,5 +51,10 @@ public class UtilsTestActivity extends AppCompatActivity {
     @OnClick(R.id.btn_test_2)
     public void onBtnTest2Clicked() {
 
+    }
+
+    @OnClick(R.id.btn_test_toast_util)
+    public void onViewClicked() {
+        ToastUtils.showErrorToast("这是第次点" + (count++) + "击toast", true);
     }
 }

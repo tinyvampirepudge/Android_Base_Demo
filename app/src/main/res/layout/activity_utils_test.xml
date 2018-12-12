@@ -27,6 +27,13 @@
                 android:text="ActivityInfoUtils# 栈顶Activity的信息。"
                 />
 
+
+            <Button
+                android:id="@+id/btn_test_toast_util"
+                style="@style/btn_style_lower"
+                android:text="测试ToastUtils"
+                />
+
         </LinearLayout>
     </ScrollView>
 
