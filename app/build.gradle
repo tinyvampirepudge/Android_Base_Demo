@@ -130,7 +130,7 @@ android {
     }
 
     productFlavors.all { flavor ->
-        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        flavor.manifestPlaceholders = ["UMENG_CHANNEL_VALUE": name]
     }
 
     //针对2.3版本添加的配置
