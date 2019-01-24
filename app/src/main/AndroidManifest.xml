@@ -786,8 +786,10 @@
         <activity
             android:name=".designpattern.practice.observer.ObserverPracticeActivity"
             android:label="观察者模式实战" />
-        <activity android:name=".designpattern.practice.observer.ObserverLoginActivity"
-            android:label="观察者模式实战——登录页面"/>
+        <activity
+            android:name=".designpattern.practice.observer.ObserverLoginActivity"
+            android:label="观察者模式实战——登录页面" />
+        <activity android:name=".bitmap.BitmapFactoryTestActivity"></activity>
     </application>
 
 </manifest>

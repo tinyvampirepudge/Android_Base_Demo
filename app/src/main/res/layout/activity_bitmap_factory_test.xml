@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bitmap.BitmapFactoryTestActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_bitmap_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BitmapFactory.decodeByteArray()"
+            android:textAllCaps="false" />
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            tools:src="@drawable/wx20190116_180256" />
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            tools:src="@drawable/wx20190116_180256" />
+
+        <Button
+            android:id="@+id/btn_bitmap_test1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="BitmapFactory.decodeStream()"
+            android:textAllCaps="false" />
+
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            tools:src="@drawable/wx20190116_180256" />
+
+        <Button
+            android:id="@+id/btn_bitmap_test2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="BitmapFactory.decodeFile()"
+            android:textAllCaps="false" />
+
+        <ImageView
+            android:id="@+id/img3"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            tools:src="@drawable/wx20190116_180256" />
+
+        <Button
+            android:id="@+id/btn_bitmap_test3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="BitmapFactory.decodeByteArray() baes64"
+            android:textAllCaps="false" />
+
+        <ImageView
+            android:id="@+id/img4"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            tools:src="@drawable/wx20190116_180256" />
+
+    </LinearLayout>
+
+
+</ScrollView>

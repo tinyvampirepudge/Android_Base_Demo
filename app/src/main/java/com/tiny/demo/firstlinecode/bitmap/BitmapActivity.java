@@ -43,6 +43,6 @@ public class BitmapActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_test3)
     public void onBtnTest3Clicked() {
-
+        BitmapFactoryTestActivity.actionStart(this);
     }
 }
