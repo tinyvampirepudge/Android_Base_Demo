@@ -134,6 +134,12 @@
                 android:text="进入设置页面"
                 />
 
+            <Button
+                android:id="@+id/btn_test_validte_ui_on_child_thread"
+                style="@style/btn_style_lower"
+                android:text="子线程能否更新UI"
+                />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -78,6 +78,13 @@ public class TestActivity extends BaseActivity {
                 AutoSizeTextViewActivity.actionStart(mContext);
             }
         });
+
+        findViewById(R.id.btn_test_validte_ui_on_child_thread).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ValidateUIOnChildThreadActivity.actionStart(mContext);
+            }
+        });
     }
 
     @Override

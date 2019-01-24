@@ -789,7 +789,8 @@
         <activity
             android:name=".designpattern.practice.observer.ObserverLoginActivity"
             android:label="观察者模式实战——登录页面" />
-        <activity android:name=".bitmap.BitmapFactoryTestActivity"></activity>
+        <activity android:name=".bitmap.BitmapFactoryTestActivity" />
+        <activity android:name=".test.view.ValidateUIOnChildThreadActivity"></activity>
     </application>
 
 </manifest>
