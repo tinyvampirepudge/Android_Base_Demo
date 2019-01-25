@@ -140,6 +140,11 @@
                 android:text="子线程能否更新UI"
                 />
 
+            <Button
+                android:id="@+id/btn_test_layoutInflater_inflate"
+                style="@style/btn_style_lower"
+                android:text="LayoutInflater#inflate()原理解析" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

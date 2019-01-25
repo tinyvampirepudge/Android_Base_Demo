@@ -85,6 +85,13 @@ public class TestActivity extends BaseActivity {
                 ValidateUIOnChildThreadActivity.actionStart(mContext);
             }
         });
+
+        findViewById(R.id.btn_test_layoutInflater_inflate).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LayoutInflaterTestActivity.actionStart(mContext);
+            }
+        });
     }
 
     @Override
@@ -347,6 +354,7 @@ public class TestActivity extends BaseActivity {
 
     /**
      * 跳转应用信息页面，跳转应用设置页面
+     *
      * @param context
      */
     public void switchSettingActivity(Context context) {
