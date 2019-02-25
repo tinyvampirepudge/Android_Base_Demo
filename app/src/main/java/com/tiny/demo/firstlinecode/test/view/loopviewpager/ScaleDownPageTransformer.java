@@ -1,6 +1,5 @@
-package com.jianghu_app.view.viewpager;
+package com.tiny.demo.firstlinecode.test.view.loopviewpager;
 
-import android.support.v4.view.ViewPager;
 import android.view.View;
 
 /**
