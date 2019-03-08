@@ -29,6 +29,7 @@ import com.tiny.demo.firstlinecode.common.utils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.MapUtils;
 import com.tiny.demo.firstlinecode.coolweather.CoolWeatherActivity;
 import com.tiny.demo.firstlinecode.designpattern.DesignPatternActivity;
+import com.tiny.demo.firstlinecode.filter.FilterTestActivity;
 import com.tiny.demo.firstlinecode.fragment.FragmentActivity;
 import com.tiny.demo.firstlinecode.handler.HandlerEntryActivity;
 import com.tiny.demo.firstlinecode.javareference.JavaReferenceActivity;
@@ -352,6 +353,9 @@ public class MainActivity extends BaseActivity
 
         // 桌面角标适配
         findViewById(R.id.btn_launch_badge).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, LaunchBadgeActivity.class)));
+
+        //Android中Filter的使用
+        findViewById(R.id.btn_filter).setOnClickListener(v -> FilterTestActivity.actionStart(mContext));
 
         //test的数据都放在这里面
         findViewById(R.id.btn_test).setOnClickListener(v -> {

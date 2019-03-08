@@ -789,9 +789,18 @@
         <activity
             android:name=".designpattern.practice.observer.ObserverLoginActivity"
             android:label="观察者模式实战——登录页面" />
-        <activity android:name=".bitmap.BitmapFactoryTestActivity" />
-        <activity android:name=".test.view.ValidateUIOnChildThreadActivity" />
-        <activity android:name=".test.view.LayoutInflaterTestActivity"></activity>
+        <activity
+            android:name=".bitmap.BitmapFactoryTestActivity"
+            android:label="BitmapFactory测试" />
+        <activity
+            android:name=".test.view.ValidateUIOnChildThreadActivity"
+            android:label="子线程中更新UI" />
+        <activity
+            android:name=".test.view.LayoutInflaterTestActivity"
+            android:label="LayoutInflater学习" />
+        <activity
+            android:name=".filter.FilterTestActivity"
+            android:label="Android中Filter的使用" />
     </application>
 
 </manifest>

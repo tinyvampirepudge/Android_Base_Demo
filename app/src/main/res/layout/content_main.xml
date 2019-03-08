@@ -307,6 +307,11 @@
             android:text="桌面角标适配" />
 
         <Button
+            android:id="@+id/btn_filter"
+            style="@style/btn_style_lower"
+            android:text="Android中Filter的使用" />
+
+        <Button
             android:id="@+id/btn_test"
             style="@style/btn_style_lower"
             android:text="test 相关" />

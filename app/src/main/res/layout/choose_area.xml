@@ -36,7 +36,7 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="14dp"
                 android:layout_marginTop="13dp"
-                android:background="@drawable/selector_nav_back"
+                android:src="@drawable/selector_nav_back"
                 />
 
             <!-- app:srcCompat="@drawable/selector_nav_back" -->
