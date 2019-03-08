@@ -7,7 +7,6 @@ import android.os.Process;
 import android.support.v7.app.AppCompatDelegate;
 
 import com.coder.zzq.smartshow.core.SmartShow;
-import com.coder.zzq.smartshow.toast.SmartToast;
 import com.facebook.stetho.Stetho;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
@@ -21,7 +20,7 @@ import com.tiny.demo.firstlinecode.refresh.util.DynamicTimeFormat;
 import com.tiny.demo.firstlinecode.stetho.httphelper.OkHttpClientUtils;
 import com.tiny.demo.firstlinecode.storage.greendao.GreenDaoHelper;
 
-import org.litepal.LitePalApplication;
+import org.litepal.LitePal;
 
 /**
  * Created by 87959 on 2017/3/7.
@@ -50,6 +49,9 @@ public class FLCApplication extends Application {
         super.onCreate();
         LogUtils.e("MyApplication onCreate");
 
+        // litepal
+        LitePal.initialize(this);
+
         //打印当前process的名称
         String processName = ProcessUtil.getProcessNameByCtx(getApplicationContext(), Process.myPid());
         LogUtils.e("processName --> " + processName);
@@ -62,7 +64,6 @@ public class FLCApplication extends Application {
 
         //stetho
         Stetho.initializeWithDefaults(this);
-        LitePalApplication.initialize(this);
 
         LogUtils.openLog(true);
         OkHttpClientUtils.setShowLog(true);

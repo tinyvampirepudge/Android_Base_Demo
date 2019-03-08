@@ -28,7 +28,7 @@
             android:text="add database"/>
 
         <Button
-            android:id="@+id/btn_litepal_updage"
+            android:id="@+id/btn_litepal_update"
             style="@style/btn_style_lower"
             android:text="update database"/>
         <Button
@@ -39,7 +39,7 @@
         <Button
             android:id="@+id/btn_litepal_delete"
             style="@style/btn_style_lower"
-            android:text="delete database"/>
+            android:text="delete database (pages > 508)"/>
 
         <Button
             android:id="@+id/btn_litepal_query"

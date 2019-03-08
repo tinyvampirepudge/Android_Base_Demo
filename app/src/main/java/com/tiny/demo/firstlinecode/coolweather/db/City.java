@@ -1,12 +1,12 @@
 package com.tiny.demo.firstlinecode.coolweather.db;
 
-import org.litepal.crud.DataSupport;
+import org.litepal.crud.LitePalSupport;
 
 /**
  * Created by 87959 on 2017/6/1.
  */
 
-public class City extends DataSupport {
+public class City extends LitePalSupport {
     private int id;
     private String cityName;
     private int cityCode;

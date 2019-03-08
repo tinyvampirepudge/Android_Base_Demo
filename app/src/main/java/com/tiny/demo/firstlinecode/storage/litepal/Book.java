@@ -1,12 +1,12 @@
 package com.tiny.demo.firstlinecode.storage.litepal;
 
-import org.litepal.crud.DataSupport;
+import org.litepal.crud.LitePalSupport;
 
 /**
  * Created by 87959 on 2017/5/6.
  */
 
-public class Book extends DataSupport{
+public class Book extends LitePalSupport {
     private int id;
     private String author;
     private double price;
