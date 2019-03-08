@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Process;
 import android.support.v7.app.AppCompatDelegate;
 
+import com.coder.zzq.smartshow.core.SmartShow;
 import com.coder.zzq.smartshow.toast.SmartToast;
 import com.facebook.stetho.Stetho;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -75,8 +76,10 @@ public class FLCApplication extends Application {
     }
 
     private void initSmartToast() {
+        SmartShow.init(this);
+
         //使用默认布局的普通Toast
-        SmartToast.plainToast(this);
+//        SmartToast.plainToast(this);
 
         //返回PlainToastSetting对象，对布局进行风格设置
 //        SmartToast.plainToast(this)
