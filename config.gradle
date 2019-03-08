@@ -22,6 +22,6 @@ ext {//定义所有project公用参数
             loggingInterceptor   : '3.1.0',
             stetho               : '1.4.2',
             guavaVersion         : '18.0',
-            leakcanary           : '1.5.4'
+            leakcanary           : '1.6.3'
     ]
 }

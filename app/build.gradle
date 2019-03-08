@@ -242,6 +242,8 @@ dependencies {
     api 'com.nineoldandroids:library:2.4.0'
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$rootProject.ext.dependencies.leakcanary"
     releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$rootProject.ext.dependencies.leakcanary"
+    // Optional, if you use support library fragments:
+    debugImplementation "com.squareup.leakcanary:leakcanary-support-fragment:$rootProject.ext.dependencies.leakcanary"
 
     //BaseRecyclerViewAdapterHelper相关
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.31'
