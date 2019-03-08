@@ -17,7 +17,6 @@ import android.widget.Toast;
 import com.coder.zzq.smartshow.toast.SmartToast;
 import com.google.gson.Gson;
 import com.tiny.demo.firstlinecode.activity.ActivityReferedActivity;
-import com.tiny.demo.firstlinecode.activity.StartActivity;
 import com.tiny.demo.firstlinecode.activity.activity_stack_manager.ActivityCollector;
 import com.tiny.demo.firstlinecode.adaptive.AdaptiveActivity;
 import com.tiny.demo.firstlinecode.audio.AudioActivity;
