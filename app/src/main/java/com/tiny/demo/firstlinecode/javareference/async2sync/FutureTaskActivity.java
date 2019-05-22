@@ -1,4 +1,4 @@
-package com.tiny.demo.firstlinecode.javareference.thread;
+package com.tiny.demo.firstlinecode.javareference.async2sync;
 
 import android.content.Context;
 import android.content.Intent;
@@ -23,12 +23,13 @@ import butterknife.OnClick;
 
 /**
  * @Description: Java并发编程：Callable、Future和FutureTask
+ * 异步转同步
  * @Author wangjianzhou@qding.me
  * @Date 2018/9/18 5:49 PM
  * @Version TODO
  */
-public class ConcurrentThreadTestActivity extends AppCompatActivity {
-    public static final String TAG = ConcurrentThreadTestActivity.class.getSimpleName();
+public class FutureTaskActivity extends AppCompatActivity {
+    public static final String TAG = FutureTaskActivity.class.getSimpleName();
 
 
     @BindView(R.id.btn_java_callable_future)
@@ -39,14 +40,14 @@ public class ConcurrentThreadTestActivity extends AppCompatActivity {
     Button btnJavaCallableFutureTask1;
 
     public static void actionStart(Context context) {
-        Intent starter = new Intent(context, ConcurrentThreadTestActivity.class);
+        Intent starter = new Intent(context, FutureTaskActivity.class);
         context.startActivity(starter);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_concurrent_thread_test);
+        setContentView(R.layout.activity_future_task);
         ButterKnife.bind(this);
     }
 
@@ -55,7 +56,7 @@ public class ConcurrentThreadTestActivity extends AppCompatActivity {
         // Callable + Future + ExecutorService
         ThreadUtils.logCurrThreadName(TAG + "  main start");
         ExecutorService executorService = Executors.newCachedThreadPool();
-        Task task = new Task();
+        CustomCallable task = new CustomCallable();
         Future<Integer> result = executorService.submit(task);
         executorService.shutdown();
 
@@ -76,14 +77,14 @@ public class ConcurrentThreadTestActivity extends AppCompatActivity {
         ThreadUtils.logCurrThreadName(TAG + "  main 主线程任务执行完毕");
     }
 
-    class Task implements Callable<Integer> {
+    class CustomCallable implements Callable<Integer> {
 
         @Override
         public Integer call() throws Exception {
             LogUtils.e(TAG, "在子线程进行计算");
             ThreadUtils.logCurrThreadName(TAG + " Task start");
             int sum = 0;
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 20; i++) {
                 Thread.sleep(100);
                 sum += i;
                 ThreadUtils.logCurrThreadName(TAG + " Task sum:" + sum);
@@ -98,7 +99,7 @@ public class ConcurrentThreadTestActivity extends AppCompatActivity {
         // Callable + FutureTask + ExecutorService
         ThreadUtils.logCurrThreadName(TAG + "  main start");
         ExecutorService executorService = Executors.newCachedThreadPool();
-        Task task = new Task();
+        CustomCallable task = new CustomCallable();
         FutureTask<Integer> futureTask = new FutureTask<>(task);
         executorService.submit(futureTask);
         executorService.shutdown();
@@ -124,7 +125,7 @@ public class ConcurrentThreadTestActivity extends AppCompatActivity {
     public void onViewClicked() {
         // Callable + FutureTask + Thread
         ThreadUtils.logCurrThreadName(TAG + "  main start");
-        Task task = new Task();
+        CustomCallable task = new CustomCallable();
         FutureTask<Integer> futureTask = new FutureTask<>(task);
         Thread thread = new Thread(futureTask);
         thread.start();

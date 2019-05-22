@@ -35,8 +35,8 @@
         android:text="Java Class相关" />
 
     <Button
-        android:id="@+id/btn_java_concurrent_thread"
+        android:id="@+id/btn_java_async_to_sync"
         style="@style/btn_style_lower"
-        android:text="Java 并发" />
+        android:text="Java 异步转同步" />
 
 </LinearLayout>

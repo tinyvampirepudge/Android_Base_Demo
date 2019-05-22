@@ -6,9 +6,10 @@ import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
+import com.tiny.demo.firstlinecode.javareference.async2sync.AsyncToSyncActivity;
 import com.tiny.demo.firstlinecode.javareference.clazz.ClazzActivity;
 import com.tiny.demo.firstlinecode.javareference.reflect.JavaReflectActivity;
-import com.tiny.demo.firstlinecode.javareference.thread.ConcurrentThreadTestActivity;
+import com.tiny.demo.firstlinecode.javareference.async2sync.FutureTaskActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -87,8 +88,9 @@ public class JavaReferenceActivity extends BaseActivity {
         ClazzActivity.Companion.actionStart(this, null);
     }
 
-    @OnClick(R.id.btn_java_concurrent_thread)
-    public void onViewJavaConcurrentThreadClicked() {
-        ConcurrentThreadTestActivity.actionStart(this);
+
+    @OnClick(R.id.btn_java_async_to_sync)
+    public void onViewJavaAsyncToSyncClicked() {
+        AsyncToSyncActivity.actionStart(this);
     }
 }

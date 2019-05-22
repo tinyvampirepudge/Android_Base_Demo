@@ -37,7 +37,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".handler.HandlerSyncBarrierActivity"></activity>
+        <activity android:name=".javareference.async2sync.AsyncToSyncActivity"></activity>
+        <activity android:name=".handler.HandlerSyncBarrierActivity" />
         <activity
             android:name=".guide.SplashActivity"
             android:theme="@style/AppStartFullScreen">
@@ -747,7 +748,7 @@
             android:name=".storage.database.SqliteUpgradeActivity"
             android:label="数据库升级" />
         <activity
-            android:name=".javareference.thread.ConcurrentThreadTestActivity"
+            android:name=".javareference.async2sync.FutureTaskActivity"
             android:label="多线程测试" />
         <activity
             android:name=".launcherbadge.LaunchBadgeActivity"

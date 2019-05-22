@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".javareference.async2sync.AsyncToSyncActivity">
+
+    <Button
+        android:id="@+id/btn_java_count_down_latch"
+        style="@style/btn_style_lower"
+        android:text="CountDownLatch"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_java_future_task"
+        style="@style/btn_style_lower"
+        android:text="FutureTask"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_java_count_down_latch"
+        />
+
+    <Button
+        android:id="@+id/btn_java_rxjava"
+        style="@style/btn_style_lower"
+        android:text="RxJava"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_java_future_task" />
+
+</android.support.constraint.ConstraintLayout>
