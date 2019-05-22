@@ -188,7 +188,7 @@ dependencies {
     androidTestImplementation "com.android.support.test.espresso:espresso-intents:$rootProject.ext.dependencies.espresso"
 
     //junit
-    androidTestImplementation "junit:junit:$rootProject.ext.dependencies.junit"
+    testImplementation "junit:junit:$rootProject.ext.dependencies.junit"
 
     //support library
     api "com.android.support:appcompat-v7:$rootProject.ext.dependencies.supportLibraryVersion"
