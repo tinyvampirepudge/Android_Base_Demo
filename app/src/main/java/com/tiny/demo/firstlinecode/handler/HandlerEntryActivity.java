@@ -68,4 +68,10 @@ public class HandlerEntryActivity extends BaseActivity {
             }
         }).start();
     }
+
+    @OnClick(R.id.btn_handler_sync_barrier)
+    public void onHandlerSybcBarrierClicked() {
+        HandlerSyncBarrierActivity.actionStart(this);
+    }
+
 }

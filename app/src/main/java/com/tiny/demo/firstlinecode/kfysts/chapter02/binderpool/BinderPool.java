@@ -51,6 +51,7 @@ public class BinderPool {
         Intent intent = new Intent(mContext, BinderPoolService.class);
         mContext.bindService(intent, mBinderPoolConnection, Context.BIND_AUTO_CREATE);
         try {
+            // 异步转同步操作。
             mConnectBinderPoolCountDownLatch.await();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -103,6 +104,7 @@ public class BinderPool {
             LogUtils.e(TAG, "binder died.");
             mBinderPool.asBinder().unlinkToDeath(mBinderPoolDeathRecipient, 0);
             mBinderPool = null;
+            // 异常重连
             connectBinderPoolService();
         }
     };

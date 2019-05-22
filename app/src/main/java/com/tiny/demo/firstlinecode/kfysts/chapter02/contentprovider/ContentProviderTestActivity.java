@@ -15,6 +15,8 @@ import com.tiny.demo.firstlinecode.common.utils.LogUtils;
 import com.tiny.demo.firstlinecode.kfysts.chapter02.User;
 import com.tiny.demo.firstlinecode.kfysts.chapter02.aidl.Book;
 
+import java.util.Random;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -60,7 +62,7 @@ public class ContentProviderTestActivity extends AppCompatActivity {
     private void operateBookTable() {
         Uri bookUri = Uri.parse("content://com.tiny.demo.firstlinecode.book.provider/book");
         ContentValues values = new ContentValues();
-        values.put("_id", 6);
+        values.put("_id", new Random().nextInt());
         values.put("name", "程序设计的艺术");
         getContentResolver().insert(bookUri, values);
 

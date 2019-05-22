@@ -132,12 +132,7 @@ public class SocketIPCActivity extends AppCompatActivity {
     public void onViewClicked() {
         String msg = et.getText().toString();
         if (!TextUtils.isEmpty(msg) && mPrintWriter != null) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    mPrintWriter.println(msg);
-                }
-            }).start();
+            new Thread(() -> mPrintWriter.println(msg)).start();
             et.setText("");
             String time = formatDateTime(System.currentTimeMillis());
             final String showedMsg = "self " + time + ":" + msg + "\n";

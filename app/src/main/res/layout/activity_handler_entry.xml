@@ -30,6 +30,10 @@
             style="@style/btn_style_lower"
             android:text="java.lang.RuntimeException: Can't create handler inside thread that has not called Looper.prepare()" />
 
+        <Button
+            android:id="@+id/btn_handler_sync_barrier"
+            style="@style/btn_style_lower"
+            android:text="Handler Sync Barrier"/>
 
     </LinearLayout>
 

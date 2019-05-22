@@ -57,6 +57,7 @@ public class TCPServerService extends Service {
         public void run() {
             ServerSocket serverSocket = null;
             try {
+                // 监听本地8688端口
                 serverSocket = new ServerSocket(8688);
             } catch (IOException e) {
                 System.err.println("establish tcp server failed, port:8688");

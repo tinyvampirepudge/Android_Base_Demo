@@ -37,7 +37,7 @@ public class BookContentProvider extends ContentProvider {
      * 具体原因是SQLiteDataBase内部对数据库的操作是有同步处理的，但是通过多个SQLiteDataBase对象来操作数据库就
      * 无法保证线程同步，因为SQLiteDataBase对象之间无法进行线程同步。
      * 如果ContentProvider的底层数据集是一块内存的话，比如是List，在这种情况下同List的遍历、插入、删除操作就需要
-     * 进行线程听不，否则就会引发并发错误，这点是尤其需要注意的。
+     * 进行线程同步，否则就会引发并发错误，这点是尤其需要注意的。
      */
     /**
      * 跟AndroidManifest.xml中配置保持一致

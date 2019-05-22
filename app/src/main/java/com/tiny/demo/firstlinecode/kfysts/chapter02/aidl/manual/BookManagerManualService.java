@@ -20,7 +20,7 @@ import java.util.List;
  * @date 2018/3/5 上午1:16
  */
 public class BookManagerManualService extends Service {
-    public static final String TAG = "BookManagerManualServic";
+    public static final String TAG = "BookManagerManualService";
     private ArrayList<Book> mBookList = new ArrayList<>();
     private Binder mBinder = new IBookManagerManual.BookManagerManualImpl() {
         @Override

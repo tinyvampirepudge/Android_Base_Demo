@@ -2,57 +2,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.tiny.demo.firstlinecode">
-
     <!-- 请求网络权限 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 监听网络状态 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- 监听开机启动 -->
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-
-    <!-- 获取wifi地址 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 监听网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 监听开机启动 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- 获取wifi地址 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-
-    <!-- 电话 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 电话 -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-
-    <!-- 震动权限，通知到来时 -->
-    <uses-permission android:name="android.permission.VIBRATE" />
-
-    <!-- 存储卡权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 震动权限，通知到来时 -->
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 存储卡权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-    <!-- 手机状态权限 -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
-    <!-- 悬浮窗权限 -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
-    <!-- aidl -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 手机状态权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 悬浮窗权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- aidl -->
     <permission
         android:name="com.tiny.demo.firstlinecode.aidl.AIDL_SERVICE"
-        android:protectionLevel="normal" />
-
-    <!-- manual aidl -->
+        android:protectionLevel="normal" /> <!-- manual aidl -->
     <permission
         android:name="com.tiny.demo.firstlinecode.aidl.MANUAL_AIDL_SERVICE"
-        android:protectionLevel="normal" />
-
-    <!-- AIDL权限校验 -->
+        android:protectionLevel="normal" /> <!-- AIDL权限校验 -->
     <permission
         android:name="com.tiny.demo.firstlinecode.permission.ACCESS_BOOK_SERVICE"
         android:protectionLevel="normal" />
 
-    <uses-permission android:name="com.tiny.demo.firstlinecode.permission.ACCESS_BOOK_SERVICE" />
-
-    <!-- 华为桌面角标修改 https://developer.huawei.com/consumer/cn/devunion/download/badge.pdf -->
+    <uses-permission android:name="com.tiny.demo.firstlinecode.permission.ACCESS_BOOK_SERVICE" /> <!-- 华为桌面角标修改 https://developer.huawei.com/consumer/cn/devunion/download/badge.pdf -->
     <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
 
     <application
@@ -62,6 +37,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".handler.HandlerSyncBarrierActivity"></activity>
         <activity
             android:name=".guide.SplashActivity"
             android:theme="@style/AppStartFullScreen">
