@@ -37,8 +37,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".javareference.async2sync.AsyncToSyncActivity"></activity>
-        <activity android:name=".handler.HandlerSyncBarrierActivity" />
         <activity
             android:name=".guide.SplashActivity"
             android:theme="@style/AppStartFullScreen">
@@ -778,6 +776,13 @@
         <activity
             android:name=".filter.FilterTestActivity"
             android:label="Android中Filter的使用" />
+
+        <activity
+            android:name=".javareference.async2sync.AsyncToSyncActivity"
+            android:label="Java中异步转同步的常用方式" />
+        <activity
+            android:name=".handler.HandlerSyncBarrierActivity"
+            android:label="Handler中的SyncBarrier" />
     </application>
 
 </manifest>

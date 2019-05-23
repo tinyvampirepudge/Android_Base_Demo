@@ -15,20 +15,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/btn_java_cyclic_barrier"
+        style="@style/btn_style_lower"
+        android:text="CyclicBarrier"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_java_count_down_latch" />
+
+    <Button
         android:id="@+id/btn_java_future_task"
         style="@style/btn_style_lower"
         android:text="FutureTask"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_java_count_down_latch"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/btn_java_cyclic_barrier" />
 
     <Button
-        android:id="@+id/btn_java_rxjava"
+        android:id="@+id/btn_java_rxjava_callback"
         style="@style/btn_style_lower"
-        android:text="RxJava"
+        android:text="RxJava 异步任务顺序执行"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_java_future_task" />
+
+    <Button
+        android:id="@+id/btn_java_rxjava_merge"
+        style="@style/btn_style_lower"
+        android:text="RxJava merge 多个异步任务就绪后再执行"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_java_rxjava_callback" />
 
 </android.support.constraint.ConstraintLayout>

@@ -11,7 +11,13 @@ import com.example.tiny.tinymodule.util.ThreadUtils;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
@@ -24,6 +30,7 @@ import io.reactivex.Observer;
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
@@ -35,13 +42,6 @@ import io.reactivex.schedulers.Schedulers;
  */
 public class AsyncToSyncActivity extends AppCompatActivity {
     public static final String TAG = AsyncToSyncActivity.class.getSimpleName();
-
-    @BindView(R.id.btn_java_count_down_latch)
-    Button btnJavaCountDownLatch;
-    @BindView(R.id.btn_java_future_task)
-    Button btnJavaFutureTask;
-    @BindView(R.id.btn_java_rxjava)
-    Button btnJavaRxjava;
 
     public static void actionStart(Context context) {
         Intent starter = new Intent(context, AsyncToSyncActivity.class);
@@ -76,12 +76,21 @@ public class AsyncToSyncActivity extends AppCompatActivity {
             LogUtils.e(TAG, "Task1执行完毕");
         };
 
-        new Thread(Task1).start();
-        new Thread(new CustomRunnable(countDownLatch, "Task2", 3)).start();
-        new Thread(new CustomRunnable(countDownLatch, "Task3", 5)).start();
+        // 创建线程池
+        ExecutorService executors = Executors.newFixedThreadPool(3);
+
+        // 执行任务。
+        executors.submit(Task1);
+        executors.submit(new CustomRunnable(countDownLatch, "Task2", 3));
+        executors.submit(new CustomRunnable(countDownLatch, "Task3", 5));
+
+        executors.shutdown();
 
     }
 
+    /**
+     * 自定义Runnable
+     */
     private static class CustomRunnable implements Runnable {
 
         private CountDownLatch countDownLatch;
@@ -110,14 +119,145 @@ public class AsyncToSyncActivity extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.btn_java_cyclic_barrier)
+    public void onBtnJavaCyclicBarrierClicked() {
+        /**
+         * CyclicBarrier是一个同步辅助类，它允许一组线程互相等待，直到到达某个公共屏障点 (common barrier point)。
+         */
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(10, new Runnable() {
+            @Override
+            public void run() {
+                LogUtils.e(TAG, "所有任务都执行完毕了");
+                ThreadUtils.logCurrThreadName(TAG + " barrierAction");
+            }
+        });
+        List<Runnable> runnables = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            int finalI = i;
+            Runnable runnable = () -> {
+                LogUtils.e(TAG, "当前是第" + finalI + "个任务，开始执行");
+                ThreadUtils.logCurrThreadName(TAG + " 子任务");
+                try {
+                    TimeUnit.SECONDS.sleep(finalI);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                LogUtils.e(TAG, "当前是第" + finalI + "个任务，执行完毕");
+                try {
+                    cyclicBarrier.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (BrokenBarrierException e) {
+                    e.printStackTrace();
+                }
+            };
+            runnables.add(runnable);
+        }
+
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        for (Runnable r : runnables) {
+            executorService.submit(r);
+        }
+        executorService.shutdown();
+    }
 
     @OnClick(R.id.btn_java_future_task)
     public void onBtnJavaFutureTaskClicked() {
         FutureTaskActivity.actionStart(this);
     }
 
-    @OnClick(R.id.btn_java_rxjava)
-    public void onBtnJavaRxjavaClicked() {
+    /**
+     * 比如说注册成功后直接登录
+     */
+    @OnClick(R.id.btn_java_rxjava_callback)
+    public void onBtnJavaRxjavaCallbackClicked() {
+        RegisterReqBean registerReqBean = new RegisterReqBean("猫了个咪", "13333333333", "123456");
+        Observable registerRequest = Observable.create(new ObservableOnSubscribe<RegisterReqBean>() {
+            @Override
+            public void subscribe(ObservableEmitter<RegisterReqBean> emitter) throws Exception {
+                LogUtils.e(TAG, "注册请求 registerReqBean:" + registerReqBean);
+                ThreadUtils.logCurrThreadName(TAG + " 注册请求成功");
+                emitter.onNext(registerReqBean);
+                LogUtils.e(TAG, "发送注册请求");
+                emitter.onComplete();
+                LogUtils.e(TAG, "发送注册请求完成");
+            }
+        });
+
+        // 模拟注册响应
+        Function mockRegisterResp = new Function<RegisterReqBean, RegisterRespBean>() {
+            @Override
+            public RegisterRespBean apply(RegisterReqBean registerReqBean) throws Exception {
+                RegisterRespBean registerRespBean = new RegisterRespBean(registerReqBean.getName(),
+                        registerReqBean.getPwd(), "恭喜您注册成功");
+                LogUtils.e(TAG, "注册响应 registerRespBean:" + registerRespBean);
+                TimeUnit.SECONDS.sleep(5);// 模拟网络延迟
+                ThreadUtils.logCurrThreadName(TAG + " 注册响应成功");
+                return registerRespBean;
+            }
+        };
+
+        // 模拟登录请求
+        Function mockLoginReq = new Function<RegisterRespBean, LoginReqBean>() {
+            @Override
+            public LoginReqBean apply(RegisterRespBean registerRespBean) throws Exception {
+                LoginReqBean loginReqBean = new LoginReqBean(registerRespBean.getName() + " 我要登陆", registerRespBean.getPwd());
+                LogUtils.e(TAG, "登录请求 loginReqBean:" + loginReqBean);
+                ThreadUtils.logCurrThreadName(TAG + " 登录请求成功");
+                return loginReqBean;
+            }
+        };
+
+        // 模拟登录响应
+        Function mockLoginResp = new Function<LoginReqBean, LoginRespBean>() {
+            @Override
+            public LoginRespBean apply(LoginReqBean loginReqBean) throws Exception {
+                LoginRespBean loginRespBean = new LoginRespBean(loginReqBean.getName(),
+                        loginReqBean.getPwd(), "恭喜您登录成功");
+                LogUtils.e(TAG, "登录响应 loginRespBean:" + loginRespBean);
+                TimeUnit.SECONDS.sleep(5);// 模拟网络延迟
+                ThreadUtils.logCurrThreadName(TAG + " 登录响应成功");
+                return loginRespBean;
+            }
+
+        };
+
+        Observer<LoginRespBean> resultObserver = new Observer<LoginRespBean>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                LogUtils.e(TAG, "onSubscribe");
+            }
+
+            @Override
+            public void onNext(LoginRespBean loginRespBean) {
+                LogUtils.e(TAG, "onNext 登录成功，可以更新UI了。 loginRespBean:" + loginRespBean);
+                ThreadUtils.logCurrThreadName(TAG + " ");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                LogUtils.e(TAG, "onError e:" + e.getMessage());
+            }
+
+            @Override
+            public void onComplete() {
+                LogUtils.e(TAG, "onComplete");
+            }
+        };
+
+        registerRequest.subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.newThread())
+                .map(mockRegisterResp)
+                .observeOn(Schedulers.io())
+                .map(mockLoginReq)
+                .observeOn(Schedulers.newThread())
+                .map(mockLoginResp)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(resultObserver);
+    }
+
+    @OnClick(R.id.btn_java_rxjava_merge)
+    public void onBtnJavaRxjavaMergeClicked() {
         /**
          * 等待多个任务完成后再执行，不保证顺序
          */
