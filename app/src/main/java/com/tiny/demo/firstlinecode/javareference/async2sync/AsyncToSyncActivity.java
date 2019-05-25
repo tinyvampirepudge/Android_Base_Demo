@@ -84,6 +84,7 @@ public class AsyncToSyncActivity extends AppCompatActivity {
         executors.submit(new CustomRunnable(countDownLatch, "Task2", 3));
         executors.submit(new CustomRunnable(countDownLatch, "Task3", 5));
 
+        // 任务完成后关闭线程池
         executors.shutdown();
 
     }
@@ -124,12 +125,9 @@ public class AsyncToSyncActivity extends AppCompatActivity {
         /**
          * CyclicBarrier是一个同步辅助类，它允许一组线程互相等待，直到到达某个公共屏障点 (common barrier point)。
          */
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(10, new Runnable() {
-            @Override
-            public void run() {
-                LogUtils.e(TAG, "所有任务都执行完毕了");
-                ThreadUtils.logCurrThreadName(TAG + " barrierAction");
-            }
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(10, () -> {
+            LogUtils.e(TAG, "所有任务都执行完毕了");
+            ThreadUtils.logCurrThreadName(TAG + " barrierAction");
         });
         List<Runnable> runnables = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
@@ -184,7 +182,7 @@ public class AsyncToSyncActivity extends AppCompatActivity {
             }
         });
 
-        // 模拟注册响应
+        // 模拟注册响应。将RegisterReqBean转化为RegisterRespBean。
         Function mockRegisterResp = new Function<RegisterReqBean, RegisterRespBean>() {
             @Override
             public RegisterRespBean apply(RegisterReqBean registerReqBean) throws Exception {
@@ -197,7 +195,7 @@ public class AsyncToSyncActivity extends AppCompatActivity {
             }
         };
 
-        // 模拟登录请求
+        // 模拟登录请求。将RegisterRespBean转化为LoginReqBean。
         Function mockLoginReq = new Function<RegisterRespBean, LoginReqBean>() {
             @Override
             public LoginReqBean apply(RegisterRespBean registerRespBean) throws Exception {
@@ -208,7 +206,7 @@ public class AsyncToSyncActivity extends AppCompatActivity {
             }
         };
 
-        // 模拟登录响应
+        // 模拟登录响应。将LoginReqBean转化为LoginRespBean。
         Function mockLoginResp = new Function<LoginReqBean, LoginRespBean>() {
             @Override
             public LoginRespBean apply(LoginReqBean loginReqBean) throws Exception {
@@ -222,6 +220,7 @@ public class AsyncToSyncActivity extends AppCompatActivity {
 
         };
 
+        // 模拟接受登录响应结果。
         Observer<LoginRespBean> resultObserver = new Observer<LoginRespBean>() {
             @Override
             public void onSubscribe(Disposable d) {

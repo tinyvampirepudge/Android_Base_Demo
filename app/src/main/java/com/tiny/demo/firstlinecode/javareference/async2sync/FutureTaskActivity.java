@@ -84,7 +84,7 @@ public class FutureTaskActivity extends AppCompatActivity {
             LogUtils.e(TAG, "在子线程进行计算");
             ThreadUtils.logCurrThreadName(TAG + " Task start");
             int sum = 0;
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < 10; i++) {
                 Thread.sleep(100);
                 sum += i;
                 ThreadUtils.logCurrThreadName(TAG + " Task sum:" + sum);
