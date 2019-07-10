@@ -70,6 +70,7 @@ public class HorizontalScrollViewEx extends ViewGroup {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 intercepted = false;
+                // 优化滑动体验
                 if (!mScroller.isFinished()) {
                     mScroller.abortAnimation();
                     intercepted = true;

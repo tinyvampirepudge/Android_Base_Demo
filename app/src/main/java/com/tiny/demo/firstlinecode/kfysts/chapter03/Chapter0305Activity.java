@@ -131,11 +131,15 @@ public class Chapter0305Activity extends AppCompatActivity {
 //    }
     @OnClick(R.id.btn_test1)
     public void onBtnTest1Clicked() {
-        Chapter030501Activity.actionStart(Chapter0305Activity.this);
     }
 
     @OnClick(R.id.btn_test2)
     public void onBtnTest2Clicked() {
 
+    }
+
+    @OnClick(R.id.btn_test3)
+    public void onBtnTest3Clicked() {
+        Chapter030501Activity.actionStart(Chapter0305Activity.this);
     }
 }

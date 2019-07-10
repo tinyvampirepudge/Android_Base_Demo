@@ -23,6 +23,12 @@
             android:text="内部拦截法"
             />
 
+        <Button
+            android:id="@+id/btn_test3"
+            style="@style/btn_style_lower"
+            android:text="HorizontalScrollViewEx + ListView "
+            />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

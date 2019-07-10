@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -42,6 +43,11 @@ public class Chapter0304Activity extends AppCompatActivity {
         rootView.setBackgroundColor(ContextCompat.getColor(Chapter0304Activity.this,R.color.gray_color));
     }
 
+//    /**
+//     * 事件分发伪代码
+//     * @param ev
+//     * @return
+//     */
 //    public boolean dispatchTouchEvent(MotionEvent ev){
 //        boolean consume = false;
 //        if(onInterceptTouchEvent(ev)){
