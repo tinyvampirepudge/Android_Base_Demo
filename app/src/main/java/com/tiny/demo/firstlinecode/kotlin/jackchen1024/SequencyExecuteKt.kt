@@ -1,10 +1,6 @@
 package com.tiny.demo.firstlinecode.kotlin.jackchen1024
 
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.runBlocking
-import org.jetbrains.anko.custom.async
+import kotlinx.coroutines.*
 import kotlin.system.measureTimeMillis
 
 /**
@@ -44,8 +40,8 @@ fun testSequential() = runBlocking {
 
 fun testAsync() = runBlocking {
     val time = measureTimeMillis {
-        val one = async(CommonPool) { doJob1() }
-        val two = async(CommonPool) { doJob2() }
+        val one = async { doJob1() }
+        val two = async { doJob2() }
         println("最终结果: ${one.await() + two.await()}")
     }
     println("Completed in $time ms")

@@ -1,10 +1,9 @@
 package com.tiny.demo.firstlinecode.kotlin.official.coroutines
 
-import com.example.tiny.tinymodule.util.ThreadUtils
-import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.launch
-import kotlinx.coroutines.experimental.runBlocking
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 /**
  * @Description: 协程官网教程——
@@ -32,7 +31,7 @@ fun launchTest() {
     println("Start")
 
     //Start a coroutine
-    launch {
+    GlobalScope.launch {
         println("launchTest:" + Thread.currentThread().name)
         delay(1000L)
         println("hello")

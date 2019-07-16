@@ -1,7 +1,6 @@
 package com.tiny.demo.firstlinecode.kotlin.primer.project14
 
-import kotlinx.coroutines.experimental.*
-import org.jetbrains.anko.custom.async
+import kotlinx.coroutines.*
 
 /**
  * @Description: 协程参数
@@ -11,12 +10,12 @@ import org.jetbrains.anko.custom.async
  * @Date 2018/8/23 8:39 PM
  */
 
-fun main(args: Array<String>) = runBlocking<Unit> {
-    var job = launch {
+fun main() = runBlocking<Unit> {
+    var job = GlobalScope.launch {
         println("launch..." + Thread.currentThread().name)
     }
 
-    val job2 = async(CommonPool) {
+    val job2 = async {
         delay(500L)
         println("async..." + Thread.currentThread().name)
         return@async

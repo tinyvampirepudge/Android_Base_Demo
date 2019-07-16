@@ -2,10 +2,7 @@ package com.tiny.demo.firstlinecode.kotlin.primer.project14
 
 import android.widget.TextView
 import com.example.tinytongtong.kotlincoroutineapplication.AndroidCommonPool
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.launch
-import kotlinx.coroutines.experimental.runBlocking
+import kotlinx.coroutines.*
 import okhttp3.OkHttpClient
 import okhttp3.Request
 
@@ -21,7 +18,7 @@ private val mOkHttpClient = OkHttpClient()
 private val mRequest = Request.Builder().url("https://www.baidu.com").get().build()
 
 fun displayContent(textview: TextView) = runBlocking {
-    launch(UI) {
+    GlobalScope.launch(Dispatchers.Main) {
         textview.text = async(AndroidCommonPool) {
             // 不考虑异常的情况
             mOkHttpClient.newCall(mRequest).execute().body()?.string()

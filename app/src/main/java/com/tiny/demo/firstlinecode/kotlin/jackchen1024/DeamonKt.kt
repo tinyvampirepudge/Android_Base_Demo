@@ -1,9 +1,9 @@
 package com.tiny.demo.firstlinecode.kotlin.jackchen1024
 
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.launch
-import kotlinx.coroutines.experimental.runBlocking
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 /**
  * @Description: 协程 vs 守护线程
@@ -33,7 +33,7 @@ fun testDeamon1() {
 
 // 协程的行为和守护进程很像
 fun testDeamon2() = runBlocking {
-    launch(CommonPool) {
+    GlobalScope.launch {
         repeat(100) { i ->
             println("I'm sleeping $i ...")
             delay(500L)

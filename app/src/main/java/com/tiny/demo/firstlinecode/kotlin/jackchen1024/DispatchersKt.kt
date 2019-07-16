@@ -1,6 +1,10 @@
 package com.tiny.demo.firstlinecode.kotlin.jackchen1024
 
-import kotlinx.coroutines.experimental.*
+import kotlinx.coroutines.Dispatchers.Unconfined
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.newSingleThreadContext
+import kotlinx.coroutines.runBlocking
 
 /**
  * @Description: 协程上下文与调度器
@@ -24,10 +28,15 @@ fun testDispatchersAndThreads() = runBlocking {
         println("Default: I'm working in thread ${Thread.currentThread()}")
     }
 
-    jobs += launch(CommonPool) {
-        // 调度指派给ForkJoinPool.commonPool
-        println("CommonPool: I'm working in thread ${Thread.currentThread()}")
+    jobs += launch(coroutineContext) {
+        // 父协程的上下文 ： runBlocking coroutine
+        println("coroutineContext: I'm working in thread ${Thread.currentThread()}")
     }
+
+//    jobs += GlobalScope.launch {
+//        // 调度指派给ForkJoinPool.commonPool
+//        println("CommonPool: I'm working in thread ${Thread.currentThread()}")
+//    }
 
     jobs += launch(newSingleThreadContext("MyOwnThread")){
         // 将会在这个协程自己的新线程中执行

@@ -1,6 +1,6 @@
 package com.tiny.demo.firstlinecode.kotlin.jackchen1024
 
-import kotlinx.coroutines.experimental.*
+import kotlinx.coroutines.*
 
 /**
  * @Description: 在Finally中的协程代码
@@ -18,7 +18,7 @@ fun main(args: Array<String>) {
 
 // try finally 语句
 fun finallyCacheDemo() = runBlocking {
-    val job = launch(CommonPool) {
+    val job = GlobalScope.launch {
         try {
             repeat(1000) { i ->
                 println("I'm sleeping $i ...")
@@ -38,7 +38,7 @@ fun finallyCacheDemo() = runBlocking {
 
 // finally 语句中添加delay函数
 fun finallyCacheDemo1() = runBlocking {
-    val job = launch(CommonPool) {
+    val job = GlobalScope.launch {
         try {
             repeat(1000) { i ->
                 println("I'm sleeping $i ...")
@@ -59,7 +59,7 @@ fun finallyCacheDemo1() = runBlocking {
 }
 
 fun finallyCacheDemo2() = runBlocking {
-    val job = launch(CommonPool) {
+    val job = GlobalScope.launch {
         try {
             repeat(1000) { i ->
                 println("I'm sleeping $i ...")

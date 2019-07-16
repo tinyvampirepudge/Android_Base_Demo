@@ -1,6 +1,6 @@
 package com.tiny.demo.firstlinecode.kotlin.jackchen1024
 
-import kotlinx.coroutines.experimental.*
+import kotlinx.coroutines.*
 
 /**
  * @Description: 协程执行的取消
@@ -18,7 +18,7 @@ fun main(args: Array<String>) {
 }
 
 fun testCancellation() = runBlocking {
-    val job = launch(CommonPool) {
+    val job = GlobalScope.launch {
         repeat(1000) { i ->
             println("I'm sleeping $i ... CurrentThread: ${Thread.currentThread()}")
             delay(500L)
@@ -42,7 +42,7 @@ fun testCancellation() = runBlocking {
  * 计算的协程无法取消
  */
 fun testCooperativeCancellation1() = runBlocking {
-    var job = launch(CommonPool) {
+    var job = GlobalScope.launch {
         var nextPrintTime = 0L
         var i = 0
         while (i < 20) { // computation loop
@@ -75,7 +75,7 @@ fun testCooperativeCancellation1() = runBlocking {
  * 显式检查取消状态isActive
  */
 fun testCooperativeCancellation2() = runBlocking {
-    var job = launch(CommonPool) {
+    var job = GlobalScope.launch {
         var nextPrintTime = 0L
         var i = 0
         while (i < 20) {// computation loop
@@ -109,7 +109,7 @@ fun testCooperativeCancellation2() = runBlocking {
 
 
 fun testCooperativeCancellation3() = runBlocking {
-    val job = launch(CommonPool) {
+    val job = GlobalScope.launch {
         var nextPrintTime = 0L
         var i = 0
         while (i < 20) {// computation loop

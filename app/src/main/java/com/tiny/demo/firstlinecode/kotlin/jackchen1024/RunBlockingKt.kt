@@ -1,9 +1,9 @@
 package com.tiny.demo.firstlinecode.kotlin.jackchen1024
 
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.launch
-import kotlinx.coroutines.experimental.runBlocking
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 /**
  * @Description: runBlocking函数: 使用纯的Kotlin的协程代码来实现上面的 阻塞+非阻塞 的例子（不用Thread）。
@@ -26,7 +26,7 @@ fun testRunBlocking() = runBlocking {
     //主协程
     println("111" + Thread.currentThread().name)
 
-    launch(CommonPool) {
+    GlobalScope.launch {
         // 在common thread pool中创建协程
         println("222" + Thread.currentThread().name)
         delay(3000L)
@@ -45,14 +45,14 @@ fun testRunBlocking() = runBlocking {
  */
 fun testJoinCoroutine() = runBlocking<Unit> {
     // Start a coroutine
-    var job1 = launch(CommonPool) {
+    var job1 = GlobalScope.launch {
         println("job1 Thread: ${Thread.currentThread()}")
         println("job1 Start")
         delay(3000L)
         println("job1 End")
     }
 
-    var job2 = launch(CommonPool) {
+    var job2 = GlobalScope.launch {
         println("job2 Thread: ${Thread.currentThread()}")
         println("job2 Start")
         delay(5000L)

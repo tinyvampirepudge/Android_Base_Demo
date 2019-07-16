@@ -2,12 +2,14 @@ package com.tiny.demo.firstlinecode.kotlin.primer.project14
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Contacts
 import android.view.View
 import com.tiny.demo.firstlinecode.R
 import kotlinx.android.synthetic.main.activity_coroutines.*
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import org.jetbrains.anko.custom.async
 
 class CoroutinesActivity : AppCompatActivity() {
 
@@ -18,7 +20,7 @@ class CoroutinesActivity : AppCompatActivity() {
 
     fun test1(v: View) {
         // 表示是在UI线程中启动的
-        launch(UI) {
+        GlobalScope.launch(Dispatchers.Main) {
             println("在主线程中启动一个协程:" + Thread.currentThread().name)// 在主线程中启动一个协程:main
         }
     }

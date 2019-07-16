@@ -1,9 +1,8 @@
 package com.example.tinytongtong.kotlincoroutineapplication
 
 import android.os.AsyncTask
-import kotlinx.coroutines.experimental.CoroutineDispatcher
-import kotlinx.coroutines.experimental.Runnable
-import kotlin.coroutines.experimental.CoroutineContext
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlin.coroutines.CoroutineContext
 
 /**
  * @Description: 服用AsyncTask的线程池

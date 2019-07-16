@@ -1,6 +1,5 @@
 package com.tiny.demo.firstlinecode.javareference.reflect.type;
 
-import junit.framework.Assert;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;
