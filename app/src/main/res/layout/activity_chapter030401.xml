@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".kfysts.chapter03.Chapter030401Activity">
+
+    <com.tiny.demo.firstlinecode.kfysts.chapter03.eventview.EventViewGroupA
+        android:id="@+id/evg_a"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#3c393d"
+        android:orientation="vertical">
+
+        <com.tiny.demo.firstlinecode.kfysts.chapter03.eventview.EventViewA
+            android:id="@+id/ev_a"
+            android:layout_width="100dp"
+            android:background="#085cfe"
+            android:layout_height="75dp" />
+        
+        <com.tiny.demo.firstlinecode.kfysts.chapter03.eventview.EventViewGroupB
+            android:id="@+id/evg_b"
+            android:layout_width="match_parent"
+            android:layout_marginTop="125dp"
+            android:background="#b0defe"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <com.tiny.demo.firstlinecode.kfysts.chapter03.eventview.EventViewA
+                android:id="@+id/ev_a1"
+                android:layout_width="100dp"
+                android:layout_height="75dp"
+                android:background="#ef5350"/>
+
+            <com.tiny.demo.firstlinecode.kfysts.chapter03.eventview.EventViewB
+                android:id="@+id/ev_b"
+                android:layout_width="100dp"
+                android:layout_height="75dp"
+                android:background="#085cfe"/>
+
+            <com.tiny.demo.firstlinecode.kfysts.chapter03.eventview.EventViewC
+                android:id="@+id/ev_c"
+                android:layout_width="100dp"
+                android:layout_height="75dp"
+                android:background="#33ff33"/>
+
+
+        </com.tiny.demo.firstlinecode.kfysts.chapter03.eventview.EventViewGroupB>
+
+    </com.tiny.demo.firstlinecode.kfysts.chapter03.eventview.EventViewGroupA>
+
+</FrameLayout>
