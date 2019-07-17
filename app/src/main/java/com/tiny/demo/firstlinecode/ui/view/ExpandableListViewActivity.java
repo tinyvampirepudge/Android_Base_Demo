@@ -67,7 +67,7 @@ public class ExpandableListViewActivity extends BaseActivity {
             mRefreshLayout.resetNoMoreData();
         }, 2000));
 
-        mRefreshLayout.setOnLoadmoreListener(refreshlayout -> mRefreshLayout.getLayout().postDelayed(() -> {
+        mRefreshLayout.setOnRefreshListener(refreshlayout -> mRefreshLayout.getLayout().postDelayed(() -> {
             ToastUtils.showSingleToast("加载更多成功！");
             mRefreshLayout.finishRefresh();
         }, 2000));

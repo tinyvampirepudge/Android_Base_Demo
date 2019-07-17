@@ -22,6 +22,7 @@ import butterknife.ButterKnife;
  * <p>
  * Android事件分发机制，大表哥带你慢慢深入
  * https://www.jianshu.com/p/fc0590afb1bf
+ *
  * @Author wangjianzhou
  * @Date 2019-07-10 11:42
  * @Version TODO

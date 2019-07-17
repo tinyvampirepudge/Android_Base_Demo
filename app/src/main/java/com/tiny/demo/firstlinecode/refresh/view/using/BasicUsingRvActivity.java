@@ -39,7 +39,7 @@ public class BasicUsingRvActivity extends BaseActivity {
     protected void buildContentView() {
         toolbar.setNavigationOnClickListener(v -> finish());
         toolbar.setOnLongClickListener(v -> {
-            mRefreshLayout.finishLoadmore();
+            mRefreshLayout.finishLoadMore();
             return false;
         });
 
@@ -55,19 +55,19 @@ public class BasicUsingRvActivity extends BaseActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         //refreshLayout 设置
-        mRefreshLayout.setEnableAutoLoadmore(true);//开启自动加载功能（非必须）
+        mRefreshLayout.setEnableAutoLoadMore(true);//开启自动加载功能（非必须）
         mRefreshLayout.setOnRefreshListener(refreshlayout -> mRefreshLayout.getLayout().postDelayed(() -> {
             mAdapter.refresh(initData());
             mRefreshLayout.finishRefresh();
             mRefreshLayout.resetNoMoreData();
         }, 2000));
-        mRefreshLayout.setOnLoadmoreListener(refreshlayout -> mRefreshLayout.getLayout().postDelayed(() -> {
+        mRefreshLayout.setOnLoadMoreListener(refreshlayout -> mRefreshLayout.getLayout().postDelayed(() -> {
             mAdapter.loadmore(initData());
             if (mAdapter.getItemCount() > 60) {
                 ToastUtils.showSingleToast("\"数据全部加载完毕\"");
-                mRefreshLayout.finishLoadmoreWithNoMoreData();//将不会再次触发加载更多事件
+                mRefreshLayout.finishLoadMoreWithNoMoreData();//将不会再次触发加载更多事件
             } else {
-                refreshlayout.finishLoadmore();
+                refreshlayout.finishLoadMore();
             }
 
         }, 2000));

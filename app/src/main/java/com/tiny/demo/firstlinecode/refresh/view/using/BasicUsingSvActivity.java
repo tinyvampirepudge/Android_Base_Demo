@@ -28,7 +28,7 @@ public class BasicUsingSvActivity extends BaseActivity {
     protected void buildContentView() {
         toolbar.setNavigationOnClickListener(v -> finish());
         toolbar.setOnLongClickListener(v -> {
-            mRefreshLayout.finishLoadmore();
+            mRefreshLayout.finishLoadMore();
             return false;
         });
 
@@ -38,9 +38,9 @@ public class BasicUsingSvActivity extends BaseActivity {
             mRefreshLayout.resetNoMoreData();
         }, 2000));
 
-        mRefreshLayout.setOnLoadmoreListener(refreshlayout -> mRefreshLayout.getLayout().postDelayed(() -> {
+        mRefreshLayout.setOnLoadMoreListener(refreshlayout -> mRefreshLayout.getLayout().postDelayed(() -> {
             SmartToast.show("上拉加载更多");
-            mRefreshLayout.finishLoadmore();
+            mRefreshLayout.finishLoadMore();
         }, 2000));
 
         mRefreshLayout.autoRefresh();

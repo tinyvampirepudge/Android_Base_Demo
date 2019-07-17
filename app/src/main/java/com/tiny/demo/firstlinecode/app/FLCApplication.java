@@ -32,7 +32,7 @@ public class FLCApplication extends Application {
 
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
-        SmartRefreshLayout.setDefaultRefreshHeaderCreater((context, layout) -> {
+        SmartRefreshLayout.setDefaultRefreshHeaderCreator((context, layout) -> {
             layout.setPrimaryColorsId(R.color.colorPrimary, android.R.color.white);//全局设置主题颜色
             return new ClassicsHeader(context).setTimeFormat(new DynamicTimeFormat("更新于 %s"));
         });
