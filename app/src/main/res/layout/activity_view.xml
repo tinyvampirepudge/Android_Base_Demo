@@ -23,6 +23,12 @@
                 />
 
             <Button
+                android:id="@+id/btn_hsv_dispatch_touch_event"
+                style="@style/btn_style_lower"
+                android:text="HorizontalScrollView 和 ScrollView 相关的事件分发"
+                />
+
+            <Button
                 android:id="@+id/btn_dialog"
                 style="@style/btn_style_lower"
                 android:text="Dialog 相关"

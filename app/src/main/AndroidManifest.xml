@@ -632,7 +632,7 @@
         <activity android:name=".kfysts.chapter03.Chapter030301Activity" />
         <activity android:name=".kfysts.chapter03.Chapter030302Activity" />
         <activity android:name=".kfysts.chapter03.Chapter0304Activity" />
-        <activity android:name=".kfysts.chapter03.Chapter030401Activity"></activity>
+        <activity android:name=".kfysts.chapter03.Chapter030401Activity" />
         <activity android:name=".kfysts.chapter03.Chapter0305Activity" />
         <activity android:name=".kfysts.chapter03.Chapter030501Activity" />
         <activity android:name=".test.view.floating.FloatingActivity" />
@@ -783,6 +783,9 @@
         <activity
             android:name=".handler.HandlerSyncBarrierActivity"
             android:label="Handler中的SyncBarrier" />
+        <activity android:name=".view.dispatchevent.scrollview.HorizontalScrollviewDispatchTouchEventActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+
     </application>
 
 </manifest>

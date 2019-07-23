@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.dispatchevent.scrollview.HorizontalScrollviewDispatchTouchEventActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/lb_speech_orb_not_recording"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/bg"
+            android:padding="10dp"
+            android:text="RelativeLayot + TextView"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl11"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/lb_speech_orb_not_recording"
+        app:layout_constraintTop_toBottomOf="@id/rl1">
+
+        <HorizontalScrollView
+            android:id="@+id/hsv11"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/font_blue_2371e9"
+            android:text="HorizontalScrollView">
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tv11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/bg"
+            android:padding="10dp"
+            android:text="RelativeLayot + TextView"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl12"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/lb_speech_orb_not_recording"
+        app:layout_constraintTop_toBottomOf="@id/rl11">
+
+        <HorizontalScrollView
+            android:id="@+id/hsv12"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/font_blue_2371e9"
+            android:text="HorizontalScrollView">
+
+            <TextView
+                android:id="@+id/tv120"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/bg"
+                android:padding="10dp"
+                android:text="HorizontalScrollView + TextView"
+                android:textAllCaps="false" />
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tv121"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/bg"
+            android:padding="10dp"
+            android:text="RelativeLayot + TextView"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/lb_speech_orb_not_recording"
+        app:layout_constraintTop_toBottomOf="@id/rl12">
+
+        <ScrollView
+            android:id="@+id/sv2"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:background="@color/font_blue_2371e9">
+
+            <LinearLayout
+                android:id="@+id/ll2"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:background="#1B6600">
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="100dp"
+                    android:layout_height="300dp"
+                    android:background="@color/bg"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="RelativeLayout + ScrollView + LinearLayout + TextView"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/tv21"
+            android:layout_width="100dp"
+            android:layout_height="300dp"
+            android:layout_alignParentRight="true"
+            android:background="@color/bg"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="RelativeLayout + LinearLayout + TextView"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl3"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/lb_speech_orb_not_recording"
+        app:layout_constraintTop_toBottomOf="@id/rl2">
+
+        <HorizontalScrollView
+            android:id="@+id/hsv3"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/font_blue_2371e9">
+
+            <LinearLayout
+                android:id="@+id/ll3"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:background="#1B6600">
+
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="600dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:background="@color/bg"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="RelativeLayout + HorizontalScrollView + LinearLayout + TextView"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tv31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/bg"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="RelativeLayout + TextView"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
