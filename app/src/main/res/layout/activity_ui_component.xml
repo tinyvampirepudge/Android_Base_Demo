@@ -40,6 +40,12 @@
             style="@style/btn_style_lower"
             android:text="无限循环的viewpager"
             />
+
+        <Button
+            android:id="@+id/btn_textview"
+            style="@style/btn_style_lower"
+            android:text="TextView相关"
+            />
     </LinearLayout>
 
 </ScrollView>
