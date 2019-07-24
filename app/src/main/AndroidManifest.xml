@@ -37,6 +37,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".uicomponents.textview.SpannableStringBuilderActivity"></activity>
+        <activity android:name=".uicomponents.textview.TextViewEntryActivity" />
         <activity
             android:name=".guide.SplashActivity"
             android:theme="@style/AppStartFullScreen">
@@ -783,9 +785,9 @@
         <activity
             android:name=".handler.HandlerSyncBarrierActivity"
             android:label="Handler中的SyncBarrier" />
-        <activity android:name=".view.dispatchevent.scrollview.HorizontalScrollviewDispatchTouchEventActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-
+        <activity
+            android:name=".view.dispatchevent.scrollview.HorizontalScrollviewDispatchTouchEventActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>
