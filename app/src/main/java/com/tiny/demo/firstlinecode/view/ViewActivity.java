@@ -5,7 +5,7 @@ import android.content.Intent;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.view.dialog.DialogDemoActivity;
-import com.tiny.demo.firstlinecode.view.dispatchevent.ViewDispatchTouchEventActivity;
+import com.tiny.demo.firstlinecode.view.dispatchevent.ViewDispatchTouchEventEntryActivity;
 import com.tiny.demo.firstlinecode.view.dispatchevent.scrollview.HorizontalScrollviewDispatchTouchEventActivity;
 import com.tiny.demo.firstlinecode.view.drag.DragActivity;
 import com.tiny.demo.firstlinecode.view.drag.DragActivity1;
@@ -32,11 +32,7 @@ public class ViewActivity extends BaseActivity {
     protected void buildContentView() {
         //view事件分发
         findViewById(R.id.btn_view_dispatch_touch_event).setOnClickListener((view) -> {
-            ViewDispatchTouchEventActivity.actionStart(mContext);
-        });
-        // HorizontalScrollView 和 ScrollView 相关的事件分发
-        findViewById(R.id.btn_hsv_dispatch_touch_event).setOnClickListener((view) -> {
-            HorizontalScrollviewDispatchTouchEventActivity.actionStart(mContext);
+            ViewDispatchTouchEventEntryActivity.actionStart(mContext);
         });
         //对话框展示相关代码
         findViewById(R.id.btn_dialog).setOnClickListener(v -> startActivity(new Intent(mContext, DialogDemoActivity.class)));
