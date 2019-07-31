@@ -5,10 +5,10 @@
     android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.tiny.demo.firstlinecode.MainActivity"
     tools:showIn="@layout/app_bar_main">
@@ -310,6 +310,11 @@
             android:id="@+id/btn_filter"
             style="@style/btn_style_lower"
             android:text="Android中Filter的使用" />
+
+        <Button
+            android:id="@+id/btn_screen_adaptive"
+            style="@style/btn_style_lower"
+            android:text="Android中的屏幕适配" />
 
         <Button
             android:id="@+id/btn_test"

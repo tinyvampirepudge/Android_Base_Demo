@@ -37,7 +37,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.dispatchevent.summary.ViewDispatchTouchEventTestActivity"></activity>
+        <activity android:name=".screenadaptive.ScreenAdaptiveEntryActivity" />
+        <activity android:name=".view.dispatchevent.summary.ViewDispatchTouchEventTestActivity" />
         <activity android:name=".uicomponents.textview.SpannableStringBuilderActivity" />
         <activity android:name=".uicomponents.textview.TextViewEntryActivity" />
         <activity

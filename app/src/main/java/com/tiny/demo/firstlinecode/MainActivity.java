@@ -51,6 +51,7 @@ import com.tiny.demo.firstlinecode.provider.ContentProviderActivity;
 import com.tiny.demo.firstlinecode.proxy.ProxyActivity;
 import com.tiny.demo.firstlinecode.refresh.view.SmartRefreshHomeActivity;
 import com.tiny.demo.firstlinecode.rxjava2.Rxjava2EntryActivity;
+import com.tiny.demo.firstlinecode.screenadaptive.ScreenAdaptiveEntryActivity;
 import com.tiny.demo.firstlinecode.service.ServiceEntryActivity;
 import com.tiny.demo.firstlinecode.smarttoast.SmartToastActivity;
 import com.tiny.demo.firstlinecode.sourcecode.AndroidSourceCodeDesignPatternActivity;
@@ -356,6 +357,9 @@ public class MainActivity extends BaseActivity
 
         //Android中Filter的使用
         findViewById(R.id.btn_filter).setOnClickListener(v -> FilterTestActivity.actionStart(mContext));
+
+        //Android中的屏幕适配
+        findViewById(R.id.btn_screen_adaptive).setOnClickListener(v -> ScreenAdaptiveEntryActivity.actionStart(mContext));
 
         //test的数据都放在这里面
         findViewById(R.id.btn_test).setOnClickListener(v -> {
