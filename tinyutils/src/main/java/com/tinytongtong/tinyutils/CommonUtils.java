@@ -78,11 +78,10 @@ public class CommonUtils {
         }
     };
 
-
     /**
-     * @author yangzc
-     * @data 2016/1/5 9:40
-     * @desc 指定时间之前的所有日期
+     * 指定时间之前的所有日期
+     * @param beginDate
+     * @return
      */
     public static List<Long> getDatesBetweenTwoDate(Date beginDate) {
         Date endDate = new Date();
