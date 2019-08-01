@@ -1,4 +1,4 @@
-package com.example.tiny.tinymodule.util;
+package com.tinytongtong.tinyutils;
 
 import android.text.TextUtils;
 
@@ -7,12 +7,12 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * Desc:
- * Created by tiny on 2018/1/5.
- * Time: 23:18
- * Version:
+ * @Description: 日期相关工具类
+ *
+ * @Author wangjianzhou
+ * @Date 2019-08-01 11:38
+ * @Version
  */
-
 public class DateUtils {
 
     /**

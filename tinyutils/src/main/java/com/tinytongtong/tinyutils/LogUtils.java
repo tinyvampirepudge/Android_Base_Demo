@@ -1,13 +1,14 @@
-package com.example.tiny.tinymodule.util;
+package com.tinytongtong.tinyutils;
 
 import android.util.Log;
 
 
 /**
- * 类描述：日志管理类
+ * @Description: 日志管理类
  *
- * @author wuhenzhizao
- * @creation 2014-4-23
+ * @Author wangjianzhou
+ * @Date 2019-08-01 11:37
+ * @Version
  */
 public class LogUtils {
     private static final String TAG = "tiny_module";

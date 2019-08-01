@@ -3,7 +3,7 @@ package com.tiny.demo.firstlinecode.handler;
 import android.os.Handler;
 import android.widget.Button;
 
-import com.example.tiny.tinymodule.util.ThreadUtils;
+import com.tinytongtong.tinyutils.ThreadUtils;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 

@@ -13,9 +13,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
-import com.example.tiny.tinymodule.util.ThreadUtils;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.ThreadUtils;
 
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 

@@ -1,11 +1,13 @@
-package com.example.tiny.tinymodule.util;
+package com.tinytongtong.tinyutils;
 
 import java.util.List;
 
 /**
- * Desc:    list相关工具类。
- * Created by tiny on 2017/10/27.
- * Version:
+ * @Description: list相关工具类。
+ *
+ * @Author wangjianzhou
+ * @Date 2019-08-01 11:39
+ * @Version
  */
 
 public class ListUtils {

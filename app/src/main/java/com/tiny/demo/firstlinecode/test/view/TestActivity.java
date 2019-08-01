@@ -11,14 +11,13 @@ import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.tiny.tinymodule.ModuleTest;
-import com.example.tiny.tinymodule.util.ThreadUtils;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
 import com.tiny.demo.firstlinecode.templates.temp1.view.MvpTestActivity;
 import com.tiny.demo.firstlinecode.templates.template5.view.MvpTest5Actiity;
 import com.tiny.demo.firstlinecode.test.view.floating.FloatingActivity;
+import com.tinytongtong.tinyutils.ThreadUtils;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -96,7 +95,7 @@ public class TestActivity extends BaseActivity {
 
     @Override
     protected void initViewData() {
-        ModuleTest.test();
+
     }
 
     @OnClick({R.id.btn_test_chLayout, R.id.btn_test_listview})

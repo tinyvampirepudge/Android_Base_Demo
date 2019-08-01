@@ -1,4 +1,4 @@
-package com.example.tiny.tinymodule.util;
+package com.tinytongtong.tinyutils;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -7,9 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 序列化map供Bundle传递map使用
- * <p>
- * Created by tiny on 16/7/28.
+ * @Description: 序列化map供Bundle传递map使用
+ *
+ * @Author wangjianzhou
+ * @Date 2019-08-01 11:39
+ * @Version
  */
 public class ParcelableMap implements Parcelable {
     private Map<String, String> map;

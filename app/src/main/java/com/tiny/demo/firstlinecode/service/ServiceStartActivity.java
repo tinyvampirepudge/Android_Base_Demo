@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.tiny.tinymodule.util.LogUtils;
-import com.example.tiny.tinymodule.util.ThreadUtils;
+import com.tinytongtong.tinyutils.LogUtils;
+import com.tinytongtong.tinyutils.ThreadUtils;
 import com.tiny.demo.firstlinecode.R;
 
 /**

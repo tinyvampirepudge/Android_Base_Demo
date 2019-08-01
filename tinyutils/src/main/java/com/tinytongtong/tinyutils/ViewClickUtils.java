@@ -1,4 +1,4 @@
-package com.example.tiny.tinymodule.util;
+package com.tinytongtong.tinyutils;
 
 import android.content.Context;
 import android.graphics.Rect;
@@ -6,12 +6,15 @@ import android.view.MotionEvent;
 import android.view.TouchDelegate;
 import android.view.View;
 
-
 /**
- * Created by tiny on 17/7/26.
+ * @Description: 给View的事件传递设置代理，放大View点击区域。
+ *
+ * @Author wangjianzhou
+ * @Date 2019-08-01 11:40
+ * @Version
  */
 
-public class ViewUtils {
+public class ViewClickUtils {
 
     public static void setTouchDelegate(final Context mContext, final View view) {
         setTouchDelegate(mContext, view, 30, 30, 30, 30);

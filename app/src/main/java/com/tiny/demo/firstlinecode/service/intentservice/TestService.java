@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
-import com.example.tiny.tinymodule.util.ThreadUtils;
+import com.tinytongtong.tinyutils.ThreadUtils;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
 
 /**

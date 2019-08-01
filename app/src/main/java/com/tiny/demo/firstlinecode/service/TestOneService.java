@@ -4,7 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-import com.example.tiny.tinymodule.util.ThreadUtils;
+import com.tinytongtong.tinyutils.ThreadUtils;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 

@@ -1,12 +1,16 @@
-package com.example.tiny.tinymodule.util;
+package com.tinytongtong.tinyutils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.DisplayMetrics;
 
+import java.util.Locale;
+
 /**
- * 屏幕工具类
- * <p/>
- * Created by wuhenzhizao on 2014/12/10.
+ * @Description: 屏幕工具类
+ * @Author wangjianzhou
+ * @Date 2019-08-01 11:39
+ * @Version
  */
 public class ScreenUtils {
 
@@ -71,5 +75,42 @@ public class ScreenUtils {
         DisplayMetrics dm = context.getResources().getDisplayMetrics();
         int h = dm.heightPixels;
         return h;
+    }
+
+    /**
+     * 获取DisplayMetrics相关信息
+     *
+     * @param context
+     * @return
+     */
+    public static String getDisplayMetricsInfo(Context context) {
+        if (context == null || context.getResources() == null || context.getResources().getDisplayMetrics() == null) {
+            return "无法获取";
+        }
+
+        StringBuffer sb = new StringBuffer("DisplayMetrics:\n");
+
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        float heightPixels = displayMetrics.heightPixels;
+        float widthPixels = displayMetrics.widthPixels;
+        float density = displayMetrics.density;
+        int densityDpi = displayMetrics.densityDpi;
+        float scaledDensity = displayMetrics.scaledDensity;
+        // 屏幕尺寸，单位inch
+        double screenSize = Math.sqrt((Math.pow(heightPixels, 2) + Math.pow(widthPixels, 2))) / densityDpi;
+
+        sb.append(String.format(Locale.getDefault(), "heightPixels: %.2fpx", heightPixels));
+        sb.append("\n");
+        sb.append(String.format(Locale.getDefault(), "widthPixels: %.2fpx", widthPixels));
+        sb.append("\n");
+        sb.append(String.format(Locale.getDefault(), "density: %.2fpx", density));
+        sb.append("\n");
+        sb.append(String.format(Locale.getDefault(), "densityDpi: %dpx", densityDpi));
+        sb.append("\n");
+        sb.append(String.format(Locale.getDefault(), "scaledDensity: %.2fpx", scaledDensity));
+        sb.append("\n");
+        sb.append(String.format(Locale.getDefault(), "screenSize(计算得出的): %.2finch", screenSize));
+
+        return sb.toString();
     }
 }

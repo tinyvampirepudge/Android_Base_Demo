@@ -5,9 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.tiny.tinymodule.util.ThreadUtils;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.ThreadUtils;
 
 import java.util.concurrent.TimeUnit;
 

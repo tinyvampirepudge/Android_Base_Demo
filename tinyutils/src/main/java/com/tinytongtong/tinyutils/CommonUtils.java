@@ -1,4 +1,4 @@
-package com.example.tiny.tinymodule.util;
+package com.tinytongtong.tinyutils;
 
 
 
@@ -46,7 +46,11 @@ import java.util.Random;
 import java.util.regex.Pattern;
 
 /**
- * 字符串操作工具包
+ * @Description: 字符串操作工具包
+ *
+ * @Author wangjianzhou
+ * @Date 2019-08-01 11:38
+ * @Version
  */
 public class CommonUtils {
     private final static Pattern emailer = Pattern

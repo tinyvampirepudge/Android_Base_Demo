@@ -8,6 +8,7 @@ import android.util.DisplayMetrics;
 import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
+import com.tinytongtong.tinyutils.ScreenUtils;
 
 import java.util.Locale;
 
@@ -39,6 +40,10 @@ public class ScreenAdaptiveEntryActivity extends AppCompatActivity {
     TextView tv4;
     @BindView(R.id.tv5)
     TextView tv5;
+    @BindView(R.id.tv6)
+    TextView tv6;
+    @BindView(R.id.tv7)
+    TextView tv7;
 
     public static void actionStart(Context context) {
         Intent starter = new Intent(context, ScreenAdaptiveEntryActivity.class);
@@ -56,6 +61,7 @@ public class ScreenAdaptiveEntryActivity extends AppCompatActivity {
         float widthPixels = displayMetrics.widthPixels;
         float density = displayMetrics.density;
         int densityDpi = displayMetrics.densityDpi;
+        float scaledDensity = displayMetrics.scaledDensity;
         // 屏幕尺寸，单位inch
         double screenSize = Math.sqrt((Math.pow(heightPixels, 2) + Math.pow(widthPixels, 2))) / densityDpi;
 
@@ -63,6 +69,9 @@ public class ScreenAdaptiveEntryActivity extends AppCompatActivity {
         tv2.setText(String.format(Locale.getDefault(), "widthPixels: %.2fpx", widthPixels));
         tv3.setText(String.format(Locale.getDefault(), "density: %.2fpx", density));
         tv4.setText(String.format(Locale.getDefault(), "densityDpi: %dpx", densityDpi));
-        tv5.setText(String.format(Locale.getDefault(), "screenSize: %.2finch", screenSize));
+        tv5.setText(String.format(Locale.getDefault(), "scaledDensity: %.2fpx", scaledDensity));
+        tv6.setText(String.format(Locale.getDefault(), "screenSize: %.2finch", screenSize));
+
+        tv7.setText(ScreenUtils.getDisplayMetricsInfo(this));
     }
 }

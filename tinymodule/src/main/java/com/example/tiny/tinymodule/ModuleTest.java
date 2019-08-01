@@ -1,6 +1,6 @@
 package com.example.tiny.tinymodule;
 
-import com.example.tiny.tinymodule.util.LogUtils;
+import android.util.Log;
 
 /**
  * Desc:
@@ -10,6 +10,6 @@ import com.example.tiny.tinymodule.util.LogUtils;
 
 public class ModuleTest {
     public static void test() {
-        LogUtils.e("ModuleTest test");
+        Log.e("tinymodule", "ModuleTest test");
     }
 }

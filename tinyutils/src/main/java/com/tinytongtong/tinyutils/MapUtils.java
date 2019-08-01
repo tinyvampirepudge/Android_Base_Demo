@@ -1,4 +1,4 @@
-package com.example.tiny.tinymodule.util;
+package com.tinytongtong.tinyutils;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -9,8 +9,11 @@ import java.util.Map;
 
 
 /**
- * Created by tiny on 16/7/28.
- * hashMap工具类
+ * @Description: Map工具类
+ *
+ * @Author wangjianzhou
+ * @Date 2019-08-01 11:38
+ * @Version
  */
 public class MapUtils {
     //界面之间传递的hashMap参数的key

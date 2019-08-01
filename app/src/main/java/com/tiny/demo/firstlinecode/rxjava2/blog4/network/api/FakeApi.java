@@ -1,8 +1,8 @@
 package com.tiny.demo.firstlinecode.rxjava2.blog4.network.api;
 
-import com.example.tiny.tinymodule.util.ThreadUtils;
 import com.tiny.demo.firstlinecode.rxjava2.blog4.model.FakeThing;
 import com.tiny.demo.firstlinecode.rxjava2.blog4.model.FakeToken;
+import com.tinytongtong.tinyutils.ThreadUtils;
 
 import java.util.Random;
 

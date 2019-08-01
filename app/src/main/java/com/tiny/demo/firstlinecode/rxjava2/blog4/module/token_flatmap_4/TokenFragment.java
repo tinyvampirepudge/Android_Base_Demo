@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.tiny.tinymodule.util.ThreadUtils;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 import com.tiny.demo.firstlinecode.rxjava2.BaseRxFragment;
@@ -18,6 +17,7 @@ import com.tiny.demo.firstlinecode.rxjava2.blog4.model.FakeThing;
 import com.tiny.demo.firstlinecode.rxjava2.blog4.model.FakeToken;
 import com.tiny.demo.firstlinecode.rxjava2.blog4.network.NetWork;
 import com.tiny.demo.firstlinecode.rxjava2.blog4.network.api.FakeApi;
+import com.tinytongtong.tinyutils.ThreadUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

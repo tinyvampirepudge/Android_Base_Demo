@@ -4,7 +4,7 @@ import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
 
-import com.example.tiny.tinymodule.util.ThreadUtils;
+import com.tinytongtong.tinyutils.ThreadUtils;
 
 
 /**

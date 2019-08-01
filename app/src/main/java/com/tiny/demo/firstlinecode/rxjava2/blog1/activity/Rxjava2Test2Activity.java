@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
-import com.example.tiny.tinymodule.util.ThreadUtils;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.common.bean.ResBean;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
@@ -13,6 +12,7 @@ import com.tiny.demo.firstlinecode.rxjava2.blog1.myretrofit.MyRetrofitClient;
 import com.tiny.demo.firstlinecode.rxjava2.blog1.myretrofit.bean.KingRegionBean;
 import com.tiny.demo.firstlinecode.storage.greendao.GreenDaoHelper;
 import com.tiny.demo.firstlinecode.storage.greendao.bean.User;
+import com.tinytongtong.tinyutils.ThreadUtils;
 
 import java.util.HashMap;
 import java.util.List;

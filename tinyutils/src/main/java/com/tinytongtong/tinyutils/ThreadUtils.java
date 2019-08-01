@@ -1,13 +1,14 @@
-package com.example.tiny.tinymodule.util;
+package com.tinytongtong.tinyutils;
 
 import android.os.Looper;
 
 /**
- * Desc:    Thread相关的工具类
- * Created by tiny on 2017/12/27.
- * Version:
+ * @Description: Thread相关的工具类
+ *
+ * @Author wangjianzhou
+ * @Date 2019-08-01 11:39
+ * @Version
  */
-
 public class ThreadUtils {
 
     /**

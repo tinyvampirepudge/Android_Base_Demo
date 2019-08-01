@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.tiny.tinymodule.util.LogUtils;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.kfysts.chapter02.aidl.Book1ManagerActivity;
 import com.tiny.demo.firstlinecode.kfysts.chapter02.aidl.BookManagerService;
@@ -14,6 +13,7 @@ import com.tiny.demo.firstlinecode.kfysts.chapter02.contentprovider.ContentProvi
 import com.tiny.demo.firstlinecode.kfysts.chapter02.file.Chapter02FileSharingActivity;
 import com.tiny.demo.firstlinecode.kfysts.chapter02.messenger.MessengerActivity;
 import com.tiny.demo.firstlinecode.kfysts.chapter02.socket.SocketIPCActivity;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;

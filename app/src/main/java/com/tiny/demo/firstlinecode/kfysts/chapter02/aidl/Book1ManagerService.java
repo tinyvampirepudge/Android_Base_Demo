@@ -10,8 +10,8 @@ import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
 
-import com.example.tiny.tinymodule.util.ThreadUtils;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.ThreadUtils;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

@@ -11,9 +11,9 @@ import android.os.Process;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.example.tiny.tinymodule.util.ThreadUtils;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.ProcessUtil;
+import com.tinytongtong.tinyutils.ThreadUtils;
 
 /**
  * Desc:
