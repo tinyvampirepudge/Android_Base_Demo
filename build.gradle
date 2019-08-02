@@ -19,10 +19,6 @@ buildscript {
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // add plugin
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
-
-        //加上这两行
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
     }
 }
 

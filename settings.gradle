@@ -1,4 +1,4 @@
-include ':app', ':tinyutils',
+include ':app',
         ':material-spinner-1.0.5',
         ':pulltorefresh-library',
         ':tinymodule'

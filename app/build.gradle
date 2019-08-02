@@ -302,9 +302,12 @@ dependencies {
 //    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 
-    // 引入tinyutils
-    implementation project(path: ':tinyutils')
-//    implementation "com.tinytongtong:tinyutils:0.0.1"
+    // 引入tinyutils，https://github.com/tinyvampirepudge/TinyUtils
+//    implementation project(path: ':tinyutils')
+    implementation "com.tinytongtong:tinyutils:0.0.2"
+
+    // 引入loopviewpagerlibrary，https://github.com/tinyvampirepudge/LoopViewPagerGallary
+    implementation 'com.tinytongtong:loopviewpagerlibrary:1.1.0'
 }
 
 kotlin {
