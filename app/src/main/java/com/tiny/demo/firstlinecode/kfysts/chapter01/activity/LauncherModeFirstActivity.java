@@ -38,10 +38,18 @@ public class LauncherModeFirstActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btn_test3)
-    public void onViewClicked() {
-        startActivity(new Intent(this, ActivityStackCActivity.class));
-        startActivity(new Intent(this, ActivityStackDActivity.class));
+    public void onBtnTest3Clicked() {
         startActivity(new Intent(this, ActivityStackAActivity.class));
         startActivity(new Intent(this, ActivityStackBActivity.class));
+        startActivity(new Intent(this, ActivityStackCActivity.class));
+        startActivity(new Intent(this, ActivityStackDActivity.class));
+    }
+
+    @OnClick(R.id.btn_test4)
+    public void onBtnTest4Clicked() {
+        Intent intent = new Intent();
+        intent.setClass(this, LauncherModeSecondActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        getApplicationContext().startActivity(intent);
     }
 }

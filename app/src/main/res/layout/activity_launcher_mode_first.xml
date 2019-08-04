@@ -22,4 +22,9 @@
         style="@style/btn_style_lower"
         android:text="taskAffinity相关"/>
 
+    <Button
+        android:id="@+id/btn_test4"
+        style="@style/btn_style_lower"
+        android:text="通过ApplicationContext启动Activity"/>
+
 </LinearLayout>
