@@ -12,6 +12,7 @@ import com.tiny.demo.firstlinecode.view.drag.DragActivity1;
 import com.tiny.demo.firstlinecode.view.drag.DragActivity3;
 import com.tiny.demo.firstlinecode.view.drag.DragActivity4;
 import com.tiny.demo.firstlinecode.view.drag.DragActivity5;
+import com.tiny.demo.firstlinecode.view.saverestore.SaveRestoreEntryActivity;
 
 /**
  * Desc: View 相关，
@@ -46,6 +47,8 @@ public class ViewActivity extends BaseActivity {
         findViewById(R.id.btn_view_drag4).setOnClickListener(v -> startActivity(new Intent(mContext, DragActivity4.class)));
 
         findViewById(R.id.btn_view_drag5).setOnClickListener(v -> startActivity(new Intent(mContext, DragActivity5.class)));
+
+        findViewById(R.id.btn_view_save_restore).setOnClickListener(v -> SaveRestoreEntryActivity.actionStart(this));
     }
 
     @Override
