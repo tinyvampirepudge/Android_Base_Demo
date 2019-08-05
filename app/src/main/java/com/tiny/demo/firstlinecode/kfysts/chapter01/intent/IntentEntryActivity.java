@@ -2,6 +2,7 @@ package com.tiny.demo.firstlinecode.kfysts.chapter01.intent;
 
 import android.content.ComponentName;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.ImplicitIntentResolvedActivity;
 import com.tiny.demo.firstlinecode.test.view.TestActivity;
 
 import butterknife.BindView;
@@ -34,6 +36,11 @@ public class IntentEntryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intent_entry);
         ButterKnife.bind(this);
+    }
+
+    @OnClick(R.id.btn_intent_test0)
+    public void onBtnIntentTest0Clicked() {
+        ImplicitIntentResolvedActivity.actionStart(this);
     }
 
     @OnClick(R.id.btn_intent_test1)
@@ -245,7 +252,14 @@ public class IntentEntryActivity extends AppCompatActivity {
         intent.addCategory("com.tinytongtong.dividerviewdemo.category.j");
         //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
         intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/阿西吧"), "text/plain");
-        if (intent.resolveActivity(getPackageManager()) != null) {
+//        if (intent.resolveActivity(getPackageManager()) != null) {
+//            LogUtils.e("match success");
+//            startActivity(intent);
+//        } else {
+//            LogUtils.e("match failure");
+//        }
+
+        if (getPackageManager().resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY) != null) {
             LogUtils.e("match success");
             startActivity(intent);
         } else {

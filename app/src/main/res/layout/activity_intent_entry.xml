@@ -12,6 +12,11 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btn_intent_test0"
+            style="@style/btn_style_lower"
+            android:text="查询隐式Intent是否有匹配的三个方法" />
+
+        <Button
             android:id="@+id/btn_intent_test1"
             style="@style/btn_style_lower"
             android:text="显式Intent调用——构造方法传入Component" />

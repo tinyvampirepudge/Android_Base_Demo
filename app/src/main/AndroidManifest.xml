@@ -791,6 +791,40 @@
         <activity android:name=".view.dispatchevent.summary.ViewDispatchTouchEventTestActivity" />
         <activity android:name=".screenadaptive.ScreenAdaptiveEntryActivity" />
         <activity android:name=".view.saverestore.SaveRestoreEntryActivity" />
+        <activity
+            android:name=".kfysts.chapter01.intent.resolve.ImplicitIntentResolvedActivity"
+            android:label="隐式Intent匹配Activity查询" />
+        <activity
+            android:name=".kfysts.chapter01.intent.resolve.ImplicitIntentTestAActivity"
+            android:label="ImplicitIntentTestAActivity">
+            <intent-filter>
+                <action android:name="com.tinytongtong.implicit.intent.test.action.a" />
+                <action android:name="com.tinytongtong.implicit.intent.test.action.abc" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".kfysts.chapter01.intent.resolve.ImplicitIntentTestBActivity"
+            android:label="ImplicitIntentTestBActivity">
+            <intent-filter>
+                <action android:name="com.tinytongtong.implicit.intent.test.action.b" />
+                <action android:name="com.tinytongtong.implicit.intent.test.action.abc" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".kfysts.chapter01.intent.resolve.ImplicitIntentTestCActivity"
+            android:label="ImplicitIntentTestBActivity">
+            <intent-filter>
+                <action android:name="com.tinytongtong.implicit.intent.test.action.c" />
+                <action android:name="com.tinytongtong.implicit.intent.test.action.abc" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
