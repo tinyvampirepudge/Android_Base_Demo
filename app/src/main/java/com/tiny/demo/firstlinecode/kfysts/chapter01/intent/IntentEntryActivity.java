@@ -9,8 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
 import com.tiny.demo.firstlinecode.kfysts.chapter01.intent.explicit.ExplicitIntentEntryActivity;
-import com.tiny.demo.firstlinecode.kfysts.chapter01.intent.intentfilter.IntentFilterEntryActivity;
-import com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.ImplicitIntentResolvedActivity;
+import com.tiny.demo.firstlinecode.kfysts.chapter01.intent.intentfilter.ImplicitIntentEntryActivity;
+import com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.IntentFilterResolvedEntryActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -31,12 +31,12 @@ public class IntentEntryActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_intent_test0)
     public void onBtnIntentTest0Clicked() {
-        ImplicitIntentResolvedActivity.actionStart(this);
+        IntentFilterResolvedEntryActivity.actionStart(this);
     }
 
     @OnClick(R.id.btn_intent_test1)
     public void onBtnIntentTest01Clicked() {
-        IntentFilterEntryActivity.actionStart(this);
+        ImplicitIntentEntryActivity.actionStart(this);
     }
 
     @OnClick(R.id.btn_intent_test2)
@@ -44,196 +44,6 @@ public class IntentEntryActivity extends AppCompatActivity {
         ExplicitIntentEntryActivity.actionStart(this);
     }
 
-    @OnClick(R.id.btn_intent_test5)
-    public void onBtnIntentTest5Clicked() {
-        Intent intent = new Intent();
-        //action
-//        intent.setAction("com.wjz.intent.action.a");
-        //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
-        intent.addCategory("com.wjz.intent.category.a");
-        //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
-        intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/abcdefg"), "text/plain");
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
-            startActivity(intent);
-        } else {
-            LogUtils.e("match failure");
-        }
-    }
-
-    @OnClick(R.id.btn_intent_test6)
-    public void onBtnIntentTest6Clicked() {
-        //Create the text message with a string
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "猫了个咪");
-        sendIntent.setType("text/plain");
-
-        //Verify that the intent will resolve to an activity
-        if (sendIntent.resolveActivity(getPackageManager()) != null) {
-            startActivity(sendIntent);
-        }
-    }
-
-    @OnClick(R.id.btn_intent_test7)
-    public void onBtnIntentTest7Clicked() {
-        //选择器
-        Intent sendIntent = new Intent(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "猫了个咪啊");
-        sendIntent.setType("text/plain");
-        //Always use string resources for UI text.
-        //This says something like "Share this photo with"
-        String title = getResources().getString(R.string.chooser_title);
-        //Create intent to show the chooser dialog
-        Intent chooser = Intent.createChooser(sendIntent, title);
-
-        //Verify the original intent will resolve to at least one activity
-        if (sendIntent.resolveActivity(getPackageManager()) != null) {
-            startActivity(chooser);
-        }
-    }
 
 
-    @OnClick(R.id.btn_intent_test8)
-    public void onBtnIntentTest8Clicked() {
-        Intent intent = new Intent();
-        //action
-        intent.setAction("com.tinytongtong.dividerviewdemo.action.c");
-        //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
-        intent.addCategory("com.tinytongtong.dividerviewdemo.category.c");
-        //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
-        intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/abcdefg"), "text/plain");
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
-            startActivity(intent);
-        } else {
-            LogUtils.e("match failure");
-        }
-    }
-
-    @OnClick(R.id.btn_intent_test9)
-    public void onBtnIntentTest9Clicked() {
-        Intent intent = new Intent();
-        //action
-        intent.setAction("com.tinytongtong.dividerviewdemo.action.d");
-        //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
-        intent.addCategory("com.tinytongtong.dividerviewdemo.category.d");
-        //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
-        intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/猫了个咪"), "text/plain");
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
-            startActivity(intent);
-        } else {
-            LogUtils.e("match failure");
-        }
-    }
-
-    @OnClick(R.id.btn_intent_test10)
-    public void onBtnIntentTest10Clicked() {
-        Intent intent = new Intent();
-        //action
-        intent.setAction("com.tinytongtong.dividerviewdemo.action.e");
-        //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
-        intent.addCategory("com.tinytongtong.dividerviewdemo.category.e");
-        //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
-        intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/啊哈哈哈哈"), "text/plain");
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
-            startActivity(intent);
-        } else {
-            LogUtils.e("match failure");
-        }
-    }
-
-    @OnClick(R.id.btn_intent_test11)
-    public void onBtnIntentTest11Clicked() {
-        Intent intent = new Intent();
-        //action
-        intent.setAction("com.tinytongtong.dividerviewdemo.action.f");
-        //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
-        intent.addCategory("com.tinytongtong.dividerviewdemo.category.f");
-        //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
-        intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/阿西吧"), "text/plain");
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
-            startActivity(intent);
-        } else {
-            LogUtils.e("match failure");
-        }
-    }
-
-    @OnClick(R.id.btn_intent_test12)
-    public void onBtnIntentTest12Clicked() {
-        Intent intent = new Intent();
-        //action
-        intent.setAction("com.tinytongtong.dividerviewdemo.action.g");
-        //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
-        intent.addCategory("com.tinytongtong.dividerviewdemo.category.g");
-        //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
-        intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/阿西吧"), "text/plain");
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
-            startActivity(intent);
-        } else {
-            LogUtils.e("match failure");
-        }
-    }
-
-    @OnClick(R.id.btn_intent_test13)
-    public void onBtnIntentTest13Clicked() {
-        Intent intent = new Intent();
-        //action
-        intent.setAction("com.tinytongtong.dividerviewdemo.action.h");
-        //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
-        intent.addCategory("com.tinytongtong.dividerviewdemo.category.h");
-        //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
-        intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/阿西吧"), "text/plain");
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
-            startActivity(intent);
-        } else {
-            LogUtils.e("match failure");
-        }
-    }
-
-    @OnClick(R.id.btn_intent_test14)
-    public void onBtnIntentTest14Clicked() {
-        Intent intent = new Intent();
-        //action
-        intent.setAction("com.tinytongtong.dividerviewdemo.action.i");
-        //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
-        intent.addCategory("com.tinytongtong.dividerviewdemo.category.i");
-        //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
-        intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/阿西吧"), "text/plain");
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
-            startActivity(intent);
-        } else {
-            LogUtils.e("match failure");
-        }
-    }
-
-    @OnClick(R.id.btn_intent_test15)
-    public void onBtnIntentTest15Clicked() {
-        Intent intent = new Intent();
-        //action
-        intent.setAction("com.tinytongtong.dividerviewdemo.action.j");
-        //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
-        intent.addCategory("com.tinytongtong.dividerviewdemo.category.j");
-        //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
-        intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/阿西吧"), "text/plain");
-//        if (intent.resolveActivity(getPackageManager()) != null) {
-//            LogUtils.e("match success");
-//            startActivity(intent);
-//        } else {
-//            LogUtils.e("match failure");
-//        }
-
-        if (getPackageManager().resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY) != null) {
-            LogUtils.e("match success");
-            startActivity(intent);
-        } else {
-            LogUtils.e("match failure");
-        }
-    }
 }

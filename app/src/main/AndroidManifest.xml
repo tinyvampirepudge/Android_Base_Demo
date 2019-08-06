@@ -37,10 +37,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".kfysts.chapter01.intent.explicit.ExplicitIntentEntryActivity"></activity>
-        <activity android:name=".kfysts.chapter01.intent.intentfilter.IntentFilterTestDActivity" />
-        <activity android:name=".kfysts.chapter01.intent.intentfilter.IntentFilterTestCActivity" />
-        <activity android:name=".kfysts.chapter01.intent.intentfilter.IntentFilterTestBActivity" />
         <activity
             android:name=".guide.SplashActivity"
             android:theme="@style/AppStartFullScreen">
@@ -504,8 +500,12 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".kfysts.chapter01.intent.IntentEntryActivity" />
-        <activity android:name=".kfysts.chapter01.activity.LauncherModeFirstActivity" />
+        <activity
+            android:name=".kfysts.chapter01.intent.IntentEntryActivity"
+            android:label="Intent入口" />
+        <activity
+            android:name=".kfysts.chapter01.activity.LauncherModeEntryActivity"
+            android:label="启动模式入口" />
         <activity android:name=".kfysts.AndroidKfystsActivity" />
         <activity
             android:name=".kfysts.chapter01.AndroidKfystsChapter01Activity"
@@ -796,11 +796,11 @@
         <activity android:name=".screenadaptive.ScreenAdaptiveEntryActivity" />
         <activity android:name=".view.saverestore.SaveRestoreEntryActivity" />
         <activity
-            android:name=".kfysts.chapter01.intent.resolve.ImplicitIntentResolvedActivity"
+            android:name=".kfysts.chapter01.intent.resolve.IntentFilterResolvedEntryActivity"
             android:label="隐式Intent匹配Activity查询" />
         <activity
             android:name=".kfysts.chapter01.intent.resolve.IntentFilterResolvedTestAActivity"
-            android:label="ImplicitIntentTestAActivity">
+            android:label="IntentFilterResolvedTestAActivity">
             <intent-filter>
                 <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.a" />
                 <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.abc" />
@@ -810,7 +810,7 @@
         </activity>
         <activity
             android:name=".kfysts.chapter01.intent.resolve.IntentFilterResolvedTestBActivity"
-            android:label="ImplicitIntentTestBActivity">
+            android:label="IntentFilterResolvedTestBActivity">
             <intent-filter>
                 <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.b" />
                 <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.abc" />
@@ -820,7 +820,7 @@
         </activity>
         <activity
             android:name=".kfysts.chapter01.intent.resolve.IntentFilterResolvedTestCActivity"
-            android:label="ImplicitIntentTestBActivity">
+            android:label="IntentFilterResolvedTestCActivity">
             <intent-filter>
                 <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.c" />
                 <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.abc" />
@@ -829,15 +829,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".kfysts.chapter01.intent.intentfilter.IntentFilterEntryActivity"
-            android:label="IntentFilterEntryActivity" />
-        <activity android:name=".kfysts.chapter01.intent.intentfilter.IntentFilterTestAActivity">
+            android:name=".kfysts.chapter01.intent.intentfilter.ImplicitIntentEntryActivity"
+            android:label="ImplicitIntentEntryActivity" />
+        <activity android:name=".kfysts.chapter01.intent.intentfilter.ImplicitIntentTestAActivity">
             <intent-filter>
                 <action android:name="com.tinytongtong.intent.filter.test.action.a" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".kfysts.chapter01.activity.allowtaskreparenting.AllowTaskReparentingTestActivity"
+            android:label="启动模式和AllowTaskReparenting配合使用"></activity>
+        <activity
+            android:name=".kfysts.chapter01.intent.explicit.ExplicitIntentEntryActivity"
+            android:label="显式Intent入口" />
     </application>
 
 </manifest>

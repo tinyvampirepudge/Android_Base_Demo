@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.kfysts.chapter01.activity.LauncherModeFirstActivity;
+import com.tiny.demo.firstlinecode.kfysts.chapter01.activity.LauncherModeEntryActivity;
 import com.tiny.demo.firstlinecode.kfysts.chapter01.intent.IntentEntryActivity;
 
 import butterknife.ButterKnife;
@@ -183,6 +183,6 @@ public class AndroidKfystsChapter01Activity extends AppCompatActivity {
 
     @OnClick(R.id.btn_chapter_02)
     public void onBtnChapter02Clicked() {
-        startActivity(new Intent(this, LauncherModeFirstActivity.class));
+        startActivity(new Intent(this, LauncherModeEntryActivity.class));
     }
 }

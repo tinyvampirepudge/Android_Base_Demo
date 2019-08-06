@@ -12,74 +12,20 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/btn_intent_test0"
-            style="@style/btn_style_lower"
-            android:text="查询隐式Intent是否有匹配的三个方法" />
-
-        <Button
-            android:id="@+id/btn_intent_test1"
-            style="@style/btn_style_lower"
-            android:text="IntentFilter匹配规则" />
-
-        <Button
             android:id="@+id/btn_intent_test2"
             style="@style/btn_style_lower"
             android:text="显式Intent" />
 
         <Button
-            android:id="@+id/btn_intent_test5"
+            android:id="@+id/btn_intent_test1"
             style="@style/btn_style_lower"
-            android:text="隐式Intent调用——自定义" />
+            android:text="隐式Intent" />
 
         <Button
-            android:id="@+id/btn_intent_test6"
+            android:id="@+id/btn_intent_test0"
             style="@style/btn_style_lower"
-            android:text="隐式Intent调用——send，有默认选择选项" />
+            android:text="查询隐式Intent是否有匹配的三个方法" />
 
-        <Button
-            android:id="@+id/btn_intent_test7"
-            style="@style/btn_style_lower"
-            android:text="隐式Intent调用——强制使用应用选择器，无默认选择选项" />
-
-        <Button
-            android:id="@+id/btn_intent_test8"
-            style="@style/btn_style_lower"
-            android:text="隐式Intent调用——调起DividerDemo应用的C页面，默认启动模式" />
-
-        <Button
-            android:id="@+id/btn_intent_test9"
-            style="@style/btn_style_lower"
-            android:text="隐式Intent调用——调起DividerDemo应用的D页面，singleTop启动模式" />
-
-        <Button
-            android:id="@+id/btn_intent_test10"
-            style="@style/btn_style_lower"
-            android:text="隐式Intent调用——调起DividerDemo应用的E页面，singleTask启动模式" />
-
-        <Button
-            android:id="@+id/btn_intent_test11"
-            style="@style/btn_style_lower"
-            android:text="隐式Intent调用——调起DividerDemo应用的F页面，singleInstance启动模式" />
-
-        <Button
-            android:id="@+id/btn_intent_test12"
-            style="@style/btn_style_lower"
-            android:text="隐式Intent调用——调起DividerDemo应用的G页面，默认启动模式，allowTaskReparenting=true" />
-
-        <Button
-            android:id="@+id/btn_intent_test13"
-            style="@style/btn_style_lower"
-            android:text="隐式Intent调用——调起DividerDemo应用的H页面，singleTop启动模式，allowTaskReparenting=true" />
-
-        <Button
-            android:id="@+id/btn_intent_test14"
-            style="@style/btn_style_lower"
-            android:text="隐式Intent调用——调起DividerDemo应用的I页面，singleTask启动模式，allowTaskReparenting=true" />
-
-        <Button
-            android:id="@+id/btn_intent_test15"
-            style="@style/btn_style_lower"
-            android:text="隐式Intent调用——调起DividerDemo应用的J页面，singleInstance启动模式，allowTaskReparenting=true" />
     </LinearLayout>
 
 </ScrollView>

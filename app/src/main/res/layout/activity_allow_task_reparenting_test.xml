@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".kfysts.chapter01.activity.allowtaskreparenting.AllowTaskReparentingTestActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_intent_test8"
+            style="@style/btn_style_lower"
+            android:text="隐式Intent调用——调起DividerDemo应用的C页面，默认启动模式" />
+
+        <Button
+            android:id="@+id/btn_intent_test9"
+            style="@style/btn_style_lower"
+            android:text="隐式Intent调用——调起DividerDemo应用的D页面，singleTop启动模式" />
+
+        <Button
+            android:id="@+id/btn_intent_test10"
+            style="@style/btn_style_lower"
+            android:text="隐式Intent调用——调起DividerDemo应用的E页面，singleTask启动模式" />
+
+        <Button
+            android:id="@+id/btn_intent_test11"
+            style="@style/btn_style_lower"
+            android:text="隐式Intent调用——调起DividerDemo应用的F页面，singleInstance启动模式" />
+
+        <Button
+            android:id="@+id/btn_intent_test12"
+            style="@style/btn_style_lower"
+            android:text="隐式Intent调用——调起DividerDemo应用的G页面，默认启动模式，allowTaskReparenting=true" />
+
+        <Button
+            android:id="@+id/btn_intent_test13"
+            style="@style/btn_style_lower"
+            android:text="隐式Intent调用——调起DividerDemo应用的H页面，singleTop启动模式，allowTaskReparenting=true" />
+
+        <Button
+            android:id="@+id/btn_intent_test14"
+            style="@style/btn_style_lower"
+            android:text="隐式Intent调用——调起DividerDemo应用的I页面，singleTask启动模式，allowTaskReparenting=true" />
+
+        <Button
+            android:id="@+id/btn_intent_test15"
+            style="@style/btn_style_lower"
+            android:text="隐式Intent调用——调起DividerDemo应用的J页面，singleInstance启动模式，allowTaskReparenting=true" />
+
+    </LinearLayout>
+</ScrollView>

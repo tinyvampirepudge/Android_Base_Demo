@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".kfysts.chapter01.intent.intentfilter.IntentFilterEntryActivity">
+    tools:context=".kfysts.chapter01.intent.intentfilter.ImplicitIntentEntryActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,22 +14,35 @@
         <Button
             android:id="@+id/btn_intent_test1"
             style="@style/btn_style_lower"
-            android:text="只包含action" />
+            android:text="启动当前应用的Activity" />
 
         <Button
             android:id="@+id/btn_intent_test2"
             style="@style/btn_style_lower"
-            android:text="action + category" />
+            android:text="启动其他应用的Activity" />
 
         <Button
             android:id="@+id/btn_intent_test3"
             style="@style/btn_style_lower"
-            android:text="action + data" />
+            android:text="隐式Intent调用——send，有默认选择选项" />
 
         <Button
             android:id="@+id/btn_intent_test4"
             style="@style/btn_style_lower"
+            android:text="隐式Intent调用——强制使用应用选择器，无默认选择选项" />
+
+
+        <Button
+            android:id="@+id/btn_intent_test5"
+            style="@style/btn_style_lower"
+            android:text="action + data" />
+
+        <Button
+            android:id="@+id/btn_intent_test6"
+            style="@style/btn_style_lower"
             android:text="action + category + data" />
+
+
 
     </LinearLayout>
 </ScrollView>

@@ -24,12 +24,12 @@ import butterknife.OnClick;
  * @Date 2019-08-05 10:25
  * @Version TODO
  */
-public class ImplicitIntentResolvedActivity extends AppCompatActivity {
+public class IntentFilterResolvedEntryActivity extends AppCompatActivity {
     @BindView(R.id.tv_query_results)
     TextView tvQueryResults;
 
     public static void actionStart(Context context) {
-        Intent starter = new Intent(context, ImplicitIntentResolvedActivity.class);
+        Intent starter = new Intent(context, IntentFilterResolvedEntryActivity.class);
         context.startActivity(starter);
     }
 

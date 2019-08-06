@@ -5,23 +5,29 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tiny.demo.firstlinecode.R;
+import com.tiny.demo.firstlinecode.kfysts.chapter01.activity.allowtaskreparenting.AllowTaskReparentingTestActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * Desc:    启动模式相关
+ * Desc:    启动模式入口
  * Created by tiny on 2018/2/24 下午4:03
  * Version:
  */
 
-public class LauncherModeFirstActivity extends AppCompatActivity {
+public class LauncherModeEntryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_launcher_mode_first);
+        setContentView(R.layout.activity_launcher_mode_entry);
         ButterKnife.bind(this);
+    }
+
+    @OnClick(R.id.btn_test0)
+    public void onBtnTest0Clicked() {
+        AllowTaskReparentingTestActivity.actionStart(this);
     }
 
     @OnClick(R.id.btn_test1)
