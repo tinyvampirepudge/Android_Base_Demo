@@ -8,14 +8,14 @@ import com.tiny.demo.firstlinecode.R;
  * @Description: 隐式Intent相关
  *
  * @Author wangjianzhou@qding.me
- * @Date 2019-08-05 10:46
+ * @Date 2019-08-05 10:45
  * @Version TODO
  */
-public class ImplicitIntentTestCActivity extends AppCompatActivity {
+public class IntentFilterResolvedTestBActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_implicit_intent_test_c);
+        setContentView(R.layout.activity_intent_filter_resolved_test_b);
     }
 }

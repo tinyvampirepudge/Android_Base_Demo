@@ -799,31 +799,31 @@
             android:name=".kfysts.chapter01.intent.resolve.ImplicitIntentResolvedActivity"
             android:label="隐式Intent匹配Activity查询" />
         <activity
-            android:name=".kfysts.chapter01.intent.resolve.ImplicitIntentTestAActivity"
+            android:name=".kfysts.chapter01.intent.resolve.IntentFilterResolvedTestAActivity"
             android:label="ImplicitIntentTestAActivity">
             <intent-filter>
-                <action android:name="com.tinytongtong.implicit.intent.test.action.a" />
-                <action android:name="com.tinytongtong.implicit.intent.test.action.abc" />
+                <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.a" />
+                <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.abc" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".kfysts.chapter01.intent.resolve.ImplicitIntentTestBActivity"
+            android:name=".kfysts.chapter01.intent.resolve.IntentFilterResolvedTestBActivity"
             android:label="ImplicitIntentTestBActivity">
             <intent-filter>
-                <action android:name="com.tinytongtong.implicit.intent.test.action.b" />
-                <action android:name="com.tinytongtong.implicit.intent.test.action.abc" />
+                <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.b" />
+                <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.abc" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".kfysts.chapter01.intent.resolve.ImplicitIntentTestCActivity"
+            android:name=".kfysts.chapter01.intent.resolve.IntentFilterResolvedTestCActivity"
             android:label="ImplicitIntentTestBActivity">
             <intent-filter>
-                <action android:name="com.tinytongtong.implicit.intent.test.action.c" />
-                <action android:name="com.tinytongtong.implicit.intent.test.action.abc" />
+                <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.c" />
+                <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.abc" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

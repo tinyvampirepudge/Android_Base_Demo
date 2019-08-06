@@ -5,15 +5,16 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
 
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -24,6 +25,9 @@ import butterknife.OnClick;
  * @Version TODO
  */
 public class ImplicitIntentResolvedActivity extends AppCompatActivity {
+    @BindView(R.id.tv_query_results)
+    TextView tvQueryResults;
+
     public static void actionStart(Context context) {
         Intent starter = new Intent(context, ImplicitIntentResolvedActivity.class);
         context.startActivity(starter);
@@ -40,8 +44,8 @@ public class ImplicitIntentResolvedActivity extends AppCompatActivity {
     public void onBtnResolveActivityTest1Clicked() {
         Intent intent = new Intent();
         //action
-//        intent.setAction("com.tinytongtong.implicit.intent.test.action.a");
-        intent.setAction("com.tinytongtong.implicit.intent.test.action.abc");
+        intent.setAction("com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.a");
+//        intent.setAction("com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.abc");
         //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
         if (intent.resolveActivity(getPackageManager()) != null) {
             LogUtils.e("match success");
@@ -55,8 +59,8 @@ public class ImplicitIntentResolvedActivity extends AppCompatActivity {
     public void onBtnResolveActivityTest2Clicked() {
         Intent intent = new Intent();
         //action
-//        intent.setAction("com.tinytongtong.implicit.intent.test.action.a");
-        intent.setAction("com.tinytongtong.implicit.intent.test.action.abc");
+        intent.setAction("com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.a");
+//        intent.setAction("com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.abc");
         //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
         if (getPackageManager().resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY) != null) {
             LogUtils.e("match success");
@@ -70,25 +74,36 @@ public class ImplicitIntentResolvedActivity extends AppCompatActivity {
     public void onBtnResolveActivityTest3Clicked() {
         Intent intent = new Intent();
         //action
-        intent.setAction("com.tinytongtong.implicit.intent.test.action.abc");
+        intent.setAction("com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.abc");
         //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
         List<ResolveInfo> resolveInfoList = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+        StringBuilder results = new StringBuilder("匹配结果为：\n");
         if (resolveInfoList != null) {
             LogUtils.e("query success");
             for (int i = 0; i < resolveInfoList.size(); i++) {
                 ResolveInfo resolveInfo = resolveInfoList.get(i);
                 if (resolveInfo != null) {
                     LogUtils.e("resolveInfo.resolvePackageName: " + resolveInfo.resolvePackageName);
+                    results.append("resolveInfo.resolvePackageName: " + resolveInfo.resolvePackageName);
+                    results.append("\n");
                     ActivityInfo activityInfo = resolveInfo.activityInfo;
                     if (activityInfo != null) {
                         LogUtils.e("activityInfo.name:" + activityInfo.name);
                         LogUtils.e("activityInfo.packageName:" + activityInfo.packageName);
                         LogUtils.e("activityInfo.launchMode:" + activityInfo.launchMode);
+                        results.append("activityInfo.name: " + activityInfo.name);
+                        results.append("\n");
+                        results.append("activityInfo.packageName: " + activityInfo.packageName);
+                        results.append("\n");
+                        results.append("activityInfo.launchMode: " + activityInfo.launchMode);
+                        results.append("\n");
                     }
                 }
+                results.append("\n");
             }
         } else {
             LogUtils.e("match failure");
         }
+        tvQueryResults.setText(results.toString());
     }
 }

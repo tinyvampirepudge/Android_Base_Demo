@@ -25,6 +25,14 @@
             android:id="@+id/btn_resolve_activity_test3"
             style="@style/btn_style_lower"
             android:text="PackageManager#queryIntentActivities" />
+
+        <TextView
+            android:id="@+id/tv_query_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            tools:text="我是查询结果" />
     </LinearLayout>
 
 </ScrollView>
