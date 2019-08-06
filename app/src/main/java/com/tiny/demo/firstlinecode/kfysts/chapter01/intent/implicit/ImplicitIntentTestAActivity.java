@@ -1,4 +1,4 @@
-package com.tiny.demo.firstlinecode.kfysts.chapter01.intent.intentfilter;
+package com.tiny.demo.firstlinecode.kfysts.chapter01.intent.implicit;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

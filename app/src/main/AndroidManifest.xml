@@ -829,22 +829,62 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".kfysts.chapter01.intent.intentfilter.ImplicitIntentEntryActivity"
+            android:name=".kfysts.chapter01.intent.implicit.ImplicitIntentEntryActivity"
             android:label="ImplicitIntentEntryActivity" />
-        <activity android:name=".kfysts.chapter01.intent.intentfilter.ImplicitIntentTestAActivity">
+        <activity
+            android:name=".kfysts.chapter01.activity.allowtaskreparenting.AllowTaskReparentingTestActivity"
+            android:label="启动模式和AllowTaskReparenting配合使用" />
+        <activity
+            android:name=".kfysts.chapter01.intent.explicit.ExplicitIntentEntryActivity"
+            android:label="显式Intent入口" />
+        <activity android:name=".kfysts.chapter01.intent.implicit.ImplicitIntentTestAActivity">
             <intent-filter>
-                <action android:name="com.tinytongtong.intent.filter.test.action.a" />
+                <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.implicit.action.a" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".kfysts.chapter01.intent.implicit.ImplicitIntentTestBActivity"
+            android:label="设置了action、自定义的category和默认的category">
+            <intent-filter>
+                <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.implicit.action.b" />
 
-        <activity
-            android:name=".kfysts.chapter01.activity.allowtaskreparenting.AllowTaskReparentingTestActivity"
-            android:label="启动模式和AllowTaskReparenting配合使用"></activity>
-        <activity
-            android:name=".kfysts.chapter01.intent.explicit.ExplicitIntentEntryActivity"
-            android:label="显式Intent入口" />
+                <category android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.implicit.category.b" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".kfysts.chapter01.intent.implicit.ImplicitIntentTestCActivity">
+            <intent-filter>
+                <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.implicit.action.c" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".kfysts.chapter01.intent.implicit.ImplicitIntentTestDActivity">
+            <intent-filter>
+                <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.implicit.action.d" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="www.tiny.com"
+                    android:port="8080"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".kfysts.chapter01.intent.implicit.ImplicitIntentTestEActivity">
+            <intent-filter>
+                <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.implicit.action.e" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="www.tiny.com"
+                    android:port="8080"
+                    android:mimeType="text/plain"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

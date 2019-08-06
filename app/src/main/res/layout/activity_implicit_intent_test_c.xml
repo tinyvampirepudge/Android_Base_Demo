@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".kfysts.chapter01.intent.implicit.ImplicitIntentTestAActivity">
+    tools:context=".kfysts.chapter01.intent.implicit.ImplicitIntentTestCActivity">
 
     <TextView
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:gravity="center"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:padding="20dp"
-        android:text="我是自家的Activity"
-        />
-
+        android:text="设置了action、默认的category、data(mimeType，默认URI)"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

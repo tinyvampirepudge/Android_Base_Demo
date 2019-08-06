@@ -1,15 +1,11 @@
 package com.tiny.demo.firstlinecode.kfysts.chapter01.intent;
 
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
 import com.tiny.demo.firstlinecode.kfysts.chapter01.intent.explicit.ExplicitIntentEntryActivity;
-import com.tiny.demo.firstlinecode.kfysts.chapter01.intent.intentfilter.ImplicitIntentEntryActivity;
+import com.tiny.demo.firstlinecode.kfysts.chapter01.intent.implicit.ImplicitIntentEntryActivity;
 import com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.IntentFilterResolvedEntryActivity;
 
 import butterknife.ButterKnife;

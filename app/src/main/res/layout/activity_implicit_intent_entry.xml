@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".kfysts.chapter01.intent.intentfilter.ImplicitIntentEntryActivity">
+    tools:context=".kfysts.chapter01.intent.implicit.ImplicitIntentEntryActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,18 +31,25 @@
             style="@style/btn_style_lower"
             android:text="隐式Intent调用——强制使用应用选择器，无默认选择选项" />
 
-
         <Button
             android:id="@+id/btn_intent_test5"
             style="@style/btn_style_lower"
-            android:text="action + data" />
+            android:text="data + category(default + custom)" />
 
         <Button
             android:id="@+id/btn_intent_test6"
             style="@style/btn_style_lower"
-            android:text="action + category + data" />
+            android:text="data + category(default) + data(mimeType)" />
 
+        <Button
+            android:id="@+id/btn_intent_test7"
+            style="@style/btn_style_lower"
+            android:text="data + category(default) + data(自定义URI)" />
 
+        <Button
+            android:id="@+id/btn_intent_test8"
+            style="@style/btn_style_lower"
+            android:text="data + category(default) + data(mimeType + 自定义URI)" />
 
     </LinearLayout>
 </ScrollView>
