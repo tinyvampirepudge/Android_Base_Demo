@@ -19,22 +19,12 @@
         <Button
             android:id="@+id/btn_intent_test1"
             style="@style/btn_style_lower"
-            android:text="显式Intent调用——构造方法传入Component" />
+            android:text="IntentFilter匹配规则" />
 
         <Button
             android:id="@+id/btn_intent_test2"
             style="@style/btn_style_lower"
-            android:text="显式Intent调用——setComponent" />
-
-        <Button
-            android:id="@+id/btn_intent_test3"
-            style="@style/btn_style_lower"
-            android:text="显式Intent调用——setClass" />
-
-        <Button
-            android:id="@+id/btn_intent_test4"
-            style="@style/btn_style_lower"
-            android:text="显式Intent调用——setClassName" />
+            android:text="显式Intent" />
 
         <Button
             android:id="@+id/btn_intent_test5"

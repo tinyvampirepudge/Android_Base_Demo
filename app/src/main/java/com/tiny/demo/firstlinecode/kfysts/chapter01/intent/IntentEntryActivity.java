@@ -1,19 +1,17 @@
 package com.tiny.demo.firstlinecode.kfysts.chapter01.intent;
 
-import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tiny.demo.firstlinecode.kfysts.chapter01.intent.explicit.ExplicitIntentEntryActivity;
+import com.tiny.demo.firstlinecode.kfysts.chapter01.intent.intentfilter.IntentFilterEntryActivity;
 import com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.ImplicitIntentResolvedActivity;
-import com.tiny.demo.firstlinecode.test.view.TestActivity;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -23,13 +21,6 @@ import butterknife.OnClick;
  * Version:
  */
 public class IntentEntryActivity extends AppCompatActivity {
-
-    @BindView(R.id.btn_intent_test1)
-    Button btnIntentTest1;
-    @BindView(R.id.btn_intent_test2)
-    Button btnIntentTest2;
-    @BindView(R.id.btn_intent_test3)
-    Button btnIntentTest3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,34 +35,13 @@ public class IntentEntryActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btn_intent_test1)
-    public void onBtnIntentTest1Clicked() {
-        Intent intent = new Intent(this, TestActivity.class);
-        startActivity(intent);
+    public void onBtnIntentTest01Clicked() {
+        IntentFilterEntryActivity.actionStart(this);
     }
 
     @OnClick(R.id.btn_intent_test2)
-    public void onBtnIntentTest2Clicked() {
-        ComponentName componentName = new ComponentName(this, TestActivity.class);
-        Intent intent = new Intent();
-        intent.setComponent(componentName);
-        startActivity(intent);
-    }
-
-    @OnClick(R.id.btn_intent_test3)
-    public void onBtnIntentTest3Clicked() {
-        Intent intent = new Intent();
-        intent.setClass(this, TestActivity.class);
-        startActivity(intent);
-    }
-
-    @OnClick(R.id.btn_intent_test4)
-    public void onBtnIntentTest4Clicked() {
-        Intent intent = new Intent();
-        //context, String
-//        intent.setClassName(this, "com.tiny.demo.firstlinecode.test.view.TestActivity");
-        //String, String
-        intent.setClassName("com.tiny.demo.firstlinecode", "com.tiny.demo.firstlinecode.test.view.TestActivity");
-        startActivity(intent);
+    public void onBtnIntentTest02Clicked() {
+        ExplicitIntentEntryActivity.actionStart(this);
     }
 
     @OnClick(R.id.btn_intent_test5)

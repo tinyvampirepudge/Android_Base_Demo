@@ -37,6 +37,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".kfysts.chapter01.intent.explicit.ExplicitIntentEntryActivity"></activity>
+        <activity android:name=".kfysts.chapter01.intent.intentfilter.IntentFilterTestDActivity" />
+        <activity android:name=".kfysts.chapter01.intent.intentfilter.IntentFilterTestCActivity" />
+        <activity android:name=".kfysts.chapter01.intent.intentfilter.IntentFilterTestBActivity" />
         <activity
             android:name=".guide.SplashActivity"
             android:theme="@style/AppStartFullScreen">
@@ -804,7 +808,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".kfysts.chapter01.intent.resolve.ImplicitIntentTestBActivity"
             android:label="ImplicitIntentTestBActivity">
@@ -821,6 +824,16 @@
             <intent-filter>
                 <action android:name="com.tinytongtong.implicit.intent.test.action.c" />
                 <action android:name="com.tinytongtong.implicit.intent.test.action.abc" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".kfysts.chapter01.intent.intentfilter.IntentFilterEntryActivity"
+            android:label="IntentFilterEntryActivity" />
+        <activity android:name=".kfysts.chapter01.intent.intentfilter.IntentFilterTestAActivity">
+            <intent-filter>
+                <action android:name="com.tinytongtong.intent.filter.test.action.a" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
