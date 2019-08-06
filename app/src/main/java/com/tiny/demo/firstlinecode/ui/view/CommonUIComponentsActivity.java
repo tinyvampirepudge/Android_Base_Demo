@@ -17,12 +17,13 @@ import com.tiny.demo.firstlinecode.ui.swipe.SwipeDeleteRecyclerViewActivity;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
  * 常用控件的基本使用
  */
-public class UiActivity extends BaseActivity {
+public class CommonUIComponentsActivity extends BaseActivity {
 
     @BindView(R.id.btn_recycler_view_drag_and_delete)
     Button btnRecyclerViewDragAndDelete;
@@ -34,13 +35,13 @@ public class UiActivity extends BaseActivity {
     private ProgressBar pD;
 
     public static void actionStart(Context context) {
-        Intent intent = new Intent(context, UiActivity.class);
+        Intent intent = new Intent(context, CommonUIComponentsActivity.class);
         context.startActivity(intent);
     }
 
     @Override
     protected int setContentLayout() {
-        return R.layout.activity_ui;
+        return R.layout.activity_common_ui_components;
     }
 
     @Override
@@ -64,7 +65,7 @@ public class UiActivity extends BaseActivity {
 
         //alertDialog
         findViewById(R.id.btn_alert_dialog).setOnClickListener(v -> {
-            AlertDialog.Builder dialog = new AlertDialog.Builder(UiActivity.this);
+            AlertDialog.Builder dialog = new AlertDialog.Builder(CommonUIComponentsActivity.this);
             dialog.setTitle("This is a alert dialog");
             dialog.setMessage("Something important");
             dialog.setCancelable(true);
@@ -75,7 +76,7 @@ public class UiActivity extends BaseActivity {
 
         //progress dialog
         findViewById(R.id.btn_progress_dialog).setOnClickListener(v -> {
-            ProgressDialog progressDialog = new ProgressDialog(UiActivity.this);
+            ProgressDialog progressDialog = new ProgressDialog(CommonUIComponentsActivity.this);
             progressDialog.setTitle("This is a progress diialog!");
             progressDialog.setMessage("Loading...");
             progressDialog.setCancelable(true);
@@ -83,7 +84,7 @@ public class UiActivity extends BaseActivity {
         });
 
         //百分比布局
-        findViewById(R.id.btn_percent_layout).setOnClickListener(v -> startActivity(new Intent(UiActivity.this, PercentLayoutActivity.class)));
+        findViewById(R.id.btn_percent_layout).setOnClickListener(v -> startActivity(new Intent(CommonUIComponentsActivity.this, PercentLayoutActivity.class)));
 
         //listview的简单使用
         findViewById(R.id.btn_listview).setOnClickListener(v -> ListViewActivity.actionStart(mContext));
@@ -128,5 +129,10 @@ public class UiActivity extends BaseActivity {
     @OnClick(R.id.btn_expandable_listview)
     public void onExpandableListViewClicked() {
         activitySwitch(ExpandableListViewActivity.class);
+    }
+
+    @OnClick(R.id.btn_recyclerview_bottom)
+    public void onRecyclerViewBottomClicked() {
+        RecyclerViewBottomActivity.actionStart(this);
     }
 }

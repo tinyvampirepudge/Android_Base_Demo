@@ -7,6 +7,10 @@ package com.tiny.demo.firstlinecode.ui.bean;
 public class Fruit {
     private String name;
     private int imgId;
+    private int type;
+
+    public Fruit() {
+    }
 
     public Fruit(String name, int imgId) {
         this.name = name;
@@ -28,5 +32,13 @@ public class Fruit {
 
     public void setImgId(int imgId) {
         this.imgId = imgId;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }

@@ -94,7 +94,7 @@
         <activity android:name=".activity.launcher_mode.LauncherModeActivity" />
         <activity android:name=".activity.ActivityReferedActivity" />
         <activity android:name=".activity.StartActivity" />
-        <activity android:name=".ui.view.UiActivity" />
+        <activity android:name=".ui.view.CommonUIComponentsActivity" />
         <activity android:name=".ui.view.PercentLayoutActivity" />
         <activity android:name=".adaptive.AdaptiveActivity" />
         <activity android:name=".ui.view.ListViewActivity" />
@@ -859,6 +859,7 @@
                 <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.implicit.action.c" />
 
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="image/*" />
             </intent-filter>
         </activity>
@@ -867,6 +868,7 @@
                 <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.implicit.action.d" />
 
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data
                     android:host="www.tiny.com"
                     android:port="8080"
@@ -878,13 +880,18 @@
                 <action android:name="com.tiny.demo.firstlinecode.kfysts.chapter01.intent.implicit.action.e" />
 
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data
                     android:host="www.tiny.com"
-                    android:port="8080"
                     android:mimeType="text/plain"
+                    android:port="8080"
                     android:scheme="http" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.view.RecyclerViewBottomActivity"
+            android:label="RecyclerView实现吸底效果"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

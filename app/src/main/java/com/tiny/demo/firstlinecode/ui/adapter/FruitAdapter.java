@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
+import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 import com.tiny.demo.firstlinecode.ui.bean.Fruit;
 
 import java.util.List;
@@ -35,6 +36,12 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
         Fruit fruit = fruits.get(position);
         holder.txt.setText(fruit.getName());
         holder.img.setImageResource(fruit.getImgId());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtils.showSingleToast("放肆，竟然敢点你二哈大爷");
+            }
+        });
     }
 
     @Override

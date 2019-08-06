@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:id="@+id/activity_ui"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ui"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.tiny.demo.firstlinecode.ui.view.UiActivity">
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.tiny.demo.firstlinecode.ui.view.CommonUIComponentsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,18 +18,17 @@
         <Button
             android:id="@+id/btn_progress_default"
             style="@style/btn_style_lower"
-            android:text="normal progress"/>
+            android:text="normal progress" />
 
         <ProgressBar
             android:id="@+id/progress_default"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/btn_progress_horizontal"
             style="@style/btn_style_lower"
-            android:text="normal progress"/>
+            android:text="normal progress" />
 
         <ProgressBar
             android:id="@+id/progress_horizontal"
@@ -38,77 +36,82 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:max="100"/>
+            android:max="100" />
 
         <Button
             android:id="@+id/btn_alert_dialog"
             style="@style/btn_style_lower"
-            android:text="alert dialog"/>
+            android:text="alert dialog" />
 
         <Button
             android:id="@+id/btn_progress_dialog"
             style="@style/btn_style_lower"
-            android:text="progress dialog"/>
+            android:text="progress dialog" />
 
         <Button
             android:id="@+id/btn_percent_layout"
             style="@style/btn_style_lower"
-            android:text="percent layout(百分比布局)"/>
+            android:text="percent layout(百分比布局)" />
 
         <Button
             android:id="@+id/btn_listview"
             style="@style/btn_style_lower"
-            android:text="listview的简单demo"/>
+            android:text="listview的简单demo" />
 
         <Button
             android:id="@+id/btn_recycle_view_vertical"
             style="@style/btn_style_lower"
-            android:text="recycleview的竖向demo"/>
+            android:text="recycleview的竖向demo" />
 
         <Button
             android:id="@+id/btn_recycle_view_horizontal"
             style="@style/btn_style_lower"
-            android:text="recycleview的横向demo"/>
+            android:text="recycleview的横向demo" />
 
         <Button
             android:id="@+id/btn_recycle_view_flow"
             style="@style/btn_style_lower"
-            android:text="recycleview的瀑布流"/>
+            android:text="recycleview的瀑布流" />
 
         <Button
             android:id="@+id/btn_recycle_view_grid"
             style="@style/btn_style_lower"
-            android:text="recycleview的网格布局"/>
+            android:text="recycleview的网格布局" />
 
         <Button
             android:id="@+id/btn_view_fipper"
             style="@style/btn_style_lower"
-            android:text="垂直滚动的布局 ViewFipper"/>
+            android:text="垂直滚动的布局 ViewFipper" />
 
         <Button
             android:id="@+id/btn_recycler_view_drag_and_delete"
             style="@style/btn_style_lower"
-            android:text="RecyclerView拖拽排序、置顶、全选、反选、侧滑删除"/>
+            android:text="RecyclerView拖拽排序、置顶、全选、反选、侧滑删除" />
 
         <Button
             android:id="@+id/btn_recycler_view_swipe"
             style="@style/btn_style_lower"
-            android:text="RecyclerView侧拉删除(自定义)"/>
+            android:text="RecyclerView侧拉删除(自定义)" />
 
         <Button
             android:id="@+id/btn_recycler_view_multiple_item"
             style="@style/btn_style_lower"
-            android:text="RecyclerView多种item getItemViewType"/>
+            android:text="RecyclerView多种item getItemViewType" />
 
         <Button
             android:id="@+id/btn_recycler_view_multiple_item_bravh"
             style="@style/btn_style_lower"
-            android:text="RecyclerView多种item bravh"/>
+            android:text="RecyclerView多种item bravh" />
 
         <Button
             android:id="@+id/btn_expandable_listview"
             style="@style/btn_style_lower"
-            android:text="ExpandableListView基本使用"/>
+            android:text="ExpandableListView基本使用" />
+
+        <Button
+            android:id="@+id/btn_recyclerview_bottom"
+            style="@style/btn_style_lower"
+            android:text="RecyclerView吸底效果" />
 
     </LinearLayout>
 

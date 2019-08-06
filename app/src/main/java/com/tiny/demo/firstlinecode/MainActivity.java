@@ -61,7 +61,7 @@ import com.tiny.demo.firstlinecode.storage.StorageActivity;
 import com.tiny.demo.firstlinecode.svg.SvgToTextViewActivity;
 import com.tiny.demo.firstlinecode.test.view.TestActivity;
 import com.tiny.demo.firstlinecode.thinkinjava.ThingInJavaActivity;
-import com.tiny.demo.firstlinecode.ui.view.UiActivity;
+import com.tiny.demo.firstlinecode.ui.view.CommonUIComponentsActivity;
 import com.tiny.demo.firstlinecode.uicomponents.UIComponentsActivity;
 import com.tiny.demo.firstlinecode.unittest.AndroidTestActivity;
 import com.tiny.demo.firstlinecode.video.VideoActivity;
@@ -225,7 +225,7 @@ public class MainActivity extends BaseActivity
         findViewById(R.id.btn_activity).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ActivityReferedActivity.class)));
 
         //控件
-        findViewById(R.id.btn_common_view).setOnClickListener(v -> UiActivity.actionStart(MainActivity.this));
+        findViewById(R.id.btn_common_view).setOnClickListener(v -> CommonUIComponentsActivity.actionStart(MainActivity.this));
 
         //UI组件
         findViewById(R.id.btn_ui_components).setOnClickListener(v -> activitySwitch(UIComponentsActivity.class));
