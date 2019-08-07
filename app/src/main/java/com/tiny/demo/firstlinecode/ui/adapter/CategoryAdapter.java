@@ -1,4 +1,4 @@
-package com.tiny.demo.firstlinecode.ui.view;
+package com.tiny.demo.firstlinecode.ui.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tiny.demo.firstlinecode.R;
+import com.tiny.demo.firstlinecode.ui.bean.CategoryBean;
 
 import java.util.List;
 

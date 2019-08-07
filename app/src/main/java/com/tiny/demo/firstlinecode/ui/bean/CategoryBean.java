@@ -1,4 +1,4 @@
-package com.tiny.demo.firstlinecode.ui.view;
+package com.tiny.demo.firstlinecode.ui.bean;
 
 import java.io.Serializable;
 

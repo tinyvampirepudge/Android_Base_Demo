@@ -2,7 +2,6 @@ package com.tiny.demo.firstlinecode.ui.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -22,13 +21,13 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * @Description: RecyclerView实现吸底效果
+ * @Description: RecyclerView实现吸底效果，通过RecyclerView高度做判定
  * @Author wangjianzhou@qding.me
  * @Date 2019-08-06 16:11
  * @Version TODO
  */
-public class RecyclerViewBottomActivity extends BaseActivity {
-    public static final String TAG = RecyclerViewBottomActivity.class.getSimpleName();
+public class RecyclerViewBottomFloatByViewHeightActivity extends BaseActivity {
+    public static final String TAG = RecyclerViewBottomFloatByViewHeightActivity.class.getSimpleName();
 
     @BindView(R.id.tv_bottom)
     TextView tvBottom;
@@ -37,13 +36,13 @@ public class RecyclerViewBottomActivity extends BaseActivity {
     RecyclerView recyclerView;
 
     public static void actionStart(Context context) {
-        Intent starter = new Intent(context, RecyclerViewBottomActivity.class);
+        Intent starter = new Intent(context, RecyclerViewBottomFloatByViewHeightActivity.class);
         context.startActivity(starter);
     }
 
     @Override
     protected int setContentLayout() {
-        return R.layout.activity_recycler_view_bottom;
+        return R.layout.activity_recycler_view_bottom_float_by_view_height;
     }
 
     @Override
@@ -56,9 +55,9 @@ public class RecyclerViewBottomActivity extends BaseActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         List<Fruit> lists = initFruits();
-        Fruit fruit = new Fruit();
-        fruit.setType(1);
-        lists.add(fruit);
+//        Fruit fruit = new Fruit();
+//        fruit.setType(1);
+//        lists.add(fruit);
         BottomAdapter bottomAdapter = new BottomAdapter(lists);
 
         recyclerView.setAdapter(bottomAdapter);
@@ -90,7 +89,7 @@ public class RecyclerViewBottomActivity extends BaseActivity {
 
     private List<Fruit> initFruits() {
         List<Fruit> fruits = new ArrayList<>();
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 10; i++) {
             Fruit fruit = new Fruit("erha --> " + i, R.drawable.ic_erha);
             fruits.add(fruit);
         }

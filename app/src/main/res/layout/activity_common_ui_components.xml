@@ -109,9 +109,29 @@
             android:text="ExpandableListView基本使用" />
 
         <Button
-            android:id="@+id/btn_recyclerview_bottom"
+            android:id="@+id/btn_recyclerview_bottom_by_view_height"
             style="@style/btn_style_lower"
-            android:text="RecyclerView吸底效果" />
+            android:text="RecyclerView实现吸底效果，通过RecyclerView高度做判定" />
+
+        <Button
+            android:id="@+id/btn_recyclerview_bottom_by_item_decoration"
+            style="@style/btn_style_lower"
+            android:text="RecyclerView实现吸底效果，通过ItemDecoration" />
+
+        <Button
+            android:id="@+id/btn_recyclerview_divider_item_decoration"
+            style="@style/btn_style_lower"
+            android:text="RecyclerView使用系统提供的DividerItemDecoration" />
+
+        <Button
+            android:id="@+id/btn_recyclerview_custom_item_decoration_divider"
+            style="@style/btn_style_lower"
+            android:text="RecyclerView使用ItemDecoration自定义分割线" />
+
+        <Button
+            android:id="@+id/btn_recyclerview_custom_item_decoration_float_group"
+            style="@style/btn_style_lower"
+            android:text="RecyclerView使用ItemDecoration自定义分组悬停效果" />
 
     </LinearLayout>
 

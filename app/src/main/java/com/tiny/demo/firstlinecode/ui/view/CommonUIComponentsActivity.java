@@ -17,7 +17,6 @@ import com.tiny.demo.firstlinecode.ui.swipe.SwipeDeleteRecyclerViewActivity;
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -131,8 +130,28 @@ public class CommonUIComponentsActivity extends BaseActivity {
         activitySwitch(ExpandableListViewActivity.class);
     }
 
-    @OnClick(R.id.btn_recyclerview_bottom)
-    public void onRecyclerViewBottomClicked() {
-        RecyclerViewBottomActivity.actionStart(this);
+    @OnClick(R.id.btn_recyclerview_bottom_by_view_height)
+    public void onRecyclerViewBottomByViewHeightClicked() {
+        RecyclerViewBottomFloatByViewHeightActivity.actionStart(this);
+    }
+
+    @OnClick(R.id.btn_recyclerview_bottom_by_item_decoration)
+    public void onRecyclerViewBottomByItemDecorationClicked() {
+        RecyclerViewBottomFloatByItemDecorationActivity.actionStart(this);
+    }
+
+    @OnClick(R.id.btn_recyclerview_divider_item_decoration)
+    public void onRecyclerViewDividerItemDecorationClicked() {
+        RecyclerViewDividerItemDecorationActivity.actionStart(this);
+    }
+
+    @OnClick(R.id.btn_recyclerview_custom_item_decoration_divider)
+    public void onRecyclerViewCustomItemDecorationDividerClicked() {
+        RecyclerViewCustomItemDecorationDividerActivity.actionStart(this);
+    }
+
+    @OnClick(R.id.btn_recyclerview_custom_item_decoration_float_group)
+    public void onRecyclerViewCustomItemDecorationFloatGroupClicked() {
+        RecyclerViewCustomItemDecorationFloatGroupActivity.actionStart(this);
     }
 }
