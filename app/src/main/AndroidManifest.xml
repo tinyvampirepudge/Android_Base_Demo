@@ -899,15 +899,15 @@
         <activity
             android:name=".ui.view.RecyclerViewDividerItemDecorationActivity"
             android:label="使用系统的DividerItemDecoration绘制分割线"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity
             android:name=".ui.view.RecyclerViewCustomItemDecorationDividerActivity"
             android:label="RecyclerView使用ItemDecoration自定义分割线"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity
             android:name=".ui.view.RecyclerViewCustomItemDecorationFloatGroupActivity"
             android:label="RecyclerView使用ItemDecoration自定义分组悬停效果"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
 
     </application>
 
