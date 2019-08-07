@@ -1,4 +1,4 @@
-package com.tiny.demo.firstlinecode.ui.view;
+package com.tiny.demo.firstlinecode.ui.widget;
 
 import android.graphics.Canvas;
 import android.support.annotation.NonNull;

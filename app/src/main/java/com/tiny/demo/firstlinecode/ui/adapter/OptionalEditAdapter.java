@@ -13,7 +13,7 @@ import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 import com.tiny.demo.firstlinecode.common.utils.ViewUtils;
 import com.tiny.demo.firstlinecode.ui.bean.StockEditBean;
-import com.tiny.demo.firstlinecode.ui.view.ItemTouchHelperCallback;
+import com.tiny.demo.firstlinecode.ui.widget.ItemTouchHelperCallback;
 
 import java.util.Collections;
 import java.util.List;

@@ -4,6 +4,7 @@ import android.widget.ViewFlipper;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
+import com.tiny.demo.firstlinecode.ui.widget.MyContentView;
 
 /**
  * http://www.10tiao.com/html/169/201701/2650821911/1.html

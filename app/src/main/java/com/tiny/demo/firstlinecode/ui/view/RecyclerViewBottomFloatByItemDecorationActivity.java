@@ -2,24 +2,19 @@ package com.tiny.demo.firstlinecode.ui.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
-import com.tiny.demo.firstlinecode.common.utils.AppUtils;
 import com.tiny.demo.firstlinecode.ui.adapter.BottomAdapter;
 import com.tiny.demo.firstlinecode.ui.bean.Fruit;
-import com.tinytongtong.tinyutils.LogUtils;
-import com.tinytongtong.tinyutils.ScreenUtils;
+import com.tiny.demo.firstlinecode.ui.widget.BottomFloatItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * @Description: RecyclerView实现吸底效果，通过ItemDecoration

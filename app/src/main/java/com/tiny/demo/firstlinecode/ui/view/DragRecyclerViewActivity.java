@@ -1,6 +1,5 @@
 package com.tiny.demo.firstlinecode.ui.view;
 
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -26,6 +25,7 @@ import com.tiny.demo.firstlinecode.ui.contract.OptionalResortContract;
 import com.tiny.demo.firstlinecode.ui.operateoptional.OperateOptionalHandler;
 import com.tiny.demo.firstlinecode.ui.operateoptional.OperateOptionalInterface;
 import com.tiny.demo.firstlinecode.ui.presenter.OptionalResortPresenter;
+import com.tiny.demo.firstlinecode.ui.widget.RecycleItemTouchHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,7 +37,6 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import okhttp3.ResponseBody;
 
