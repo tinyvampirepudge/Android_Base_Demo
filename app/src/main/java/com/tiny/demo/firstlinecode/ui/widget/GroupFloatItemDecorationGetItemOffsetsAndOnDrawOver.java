@@ -18,14 +18,14 @@ import com.tiny.demo.firstlinecode.ui.listener.OnGroupClickListener;
 /**
  * @Description: 分组悬停，悬停布局直接在Item上层绘制，不是复用Item的View
  * 参考： https://www.jianshu.com/p/b335b620af39   StickyDecoration
- * 预留空间 {@link GroupItemDecoration#getItemOffsets(Rect, View, RecyclerView, RecyclerView.State)}
- * 在Item上层绘制 {@link GroupItemDecoration#onDrawOver(Canvas, RecyclerView, RecyclerView.State)}
+ * 预留空间 {@link GroupFloatItemDecorationGetItemOffsetsAndOnDrawOver#getItemOffsets(Rect, View, RecyclerView, RecyclerView.State)}
+ * 在Item上层绘制 {@link GroupFloatItemDecorationGetItemOffsetsAndOnDrawOver#onDrawOver(Canvas, RecyclerView, RecyclerView.State)}
  * @Author wangjianzhou@qding.me
  * @Date 2019-08-07 14:11
  * @Version
  */
-public class GroupItemDecoration extends RecyclerView.ItemDecoration {
-    public static final String TAG = GroupItemDecoration.class.getSimpleName();
+public class GroupFloatItemDecorationGetItemOffsetsAndOnDrawOver extends RecyclerView.ItemDecoration {
+    public static final String TAG = GroupFloatItemDecorationGetItemOffsetsAndOnDrawOver.class.getSimpleName().substring(0, 23);
 
     /**
      * group背景色，默认透明
@@ -48,7 +48,7 @@ public class GroupItemDecoration extends RecyclerView.ItemDecoration {
     private int mSideMargin = 32;   //边距 左边距
     private int mTextSize = 50;     //字体大小
 
-    public GroupItemDecoration(GroupListener mGroupListener) {
+    public GroupFloatItemDecorationGetItemOffsetsAndOnDrawOver(GroupListener mGroupListener) {
         this.mGroupListener = mGroupListener;
         //设置悬浮栏的画笔---mGroupPaint
         mGroupPaint = new Paint();

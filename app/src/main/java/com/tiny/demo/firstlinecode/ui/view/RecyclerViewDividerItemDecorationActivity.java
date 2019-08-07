@@ -31,7 +31,7 @@ import butterknife.BindView;
  * @Version
  */
 public class RecyclerViewDividerItemDecorationActivity extends BaseActivity {
-    public static final String TAG = RecyclerViewDividerItemDecorationActivity.class.getSimpleName();
+    public static final String TAG = RecyclerViewDividerItemDecorationActivity.class.getSimpleName().substring(0, 23);
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
 
@@ -55,13 +55,13 @@ public class RecyclerViewDividerItemDecorationActivity extends BaseActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 //        recyclerView.addItemDecoration(new MyDividerItemDecoration());
         // DividerItemDecoration会改变item的高度
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this,DividerItemDecoration.VERTICAL);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         // 可以通过setDrawable方法使用自定义样式的分割线
         // 1、设置颜色——每个item高度减少1px，很奇怪，竟然减少了
 //        dividerItemDecoration.setDrawable(new ColorDrawable(ContextCompat.getColor(mContext,R.color.colorPrimary)));
 
         // 2、设置shape——每个item高度增加shape的高度，这里是10dp
-        Drawable drawable = ContextCompat.getDrawable(mContext,R.drawable.shape_divider);
+        Drawable drawable = ContextCompat.getDrawable(mContext, R.drawable.shape_divider);
         dividerItemDecoration.setDrawable(drawable);
 
         // 3、设置图片——分割线的高度就是图片的高度，图片会有拉伸。图片大小36*5

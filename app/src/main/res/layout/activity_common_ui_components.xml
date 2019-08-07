@@ -129,9 +129,9 @@
             android:text="RecyclerView使用ItemDecoration自定义分割线" />
 
         <Button
-            android:id="@+id/btn_recyclerview_custom_item_decoration_float_group"
+            android:id="@+id/btn_recyclerview_custom_item_decoration_float_group_getItemOffsets_onDrawOver"
             style="@style/btn_style_lower"
-            android:text="RecyclerView使用ItemDecoration自定义分组悬停效果" />
+            android:text="RecyclerView使用ItemDecoration自定义分组悬停效果，getItemOffsets预留空间，onDrawOver直接在Item上层绘制悬停布局，不复用ItemView" />
 
     </LinearLayout>
 

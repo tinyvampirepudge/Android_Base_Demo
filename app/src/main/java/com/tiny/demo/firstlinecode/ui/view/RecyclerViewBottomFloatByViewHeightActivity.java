@@ -55,9 +55,9 @@ public class RecyclerViewBottomFloatByViewHeightActivity extends BaseActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         List<Fruit> lists = initFruits();
-//        Fruit fruit = new Fruit();
-//        fruit.setType(1);
-//        lists.add(fruit);
+        Fruit fruit = new Fruit();
+        fruit.setType(1);
+        lists.add(fruit);
         BottomAdapter bottomAdapter = new BottomAdapter(lists);
 
         recyclerView.setAdapter(bottomAdapter);
@@ -89,7 +89,7 @@ public class RecyclerViewBottomFloatByViewHeightActivity extends BaseActivity {
 
     private List<Fruit> initFruits() {
         List<Fruit> fruits = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             Fruit fruit = new Fruit("erha --> " + i, R.drawable.ic_erha);
             fruits.add(fruit);
         }

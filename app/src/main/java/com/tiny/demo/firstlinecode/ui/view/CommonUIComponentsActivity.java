@@ -150,7 +150,7 @@ public class CommonUIComponentsActivity extends BaseActivity {
         RecyclerViewCustomItemDecorationDividerActivity.actionStart(this);
     }
 
-    @OnClick(R.id.btn_recyclerview_custom_item_decoration_float_group)
+    @OnClick(R.id.btn_recyclerview_custom_item_decoration_float_group_getItemOffsets_onDrawOver)
     public void onRecyclerViewCustomItemDecorationFloatGroupClicked() {
         RecyclerViewCustomItemDecorationFloatGroupActivity.actionStart(this);
     }

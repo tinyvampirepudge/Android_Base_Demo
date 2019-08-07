@@ -3,8 +3,6 @@ package com.tiny.demo.firstlinecode.ui.view;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,13 +14,11 @@ import android.widget.Toast;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.common.utils.AppUtils;
-import com.tiny.demo.firstlinecode.ui.adapter.BottomAdapter;
 import com.tiny.demo.firstlinecode.ui.bean.City;
 import com.tiny.demo.firstlinecode.ui.bean.CityUtil;
-import com.tiny.demo.firstlinecode.ui.bean.Fruit;
 import com.tiny.demo.firstlinecode.ui.listener.GroupListener;
 import com.tiny.demo.firstlinecode.ui.listener.OnGroupClickListener;
-import com.tiny.demo.firstlinecode.ui.widget.GroupItemDecoration;
+import com.tiny.demo.firstlinecode.ui.widget.GroupFloatItemDecorationGetItemOffsetsAndOnDrawOver;
 import com.tiny.demo.firstlinecode.ui.widget.StickyDecoration;
 import com.tinytongtong.tinyutils.LogUtils;
 import com.tinytongtong.tinyutils.ScreenUtils;
@@ -33,13 +29,15 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * @Description: RecyclerView使用ItemDecoration自定义分组悬停效果
+ * @Description: RecyclerView使用ItemDecoration自定义分组悬停效果。分组悬停，悬停布局直接在Item上层绘制，不是复用Item的View
+ * {@link StickyDecoration}
+ * {@link GroupFloatItemDecorationGetItemOffsetsAndOnDrawOver}
  * @Author wangjianzhou@qding.me
  * @Date 2019-08-07 11:50
  * @Version
  */
 public class RecyclerViewCustomItemDecorationFloatGroupActivity extends BaseActivity {
-    public static final String TAG = RecyclerViewCustomItemDecorationFloatGroupActivity.class.getSimpleName();
+    public static final String TAG = RecyclerViewCustomItemDecorationFloatGroupActivity.class.getSimpleName().substring(0, 23);
 
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
@@ -101,7 +99,7 @@ public class RecyclerViewCustomItemDecorationFloatGroupActivity extends BaseActi
 //        recyclerView.addItemDecoration(decoration);
         //------------- StickyDecoration 使用部分  ----------------
 
-        GroupItemDecoration groupItemDecoration = new GroupItemDecoration(position -> {
+        GroupFloatItemDecorationGetItemOffsetsAndOnDrawOver groupFloatItemDecorationGetItemOffsetsAndOnDrawOver = new GroupFloatItemDecorationGetItemOffsetsAndOnDrawOver(position -> {
             //组名回调
             if (dataList.size() > position && position > -1) {
                 //获取组名，用于判断是否是同一组
@@ -109,7 +107,7 @@ public class RecyclerViewCustomItemDecorationFloatGroupActivity extends BaseActi
             }
             return null;
         });
-        recyclerView.addItemDecoration(groupItemDecoration);
+        recyclerView.addItemDecoration(groupFloatItemDecorationGetItemOffsetsAndOnDrawOver);
 
         RecyclerView.Adapter mAdapter = new RecyclerView.Adapter() {
             @Override

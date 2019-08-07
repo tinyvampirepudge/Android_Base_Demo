@@ -26,7 +26,7 @@ import butterknife.BindView;
  * @Version TODO
  */
 public class RecyclerViewCustomItemDecorationDividerActivity extends BaseActivity {
-    public static final String TAG = RecyclerViewCustomItemDecorationDividerActivity.class.getSimpleName();
+    public static final String TAG = RecyclerViewCustomItemDecorationDividerActivity.class.getSimpleName().substring(0, 23);
 
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;

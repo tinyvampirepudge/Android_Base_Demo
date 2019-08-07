@@ -10,6 +10,8 @@ import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.ui.adapter.BottomAdapter;
 import com.tiny.demo.firstlinecode.ui.bean.Fruit;
 import com.tiny.demo.firstlinecode.ui.widget.BottomFloatItemDecoration;
+import com.tinytongtong.tinyutils.LogUtils;
+import com.tinytongtong.tinyutils.ScreenUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,14 +41,14 @@ public class RecyclerViewBottomFloatByItemDecorationActivity extends BaseActivit
 
     @Override
     protected void buildContentView() {
-
+        LogUtils.e(TAG, ScreenUtils.getDisplayMetricsInfo(this));
     }
 
     @Override
     protected void initViewData() {
         LinearLayoutManager llm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);
-        recyclerView.addItemDecoration(new BottomFloatItemDecoration(llm));
+        recyclerView.addItemDecoration(new BottomFloatItemDecoration(this));
 
         List<Fruit> lists = initFruits();
         Fruit fruit = new Fruit();
@@ -59,7 +61,7 @@ public class RecyclerViewBottomFloatByItemDecorationActivity extends BaseActivit
 
     private List<Fruit> initFruits() {
         List<Fruit> fruits = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 100; i++) {
             Fruit fruit = new Fruit("erha --> " + i, R.drawable.ic_erha);
             fruits.add(fruit);
         }

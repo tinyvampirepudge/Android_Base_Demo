@@ -895,20 +895,16 @@
         <activity
             android:name=".ui.view.RecyclerViewBottomFloatByItemDecorationActivity"
             android:label="RecyclerView实现吸底效果，通过ItemDecoration"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity
             android:name=".ui.view.RecyclerViewDividerItemDecorationActivity"
-            android:label="使用系统的DividerItemDecoration绘制分割线"
-            />
+            android:label="使用系统的DividerItemDecoration绘制分割线" />
         <activity
             android:name=".ui.view.RecyclerViewCustomItemDecorationDividerActivity"
-            android:label="RecyclerView使用ItemDecoration自定义分割线"
-            />
+            android:label="RecyclerView使用ItemDecoration自定义分割线" />
         <activity
             android:name=".ui.view.RecyclerViewCustomItemDecorationFloatGroupActivity"
-            android:label="RecyclerView使用ItemDecoration自定义分组悬停效果"
-            />
-
+            android:label="分组悬停，getItemOffsets预留空间，onDrawOver直接在Item上层绘制悬停布局，不复用ItemView" />
     </application>
 
 </manifest>
