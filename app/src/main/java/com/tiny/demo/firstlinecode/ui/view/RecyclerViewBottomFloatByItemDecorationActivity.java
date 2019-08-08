@@ -61,7 +61,7 @@ public class RecyclerViewBottomFloatByItemDecorationActivity extends BaseActivit
 
     private List<Fruit> initFruits() {
         List<Fruit> fruits = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 20; i++) {
             Fruit fruit = new Fruit("erha --> " + i, R.drawable.ic_erha);
             fruits.add(fruit);
         }

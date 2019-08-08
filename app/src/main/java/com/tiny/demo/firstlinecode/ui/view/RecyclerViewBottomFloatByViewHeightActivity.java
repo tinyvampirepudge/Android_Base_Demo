@@ -9,11 +9,9 @@ import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
-import com.tiny.demo.firstlinecode.common.utils.AppUtils;
 import com.tiny.demo.firstlinecode.ui.adapter.BottomAdapter;
 import com.tiny.demo.firstlinecode.ui.bean.Fruit;
 import com.tinytongtong.tinyutils.LogUtils;
-import com.tinytongtong.tinyutils.ScreenUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,23 +61,17 @@ public class RecyclerViewBottomFloatByViewHeightActivity extends BaseActivity {
         recyclerView.setAdapter(bottomAdapter);
 
         recyclerView.post(() -> {
-            // 获取屏幕可用高度，包含可用的navigationBar高度。
-            int screenHeight = ScreenUtils.getScreenH(mContext);
-            LogUtils.e(TAG, "screenHeight: " + screenHeight);
 
-            // 获取statusBar高度
-            int statusBarHeight = AppUtils.getStatusBarHeight(mContext);
-            LogUtils.e(TAG, "statusBarHeight: " + statusBarHeight);
+            // 获取RecyclerView控件高度
+            int recyclerViewHeight = recyclerView.getHeight();
+            LogUtils.e(TAG, "recyclerViewHeight: " + recyclerViewHeight);
 
-            // 获取recyclerView可滚动的高度
+            // 获取recyclerView的内容高度
             int recyclerViewRealHeight = recyclerView.computeVerticalScrollRange();
             LogUtils.e(TAG, "recyclerViewRealHeight: " + recyclerViewRealHeight);
 
-            float leftHeight = screenHeight - recyclerViewRealHeight - statusBarHeight;
-            LogUtils.e(TAG, "leftHeight: " + leftHeight);
-
             // 根据剩余空间确定是否需要显示吸底的图表底部
-            if (leftHeight < 0) {
+            if (recyclerViewHeight < recyclerViewRealHeight) {
                 tvBottom.setVisibility(View.VISIBLE);
             } else {
                 tvBottom.setVisibility(View.GONE);
@@ -89,7 +81,7 @@ public class RecyclerViewBottomFloatByViewHeightActivity extends BaseActivity {
 
     private List<Fruit> initFruits() {
         List<Fruit> fruits = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 7; i++) {
             Fruit fruit = new Fruit("erha --> " + i, R.drawable.ic_erha);
             fruits.add(fruit);
         }
