@@ -29,7 +29,7 @@ public class RecyclerViewFlowActivity extends BaseActivity {
     @Override
     protected void buildContentView() {
         initFruits();
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view_flow);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view_flow);
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         FruitiAdapterFlow fruitiAdapterFlow = new FruitiAdapterFlow(fruits);
