@@ -11,6 +11,7 @@ import com.tiny.demo.firstlinecode.javareference.copy.JavaCloneActivity4;
 import com.tiny.demo.firstlinecode.javareference.copy.JavaCloneActivity5;
 import com.tiny.demo.firstlinecode.javareference.copy.JavaCloneActivity6;
 import com.tiny.demo.firstlinecode.javareference.copy.JavaCloneActivity7;
+import com.tiny.demo.firstlinecode.javareference.copy.JavaCloneActivity8;
 
 import butterknife.OnClick;
 
@@ -49,7 +50,7 @@ public class JavaDeepCopyActivity extends BaseActivity {
         activitySwitch(JavaCloneActivity3.class);
     }
 
-    @OnClick({R.id.btn_java_deep_copy2, R.id.btn_java_deep_copy3, R.id.btn_java_deep_copy4, R.id.btn_java_deep_copy5, R.id.btn_java_deep_copy6, R.id.btn_java_deep_copy7})
+    @OnClick({R.id.btn_java_deep_copy2, R.id.btn_java_deep_copy3, R.id.btn_java_deep_copy4, R.id.btn_java_deep_copy5, R.id.btn_java_deep_copy6, R.id.btn_java_deep_copy7, R.id.btn_java_deep_copy8})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_java_deep_copy4:
@@ -63,6 +64,10 @@ public class JavaDeepCopyActivity extends BaseActivity {
                 break;
             case R.id.btn_java_deep_copy7:
                 activitySwitch(JavaCloneActivity7.class);
+                break;
+
+            case R.id.btn_java_deep_copy8:
+                activitySwitch(JavaCloneActivity8.class);
                 break;
         }
     }

@@ -7,11 +7,12 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
- * Desc:
- * Created by tiny on 2017/12/17.
- * Version:
+ * @Description: Serializable接口和自定义序列化/反序列化方法  实现java深度克隆
+ * 针对Object类型
+ * @Author wangjianzhou@qding.me
+ * @Date 2019-08-10 10:17
+ * @Version TODO
  */
-
 public class CloneClass17 implements Serializable{
     private String name;
     private CloneClass18 class18;

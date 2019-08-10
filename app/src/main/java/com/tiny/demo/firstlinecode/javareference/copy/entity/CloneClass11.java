@@ -5,9 +5,11 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Desc:
- * Created by tiny on 2017/12/17.
- * Version:
+ * @Description: 在clone方法中new 一个全新对象出来，实现java深度克隆
+ * 针对List类型
+ * @Author wangjianzhou@qding.me
+ * @Date 2019-08-10 10:07
+ * @Version TODO
  */
 
 public class CloneClass11 {
@@ -19,6 +21,7 @@ public class CloneClass11 {
         this.class12List = class12List;
     }
 
+    @Override
     public CloneClass11 clone() {
         List<CloneClass12> list = new ArrayList<>(class12List == null ? 0 : class12List.size());
         Iterator<CloneClass12> it = class12List.iterator();

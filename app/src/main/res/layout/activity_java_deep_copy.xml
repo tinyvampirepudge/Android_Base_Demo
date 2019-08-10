@@ -46,5 +46,10 @@
             style="@style/btn_style_lower"
             android:text="Java深复制和浅复制:Object, List, Map, Serializable"/>
 
+        <Button
+            android:id="@+id/btn_java_deep_copy8"
+            style="@style/btn_style_lower"
+            android:text="Java序列化和反序列化 实现深复制：相关工具类测试"/>
+
     </LinearLayout>
 </ScrollView>

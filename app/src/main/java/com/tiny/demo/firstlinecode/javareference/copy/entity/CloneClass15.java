@@ -5,9 +5,11 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * Desc:
- * Created by tiny on 2017/12/17.
- * Version:
+ * @Description: 在clone方法中new 一个全新对象出来，实现java深度克隆
+ * 针对Map类型
+ * @Author wangjianzhou@qding.me
+ * @Date 2019-08-10 10:07
+ * @Version TODO
  */
 
 public class CloneClass15 {
@@ -19,6 +21,7 @@ public class CloneClass15 {
         this.map = map;
     }
 
+    @Override
     public CloneClass15 clone() {
         Map<String, CloneClass16> cloneClass16Map = new HashMap<>(this.map == null ? 0 : this.map.size());
         Iterator<Map.Entry<String, CloneClass16>> it = this.map.entrySet().iterator();

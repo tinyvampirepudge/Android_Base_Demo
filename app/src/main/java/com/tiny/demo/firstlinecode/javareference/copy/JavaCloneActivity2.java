@@ -16,8 +16,15 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * Cloneable接口和clone方法实现java深度克隆
+ *
+ */
+
+/**
+ * @Description: Cloneable接口和clone方法实现java深度克隆
  * 针对List类型
+ * @Author wangjianzhou@qding.me
+ * @Date 2019-08-10 10:04
+ * @Version TODO
  */
 public class JavaCloneActivity2 extends BaseActivity {
 

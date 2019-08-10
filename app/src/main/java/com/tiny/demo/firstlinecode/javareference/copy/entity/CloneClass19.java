@@ -4,11 +4,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 
 /**
- * Desc:
- * Created by tiny on 2017/12/17.
- * Version:
+ * @Description: Cloneable接口和clone方法实现java深度克隆
+ *
+ * @Author wangjianzhou@qding.me
+ * @Date 2019-08-10 10:11
+ * @Version TODO
  */
-
 public class CloneClass19 implements Serializable{
     private String name;
     private HashMap<String, CloneClass20> map;

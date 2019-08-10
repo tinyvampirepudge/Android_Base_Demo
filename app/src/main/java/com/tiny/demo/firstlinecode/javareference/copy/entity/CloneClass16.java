@@ -1,9 +1,11 @@
 package com.tiny.demo.firstlinecode.javareference.copy.entity;
 
 /**
- * Desc:
- * Created by tiny on 2017/12/17.
- * Version:
+ * @Description: 在clone方法中new 一个全新对象出来，实现java深度克隆
+ * 无特殊类型
+ * @Author wangjianzhou@qding.me
+ * @Date 2019-08-10 10:07
+ * @Version TODO
  */
 
 public class CloneClass16 {
@@ -13,6 +15,7 @@ public class CloneClass16 {
         this.name = name;
     }
 
+    @Override
     public CloneClass16 clone() {
         return new CloneClass16(this.name);
     }

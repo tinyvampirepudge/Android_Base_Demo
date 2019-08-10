@@ -5,11 +5,12 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * Desc:
- * Created by tiny on 2017/12/17.
- * Version:
+ * @Description: Cloneable接口和clone方法实现java深度克隆
+ * 针对Map类型
+ * @Author wangjianzhou@qding.me
+ * @Date 2019-08-10 10:07
+ * @Version
  */
-
 public class CloneClass7 implements Cloneable {
     private String name;
     private Map<String, CloneClass8> map;

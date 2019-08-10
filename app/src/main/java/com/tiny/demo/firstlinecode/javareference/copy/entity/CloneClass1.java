@@ -1,11 +1,12 @@
 package com.tiny.demo.firstlinecode.javareference.copy.entity;
 
 /**
- * Desc:
- * Created by tiny on 2017/12/15.
- * Version:
+ * @Description: Cloneable接口和clone方法实现java深度克隆
+ * 针对Object类型
+ * @Author wangjianzhou@qding.me
+ * @Date 2019-08-10 10:04
+ * @Version TODO
  */
-
 public class CloneClass1 implements Cloneable {
     private String name;
     private CloneClass2 cloneClass2;

@@ -9,7 +9,6 @@ import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.javareference.async2sync.AsyncToSyncActivity;
 import com.tiny.demo.firstlinecode.javareference.clazz.ClazzActivity;
 import com.tiny.demo.firstlinecode.javareference.reflect.JavaReflectActivity;
-import com.tiny.demo.firstlinecode.javareference.async2sync.FutureTaskActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,7 +20,7 @@ import butterknife.OnClick;
  * Version:
  */
 
-public class JavaReferenceActivity extends BaseActivity {
+public class JavaReferenceEntryActivity extends BaseActivity {
     @BindView(R.id.btn_java_concurrent_modification_exception)
     Button btnJavaConcurrentModificationException;
     @BindView(R.id.btn_java_deep_copy)
@@ -37,7 +36,7 @@ public class JavaReferenceActivity extends BaseActivity {
 
     @Override
     protected int setContentLayout() {
-        return R.layout.activity_java_refercnce;
+        return R.layout.activity_java_refercnce_entry;
     }
 
     @Override
@@ -69,13 +68,6 @@ public class JavaReferenceActivity extends BaseActivity {
                 activitySwitch(SingletonActivity.class);
                 break;
         }
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
     }
 
     @OnClick(R.id.btn_java_reflect)

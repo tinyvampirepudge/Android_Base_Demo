@@ -235,7 +235,7 @@
         <Button
             android:id="@+id/btn_java_reference"
             style="@style/btn_style_lower"
-            android:text="java 相关" />
+            android:text="Java 相关" />
 
         <Button
             android:id="@+id/btn_ui_components"

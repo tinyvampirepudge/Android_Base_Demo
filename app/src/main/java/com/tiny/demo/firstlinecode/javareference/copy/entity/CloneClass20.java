@@ -3,11 +3,12 @@ package com.tiny.demo.firstlinecode.javareference.copy.entity;
 import java.io.Serializable;
 
 /**
- * Desc:
- * Created by tiny on 2017/12/17.
- * Version:
+ * @Description: Cloneable接口和clone方法实现java深度克隆
+ *
+ * @Author wangjianzhou@qding.me
+ * @Date 2019-08-10 10:04
+ * @Version
  */
-
 public class CloneClass20 implements Serializable {
     private String name;
 

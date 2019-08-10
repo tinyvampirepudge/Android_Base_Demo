@@ -4,11 +4,12 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Desc:
- * Created by tiny on 2017/12/17.
- * Version:
+ * @Description: Serializable接口和自定义序列化/反序列化方法  实现java深度克隆
+ *
+ * @Author wangjianzhou@qding.me
+ * @Date 2019-08-10 10:17
+ * @Version TODO
  */
-
 public class CloneClass18 implements Serializable {
     private String name;
     private List<CloneClass19> class19List;

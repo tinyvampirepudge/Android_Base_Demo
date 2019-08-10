@@ -339,7 +339,7 @@
             android:name=".handler.DifferentThreadCommunicationActivity"
             android:label="子线程间发送消息" />
         <activity
-            android:name=".javareference.JavaReferenceActivity"
+            android:name=".javareference.JavaReferenceEntryActivity"
             android:label="Java相关" />
         <activity
             android:name=".javareference.ConcurrentModificationExceptionActivity"
@@ -428,7 +428,10 @@
         <activity android:name=".javareference.copy.JavaCloneActivity6" />
         <activity
             android:name=".javareference.copy.JavaCloneActivity7"
-            android:label="Java序列化和反序列化。" />
+            android:label="Java序列化和反序列化实现深复制" />
+        <activity
+            android:name=".javareference.copy.JavaCloneActivity8"
+            android:label="序列化深复制工具类测试" />
         <activity
             android:name=".javareference.JavaDeepCopyActivity"
             android:label="Java深复制浅复制入口"

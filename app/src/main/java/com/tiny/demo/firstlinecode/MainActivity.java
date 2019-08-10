@@ -32,7 +32,7 @@ import com.tiny.demo.firstlinecode.designpattern.DesignPatternActivity;
 import com.tiny.demo.firstlinecode.filter.FilterTestActivity;
 import com.tiny.demo.firstlinecode.fragment.FragmentActivity;
 import com.tiny.demo.firstlinecode.handler.HandlerEntryActivity;
-import com.tiny.demo.firstlinecode.javareference.JavaReferenceActivity;
+import com.tiny.demo.firstlinecode.javareference.JavaReferenceEntryActivity;
 import com.tiny.demo.firstlinecode.kfysts.AndroidKfystsActivity;
 import com.tiny.demo.firstlinecode.kotlin.KotlinEntryActivity;
 import com.tiny.demo.firstlinecode.lambda.LambdaActivity;
@@ -314,7 +314,7 @@ public class MainActivity extends BaseActivity
         findViewById(R.id.btn_design_pattern).setOnClickListener(v -> startActivity(new Intent(mContext, DesignPatternActivity.class)));
 
         //java相关
-        findViewById(R.id.btn_java_reference).setOnClickListener(v -> activitySwitch(JavaReferenceActivity.class));
+        findViewById(R.id.btn_java_reference).setOnClickListener(v -> activitySwitch(JavaReferenceEntryActivity.class));
 
         //内存泄漏测试
         findViewById(R.id.btn_leak_canary_test).setOnClickListener(v -> activitySwitch(LeakCanaryActivity.class));

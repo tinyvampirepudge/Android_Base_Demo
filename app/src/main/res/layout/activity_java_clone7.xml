@@ -1,10 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.tiny.demo.firstlinecode.javareference.copy.JavaCloneActivity7">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/txt_style_normal"
+                android:text="Java序列化和反序列化实现深复制"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                style="@style/txt_style_normal"
+                android:text="源数据：" />
+
+            <TextView
+                android:id="@+id/txt1"
+                style="@style/txt_style_normal"
+                android:text="" />
+
+            <Button
+                android:id="@+id/btn_java_clone_2"
+                style="@style/btn_style_lower"
+                android:text="修改copy过的数据" />
+
+            <TextView
+                style="@style/txt_style_normal"
+                android:text="修改结果：" />
+
+            <TextView
+                android:id="@+id/txt2"
+                style="@style/txt_style_normal" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
