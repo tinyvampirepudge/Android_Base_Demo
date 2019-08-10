@@ -1,17 +1,11 @@
 package com.tiny.demo.firstlinecode.javareference.copy;
 
-import android.os.Bundle;
 import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
-import com.tiny.demo.firstlinecode.javareference.copy.entity.CloneClass17;
-import com.tiny.demo.firstlinecode.javareference.copy.entity.CloneClass18;
-import com.tiny.demo.firstlinecode.javareference.copy.entity.CloneClass19;
-import com.tiny.demo.firstlinecode.javareference.copy.entity.CloneClass20;
 import com.tiny.demo.firstlinecode.javareference.copy.entity.ObjectSerializableDeepCopyBean;
-import com.tiny.demo.firstlinecode.javareference.copy.utils.DeepCopyUtils;
+import com.tinytongtong.tinyutils.DeepCopyUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,7 +13,6 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * @Description: Java序列化和反序列化 实现深复制
