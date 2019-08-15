@@ -10,7 +10,7 @@ import android.view.View;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
-import com.tiny.demo.firstlinecode.common.utils.ScreenUtils;
+import com.tinytongtong.tinyutils.ScreenUtils;
 /**
  * @Description: View事件分发相关测试
  *

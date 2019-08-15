@@ -27,7 +27,7 @@ import android.widget.Toast;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.ScreenUtils;
+import com.tinytongtong.tinyutils.ScreenUtils;
 
 import java.io.File;
 

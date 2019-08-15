@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
-import com.tiny.demo.firstlinecode.common.utils.ScreenUtils;
+import com.tinytongtong.tinyutils.ScreenUtils;
 
 
 public class SlidingMenu extends HorizontalScrollView {

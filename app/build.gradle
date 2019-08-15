@@ -304,7 +304,7 @@ dependencies {
 
     // 引入tinyutils，https://github.com/tinyvampirepudge/TinyUtils
 //    implementation project(path: ':tinyutils')
-    implementation "com.tinytongtong:tinyutils:0.0.6"
+    implementation "com.tinytongtong:tinyutils:0.0.7"
 
     // 引入loopviewpagerlibrary，https://github.com/tinyvampirepudge/LoopViewPagerGallary
     implementation 'com.tinytongtong:loopviewpagerlibrary:1.1.0'

@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
+import com.tinytongtong.tinyutils.ScreenUtils;
 
 /**
  * Created by tiny on 16/12/19.
@@ -65,12 +66,12 @@ public class DialogUtils {
             return;
         }
         View view = LayoutInflater.from(context).inflate(R.layout.layout_dialog_common, null);
-        TextView title = (TextView) view.findViewById(R.id.txt_dialog_title);
+        TextView title = view.findViewById(R.id.txt_dialog_title);
         View lineTop = view.findViewById(R.id.line_dialog_top);
-        TextView desc1 = (TextView) view.findViewById(R.id.txt_dialog_desc1);
-        TextView desc2 = (TextView) view.findViewById(R.id.txt_dialog_desc2);
-        TextView btnOk = (TextView) view.findViewById(R.id.btn_dialog_ok);
-        TextView btnCancel = (TextView) view.findViewById(R.id.btn_dialog_cancel);
+        TextView desc1 = view.findViewById(R.id.txt_dialog_desc1);
+        TextView desc2 = view.findViewById(R.id.txt_dialog_desc2);
+        TextView btnOk = view.findViewById(R.id.btn_dialog_ok);
+        TextView btnCancel = view.findViewById(R.id.btn_dialog_cancel);
         //set view data
         title.setText(titleStr);
         if (showTopLine) {
@@ -144,9 +145,9 @@ public class DialogUtils {
     public static void showDeleteStockDialog(Context mContext, String deleteDesc, final View.OnClickListener okListener,
                                              final View.OnClickListener cancelListener, boolean cancelable) {
         View viewDeleteStock = LayoutInflater.from(mContext).inflate(R.layout.layout_delete_stock, null);
-        Button btnOk = (Button) viewDeleteStock.findViewById(R.id.btn_ok);
-        Button btnCancel = (Button) viewDeleteStock.findViewById(R.id.btn_cancel);
-        TextView txHint = (TextView) viewDeleteStock.findViewById(R.id.text_hint);
+        Button btnOk = viewDeleteStock.findViewById(R.id.btn_ok);
+        Button btnCancel = viewDeleteStock.findViewById(R.id.btn_cancel);
+        TextView txHint = viewDeleteStock.findViewById(R.id.text_hint);
         txHint.setText(deleteDesc);
 
         final AlertDialog mDialog = new AlertDialog.Builder(mContext, AlertDialog.THEME_HOLO_LIGHT).create();

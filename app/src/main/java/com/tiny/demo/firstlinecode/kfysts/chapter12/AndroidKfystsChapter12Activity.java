@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.ScreenUtils;
+import com.tinytongtong.tinyutils.ScreenUtils;
 import com.tiny.demo.firstlinecode.kfysts.chapter12.jakewarton.DiskLruCache;
 
 import java.io.File;

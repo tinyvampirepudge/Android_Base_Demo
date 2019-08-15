@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.widget.RelativeLayout;
 
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
-import com.tiny.demo.firstlinecode.common.utils.ScreenUtils;
+import com.tinytongtong.tinyutils.ScreenUtils;
 
 /**
  * Desc:

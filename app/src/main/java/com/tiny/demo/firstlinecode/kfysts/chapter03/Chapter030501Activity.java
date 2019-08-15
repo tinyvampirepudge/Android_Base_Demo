@@ -12,7 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.ScreenUtils;
+import com.tinytongtong.tinyutils.ScreenUtils;
 import com.tiny.demo.firstlinecode.kfysts.chapter03.view.HorizontalScrollViewEx;
 
 import java.util.ArrayList;

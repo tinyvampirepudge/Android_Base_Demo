@@ -23,7 +23,7 @@ import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.common.interfaces.OnTitleBarClick;
-import com.tiny.demo.firstlinecode.common.utils.ScreenUtils;
+import com.tinytongtong.tinyutils.ScreenUtils;
 
 /**
  * 类描述：自定义标题栏

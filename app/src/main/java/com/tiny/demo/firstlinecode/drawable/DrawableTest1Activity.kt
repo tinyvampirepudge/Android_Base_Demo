@@ -34,7 +34,7 @@ class DrawableTest1Activity : AppCompatActivity() {
         var srcDpi = this.resources.displayMetrics.densityDpi
 
         // 获取实际dpi对应的dpi等级
-        var targetDpi = com.tiny.demo.firstlinecode.common.utils.ScreenUtils.getTargetDpi(srcDpi)
+        var targetDpi = ScreenUtils.getTargetDpi(srcDpi)
 
         // 根据dpi等级，获取 R.drawable.empty_icon 实际尺寸
         var drawableSize = getDrawableSize(targetDpi)

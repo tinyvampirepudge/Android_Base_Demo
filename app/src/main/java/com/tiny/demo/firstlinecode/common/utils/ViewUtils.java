@@ -6,6 +6,8 @@ import android.view.MotionEvent;
 import android.view.TouchDelegate;
 import android.view.View;
 
+import com.tinytongtong.tinyutils.ScreenUtils;
+
 /**
  * Created by tiny on 17/7/26.
  */
