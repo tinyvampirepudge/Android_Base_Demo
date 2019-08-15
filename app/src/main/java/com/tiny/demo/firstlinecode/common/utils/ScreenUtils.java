@@ -93,4 +93,31 @@ public class ScreenUtils {
         int h = dm.heightPixels;
         return h;
     }
+
+
+    /**
+     * 根据实际dpi获取对应的dpi等级。
+     * 登记表参见 https://blog.csdn.net/guolin_blog/article/details/50727753
+     * @param srcDpi
+     * @return
+     */
+    public static int getTargetDpi(int srcDpi) {
+        int targetDpi = 0;
+
+        if (srcDpi <= 120) {// ldpi
+            targetDpi = 120;
+        } else if (srcDpi <= 160) {// mdpi
+            targetDpi = 160;
+        } else if (srcDpi <= 240) {// hdpi
+            targetDpi = 240;
+        } else if (srcDpi <= 320) {// xhdpi
+            targetDpi = 320;
+        } else if (srcDpi <= 480) {// xxhdpi
+            targetDpi = 480;
+        } else if (srcDpi <= 640) {// xxxhdpi
+            targetDpi = 640;
+        }
+
+        return targetDpi;
+    }
 }

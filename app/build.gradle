@@ -304,10 +304,13 @@ dependencies {
 
     // 引入tinyutils，https://github.com/tinyvampirepudge/TinyUtils
 //    implementation project(path: ':tinyutils')
-    implementation "com.tinytongtong:tinyutils:0.0.4"
+    implementation "com.tinytongtong:tinyutils:0.0.6"
 
     // 引入loopviewpagerlibrary，https://github.com/tinyvampirepudge/LoopViewPagerGallary
     implementation 'com.tinytongtong:loopviewpagerlibrary:1.1.0'
+
+    // 屏幕适配方案：https://github.com/JessYanCoding/AndroidAutoSize
+//    implementation 'me.jessyan:autosize:1.1.2'
 }
 
 kotlin {

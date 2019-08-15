@@ -37,6 +37,14 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="375" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="667" />
+
         <activity
             android:name=".guide.SplashActivity"
             android:theme="@style/AppStartFullScreen">
@@ -897,8 +905,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.view.RecyclerViewBottomFloatByItemDecorationActivity"
-            android:label="RecyclerView实现吸底效果，通过ItemDecoration"
-            />
+            android:label="RecyclerView实现吸底效果，通过ItemDecoration" />
         <activity
             android:name=".ui.view.RecyclerViewDividerItemDecorationActivity"
             android:label="使用系统的DividerItemDecoration绘制分割线" />
@@ -908,6 +915,13 @@
         <activity
             android:name=".ui.view.RecyclerViewCustomItemDecorationFloatGroupActivity"
             android:label="分组悬停，getItemOffsets预留空间，onDrawOver直接在Item上层绘制悬停布局，不复用ItemView" />
+        <activity
+            android:name=".drawable.DrawableEntryActivity"
+            android:label="Drawable加载规则学习" />
+        <activity android:name=".drawable.DrawableTest3Activity"
+            android:label="Drawable中图片缩放规则"/>
+        <activity android:name=".drawable.DrawableTest2Activity" />
+        <activity android:name=".drawable.DrawableTest1Activity" />
     </application>
 
 </manifest>

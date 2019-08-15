@@ -29,6 +29,7 @@ import com.tiny.demo.firstlinecode.common.utils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.MapUtils;
 import com.tiny.demo.firstlinecode.coolweather.CoolWeatherActivity;
 import com.tiny.demo.firstlinecode.designpattern.DesignPatternActivity;
+import com.tiny.demo.firstlinecode.drawable.DrawableEntryActivity;
 import com.tiny.demo.firstlinecode.filter.FilterTestActivity;
 import com.tiny.demo.firstlinecode.fragment.FragmentActivity;
 import com.tiny.demo.firstlinecode.handler.HandlerEntryActivity;
@@ -360,6 +361,9 @@ public class MainActivity extends BaseActivity
 
         //Android中的屏幕适配
         findViewById(R.id.btn_screen_adaptive).setOnClickListener(v -> ScreenAdaptiveEntryActivity.actionStart(mContext));
+
+        //Drawable加载规则测试
+        findViewById(R.id.btn_drawable_test).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, DrawableEntryActivity.class)));
 
         //test的数据都放在这里面
         findViewById(R.id.btn_test).setOnClickListener(v -> {

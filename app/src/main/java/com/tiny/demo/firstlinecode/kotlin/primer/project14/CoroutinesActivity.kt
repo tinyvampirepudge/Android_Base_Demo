@@ -1,8 +1,7 @@
 package com.tiny.demo.firstlinecode.kotlin.primer.project14
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Contacts
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.tiny.demo.firstlinecode.R
 import kotlinx.android.synthetic.main.activity_coroutines.*

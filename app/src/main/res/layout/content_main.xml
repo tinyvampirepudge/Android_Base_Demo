@@ -318,6 +318,11 @@
             android:text="Android中的屏幕适配" />
 
         <Button
+            android:id="@+id/btn_drawable_test"
+            style="@style/btn_style_lower"
+            android:text="Drawable加载规则测试" />
+
+        <Button
             android:id="@+id/btn_test"
             style="@style/btn_style_lower"
             android:text="test 相关" />
