@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.kfysts.chapter01.activity.allowtaskreparenting.AllowTaskReparentingTestActivity;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -57,5 +58,18 @@ public class LauncherModeEntryActivity extends AppCompatActivity {
         intent.setClass(this, LauncherModeSecondActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         getApplicationContext().startActivity(intent);
+    }
+
+    @OnClick(R.id.btn_test5)
+    public void onBtnTest5Clicked() {
+        LogUtils.e("single Top clicked");
+        startActivity(new Intent(this, LaunchModeSingleTopTestActivity.class));
+    }
+
+    @OnClick(R.id.btn_test6)
+    public void onBtnTest6Clicked() {
+        for (int i = 0; i < 5; i++) {
+            startActivity(new Intent(this, LaunchModeSingleTopTestActivity.class));
+        }
     }
 }

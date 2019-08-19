@@ -37,7 +37,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="design_width_in_dp"
             android:value="375" />
@@ -918,10 +917,14 @@
         <activity
             android:name=".drawable.DrawableEntryActivity"
             android:label="Drawable加载规则学习" />
-        <activity android:name=".drawable.DrawableTest3Activity"
-            android:label="Drawable中图片缩放规则"/>
+        <activity
+            android:name=".drawable.DrawableTest3Activity"
+            android:label="Drawable中图片缩放规则" />
         <activity android:name=".drawable.DrawableTest2Activity" />
         <activity android:name=".drawable.DrawableTest1Activity" />
+        <activity
+            android:name=".kfysts.chapter01.activity.LaunchModeSingleTopTestActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

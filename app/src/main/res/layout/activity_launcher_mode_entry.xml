@@ -31,4 +31,14 @@
         style="@style/btn_style_lower"
         android:text="通过ApplicationContext启动Activity" />
 
+    <Button
+        android:id="@+id/btn_test5"
+        style="@style/btn_style_lower"
+        android:text="防止打开多个Activity——singleTop启动模式" />
+
+    <Button
+        android:id="@+id/btn_test6"
+        style="@style/btn_style_lower"
+        android:text="瞬间打开多个Activity——singleTop启动模式" />
+
 </LinearLayout>
