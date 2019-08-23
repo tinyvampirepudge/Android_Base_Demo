@@ -925,6 +925,9 @@
         <activity
             android:name=".kfysts.chapter01.activity.LaunchModeSingleTopTestActivity"
             android:launchMode="singleTop" />
+        <activity android:name=".designpattern.talkbig.chapter21.SingletonOtherProcessTestActivity"
+            android:process=":singleton_test"/>
+
     </application>
 
 </manifest>

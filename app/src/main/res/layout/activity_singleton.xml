@@ -7,13 +7,25 @@
     <Button
         android:id="@+id/btn_singleton_lhs"
         style="@style/btn_style_lower"
-        android:text="懒汉式单利"
+        android:text="懒汉式单例"
         />
 
     <Button
         android:id="@+id/btn_singleton_ehs"
         style="@style/btn_style_lower"
-        android:text="饿汉式单利"
+        android:text="饿汉式单例"
+        />
+
+    <Button
+        android:id="@+id/btn_singleton_safe_dcl"
+        style="@style/btn_style_lower"
+        android:text="基于双重检查锁定来实现延迟初始化"
+        />
+
+    <Button
+        android:id="@+id/btn_singleton_static_inner_class"
+        style="@style/btn_style_lower"
+        android:text="基于静态内部类的延迟初始化方案"
         />
 
 </LinearLayout>

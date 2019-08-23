@@ -1,9 +1,14 @@
 package com.tiny.demo.firstlinecode.designpattern.talkbig.chapter21;
 
+import android.content.Intent;
+import android.os.Process;
+import android.util.Log;
 import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
+import com.tiny.demo.firstlinecode.common.utils.ProcessUtil;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -43,5 +48,29 @@ public class SingletonActivity extends BaseActivity {
     @OnClick(R.id.btn_singleton_ehs)
     public void onBtnSingletonEhsClicked() {
         SingletonEhs.getInstance().showInfo();
+    }
+
+    @OnClick(R.id.btn_singleton_safe_dcl)
+    public void onBtnSingletonSafeDCLClicked() {
+        //进程名称
+        String processName = ProcessUtil.getProcessNameByCtx(this, Process.myPid());
+        LogUtils.e(TAG, "processName000:" + processName);
+        SafeDoubleCheckedLocking.getInstance().addValue();
+        SafeDoubleCheckedLocking.getInstance().addValue();
+        LogUtils.e(TAG, "SafeDoubleCheckedLocking.getInstance().getValue()111:" + SafeDoubleCheckedLocking.getInstance().getValue());
+
+        startActivity(new Intent(this, SingletonOtherProcessTestActivity.class));
+    }
+
+    @OnClick(R.id.btn_singleton_static_inner_class)
+    public void onBtnSingletonStaticInnerClassClicked() {
+        //进程名称
+        String processName = ProcessUtil.getProcessNameByCtx(this, Process.myPid());
+        LogUtils.e(TAG, "processName111:" + processName);
+        InstanceFactory.getInstance().addValue();
+        InstanceFactory.getInstance().addValue();
+        LogUtils.e(TAG, "InstanceFactory.getInstance().getValue()111:" + InstanceFactory.getInstance().getValue());
+
+        startActivity(new Intent(this, SingletonOtherProcessTestActivity.class));
     }
 }
