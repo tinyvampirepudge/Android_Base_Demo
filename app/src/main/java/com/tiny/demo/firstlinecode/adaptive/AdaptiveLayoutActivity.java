@@ -4,7 +4,14 @@ import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
 
-public class AdaptiveActivity extends BaseActivity {
+/**
+ * @Description: 布局适配
+ *
+ * @Author wangjianzhou@qding.me
+ * @Date 2019-08-23 18:17
+ * @Version TODO
+ */
+public class AdaptiveLayoutActivity extends BaseActivity {
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
@@ -13,7 +20,7 @@ public class AdaptiveActivity extends BaseActivity {
 
     @Override
     protected int setContentLayout() {
-        return R.layout.activity_adaptive;
+        return R.layout.activity_adaptive_layout;
     }
 
     @Override

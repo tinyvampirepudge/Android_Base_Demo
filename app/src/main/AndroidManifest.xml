@@ -103,7 +103,7 @@
         <activity android:name=".activity.StartActivity" />
         <activity android:name=".ui.view.CommonUIComponentsActivity" />
         <activity android:name=".ui.view.PercentLayoutActivity" />
-        <activity android:name=".adaptive.AdaptiveActivity" />
+        <activity android:name=".adaptive.AdaptiveLayoutActivity" />
         <activity android:name=".ui.view.ListViewActivity" />
         <activity android:name=".ui.view.RecyclerViewVerticalActivity" />
         <activity android:name=".ui.view.RecyclerViewHorizontalActivity" />
@@ -925,9 +925,15 @@
         <activity
             android:name=".kfysts.chapter01.activity.LaunchModeSingleTopTestActivity"
             android:launchMode="singleTop" />
-        <activity android:name=".designpattern.talkbig.chapter21.SingletonOtherProcessTestActivity"
-            android:process=":singleton_test"/>
-
+        <activity
+            android:name=".designpattern.talkbig.chapter21.SingletonOtherProcessTestActivity"
+            android:process=":singleton_test" />
+        <activity
+            android:name=".adaptive.AdaptiveEntryActivity"
+            android:label="各种适配入口" />
+        <activity
+            android:name=".adaptive.AdaptiveNavigationBarActivity"
+            android:label="NavigationBar高度适配" />
     </application>
 
 </manifest>

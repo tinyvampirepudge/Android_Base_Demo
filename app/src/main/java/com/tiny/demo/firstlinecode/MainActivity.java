@@ -18,7 +18,8 @@ import com.coder.zzq.smartshow.toast.SmartToast;
 import com.google.gson.Gson;
 import com.tiny.demo.firstlinecode.activity.ActivityReferedActivity;
 import com.tiny.demo.firstlinecode.activity.activity_stack_manager.ActivityCollector;
-import com.tiny.demo.firstlinecode.adaptive.AdaptiveActivity;
+import com.tiny.demo.firstlinecode.adaptive.AdaptiveEntryActivity;
+import com.tiny.demo.firstlinecode.adaptive.AdaptiveLayoutActivity;
 import com.tiny.demo.firstlinecode.audio.AudioActivity;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.bitmap.BitmapActivity;
@@ -232,7 +233,7 @@ public class MainActivity extends BaseActivity
         findViewById(R.id.btn_ui_components).setOnClickListener(v -> activitySwitch(UIComponentsActivity.class));
 
         //布局适配
-        findViewById(R.id.btn_adaptive).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AdaptiveActivity.class)));
+        findViewById(R.id.btn_adaptive).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AdaptiveEntryActivity.class)));
 
         //fragment
         findViewById(R.id.btn_fragment).setOnClickListener(v -> startActivity(new Intent(mContext, FragmentActivity.class)));
