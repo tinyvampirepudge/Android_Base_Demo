@@ -934,6 +934,9 @@
         <activity
             android:name=".adaptive.AdaptiveNavigationBarActivity"
             android:label="NavigationBar高度适配" />
+        <activity
+            android:name=".concurrentprogram.JavaArtOfConcurrentProgramActivity"
+            android:label="Java并发编程的艺术" />
     </application>
 
 </manifest>

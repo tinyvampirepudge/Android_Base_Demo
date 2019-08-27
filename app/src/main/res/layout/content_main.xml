@@ -278,6 +278,11 @@
             android:text="Android 开发艺术探索 任玉刚" />
 
         <Button
+            android:id="@+id/btn_java_art_of_concurrent_programming"
+            style="@style/btn_style_lower"
+            android:text="Java并发编程的艺术" />
+
+        <Button
             android:id="@+id/btn_rxjava2"
             style="@style/btn_style_lower"
             android:text="rxjava2" />

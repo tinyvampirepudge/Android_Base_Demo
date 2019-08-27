@@ -28,6 +28,7 @@ import com.tiny.demo.firstlinecode.brvah.BaseRecyclerViewAdapterHelperActivity;
 import com.tiny.demo.firstlinecode.camera.CameraAlbumActivity;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.MapUtils;
+import com.tiny.demo.firstlinecode.concurrentprogram.JavaArtOfConcurrentProgramActivity;
 import com.tiny.demo.firstlinecode.coolweather.CoolWeatherActivity;
 import com.tiny.demo.firstlinecode.designpattern.DesignPatternActivity;
 import com.tiny.demo.firstlinecode.drawable.DrawableEntryActivity;
@@ -330,14 +331,17 @@ public class MainActivity extends BaseActivity
         //SmartToast
         findViewById(R.id.btn_smart_toast).setOnClickListener(v -> activitySwitch(SmartToastActivity.class));
 
-        //Think In Java
-        findViewById(R.id.btn_think_in_java).setOnClickListener(v -> activitySwitch(ThingInJavaActivity.class));
-
         //ImageView圆角
         findViewById(R.id.btn_image_view_round_corner).setOnClickListener(v -> activitySwitch(ImageViewEntryActivity.class));
 
+        //Think In Java
+        findViewById(R.id.btn_think_in_java).setOnClickListener(v -> activitySwitch(ThingInJavaActivity.class));
+
         //Android开发艺术探索
         findViewById(R.id.btn_android_kfysts).setOnClickListener(v -> AndroidKfystsActivity.actionStart(mContext));
+
+        //Java并发编程的艺术
+        findViewById(R.id.btn_java_art_of_concurrent_programming).setOnClickListener(v -> JavaArtOfConcurrentProgramActivity.actionStart(mContext));
 
         //rxjava2
         findViewById(R.id.btn_rxjava2).setOnClickListener(v -> Rxjava2EntryActivity.actionStart(mContext));
