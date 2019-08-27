@@ -937,6 +937,16 @@
         <activity
             android:name=".concurrentprogram.JavaArtOfConcurrentProgramActivity"
             android:label="Java并发编程的艺术" />
+
+        <service
+            android:name=".notification.CustomNotificationListenerService"
+            android:label="监听消息"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>
