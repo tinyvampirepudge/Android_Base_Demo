@@ -947,6 +947,9 @@
             </intent-filter>
         </service>
 
+        <activity
+            android:name=".test.view.RecyclerViewInConstraintLayoutActivity"
+            android:label="RecyclerView在ConstraintLayout中最后一个Item显示不全的问题" />
     </application>
 
 </manifest>

@@ -363,4 +363,10 @@ public class TestActivity extends BaseActivity {
         intent.setData(uri);
         context.startActivity(intent);
     }
+
+    @OnClick(R.id.btn_test_recycler_view_in_constraint_layout)
+    public void onViewRecyclerViewInConstrraintLayoutClicked() {
+        startActivity(new Intent(this, RecyclerViewInConstraintLayoutActivity.class));
+    }
+
 }

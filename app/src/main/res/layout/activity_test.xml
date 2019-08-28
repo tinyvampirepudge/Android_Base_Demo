@@ -145,6 +145,11 @@
                 style="@style/btn_style_lower"
                 android:text="LayoutInflater#inflate()原理解析" />
 
+            <Button
+                android:id="@+id/btn_test_recycler_view_in_constraint_layout"
+                style="@style/btn_style_lower"
+                android:text="RecyclerView在ConstraintLayout中最后一个Item显示不全的问题" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
