@@ -1,6 +1,5 @@
 package com.tiny.demo.firstlinecode.uicomponents;
 
-import android.os.Bundle;
 import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
@@ -8,13 +7,11 @@ import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.uicomponents.bottomnaviview.BottomNavigationViewActivity;
 import com.tiny.demo.firstlinecode.uicomponents.constraintlayout.ConstraintLayoutActivity;
 import com.tiny.demo.firstlinecode.uicomponents.tablayout.TabLayoutActivity;
-import com.tiny.demo.firstlinecode.uicomponents.textview.SpannableStringBuilderActivity;
 import com.tiny.demo.firstlinecode.uicomponents.textview.TextViewEntryActivity;
 import com.tiny.demo.firstlinecode.uicomponents.viewpager.ViewPagerPageTransformerActivity;
 import com.tiny.demo.firstlinecode.uicomponents.viewpager.loop.LoopViewPagerActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**

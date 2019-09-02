@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tiny.demo.firstlinecode.R;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -20,6 +21,8 @@ public class JavaArtOfConcurrentProgramActivity extends AppCompatActivity {
     public static void actionStart(Context context) {
         Intent starter = new Intent(context, JavaArtOfConcurrentProgramActivity.class);
         context.startActivity(starter);
+
+        LogUtils.eFullMsg("tag","result");
     }
 
     @Override
