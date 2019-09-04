@@ -94,8 +94,9 @@ public class DialogUtils {
         if (!TextUtils.isEmpty(cancelStr)) {
             btnCancel.setText(cancelStr);
         }
-//        final AlertDialog mDialog = new AlertDialog.Builder(context, AlertDialog.THEME_HOLO_LIGHT).create();
-        final AlertDialog mDialog = new AlertDialog.Builder(context).create();
+        // 设置全屏主题
+        final AlertDialog mDialog = new AlertDialog.Builder(context, R.style.custom_dialog).create();
+//        final AlertDialog mDialog = new AlertDialog.Builder(context).create();
 
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override

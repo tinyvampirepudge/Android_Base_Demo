@@ -57,6 +57,14 @@
             android:layout_marginTop="10dp"
             android:text="activity正确的启动方式"/>
 
+        <Button
+            android:id="@+id/btn_onNewIntent"
+            style="@style/btn_style_lower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="onNewIntent相关测试"/>
+
 
     </LinearLayout>
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Process;
 import android.view.View;
 
+import com.tiny.demo.firstlinecode.activity.on_new_intent.OnNewIntentActivity;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.activity.activity_lifecycle.LifecycleActivity;
@@ -63,6 +64,14 @@ public class ActivityReferedActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 StartActivity.actionStart(ActivityReferedActivity.this,"hello","start activity");
+            }
+        });
+
+        // onNewIntent相关测试
+        findViewById(R.id.btn_onNewIntent).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OnNewIntentActivity.actionStart(ActivityReferedActivity.this);
             }
         });
     }
