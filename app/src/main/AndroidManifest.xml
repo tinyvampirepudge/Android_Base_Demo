@@ -17,6 +17,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 手机状态权限 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 悬浮窗权限 -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- aidl -->
+    <uses-permission android:name="android.permission.READ_LOGS" /><!-- 获取log -->
+
     <permission
         android:name="com.tiny.demo.firstlinecode.aidl.AIDL_SERVICE"
         android:protectionLevel="normal" /> <!-- manual aidl -->

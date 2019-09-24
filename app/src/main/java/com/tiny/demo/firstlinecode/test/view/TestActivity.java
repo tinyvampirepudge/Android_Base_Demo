@@ -1,14 +1,18 @@
 package com.tiny.demo.firstlinecode.test.view;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Handler;
 import android.os.Looper;
+import android.os.Message;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tiny.demo.firstlinecode.R;
@@ -19,6 +23,12 @@ import com.tiny.demo.firstlinecode.templates.template5.view.MvpTest5Actiity;
 import com.tiny.demo.firstlinecode.test.view.floating.FloatingActivity;
 import com.tinytongtong.tinyutils.ThreadUtils;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.concurrent.Callable;
@@ -367,6 +377,81 @@ public class TestActivity extends BaseActivity {
     @OnClick(R.id.btn_test_recycler_view_in_constraint_layout)
     public void onViewRecyclerViewInConstrraintLayoutClicked() {
         startActivity(new Intent(this, RecyclerViewInConstraintLayoutActivity.class));
+    }
+
+    private ProgressDialog progressDialog;
+
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 0:
+                    hideProgressDialog();
+                    break;
+                case 1:
+                    hideProgressDialog();
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
+
+    private void showProgressDialog() {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("正在写入，请等待");
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+    }
+
+    private void hideProgressDialog() {
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
+    }
+
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            try {
+                File target = new File(getExternalCacheDir().getPath() + "/umeng_push_demo_test.txt");
+                if (target != null) {
+                    Process process = Runtime.getRuntime().exec("logcat -d");
+                    BufferedReader bufferedReader = new BufferedReader(
+                            new InputStreamReader(process.getInputStream()));
+
+                    BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(target));
+                    String line;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        bufferedWriter.append(line);
+                        bufferedWriter.newLine();
+                        bufferedWriter.flush();
+                    }
+
+                    bufferedWriter.append("这次写log结束了!!!");
+                    bufferedWriter.newLine();
+                    bufferedWriter.flush();
+
+                    bufferedWriter.close();
+                    bufferedReader.close();
+                    handler.sendEmptyMessage(1);
+                } else {
+                    handler.sendEmptyMessage(0);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                handler.sendEmptyMessage(0);
+            }
+        }
+    };
+
+    @OnClick(R.id.btn_test_write_log_to_local_file)
+    public void onViewWriteLogToLocalFileClicked() {
+        showProgressDialog();
+        new Thread(runnable).start();
     }
 
 }

@@ -150,6 +150,16 @@
                 style="@style/btn_style_lower"
                 android:text="RecyclerView在ConstraintLayout中最后一个Item显示不全的问题" />
 
+            <Button
+                android:id="@+id/btn_test_write_log_to_local_file"
+                style="@style/btn_style_lower"
+                android:text="将log输出到本地" />
+
+            <TextView
+                android:id="@+id/tv"
+                style="@style/btn_style_lower"
+                />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
