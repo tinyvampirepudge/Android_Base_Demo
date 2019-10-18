@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,20 +10,28 @@
         android:id="@+id/btn_test1"
         style="@style/btn_style_lower"
         android:text="初步使用"
-        />
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_test2"
         style="@style/btn_style_lower"
         android:text="RelativeLayout布局实现剩余空间分配"
-        app:layout_constraintTop_toBottomOf="@id/btn_test1"
-        />
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_test1" />
 
     <Button
         android:id="@+id/btn_test3"
         style="@style/btn_style_lower"
         android:text="与RelativeLayout对比"
-        app:layout_constraintTop_toBottomOf="@id/btn_test2"
-        />
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_test2" />
+
+    <Button
+        android:id="@+id/btn_test4"
+        style="@style/btn_style_lower"
+        android:text="布局跟随"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_test3" />
 
 </android.support.constraint.ConstraintLayout>

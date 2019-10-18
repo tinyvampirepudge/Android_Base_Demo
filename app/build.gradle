@@ -20,7 +20,7 @@ android {
 
         //多渠道打包的配置，除了下面的，如果没有这句代码的话，apk的输出位置会在build/outputs/apk下面
         // 默认是umeng的渠道
-        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wap"]
+//        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wap"]
 
         //lambda
 //        jackOptions {
@@ -90,6 +90,17 @@ android {
                     }
                 }
             }
+            //打包好的文件进行输出，修改文件名称的操作在下面进行。
+            applicationVariants.all { variant ->
+                //这个修改输出的APK路径
+                if (variant.buildType.name != "debug") {//防止AS无法安装debug包(apk)
+                    variant.getPackageApplication().outputDirectory = new File(project.rootDir.absolutePath + "/apk")
+                }
+                variant.getPackageApplication().outputScope.apkDatas.forEach { apkData ->
+                    //这个修改输出APK的文件名: mjh_v1.0_huawei_.apk
+                    apkData.outputFileName = "first_line_code_v${defaultConfig.versionName}_${variant.productFlavors[0].name}_${getGitRevision()}_${variant.buildType.name}.apk"
+                }
+            }
         }
     }
 
@@ -128,9 +139,9 @@ android {
         _test {}
     }
 
-    productFlavors.all { flavor ->
-        flavor.manifestPlaceholders = ["UMENG_CHANNEL_VALUE": name]
-    }
+//    productFlavors.all { flavor ->
+//        flavor.manifestPlaceholders = ["UMENG_CHANNEL_VALUE": name]
+//    }
 
     //针对2.3版本添加的配置
     lintOptions {

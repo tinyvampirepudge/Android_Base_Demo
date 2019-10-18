@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,34 +13,27 @@
         <Button
             android:id="@+id/btn_tablayout"
             style="@style/btn_style_lower"
-            android:text="TabLayout + ViewPager + Fragment"
-            />
+            android:text="TabLayout + ViewPager + Fragment" />
 
         <Button
             android:id="@+id/btn_bottomNavigationView"
             style="@style/btn_style_lower"
-            android:text="BottomNavigationView + ViewPager + Fragment"
-            />
-
-        />
+            android:text="BottomNavigationView + ViewPager + Fragment" />
 
         <Button
             android:id="@+id/btn_constraintLayout"
             style="@style/btn_style_lower"
-            android:text="constraintLayout"
-            />
+            android:text="constraintLayout" />
 
         <Button
             android:id="@+id/btn_viewpager_page_transformer"
             style="@style/btn_style_lower"
-            android:text="viewpager page transformer"
-            />
+            android:text="viewpager page transformer" />
 
         <Button
             android:id="@+id/btn_loop_viewpager"
             style="@style/btn_style_lower"
-            android:text="无限循环的viewpager"
-            />
+            android:text="无限循环的viewpager" />
 
         <Button
             android:id="@+id/btn_textview"

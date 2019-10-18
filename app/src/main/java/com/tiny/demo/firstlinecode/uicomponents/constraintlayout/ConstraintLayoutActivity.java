@@ -32,4 +32,9 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
     public void onBtnTest3Clicked() {
         startActivity(new Intent(this, ConstraintLayout2Activity.class));
     }
+
+    @OnClick(R.id.btn_test4)
+    public void onBtnTest4Clicked() {
+        startActivity(new Intent(this, ConstraintLayout3Activity.class));
+    }
 }
