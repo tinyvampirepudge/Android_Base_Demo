@@ -49,6 +49,11 @@
             android:text="progress dialog" />
 
         <Button
+            android:id="@+id/btn_loading_dialog"
+            style="@style/btn_style_lower"
+            android:text="自定义 Loading dialog" />
+
+        <Button
             android:id="@+id/btn_percent_layout"
             style="@style/btn_style_lower"
             android:text="percent layout(百分比布局)" />

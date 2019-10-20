@@ -13,6 +13,7 @@ import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.ui.bean.StockEditBean;
 import com.tiny.demo.firstlinecode.ui.swipe.SwipeDeleteRecyclerViewActivity;
+import com.tiny.demo.firstlinecode.view.dialog.LoadingDialog;
 
 import java.util.ArrayList;
 
@@ -32,6 +33,7 @@ public class CommonUIComponentsActivity extends BaseActivity {
     private Button btnH;
     private ProgressBar pH;
     private ProgressBar pD;
+    private LoadingDialog loadingDialog;
 
     public static void actionStart(Context context) {
         Intent intent = new Intent(context, CommonUIComponentsActivity.class);
@@ -80,6 +82,18 @@ public class CommonUIComponentsActivity extends BaseActivity {
             progressDialog.setMessage("Loading...");
             progressDialog.setCancelable(true);
             progressDialog.show();
+        });
+
+        findViewById(R.id.btn_loading_dialog).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (loadingDialog == null) {
+                    loadingDialog = new LoadingDialog(mContext);
+                    loadingDialog.setCancelable(true);
+                    loadingDialog.setCanceledOnTouchOutside(false);
+                }
+                loadingDialog.show();
+            }
         });
 
         //百分比布局
@@ -153,5 +167,14 @@ public class CommonUIComponentsActivity extends BaseActivity {
     @OnClick(R.id.btn_recyclerview_custom_item_decoration_float_group_getItemOffsets_onDrawOver)
     public void onRecyclerViewCustomItemDecorationFloatGroupClicked() {
         RecyclerViewCustomItemDecorationFloatGroupActivity.actionStart(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (loadingDialog != null && loadingDialog.isShowing()) {
+            loadingDialog.dismiss();
+            loadingDialog = null;
+        }
+        super.onDestroy();
     }
 }
