@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".rxjava2.practice.RxEasyHttpCacheFirstRemoteStrategyTestActivity">
+
+    <Button
+        android:id="@+id/btn_send_request_success"
+        style="@style/btn_style_lower"
+        android:text="发起请求——正常"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_send_request_failure"
+        style="@style/btn_style_lower"
+        android:text="发起请求——异常"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_send_request_success" />
+
+</android.support.constraint.ConstraintLayout>

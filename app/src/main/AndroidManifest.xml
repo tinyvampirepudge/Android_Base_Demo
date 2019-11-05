@@ -38,7 +38,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".uicomponents.constraintlayout.ConstraintLayout3Activity"></activity>
+        <activity
+            android:name=".rxjava2.practice.RxEasyHttpCacheFirstRemoteStrategyTestActivity"
+            android:label="RxEasyHttp cache FirstRemoteStrategy模式模拟" />
+        <activity android:name=".uicomponents.constraintlayout.ConstraintLayout3Activity" />
         <activity
             android:name=".activity.on_new_intent.DialogStyleActivity"
             android:excludeFromRecents="true"
