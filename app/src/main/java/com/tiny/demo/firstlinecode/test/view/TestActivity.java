@@ -8,6 +8,9 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.provider.Settings;
+import android.support.design.widget.BottomSheetDialog;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -18,9 +21,11 @@ import android.widget.Toast;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 import com.tiny.demo.firstlinecode.templates.temp1.view.MvpTestActivity;
 import com.tiny.demo.firstlinecode.templates.template5.view.MvpTest5Actiity;
 import com.tiny.demo.firstlinecode.test.view.floating.FloatingActivity;
+import com.tiny.demo.firstlinecode.test.view.wheelview.WheelView;
 import com.tinytongtong.tinyutils.ThreadUtils;
 
 import java.io.BufferedReader;
@@ -31,6 +36,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -454,4 +462,50 @@ public class TestActivity extends BaseActivity {
         new Thread(runnable).start();
     }
 
+    @OnClick(R.id.btn_test_wheel_view)
+    public void onViewWheelViewClicked() {
+        View view = View.inflate(mContext, R.layout.dialog_select_project_wheel_view, null);
+
+        WheelView wv = view.findViewById(R.id.wheelView);
+
+        TextView cancel = view.findViewById(R.id.tv_cancel);
+        TextView confirm = view.findViewById(R.id.tv_confirm);
+
+        final List<String> mOptionsItems = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            mOptionsItems.add("猫了个咪啊" + i);
+        }
+
+        wv.setOffset(2);
+        wv.setItems(mOptionsItems);
+        wv.setSeletion(3);
+        wv.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
+            @Override
+            public void onSelected(int selectedIndex, String item) {
+
+            }
+        });
+
+        final BottomSheetDialog mBottomSheetDialog = new BottomSheetDialog(mContext);
+        mBottomSheetDialog.setContentView(view);
+        mBottomSheetDialog.setCancelable(false);
+        mBottomSheetDialog.setCanceledOnTouchOutside(false);
+
+        // 设置取消、确定点击事件
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mBottomSheetDialog.dismiss();
+            }
+        });
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtils.showSingleToast(wv.getSeletedItem());
+                mBottomSheetDialog.dismiss();
+            }
+        });
+
+        mBottomSheetDialog.show();
+    }
 }
