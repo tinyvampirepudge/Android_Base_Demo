@@ -145,6 +145,11 @@
                 style="@style/btn_style_lower"
                 android:text="https://github.com/wangjiegulu/WheelView" />
 
+            <Button
+                android:id="@+id/btn_test_text_view_bold"
+                style="@style/btn_style_lower"
+                android:text="TextView字体加粗效果测试" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

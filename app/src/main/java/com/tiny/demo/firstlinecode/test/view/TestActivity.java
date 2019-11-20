@@ -508,4 +508,9 @@ public class TestActivity extends BaseActivity {
 
         mBottomSheetDialog.show();
     }
+
+    @OnClick(R.id.btn_test_text_view_bold)
+    public void onViewTextViewBoldClicked() {
+        TextViewBoldTestActivity.actionStart(this);
+    }
 }
