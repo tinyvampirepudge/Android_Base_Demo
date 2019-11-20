@@ -34,4 +34,11 @@
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_test3" />
 
+    <Button
+        android:id="@+id/btn_test5"
+        style="@style/btn_style_lower"
+        android:text="最右侧不动，左边布局跟随效果"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_test4" />
+
 </android.support.constraint.ConstraintLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".uicomponents.constraintlayout.ConstraintLayoutPractice1Activity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintLeft_toRightOf="@id/civ"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_message_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/shape_f8f8f8_radius_4dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:minHeight="16dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="1dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="1dp"
+            android:singleLine="true"
+            android:textColor="#939EAB"
+            android:textSize="13dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/tv_message_title"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_message_title"
+            android:text="12:30" />
+
+        <TextView
+            android:id="@+id/tv_message_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:textColor="#333"
+            android:textSize="17dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tv_message_tag"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="我是标题" />
+
+        <TextView
+            android:id="@+id/tv_message_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/common_bg_gray_normal"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:paddingLeft="5dp"
+            android:paddingTop="2dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="2dp"
+            android:text="标签"
+            android:textColor="#0084FF"
+            android:textSize="13dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/tv_message_title"
+            app:layout_constraintLeft_toRightOf="@id/tv_message_title"
+            app:layout_constraintRight_toLeftOf="@id/barrier"
+            app:layout_constraintTop_toTopOf="@id/tv_message_title" />
+
+        <android.support.constraint.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="left"
+            app:constraint_referenced_ids="tv_message_time" />
+
+        <TextView
+            android:id="@+id/tv_message_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:textSize="15dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/barrier"
+            app:layout_constraintTop_toBottomOf="@id/tv_message_title"
+            android:text="我是描述内容我是描述内容我是描述内容我是描述内容我是描述内容我是描述内容" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
