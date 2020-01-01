@@ -179,10 +179,12 @@ public abstract class BaseDialog extends AlertDialog {
         this.okListener = okListener;
     }
 
+    @Override
     public void setCancelable(boolean cancelable) {
         this.cancelable = cancelable;
     }
 
+    @Override
     public void setCanceledOnTouchOutside(boolean canceledOutside) {
         this.canceledOutside = canceledOutside;
     }
