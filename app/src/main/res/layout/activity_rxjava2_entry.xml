@@ -44,6 +44,11 @@
                 style="@style/btn_style_lower"
                 android:text="RxEasyHttp cache FirstRemoteStrategy模式模拟" />
 
+            <Button
+                android:id="@+id/btn_seventh"
+                style="@style/btn_style_lower"
+                android:text="zip error 处理" />
+
         </LinearLayout>
     </ScrollView>
 

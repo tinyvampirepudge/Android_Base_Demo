@@ -13,6 +13,7 @@ import com.tiny.demo.firstlinecode.rxjava2.blog3.Rxjava2Blog3EntryActivity;
 import com.tiny.demo.firstlinecode.rxjava2.blog4.Rxjava2Blog4EntryActivity;
 import com.tiny.demo.firstlinecode.rxjava2.blog5.Rxjava2Blog5EntryActivity;
 import com.tiny.demo.firstlinecode.rxjava2.practice.RxEasyHttpCacheFirstRemoteStrategyTestActivity;
+import com.tiny.demo.firstlinecode.rxjava2.test.zip_error.ZipErrorHandle;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -71,5 +72,10 @@ public class Rxjava2EntryActivity extends AppCompatActivity {
     @OnClick(R.id.btn_sixth)
     public void onBtnSixthClicked() {
         RxEasyHttpCacheFirstRemoteStrategyTestActivity.actionStart(this);
+    }
+
+    @OnClick(R.id.btn_seventh)
+    public void onBtnSeventhClicked() {
+        ZipErrorHandle.main(null);
     }
 }
