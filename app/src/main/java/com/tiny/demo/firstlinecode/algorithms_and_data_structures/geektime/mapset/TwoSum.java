@@ -1,5 +1,6 @@
 package com.tiny.demo.firstlinecode.algorithms_and_data_structures.geektime.mapset;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -57,8 +58,6 @@ public class TwoSum {
         int target = 9;
         TwoSum twoSum = new TwoSum();
         int[] result = twoSum.twoSum(nums, target);
-        for (Integer item : result) {
-            System.out.println(item);
-        }
+        System.out.println(Arrays.toString(result));
     }
 }
