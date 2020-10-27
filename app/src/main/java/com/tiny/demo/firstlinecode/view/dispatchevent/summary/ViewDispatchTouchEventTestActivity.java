@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tinytongtong.tinyutils.ScreenUtils;
 /**
  * @Description: View事件分发相关测试
@@ -50,7 +50,7 @@ public class ViewDispatchTouchEventTestActivity extends BaseActivity {
 //                parent.setTouchDelegate(new TouchDelegate(r, myButton1) {
 //                    @Override
 //                    public boolean onTouchEvent(MotionEvent event) {
-//                        LogUtils.e("MyButton setTouchDelegate onTouchEvent");
+//                        LogUtils.INSTANCE.e("MyButton setTouchDelegate onTouchEvent");
 //                        return super.onTouchEvent(event);//正常情况下返回这个值即可。
 ////                        return true;
 //                    }
@@ -62,22 +62,22 @@ public class ViewDispatchTouchEventTestActivity extends BaseActivity {
             String tag = "MyButton";
             switch (action) {
                 case MotionEvent.ACTION_DOWN:
-                    LogUtils.e(tag + " onTouch ACTION_DOWN");
+                    LogUtils.INSTANCE.e(tag + " onTouch ACTION_DOWN");
                     break;
                 case MotionEvent.ACTION_MOVE:
-                    LogUtils.e(tag + " onTouch ACTION_MOVE");
+                    LogUtils.INSTANCE.e(tag + " onTouch ACTION_MOVE");
                     break;
                 case MotionEvent.ACTION_UP:
-                    LogUtils.e(tag + " onTouch ACTION_UP");
+                    LogUtils.INSTANCE.e(tag + " onTouch ACTION_UP");
                     break;
                 default:
                     break;
             }
             return false;
         });
-        myButton1.setOnClickListener(v -> LogUtils.e("MyButton onClick"));
+        myButton1.setOnClickListener(v -> LogUtils.INSTANCE.e("MyButton onClick"));
         myButton1.setOnLongClickListener(v -> {
-            LogUtils.e("MyButton onLongClick");
+            LogUtils.INSTANCE.e("MyButton onLongClick");
             return false;
         });
 
@@ -87,13 +87,13 @@ public class ViewDispatchTouchEventTestActivity extends BaseActivity {
                     String tag = "MyTextView";
                     switch (action) {
                         case MotionEvent.ACTION_DOWN:
-                            LogUtils.e(tag + " onTouch ACTION_DOWN");
+                            LogUtils.INSTANCE.e(tag + " onTouch ACTION_DOWN");
                             break;
                         case MotionEvent.ACTION_MOVE:
-                            LogUtils.e(tag + " onTouch ACTION_MOVE");
+                            LogUtils.INSTANCE.e(tag + " onTouch ACTION_MOVE");
                             break;
                         case MotionEvent.ACTION_UP:
-                            LogUtils.e(tag + " onTouch ACTION_UP");
+                            LogUtils.INSTANCE.e(tag + " onTouch ACTION_UP");
                             break;
                         default:
                             break;

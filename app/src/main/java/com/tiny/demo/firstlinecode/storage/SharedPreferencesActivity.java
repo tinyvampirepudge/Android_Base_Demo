@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -83,14 +83,14 @@ public class SharedPreferencesActivity extends BaseActivity {
                 .putString("string", "string")
                 .putLong("long", 100l)
                 .apply();
-        LogUtils.e("getLocalClassName() --> " + getLocalClassName());
+        LogUtils.INSTANCE.e("getLocalClassName() --> " + getLocalClassName());
         //storage.SharedPreferencesActivity
     }
 
     private void saveSpPm() {
         //sp名称按照context.getPackageName() + "_preferences"规则存储。
         //可以通过getDefaultSharedPreferencesName方法获取对应的sp名称。
-        LogUtils.e("getDefaultSharedPreferencesName(context) --> "
+        LogUtils.INSTANCE.e("getDefaultSharedPreferencesName(context) --> "
                 + getPackageName() + "_preferences");
         //com.tiny.demo.firstlinecode_preferences
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);

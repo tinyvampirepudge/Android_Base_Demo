@@ -86,7 +86,7 @@ public class AndroidKfystsChapter02Activity extends AppCompatActivity {
                 try {
                     oos = new ObjectOutputStream(new FileOutputStream(cachedFile));
                     oos.writeObject(user);
-                    LogUtils.e("persist user:" + user);
+                    LogUtils.INSTANCE.e("persist user:" + user);
                 } catch (IOException e) {
                     e.printStackTrace();
                 } finally {

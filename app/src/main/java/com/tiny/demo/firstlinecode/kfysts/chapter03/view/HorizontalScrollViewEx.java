@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Scroller;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc:
@@ -79,12 +79,12 @@ public class HorizontalScrollViewEx extends ViewGroup {
             case MotionEvent.ACTION_MOVE:
                 int deltaX = x - mLastXIntercept;
                 int deltaY = y - mLastYIntercept;
-                LogUtils.e(TAG, "x --> " + x);
-                LogUtils.e(TAG, "y --> " + y);
-                LogUtils.e(TAG, "mLastXIntercept --> " + mLastXIntercept);
-                LogUtils.e(TAG, "mLastYIntercept --> " + mLastYIntercept);
-                LogUtils.e(TAG, "deltaX --> " + deltaX);
-                LogUtils.e(TAG, "deltaY --> " + deltaY);
+                LogUtils.INSTANCE.e(TAG, "x --> " + x);
+                LogUtils.INSTANCE.e(TAG, "y --> " + y);
+                LogUtils.INSTANCE.e(TAG, "mLastXIntercept --> " + mLastXIntercept);
+                LogUtils.INSTANCE.e(TAG, "mLastYIntercept --> " + mLastYIntercept);
+                LogUtils.INSTANCE.e(TAG, "deltaX --> " + deltaX);
+                LogUtils.INSTANCE.e(TAG, "deltaY --> " + deltaY);
                 if (Math.abs(deltaX) > Math.abs(deltaY)) {
                     intercepted = true;
                 } else {
@@ -97,7 +97,7 @@ public class HorizontalScrollViewEx extends ViewGroup {
             default:
                 break;
         }
-        LogUtils.e(TAG, "intercept = " + intercepted);
+        LogUtils.INSTANCE.e(TAG, "intercept = " + intercepted);
         mLastXIntercept = x;
         mLastYIntercept = y;
         return intercepted;

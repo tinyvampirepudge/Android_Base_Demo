@@ -1,5 +1,7 @@
 package com.tiny.demo.firstlinecode.common.utils;
 
+import com.tinytongtong.tinyutils.LogUtils;
+
 import java.util.List;
 
 /**
@@ -48,7 +50,7 @@ public class ListUtils {
     public static void logList(List list) {
         if (!isEmpty(list)) {
             for (int j = 0; j < list.size(); j++) {
-                LogUtils.d("position " + j + " --> " + list.get(j).toString());
+                LogUtils.INSTANCE.d("position " + j + " --> " + list.get(j).toString());
             }
         }
     }

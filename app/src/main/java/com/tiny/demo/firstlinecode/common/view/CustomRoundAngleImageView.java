@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc:    可以自己设置角度的ImageView
@@ -75,7 +75,7 @@ public class CustomRoundAngleImageView extends AppCompatImageView {
         rightBottomRadius = array.getDimensionPixelOffset(R.styleable.Custom_Round_Image_View_right_bottom_radius, defaultRadius);
         leftBottomRadius = array.getDimensionPixelOffset(R.styleable.Custom_Round_Image_View_left_bottom_radius, defaultRadius);
 
-        LogUtils.e("radius --> " + radius);
+        LogUtils.INSTANCE.e("radius --> " + radius);
 
         //如果四个角的值没有设置，那么就使用通用的radius的值。
         if (defaultRadius == leftTopRadius) {

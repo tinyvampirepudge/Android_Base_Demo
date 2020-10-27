@@ -288,7 +288,6 @@ dependencies {
 
     //banner
     api 'com.bigkoo:convenientbanner:2.0.5'
-    api 'com.github.lsjwzh.RecyclerViewPager:lib:v1.1.2@aar'
 
     //仿照CardView效果
     api 'com.loopeer.lib:shadow:0.0.4-beta2'
@@ -315,7 +314,7 @@ dependencies {
 
     // 引入tinyutils，https://github.com/tinyvampirepudge/TinyUtils
 //    implementation project(path: ':tinyutils')
-    implementation "com.tinytongtong:tinyutils:0.0.7"
+    implementation "com.tinytongtong:tinyutils:0.0.8"
 
     // 引入loopviewpagerlibrary，https://github.com/tinyvampirepudge/LoopViewPagerGallary
     implementation 'com.tinytongtong:loopviewpagerlibrary:1.1.0'

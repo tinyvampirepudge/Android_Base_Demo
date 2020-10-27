@@ -1,6 +1,6 @@
 package com.tiny.demo.firstlinecode.rxjava2.blog4.module.map_2;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.rxjava2.blog4.model.GankBeauty;
 import com.tiny.demo.firstlinecode.rxjava2.blog4.model.GankBeautyResult;
 import com.tiny.demo.firstlinecode.rxjava2.blog4.model.Item;
@@ -41,8 +41,8 @@ public class GankBeautyResultToItemsMapper implements Function<GankBeautyResult,
             try {
                 Date date = inputFormat.parse(gank.createdAt);
                 item.description = outputFormat.format(date);
-                LogUtils.e("src date --> " + gank.createdAt);
-                LogUtils.e("dst date --> " + item.description);
+                LogUtils.INSTANCE.e("src date --> " + gank.createdAt);
+                LogUtils.INSTANCE.e("dst date --> " + item.description);
             } catch (ParseException e) {
                 e.printStackTrace();
                 item.description = "unknown";

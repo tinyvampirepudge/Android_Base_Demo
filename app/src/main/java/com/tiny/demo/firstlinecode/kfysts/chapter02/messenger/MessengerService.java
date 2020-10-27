@@ -17,7 +17,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 import com.tiny.demo.firstlinecode.test.view.TestActivity;
 
@@ -66,14 +66,14 @@ public class MessengerService extends Service {
                     mClients.remove(msg.replyTo);
                     break;
                 case MessengerService.MSG_FROM_CLIENT:
-                    LogUtils.e(TAG, "receive msg from Client:" + msg.getData().get("msg"));
+                    LogUtils.INSTANCE.e(TAG, "receive msg from Client:" + msg.getData().get("msg"));
                     for (int j = mClients.size() - 1; j >= 0; j--) {
                         try {
                             Messenger client = mClients.get(j);
                             Message replyMessage = Message.obtain(null, MessengerService.MSG_FROM_SERVER);
                             Bundle bundle = new Bundle();
                             int c = msg.getData().getInt("count");
-                            LogUtils.e(TAG, "");
+                            LogUtils.INSTANCE.e(TAG, "");
                             String replyStr = "嗯，你的消息我已经收到，稍后会回复你。";
                             if (c > 0) {
                                 replyStr += "\n这是你的第" + c + "条消息，慢点发，我忙不过来的.";
@@ -103,7 +103,7 @@ public class MessengerService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        LogUtils.e(TAG, "onCreate");
+        LogUtils.INSTANCE.e(TAG, "onCreate");
         mNM = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         // Display a notification about us starting.
@@ -153,13 +153,13 @@ public class MessengerService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        LogUtils.e(TAG, "onBind");
+        LogUtils.INSTANCE.e(TAG, "onBind");
         return mMessenger.getBinder();
     }
 
     @Override
     public void onDestroy() {
-        LogUtils.e(TAG, "onDestroy");
+        LogUtils.INSTANCE.e(TAG, "onDestroy");
         // Cancel the persistent notification.
         mNM.cancel(R.string.remote_service_started);
         ToastUtils.showSingleToast(getString(R.string.remote_service_stopped));

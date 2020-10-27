@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -66,22 +66,22 @@ public class Rxjava2Test1Activity extends AppCompatActivity {
         Observer<Integer> observer = new Observer<Integer>() {
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.e("observer onSubscribe");
+                LogUtils.INSTANCE.e("observer onSubscribe");
             }
 
             @Override
             public void onNext(Integer value) {
-                LogUtils.e("observer onNext --> " + value);
+                LogUtils.INSTANCE.e("observer onNext --> " + value);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e("observer onError");
+                LogUtils.INSTANCE.e("observer onError");
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e("observer onComplete");
+                LogUtils.INSTANCE.e("observer onComplete");
             }
         };
         //建立连接
@@ -105,22 +105,22 @@ public class Rxjava2Test1Activity extends AppCompatActivity {
         }).subscribe(new Observer<Integer>() {
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.e("observer onSubscribe");
+                LogUtils.INSTANCE.e("observer onSubscribe");
             }
 
             @Override
             public void onNext(Integer value) {
-                LogUtils.e("observer onNext --> " + value);
+                LogUtils.INSTANCE.e("observer onNext --> " + value);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e("observer onError --> " + e.getMessage());
+                LogUtils.INSTANCE.e("observer onError --> " + e.getMessage());
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e("observer onComplete");
+                LogUtils.INSTANCE.e("observer onComplete");
             }
         });
     }
@@ -158,22 +158,22 @@ public class Rxjava2Test1Activity extends AppCompatActivity {
         }).subscribe(new Observer<String>() {
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.e("onSubscribe");
+                LogUtils.INSTANCE.e("onSubscribe");
             }
 
             @Override
             public void onNext(String value) {
-                LogUtils.e("onNext --> " + value);
+                LogUtils.INSTANCE.e("onNext --> " + value);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e("onError");
+                LogUtils.INSTANCE.e("onError");
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e("onComplete");
+                LogUtils.INSTANCE.e("onComplete");
             }
         });
     }
@@ -184,41 +184,41 @@ public class Rxjava2Test1Activity extends AppCompatActivity {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> e) throws Exception {
-                LogUtils.e("Observable subscribe onNext --> " + 1);
+                LogUtils.INSTANCE.e("Observable subscribe onNext --> " + 1);
                 e.onNext(1);
-                LogUtils.e("Observable subscribe onNext --> " + 2);
+                LogUtils.INSTANCE.e("Observable subscribe onNext --> " + 2);
                 e.onNext(2);
                 e.onComplete();
-                LogUtils.e("Observable subscribe onNext --> " + 3);
+                LogUtils.INSTANCE.e("Observable subscribe onNext --> " + 3);
                 e.onNext(3);
-                LogUtils.e("Observable subscribe onNext --> " + 4);
+                LogUtils.INSTANCE.e("Observable subscribe onNext --> " + 4);
                 e.onNext(4);
                 e.onComplete();
-                LogUtils.e("Observable subscribe onNext --> " + 5);
+                LogUtils.INSTANCE.e("Observable subscribe onNext --> " + 5);
                 e.onNext(5);
-                LogUtils.e("Observable subscribe onNext --> " + 6);
+                LogUtils.INSTANCE.e("Observable subscribe onNext --> " + 6);
                 e.onNext(6);
                 e.onComplete();
             }
         }).subscribe(new Observer<Integer>() {
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.e("onSubscribe");
+                LogUtils.INSTANCE.e("onSubscribe");
             }
 
             @Override
             public void onNext(Integer value) {
-                LogUtils.e("onNext --> " + value);
+                LogUtils.INSTANCE.e("onNext --> " + value);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e("onError");
+                LogUtils.INSTANCE.e("onError");
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e("onComplete");
+                LogUtils.INSTANCE.e("onComplete");
             }
         });
     }
@@ -229,36 +229,36 @@ public class Rxjava2Test1Activity extends AppCompatActivity {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> e) throws Exception {
-                LogUtils.e("Observable subscribe onNext --> " + 1);
+                LogUtils.INSTANCE.e("Observable subscribe onNext --> " + 1);
                 e.onNext(1);
-                LogUtils.e("Observable subscribe onNext --> " + 2);
+                LogUtils.INSTANCE.e("Observable subscribe onNext --> " + 2);
                 e.onNext(2);
                 e.onError(new Throwable("猫了个咪1"));
-                LogUtils.e("Observable subscribe onNext --> " + 3);
+                LogUtils.INSTANCE.e("Observable subscribe onNext --> " + 3);
                 e.onNext(3);
-                LogUtils.e("Observable subscribe onNext --> " + 4);
+                LogUtils.INSTANCE.e("Observable subscribe onNext --> " + 4);
                 e.onNext(4);
                 e.onError(new Throwable("猫了个咪2"));
             }
         }).subscribe(new Observer<Integer>() {
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.e("onSubscribe");
+                LogUtils.INSTANCE.e("onSubscribe");
             }
 
             @Override
             public void onNext(Integer value) {
-                LogUtils.e("onNext value --> " + value);
+                LogUtils.INSTANCE.e("onNext value --> " + value);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e("onError e --> " + e.getMessage());
+                LogUtils.INSTANCE.e("onError e --> " + e.getMessage());
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e("onComplete");
+                LogUtils.INSTANCE.e("onComplete");
             }
         });
     }
@@ -276,22 +276,22 @@ public class Rxjava2Test1Activity extends AppCompatActivity {
         }).subscribe(new Observer<Integer>() {
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.e("onSubscribe");
+                LogUtils.INSTANCE.e("onSubscribe");
             }
 
             @Override
             public void onNext(Integer value) {
-                LogUtils.e("onNext value --> " + value);
+                LogUtils.INSTANCE.e("onNext value --> " + value);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e("onError --> " + e.getMessage());
+                LogUtils.INSTANCE.e("onError --> " + e.getMessage());
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e("onComplete");
+                LogUtils.INSTANCE.e("onComplete");
             }
         });
     }
@@ -309,22 +309,22 @@ public class Rxjava2Test1Activity extends AppCompatActivity {
         }).subscribe(new Observer<Integer>() {
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.e("onSubscribe");
+                LogUtils.INSTANCE.e("onSubscribe");
             }
 
             @Override
             public void onNext(Integer value) {
-                LogUtils.e("onNext value --> " + value);
+                LogUtils.INSTANCE.e("onNext value --> " + value);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e("onError --> " + e.getMessage());
+                LogUtils.INSTANCE.e("onError --> " + e.getMessage());
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e("onComplete");
+                LogUtils.INSTANCE.e("onComplete");
             }
         });
     }
@@ -347,15 +347,15 @@ public class Rxjava2Test1Activity extends AppCompatActivity {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-                LogUtils.e("emit 1");
+                LogUtils.INSTANCE.e("emit 1");
                 emitter.onNext(1);
-                LogUtils.e("emit 2");
+                LogUtils.INSTANCE.e("emit 2");
                 emitter.onNext(2);
-                LogUtils.e("emit 3");
+                LogUtils.INSTANCE.e("emit 3");
                 emitter.onNext(3);
-                LogUtils.e("emit complete");
+                LogUtils.INSTANCE.e("emit complete");
                 emitter.onComplete();
-                LogUtils.e("emit 4");
+                LogUtils.INSTANCE.e("emit 4");
                 emitter.onNext(4);
             }
         }).subscribe(new Observer<Integer>() {
@@ -363,28 +363,28 @@ public class Rxjava2Test1Activity extends AppCompatActivity {
 
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.e("onSubscribe");
+                LogUtils.INSTANCE.e("onSubscribe");
                 disposable = d;
             }
 
             @Override
             public void onNext(Integer value) {
-                LogUtils.e("onNext --> " + value);
+                LogUtils.INSTANCE.e("onNext --> " + value);
                 if (2 == value) {
-                    LogUtils.e("dispose");
+                    LogUtils.INSTANCE.e("dispose");
                     disposable.dispose();
-                    LogUtils.e("disposable.isDisposed() --> " + disposable.isDisposed());
+                    LogUtils.INSTANCE.e("disposable.isDisposed() --> " + disposable.isDisposed());
                 }
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e("onError");
+                LogUtils.INSTANCE.e("onError");
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e("onComplete");
+                LogUtils.INSTANCE.e("onComplete");
             }
         });
     }
@@ -410,15 +410,15 @@ public class Rxjava2Test1Activity extends AppCompatActivity {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-                LogUtils.e("emit 1");
+                LogUtils.INSTANCE.e("emit 1");
                 emitter.onNext(1);
-                LogUtils.e("emit 2");
+                LogUtils.INSTANCE.e("emit 2");
                 emitter.onNext(2);
-                LogUtils.e("emit 3");
+                LogUtils.INSTANCE.e("emit 3");
                 emitter.onNext(3);
-                LogUtils.e("emit complete");
+                LogUtils.INSTANCE.e("emit complete");
                 emitter.onComplete();
-                LogUtils.e("emit 4");
+                LogUtils.INSTANCE.e("emit 4");
                 emitter.onNext(4);
             }
         }).subscribe();
@@ -429,21 +429,21 @@ public class Rxjava2Test1Activity extends AppCompatActivity {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-                LogUtils.e("emit 1");
+                LogUtils.INSTANCE.e("emit 1");
                 emitter.onNext(1);
-                LogUtils.e("emit 2");
+                LogUtils.INSTANCE.e("emit 2");
                 emitter.onNext(2);
-                LogUtils.e("emit 3");
+                LogUtils.INSTANCE.e("emit 3");
                 emitter.onNext(3);
-                LogUtils.e("emit complete");
+                LogUtils.INSTANCE.e("emit complete");
                 emitter.onComplete();
-                LogUtils.e("emit 4");
+                LogUtils.INSTANCE.e("emit 4");
                 emitter.onNext(4);
             }
         }).subscribe(new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) throws Exception {
-                LogUtils.e("accept --> " + integer);
+                LogUtils.INSTANCE.e("accept --> " + integer);
             }
         });
     }
@@ -453,26 +453,26 @@ public class Rxjava2Test1Activity extends AppCompatActivity {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-                LogUtils.e("emit 1");
+                LogUtils.INSTANCE.e("emit 1");
                 emitter.onNext(1);
-                LogUtils.e("emit 2");
+                LogUtils.INSTANCE.e("emit 2");
                 emitter.onNext(2);
-                LogUtils.e("emit 3");
+                LogUtils.INSTANCE.e("emit 3");
                 emitter.onNext(3);
-                LogUtils.e("emit error");
+                LogUtils.INSTANCE.e("emit error");
                 emitter.onError(new Throwable("猫了个咪啊"));
-                LogUtils.e("emit 4");
+                LogUtils.INSTANCE.e("emit 4");
                 emitter.onNext(4);
             }
         }).subscribe(new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) throws Exception {
-                LogUtils.e("accept onNext --> " + integer);
+                LogUtils.INSTANCE.e("accept onNext --> " + integer);
             }
         }, new Consumer<Throwable>() {
             @Override
             public void accept(Throwable throwable) throws Exception {
-                LogUtils.e("accept onError --> " + throwable.getMessage());
+                LogUtils.INSTANCE.e("accept onError --> " + throwable.getMessage());
             }
         });
     }
@@ -482,32 +482,32 @@ public class Rxjava2Test1Activity extends AppCompatActivity {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-                LogUtils.e("emit 1");
+                LogUtils.INSTANCE.e("emit 1");
                 emitter.onNext(1);
-                LogUtils.e("emit 2");
+                LogUtils.INSTANCE.e("emit 2");
                 emitter.onNext(2);
-                LogUtils.e("emit 3");
+                LogUtils.INSTANCE.e("emit 3");
                 emitter.onNext(3);
-//                LogUtils.e("emit error");
+//                LogUtils.INSTANCE.e("emit error");
 //                emitter.onError(new Throwable("猫了个咪啊"));
-                LogUtils.e("emit 4");
+                LogUtils.INSTANCE.e("emit 4");
                 emitter.onNext(4);
                 emitter.onComplete();
             }
         }).subscribe(new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) throws Exception {
-                LogUtils.e("accept onNext --> " + integer);
+                LogUtils.INSTANCE.e("accept onNext --> " + integer);
             }
         }, new Consumer<Throwable>() {
             @Override
             public void accept(Throwable throwable) throws Exception {
-                LogUtils.e("accept onError --> " + throwable.getMessage());
+                LogUtils.INSTANCE.e("accept onError --> " + throwable.getMessage());
             }
         }, new Action() {
             @Override
             public void run() throws Exception {
-                LogUtils.e("Action onComplete");
+                LogUtils.INSTANCE.e("Action onComplete");
             }
         });
     }
@@ -517,37 +517,37 @@ public class Rxjava2Test1Activity extends AppCompatActivity {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-                LogUtils.e("emit 1");
+                LogUtils.INSTANCE.e("emit 1");
                 emitter.onNext(1);
-                LogUtils.e("emit 2");
+                LogUtils.INSTANCE.e("emit 2");
                 emitter.onNext(2);
-                LogUtils.e("emit 3");
+                LogUtils.INSTANCE.e("emit 3");
                 emitter.onNext(3);
-                LogUtils.e("emit error");
+                LogUtils.INSTANCE.e("emit error");
                 emitter.onError(new Throwable("猫了个咪啊"));
-                LogUtils.e("emit 4");
+                LogUtils.INSTANCE.e("emit 4");
                 emitter.onNext(4);
 //                emitter.onComplete();
             }
         }).subscribe(new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) throws Exception {
-                LogUtils.e("accept onNext --> " + integer);
+                LogUtils.INSTANCE.e("accept onNext --> " + integer);
             }
         }, new Consumer<Throwable>() {
             @Override
             public void accept(Throwable throwable) throws Exception {
-                LogUtils.e("accept onError --> " + throwable.getMessage());
+                LogUtils.INSTANCE.e("accept onError --> " + throwable.getMessage());
             }
         }, new Action() {
             @Override
             public void run() throws Exception {
-                LogUtils.e("Action onComplete");
+                LogUtils.INSTANCE.e("Action onComplete");
             }
         }, new Consumer<Disposable>() {
             @Override
             public void accept(Disposable disposable) throws Exception {
-                LogUtils.e("accept onSubscribe disposable --> " + disposable);
+                LogUtils.INSTANCE.e("accept onSubscribe disposable --> " + disposable);
             }
         });
     }

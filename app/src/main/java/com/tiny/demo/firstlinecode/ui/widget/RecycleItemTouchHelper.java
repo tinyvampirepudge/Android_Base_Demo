@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.ui.adapter.OptionalEditAdapter;
 
 /**
@@ -60,7 +60,7 @@ public class RecycleItemTouchHelper extends ItemTouchHelper.Callback {
      */
     @Override
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-        LogUtils.e("getMovementFlags");
+        LogUtils.INSTANCE.e("getMovementFlags");
         int dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN;        //允许上下的拖动
 //        int swipeFlags = ItemTouchHelper.LEFT;   //只允许从右向左侧滑
         int swipeFlags = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;   //只允许从右向左侧滑，从左向右滑动

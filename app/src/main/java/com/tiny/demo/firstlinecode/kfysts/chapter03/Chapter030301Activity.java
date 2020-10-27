@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,9 +50,9 @@ public class Chapter030301Activity extends AppCompatActivity {
             public void onAnimationUpdate(ValueAnimator animation) {
                 float fraction = animation.getAnimatedFraction();
                 int destX = (int) (startX + deltaX * fraction);
-                LogUtils.e("fraction --> " + fraction);
-                LogUtils.e("destX --> " + destX);
-                LogUtils.e("tv.getScrollX() --> " + tv.getScrollX());
+                LogUtils.INSTANCE.e("fraction --> " + fraction);
+                LogUtils.INSTANCE.e("destX --> " + destX);
+                LogUtils.INSTANCE.e("tv.getScrollX() --> " + tv.getScrollX());
                 tv.scrollTo(destX, 0);
             }
         });

@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 import com.tiny.demo.firstlinecode.templates.temp1.view.MvpTestActivity;
 import com.tiny.demo.firstlinecode.templates.template5.view.MvpTest5Actiity;
@@ -167,7 +167,7 @@ public class TestActivity extends BaseActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                LogUtils.e("子线程弹Toast");
+                LogUtils.INSTANCE.e("子线程弹Toast");
                 Looper.prepare();
                 Toast.makeText(mContext, "子线程弹Toast", Toast.LENGTH_SHORT).show();
                 Looper.loop();
@@ -232,7 +232,7 @@ public class TestActivity extends BaseActivity {
 //                if(pcs.get(httpUrl)){
 //
 //                }
-            LogUtils.e(TAG, "httpUrl.host():" + httpUrl.host());
+            LogUtils.INSTANCE.e(TAG, "httpUrl.host():" + httpUrl.host());
         }
     }
 
@@ -280,9 +280,9 @@ public class TestActivity extends BaseActivity {
 
     @OnClick(R.id.btn_test_async_2_sync)
     public void onViewAsyhc2SyncClicked() {
-        ThreadUtils.logCurrThreadName("111");
+        ThreadUtils.INSTANCE.logCurrThreadName("111");
         String s = getSyncBusiness("http://www.baidu.com");
-        LogUtils.e("异步转同步 FutureTask Callable：" + s);
+        LogUtils.INSTANCE.e("异步转同步 FutureTask Callable：" + s);
     }
 
     public static String getSyncBusiness(final String url) {
@@ -292,7 +292,7 @@ public class TestActivity extends BaseActivity {
 
                 @Override
                 public String call() throws Exception {
-                    ThreadUtils.logCurrThreadName("Callable call()");
+                    ThreadUtils.INSTANCE.logCurrThreadName("Callable call()");
 //                    URL u = new URL(url);
 //                    HttpURLConnection connection = (HttpURLConnection) u.openConnection();
 //                    connection.setDoInput(true);
@@ -313,7 +313,7 @@ public class TestActivity extends BaseActivity {
             });
 
             new Thread(task).start();
-            ThreadUtils.logCurrThreadName("task.get()");
+            ThreadUtils.INSTANCE.logCurrThreadName("task.get()");
             return task.get();
         } catch (Exception e) {
             e.printStackTrace();
@@ -324,9 +324,9 @@ public class TestActivity extends BaseActivity {
 
     @OnClick(R.id.btn_test_sync_2_async)
     public void onViewSyhc2AsyncClicked() {
-        ThreadUtils.logCurrThreadName("222");
+        ThreadUtils.INSTANCE.logCurrThreadName("222");
         String s = getSyncBusiness2("http://www.baidu.com");
-        LogUtils.e("异步转同步 Callable：" + s);
+        LogUtils.INSTANCE.e("异步转同步 Callable：" + s);
     }
 
     public static String getSyncBusiness2(final String url) {
@@ -335,7 +335,7 @@ public class TestActivity extends BaseActivity {
             Callable<String> callable = new Callable<String>() {
                 @Override
                 public String call() throws Exception {
-                    ThreadUtils.logCurrThreadName("Callable call() 222");
+                    ThreadUtils.INSTANCE.logCurrThreadName("Callable call() 222");
 //                    URL u = new URL(url);
 //                    HttpURLConnection connection = (HttpURLConnection) u.openConnection();
 //                    connection.setDoInput(true);
@@ -356,7 +356,7 @@ public class TestActivity extends BaseActivity {
             };
             ExecutorService exec = Executors.newFixedThreadPool(1);
             Future<String> task = exec.submit(callable);
-            ThreadUtils.logCurrThreadName("task.get() 222");
+            ThreadUtils.INSTANCE.logCurrThreadName("task.get() 222");
             return task.get();
         } catch (Exception e) {
             e.printStackTrace();

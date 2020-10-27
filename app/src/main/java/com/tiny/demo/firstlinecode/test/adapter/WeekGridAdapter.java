@@ -14,7 +14,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 
 public class WeekGridAdapter extends BaseAdapter {
@@ -76,19 +76,19 @@ public class WeekGridAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
 
-                LogUtils.e("selected", "" + selected);
+                LogUtils.INSTANCE.e("selected", "" + selected);
                 if (v.isSelected()) {
-                    LogUtils.e("selected1", "" + selected);
+                    LogUtils.INSTANCE.e("selected1", "" + selected);
                     selected = selected - (1 << position);
                     //至少选一个
                     if (selected <= 0) {
                         selected = selected + (1 << position);
-                        LogUtils.e("selected2", "" + selected);
+                        LogUtils.INSTANCE.e("selected2", "" + selected);
                         return;
                     }
                     v.setSelected(false);
                 } else {
-                    LogUtils.e("selected3", "" + selected);
+                    LogUtils.INSTANCE.e("selected3", "" + selected);
                     selected = selected + (1 << position);
                     v.setSelected(true);
                 }

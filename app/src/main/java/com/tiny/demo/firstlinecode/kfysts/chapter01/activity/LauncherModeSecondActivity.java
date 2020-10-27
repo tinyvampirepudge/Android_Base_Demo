@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,13 +22,13 @@ public class LauncherModeSecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launcher_mode_second);
         ButterKnife.bind(this);
-        LogUtils.e(TAG, "onCreate");
+        LogUtils.INSTANCE.e(TAG, "onCreate");
     }
 
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        LogUtils.e(TAG, "onNewIntent time:" + intent.getLongExtra("time", 0));
+        LogUtils.INSTANCE.e(TAG, "onNewIntent time:" + intent.getLongExtra("time", 0));
     }
 
     @OnClick(R.id.tv)

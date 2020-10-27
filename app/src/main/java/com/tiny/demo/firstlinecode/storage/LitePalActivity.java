@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.storage.litepal.Book;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import org.litepal.LitePal;
 
@@ -85,33 +85,33 @@ public class LitePalActivity extends BaseActivity {
                 break;
             case R.id.btn_litepal_query:
                 List<Book> booksAll = LitePal.findAll(Book.class);
-                LogUtils.e("所有数据：" + booksAll.toString());
+                LogUtils.INSTANCE.e("所有数据：" + booksAll.toString());
 
                 Book bookFirst = LitePal.findFirst(Book.class);
-                LogUtils.e("第一条数据：" + bookFirst.toString());
+                LogUtils.INSTANCE.e("第一条数据：" + bookFirst.toString());
 
                 Book bookLast = LitePal.findLast(Book.class);
-                LogUtils.e("最后一条数据：" + bookLast.toString());
+                LogUtils.INSTANCE.e("最后一条数据：" + bookLast.toString());
 
                 //查询某几列的数据：
                 List<Book> books1 = LitePal.select("name", "author").find(Book.class);
-                LogUtils.e("name和author列的数据：" + books1.toString());
+                LogUtils.INSTANCE.e("name和author列的数据：" + books1.toString());
 
                 //使用约束条件进行查询
                 List<Book> books2 = LitePal.where("pages < ?", "507").find(Book.class);
-                LogUtils.e("页码小于507的数据：" + books2.toString());
+                LogUtils.INSTANCE.e("页码小于507的数据：" + books2.toString());
 
                 //给查询结果进行排序
                 List<Book> books3 = LitePal.order("price desc").find(Book.class);
-                LogUtils.e("将查询结果按照价格降序排列：" + books3.toString());
+                LogUtils.INSTANCE.e("将查询结果按照价格降序排列：" + books3.toString());
 
                 //制定查询结果的数量
                 List<Book> books4 = LitePal.limit(3).find(Book.class);
-                LogUtils.e("查询前三项数据：" + books4.toString());
+                LogUtils.INSTANCE.e("查询前三项数据：" + books4.toString());
 
                 //限制查询结果的偏移量和个数
                 List<Book> books5 = LitePal.limit(3).offset(1).find(Book.class);
-                LogUtils.e("查询第二、三、四个数据的值：" + books5.toString());
+                LogUtils.INSTANCE.e("查询第二、三、四个数据的值：" + books5.toString());
 
                 //链式调用
                 List<Book> books6 = LitePal.select("name", "author", "pages")
@@ -120,7 +120,7 @@ public class LitePalActivity extends BaseActivity {
                         .limit(5)
                         .offset(2)
                         .find(Book.class);
-                LogUtils.e("链式调用：" + books6.toString());
+                LogUtils.INSTANCE.e("链式调用：" + books6.toString());
                 break;
             case R.id.btn_sql_add:
                 break;

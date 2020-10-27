@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -64,7 +64,7 @@ public class DifferentThreadCommunicationActivity extends BaseActivity {
                 @Override
                 public void handleMessage(Message msg) {
                     //这里处理消息；
-                    LogUtils.e("收到消息了，当前线程是：" + Thread.currentThread().getName() + ",msg.object --> " + msg.obj.toString());
+                    LogUtils.INSTANCE.e("收到消息了，当前线程是：" + Thread.currentThread().getName() + ",msg.object --> " + msg.obj.toString());
                 }
             };
             Looper.loop();
@@ -79,7 +79,7 @@ public class DifferentThreadCommunicationActivity extends BaseActivity {
                 msg.what = 1;
                 msg.obj = System.currentTimeMillis() + "";
                 handler1.sendMessage(msg);
-                LogUtils.e("发送消息了，当前线程是：" + Thread.currentThread().getName() + ",msg.object --> " + msg.obj.toString());
+                LogUtils.INSTANCE.e("发送消息了，当前线程是：" + Thread.currentThread().getName() + ",msg.object --> " + msg.obj.toString());
                 SystemClock.sleep(1000);
             }
         }

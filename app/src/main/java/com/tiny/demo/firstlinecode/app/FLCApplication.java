@@ -14,7 +14,7 @@ import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.brvah.util.Utils;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.ProcessUtil;
 import com.tiny.demo.firstlinecode.refresh.util.DynamicTimeFormat;
 import com.tiny.demo.firstlinecode.stetho.httphelper.OkHttpClientUtils;
@@ -47,14 +47,14 @@ public class FLCApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        LogUtils.e("MyApplication onCreate");
+        LogUtils.INSTANCE.e("MyApplication onCreate");
 
         // litepal
         LitePal.initialize(this);
 
         //打印当前process的名称
         String processName = ProcessUtil.getProcessNameByCtx(getApplicationContext(), Process.myPid());
-        LogUtils.e("processName --> " + processName);
+        LogUtils.INSTANCE.e("processName --> " + processName);
 
         instance = this;
 
@@ -65,7 +65,7 @@ public class FLCApplication extends Application {
         //stetho
         Stetho.initializeWithDefaults(this);
 
-        LogUtils.openLog(true);
+        LogUtils.INSTANCE.openLog(true);
         OkHttpClientUtils.setShowLog(true);
 
         //初始化SmartToast

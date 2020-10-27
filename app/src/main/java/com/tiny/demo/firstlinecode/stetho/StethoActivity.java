@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.stetho.httphelper.HomepagePresenter;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -68,7 +68,7 @@ public class StethoActivity extends BaseActivity implements StethoContract.IView
             txtContent.setText(responseString);
         } catch (IOException e) {
             e.printStackTrace();
-            LogUtils.e("json解析错误。");
+            LogUtils.INSTANCE.e("json解析错误。");
         }
     }
 

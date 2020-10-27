@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.util.concurrent.TimeUnit;
 
@@ -42,13 +42,13 @@ public class Rxjava2Test5Activity extends AppCompatActivity {
 
     @OnClick(R.id.btn_test1)
     public void onBtnTest1Clicked() {
-        LogUtils.e("onBtnTest1Clicked");
+        LogUtils.INSTANCE.e("onBtnTest1Clicked");
         Observable<Integer> observable1 = Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> e) throws Exception {
                 //无限循环发送事件
                 for (int j = 0; ; j++) {
-                    LogUtils.e("e.onNext(" + j + ")");
+                    LogUtils.INSTANCE.e("e.onNext(" + j + ")");
                     e.onNext(j);
                 }
             }
@@ -70,22 +70,22 @@ public class Rxjava2Test5Activity extends AppCompatActivity {
                 .subscribe(new Observer<String>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e("onSubscribe");
+                        LogUtils.INSTANCE.e("onSubscribe");
                     }
 
                     @Override
                     public void onNext(String value) {
-                        LogUtils.e("onNext: " + value);
+                        LogUtils.INSTANCE.e("onNext: " + value);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e("onError");
+                        LogUtils.INSTANCE.e("onError");
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e("onComplete");
+                        LogUtils.INSTANCE.e("onComplete");
                     }
                 });
     }
@@ -105,7 +105,7 @@ public class Rxjava2Test5Activity extends AppCompatActivity {
         }).subscribe(new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) throws Exception {
-                LogUtils.e("onNext --> " + integer);
+                LogUtils.INSTANCE.e("onNext --> " + integer);
                 Thread.sleep(2000);
             }
         });
@@ -125,7 +125,7 @@ public class Rxjava2Test5Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtils.e("onNext --> " + integer);
+                        LogUtils.INSTANCE.e("onNext --> " + integer);
                         Thread.sleep(2000);
                     }
                 });
@@ -152,7 +152,7 @@ public class Rxjava2Test5Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtils.e("onNext --> " + integer);
+                        LogUtils.INSTANCE.e("onNext --> " + integer);
                     }
                 });
     }
@@ -173,7 +173,7 @@ public class Rxjava2Test5Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtils.e("onNext --> " + integer);
+                        LogUtils.INSTANCE.e("onNext --> " + integer);
                     }
                 });
     }

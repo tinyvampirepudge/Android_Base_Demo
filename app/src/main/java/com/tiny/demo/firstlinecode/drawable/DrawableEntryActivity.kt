@@ -5,10 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.tiny.demo.firstlinecode.R
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils
-import com.tinytongtong.tinyutils.LogUtils
 import com.tinytongtong.tinyutils.ScreenUtils
 import kotlinx.android.synthetic.main.activity_drawable_entry.*
-import org.jetbrains.anko.startActivity
 
 /**
  * @Description: Drawable相关学习

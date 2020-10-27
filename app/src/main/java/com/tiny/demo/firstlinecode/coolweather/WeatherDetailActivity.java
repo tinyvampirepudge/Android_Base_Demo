@@ -25,7 +25,7 @@ import com.tiny.demo.firstlinecode.coolweather.gson.WeatherInfo;
 import com.tiny.demo.firstlinecode.coolweather.service.AutoUpdateService;
 import com.tiny.demo.firstlinecode.coolweather.util.HttpUtil;
 import com.tiny.demo.firstlinecode.coolweather.util.Utility;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 
 import java.io.IOException;
@@ -162,7 +162,7 @@ public class WeatherDetailActivity extends BaseActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String responseText = response.body().string();
-                LogUtils.e("responseText --> " + responseText);
+                LogUtils.INSTANCE.e("responseText --> " + responseText);
                 WeatherInfo weatherInfo = Utility.handleWeatherResponse(responseText);
                 runOnUiThread(() -> {
                     if (weatherInfo != null && "ok".equals(weatherInfo.status)) {

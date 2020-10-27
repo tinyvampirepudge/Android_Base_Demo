@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.test.adapter.WeekGridAdapter;
 
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ public class DatePickerActivity extends BaseActivity {
     private WeekGridAdapter.OnAdapterChangedListener onAdapterChangedListener = new WeekGridAdapter.OnAdapterChangedListener() {
         @Override
         public void onChange(int selected) {
-            LogUtils.e("selected --> " + selected);
+            LogUtils.INSTANCE.e("selected --> " + selected);
             sp.edit().putInt("selected", selected).apply();
 
             updateTextContent(selected);

@@ -499,7 +499,6 @@
         <activity
             android:name=".uicomponents.viewpager.ViewPagerPageTransformerActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".uicomponents.viewpager.loop.LoopViewPagerActivity" />
         <activity android:name=".view.imageview.ImageViewRoundActivity" />
         <activity android:name=".view.imageview.ImageViewEntryActivity" />
         <activity android:name=".view.imageview.ImageViewCropActivity" />

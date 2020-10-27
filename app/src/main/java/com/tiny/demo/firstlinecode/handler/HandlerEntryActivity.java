@@ -58,13 +58,13 @@ public class HandlerEntryActivity extends BaseActivity {
      */
     @OnClick(R.id.btn_handler_error)
     public void onHandlerErrorClicked() {
-        ThreadUtils.logCurrThreadName("111");
+        ThreadUtils.INSTANCE.logCurrThreadName("111");
         new Thread(new Runnable() {
             @Override
             public void run() {
                 Handler handler = new Handler();
 
-                ThreadUtils.logCurrThreadName("222");
+                ThreadUtils.INSTANCE.logCurrThreadName("222");
             }
         }).start();
     }

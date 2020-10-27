@@ -2,7 +2,7 @@ package com.tiny.demo.firstlinecode.javareference;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Java基础精选
@@ -20,8 +20,8 @@ public class JavaBasisActivity extends BaseActivity {
         //Integer的比较
         Integer a = 128, b = 128;
         Integer c = 127, d = 127;
-        LogUtils.e(TAG, "a==b --> " + (a == b));//false
-        LogUtils.e(TAG, "c==d --> " + (c == d));//true
+        LogUtils.INSTANCE.e(TAG, "a==b --> " + (a == b));//false
+        LogUtils.INSTANCE.e(TAG, "c==d --> " + (c == d));//true
         /**
          * 其实当我们给一个Integer对象赋一个int值的时候，会调用Integer类的静态方法valueOf，
          * 让我们看下源代码是怎么实现的.
@@ -38,13 +38,13 @@ public class JavaBasisActivity extends BaseActivity {
          */
 
         //String的比较
-        LogUtils.e(TAG, "---------------------------------");
+        LogUtils.INSTANCE.e(TAG, "---------------------------------");
         String s1 = "abc";
         String s2 = "abc";
         String s3 = new String("abc");
 
-        LogUtils.e(TAG, "s1 == s2 --> " + (s1 == s2));//true
-        LogUtils.e(TAG, "s1 == s3 --> " + (s1 == s3));//false
+        LogUtils.INSTANCE.e(TAG, "s1 == s2 --> " + (s1 == s2));//true
+        LogUtils.INSTANCE.e(TAG, "s1 == s3 --> " + (s1 == s3));//false
         /**
          * 按照==的语法来看， 首先s1、s2、s3是三个不同的对象，常理来说，输出都会是false。然而程序的运行结果确实
          * true、false。第二个输出false可以理解，第一个输出true就又让人费解了。
@@ -55,15 +55,15 @@ public class JavaBasisActivity extends BaseActivity {
          * 当我们创建引用String s2 = "abc" 的时候，Java底层会优先在常量池中查找是否存在"abc"，如果存在则让s2指向这个值，
          * 不会重新创建，如果常量池中没有则创建并添加的池中。这就是为什么答案是true 和false的原因。
          */
-        LogUtils.e(TAG, "---------------------------------");
+        LogUtils.INSTANCE.e(TAG, "---------------------------------");
 
         //Integer和int的比较
         Integer j = new Integer(128);
         int k = 128;
         Integer m = new Integer(6);
         Integer n = new Integer(6);
-        LogUtils.e(TAG, "j==k --> " + (j == k));//true
-        LogUtils.e(TAG, "m==n --> " + (m == n));//false
+        LogUtils.INSTANCE.e(TAG, "j==k --> " + (j == k));//true
+        LogUtils.INSTANCE.e(TAG, "m==n --> " + (m == n));//false
         /**
          * c == d=false，我觉得没什么好说的，可能有的小伙伴要问了不是-128-127被缓存起来了么？
          * 但是我们这里的Integer是new出来的，并不是用的缓存，所以结果是false。

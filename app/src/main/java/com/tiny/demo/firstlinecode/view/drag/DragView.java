@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.widget.RelativeLayout;
 
 import com.nineoldandroids.view.ViewHelper;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc:
@@ -44,10 +44,10 @@ public class DragView extends RelativeLayout {
         int x = (int) event.getRawX();
         int y = (int) event.getRawY();
 
-        LogUtils.e("event.getRawX() --> " + event.getRawX());
-        LogUtils.e("event.getRawY() --> " + event.getRawY());
-        LogUtils.e("event.getX() --> " + event.getX());
-        LogUtils.e("event.getY() --> " + event.getY());
+        LogUtils.INSTANCE.e("event.getRawX() --> " + event.getRawX());
+        LogUtils.INSTANCE.e("event.getRawY() --> " + event.getRawY());
+        LogUtils.INSTANCE.e("event.getX() --> " + event.getX());
+        LogUtils.INSTANCE.e("event.getY() --> " + event.getY());
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
@@ -60,8 +60,8 @@ public class DragView extends RelativeLayout {
                 int translationY = (int) (ViewHelper.getTranslationY(this) + deltaY);
                 ViewHelper.setTranslationX(this, translationX);
                 ViewHelper.setTranslationY(this, translationY);
-                LogUtils.e("translationX --> " + translationX);
-                LogUtils.e("translationY --> " + translationY);
+                LogUtils.INSTANCE.e("translationX --> " + translationX);
+                LogUtils.INSTANCE.e("translationY --> " + translationY);
                 resetDeltaX += deltaX;
                 resetDeltaY += deltaY;
             case MotionEvent.ACTION_UP:

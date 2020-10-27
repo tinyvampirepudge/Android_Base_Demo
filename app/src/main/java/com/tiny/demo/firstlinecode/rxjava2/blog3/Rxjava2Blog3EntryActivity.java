@@ -96,7 +96,7 @@ public class Rxjava2Blog3EntryActivity extends AppCompatActivity {
 
                     @Override
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        ThreadUtils.logCurrThreadName("et onTextChanged");
+                        ThreadUtils.INSTANCE.logCurrThreadName("et onTextChanged");
                         emitter.onNext(s.toString());
                     }
 
@@ -142,7 +142,7 @@ public class Rxjava2Blog3EntryActivity extends AppCompatActivity {
                 btnSearch.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ThreadUtils.logCurrThreadName("btnSearch clicked");
+                        ThreadUtils.INSTANCE.logCurrThreadName("btnSearch clicked");
                         emitter.onNext(et.getText().toString());
                     }
                 });
@@ -206,7 +206,7 @@ public class Rxjava2Blog3EntryActivity extends AppCompatActivity {
     }
 
     private void showResult(List<String> list) {
-        ThreadUtils.logCurrThreadName("showResult");
+        ThreadUtils.INSTANCE.logCurrThreadName("showResult");
         SearchResultAdapter searchResultAdapter = new SearchResultAdapter(this, list);
         rv.setAdapter(searchResultAdapter);
     }
@@ -226,7 +226,7 @@ public class Rxjava2Blog3EntryActivity extends AppCompatActivity {
 
     private class SearchEngine {
         private List<String> search(String s) {
-            ThreadUtils.logCurrThreadName("SearchEngine#search");
+            ThreadUtils.INSTANCE.logCurrThreadName("SearchEngine#search");
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {

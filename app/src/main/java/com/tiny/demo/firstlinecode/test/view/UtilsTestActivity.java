@@ -9,7 +9,7 @@ import android.widget.Button;
 import com.tiny.demo.firstlinecode.MainActivity;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.common.utils.ActivityInfoUtils;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 
 import butterknife.BindView;
@@ -45,7 +45,7 @@ public class UtilsTestActivity extends AppCompatActivity {
     @OnClick(R.id.btn_test_1)
     public void onBtnTest1Clicked() {
         boolean result = ActivityInfoUtils.activityOnceCreated(this, MainActivity.class);
-        LogUtils.e("MainActivity started result:" + result);
+        LogUtils.INSTANCE.e("MainActivity started result:" + result);
     }
 
     @OnClick(R.id.btn_test_2)

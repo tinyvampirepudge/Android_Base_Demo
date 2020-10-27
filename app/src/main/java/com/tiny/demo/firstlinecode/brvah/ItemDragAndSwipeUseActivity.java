@@ -14,7 +14,7 @@ import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.brvah.adapter.ItemDragAdapter;
 import com.tiny.demo.firstlinecode.common.interfaces.OnTitleBarClick;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 import com.tiny.demo.firstlinecode.common.view.TitleBarLayout;
 
@@ -59,34 +59,34 @@ public class ItemDragAndSwipeUseActivity extends BaseActivity {
         OnItemDragListener onItemDragListener = new OnItemDragListener() {
             @Override
             public void onItemDragStart(RecyclerView.ViewHolder viewHolder, int pos) {
-                LogUtils.e(TAG, "drag start");
+                LogUtils.INSTANCE.e(TAG, "drag start");
             }
 
             @Override
             public void onItemDragMoving(RecyclerView.ViewHolder source, int from, RecyclerView.ViewHolder target, int to) {
-                LogUtils.e(TAG, "move from " + source.getAdapterPosition() + " to: " + target.getAdapterPosition());
+                LogUtils.INSTANCE.e(TAG, "move from " + source.getAdapterPosition() + " to: " + target.getAdapterPosition());
             }
 
             @Override
             public void onItemDragEnd(RecyclerView.ViewHolder viewHolder, int pos) {
-                LogUtils.e(TAG, "drag end");
+                LogUtils.INSTANCE.e(TAG, "drag end");
             }
         };
 
         OnItemSwipeListener onItemSwipeListener = new OnItemSwipeListener() {
             @Override
             public void onItemSwipeStart(RecyclerView.ViewHolder viewHolder, int pos) {
-                LogUtils.e(TAG, "view swiped start: " + pos);
+                LogUtils.INSTANCE.e(TAG, "view swiped start: " + pos);
             }
 
             @Override
             public void clearView(RecyclerView.ViewHolder viewHolder, int pos) {
-                LogUtils.e(TAG, "view reset: " + pos);
+                LogUtils.INSTANCE.e(TAG, "view reset: " + pos);
             }
 
             @Override
             public void onItemSwiped(RecyclerView.ViewHolder viewHolder, int pos) {
-                LogUtils.e(TAG, "view swiped: " + pos);
+                LogUtils.INSTANCE.e(TAG, "view swiped: " + pos);
             }
 
             @Override

@@ -6,7 +6,7 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 
 import com.tinytongtong.tinyutils.ThreadUtils;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc:
@@ -19,7 +19,7 @@ public class TestService extends Service {
     public static final String TAG = "IntentService";
 
     public TestService() {
-        LogUtils.e(TAG, "TestService构造方法");
+        LogUtils.INSTANCE.e(TAG, "TestService构造方法");
     }
 
     @Nullable
@@ -32,26 +32,26 @@ public class TestService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        LogUtils.e(TAG, "Service onCreate");
+        LogUtils.INSTANCE.e(TAG, "Service onCreate");
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        LogUtils.e(TAG, "Service onStartCommand");
-        ThreadUtils.logCurrThreadName("onStartCommand");
-        LogUtils.e(TAG, "开始睡眠");
+        LogUtils.INSTANCE.e(TAG, "Service onStartCommand");
+        ThreadUtils.INSTANCE.logCurrThreadName("onStartCommand");
+        LogUtils.INSTANCE.e(TAG, "开始睡眠");
         try {
             Thread.sleep(20000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        LogUtils.e(TAG, "睡眠结束");
+        LogUtils.INSTANCE.e(TAG, "睡眠结束");
         return super.onStartCommand(intent, flags, startId);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        LogUtils.e(TAG, "Service onDestroy");
+        LogUtils.INSTANCE.e(TAG, "Service onDestroy");
     }
 }

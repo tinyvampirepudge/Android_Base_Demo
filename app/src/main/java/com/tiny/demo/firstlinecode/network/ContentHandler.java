@@ -1,6 +1,6 @@
 package com.tiny.demo.firstlinecode.network;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -45,9 +45,9 @@ public class ContentHandler extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         if ("app".equals(localName)) {
-            LogUtils.d("id --> " + id.toString().trim());
-            LogUtils.d("name --> " + name.toString().trim());
-            LogUtils.d("version --> " + version.toString().trim());
+            LogUtils.INSTANCE.d("id --> " + id.toString().trim());
+            LogUtils.INSTANCE.d("name --> " + name.toString().trim());
+            LogUtils.INSTANCE.d("version --> " + version.toString().trim());
             //最后要将StringBuilder清空掉
             id.setLength(0);
             name.setLength(0);

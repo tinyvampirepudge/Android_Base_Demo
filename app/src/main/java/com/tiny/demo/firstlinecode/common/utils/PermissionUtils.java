@@ -15,6 +15,7 @@ import android.view.View;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.view.dialog.TextViewDialog;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -230,7 +231,7 @@ public class PermissionUtils {
                     activity.startActivity(intent);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    LogUtils.d("PermissionUtils openSettingActivity failed");
+                    LogUtils.INSTANCE.d("PermissionUtils openSettingActivity failed");
                 }
             }
         });
@@ -254,7 +255,7 @@ public class PermissionUtils {
             try {
                 checkSelfPermission = ActivityCompat.checkSelfPermission(activity, requestPermission);
             } catch (RuntimeException e) {
-                LogUtils.d("RuntimeException:" + e.getMessage());
+                LogUtils.INSTANCE.d("RuntimeException:" + e.getMessage());
                 return null;
             }
 

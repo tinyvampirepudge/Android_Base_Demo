@@ -10,7 +10,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.templates.bean.TestObject;
 
 import org.json.JSONArray;
@@ -65,7 +65,7 @@ public class JsonParseActivity extends BaseActivity {
         //gson解析
         List<TestObject> citys = new Gson().fromJson(jsonString, new TypeToken<ArrayList<TestObject>>() {
         }.getType());
-        LogUtils.e("citys.get(0).getData().getData().get(0).getType() --> " + citys.get(0).getData().getData().get(0).getType());
+        LogUtils.INSTANCE.e("citys.get(0).getData().getData().get(0).getType() --> " + citys.get(0).getData().getData().get(0).getType());
 
         //JSONArray解析
         try {
@@ -73,28 +73,28 @@ public class JsonParseActivity extends BaseActivity {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject1 = jsonArray.getJSONObject(i);
                 String handlerName = jsonObject1.getString("handlerName");
-                LogUtils.d("jsonObject1 handlerName --> " + handlerName);
+                LogUtils.INSTANCE.d("jsonObject1 handlerName --> " + handlerName);
 
                 JSONObject jsonObject2 = jsonObject1.getJSONObject("data");
                 String type = jsonObject2.getString("type");
-                LogUtils.d("jsonObject2 type --> " + type);
+                LogUtils.INSTANCE.d("jsonObject2 type --> " + type);
                 JSONArray jsonArray3 = jsonObject2.getJSONArray("data");
                 for (int j = 0; j < jsonArray3.length(); j++) {
                     JSONObject jsonObject4 = jsonArray3.getJSONObject(j);
                     int act = jsonObject4.getInt("act");
-                    LogUtils.d("jsonObject4 act --> " + act);
+                    LogUtils.INSTANCE.d("jsonObject4 act --> " + act);
                     String unit = jsonObject4.getString("unit");
-                    LogUtils.d("jsonObject4 unit --> " + unit);
+                    LogUtils.INSTANCE.d("jsonObject4 unit --> " + unit);
                     int tabType = jsonObject4.getInt("tab_type");
-                    LogUtils.d("jsonObject4 tab_type --> " + tabType);
+                    LogUtils.INSTANCE.d("jsonObject4 tab_type --> " + tabType);
                     String text = jsonObject4.getString("text");
-                    LogUtils.d("jsonObject4 text --> " + text);
+                    LogUtils.INSTANCE.d("jsonObject4 text --> " + text);
                     String type4 = jsonObject4.getString("type");
-                    LogUtils.d("jsonObject4 type --> " + type4);
+                    LogUtils.INSTANCE.d("jsonObject4 type --> " + type4);
                     int chart_type = jsonObject4.getInt("chart_type");
-                    LogUtils.d("jsonObject4 chart_type --> " + chart_type);
+                    LogUtils.INSTANCE.d("jsonObject4 chart_type --> " + chart_type);
                     String name = jsonObject4.getString("name");
-                    LogUtils.d("jsonObject4 name --> " + name);
+                    LogUtils.INSTANCE.d("jsonObject4 name --> " + name);
                 }
             }
         } catch (JSONException e) {
@@ -141,9 +141,9 @@ public class JsonParseActivity extends BaseActivity {
                 String id = jsonObject.getString("id");
                 String name = jsonObject.getString("name");
                 String version = jsonObject.getString("version");
-                LogUtils.d("JsonObject id --> " + id);
-                LogUtils.d("JsonObject name --> " + name);
-                LogUtils.d("JsonObject version --> " + version);
+                LogUtils.INSTANCE.d("JsonObject id --> " + id);
+                LogUtils.INSTANCE.d("JsonObject name --> " + name);
+                LogUtils.INSTANCE.d("JsonObject version --> " + version);
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -179,7 +179,7 @@ public class JsonParseActivity extends BaseActivity {
         Gson gson = new Gson();
         List<AppBean> list = gson.fromJson(responseData, new TypeToken<List<AppBean>>() {
         }.getType());
-        LogUtils.e("gson list --> " + list.toString());
+        LogUtils.INSTANCE.e("gson list --> " + list.toString());
     }
 
     @OnClick(R.id.btn_json_parse_json_array)

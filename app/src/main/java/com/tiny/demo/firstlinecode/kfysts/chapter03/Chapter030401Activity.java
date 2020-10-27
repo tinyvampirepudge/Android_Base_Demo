@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.kfysts.chapter03.eventview.EventViewA;
 import com.tiny.demo.firstlinecode.kfysts.chapter03.eventview.EventViewB;
 import com.tiny.demo.firstlinecode.kfysts.chapter03.eventview.EventViewC;
@@ -56,17 +56,17 @@ public class Chapter030401Activity extends AppCompatActivity {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        LogUtils.e(TAG, "dispatchTouchEvent event:" + event.getAction());
+        LogUtils.INSTANCE.e(TAG, "dispatchTouchEvent event:" + event.getAction());
         boolean result = super.dispatchTouchEvent(event);
-        LogUtils.e(TAG, "dispatchTouchEvent result:" + result);
+        LogUtils.INSTANCE.e(TAG, "dispatchTouchEvent result:" + result);
         return result;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        LogUtils.e(TAG, "onTouchEvent event:" + event.getAction());
+        LogUtils.INSTANCE.e(TAG, "onTouchEvent event:" + event.getAction());
         boolean result = super.onTouchEvent(event);
-        LogUtils.e(TAG, "onTouchEvent result:" + result);
+        LogUtils.INSTANCE.e(TAG, "onTouchEvent result:" + result);
         return result;
     }
 }

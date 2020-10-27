@@ -9,7 +9,6 @@ import com.tiny.demo.firstlinecode.uicomponents.constraintlayout.ConstraintLayou
 import com.tiny.demo.firstlinecode.uicomponents.tablayout.TabLayoutActivity;
 import com.tiny.demo.firstlinecode.uicomponents.textview.TextViewEntryActivity;
 import com.tiny.demo.firstlinecode.uicomponents.viewpager.ViewPagerPageTransformerActivity;
-import com.tiny.demo.firstlinecode.uicomponents.viewpager.loop.LoopViewPagerActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -66,7 +65,6 @@ public class UIComponentsActivity extends BaseActivity {
 
     @OnClick(R.id.btn_loop_viewpager)
     public void onLoopViewPagerClicked() {
-        activitySwitch(LoopViewPagerActivity.class);
     }
 
     @OnClick(R.id.btn_textview)

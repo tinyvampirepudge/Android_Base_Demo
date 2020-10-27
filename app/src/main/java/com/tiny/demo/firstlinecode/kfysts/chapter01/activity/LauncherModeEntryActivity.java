@@ -62,7 +62,7 @@ public class LauncherModeEntryActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_test5)
     public void onBtnTest5Clicked() {
-        LogUtils.e("single Top clicked");
+        LogUtils.INSTANCE.e("single Top clicked");
         startActivity(new Intent(this, LaunchModeSingleTopTestActivity.class));
     }
 

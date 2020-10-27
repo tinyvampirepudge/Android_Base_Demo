@@ -6,7 +6,7 @@ import android.widget.Button;
 
 import com.com.sky.downloader.greendao.DaoSession;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.storage.greendao.GreenDaoHelper;
 import com.tiny.demo.firstlinecode.storage.greendao.bean.User;
 
@@ -45,24 +45,24 @@ public class GreedDaoTestActivity extends AppCompatActivity {
     @OnClick(R.id.btn_dao_test1)
     public void onBtnDaoTest1Clicked() {
         User user = new User(null, "王蛋蛋 --> " + count, count + 32);
-        LogUtils.e("add user --> " + user.toString());
+        LogUtils.INSTANCE.e("add user --> " + user.toString());
         try {
             mDaoSession.getUserDao().insert(user);
         } catch (Exception e) {
             e.printStackTrace();
-            LogUtils.e("插入数据库失败");
+            LogUtils.INSTANCE.e("插入数据库失败");
         }
         count++;
     }
 
     @OnClick(R.id.btn_dao_test2)
     public void onBtnDaoTest2Clicked() {
-        LogUtils.e("delete id --> " + 1L);
+        LogUtils.INSTANCE.e("delete id --> " + 1L);
         try {
             mDaoSession.getUserDao().deleteByKey(1L);
         } catch (Exception e) {
             e.printStackTrace();
-            LogUtils.e("删除数据库失败");
+            LogUtils.INSTANCE.e("删除数据库失败");
         }
     }
 
@@ -77,7 +77,7 @@ public class GreedDaoTestActivity extends AppCompatActivity {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            LogUtils.e("更新数据失败");
+            LogUtils.INSTANCE.e("更新数据失败");
         }
     }
 
@@ -86,11 +86,11 @@ public class GreedDaoTestActivity extends AppCompatActivity {
         try {
             List<User> userList = mDaoSession.getUserDao().loadAll();
             for (User user : userList) {
-                LogUtils.e("query: " + user.toString());
+                LogUtils.INSTANCE.e("query: " + user.toString());
             }
         } catch (Exception e) {
             e.printStackTrace();
-            LogUtils.e("查询数据失败");
+            LogUtils.INSTANCE.e("查询数据失败");
         }
     }
 }

@@ -5,7 +5,7 @@ import android.content.Intent;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Android OOM 相关。
@@ -31,8 +31,8 @@ public class OOMActivity extends BaseActivity {
 
     @Override
     protected void initViewData() {
-        LogUtils.e("Runtime.getRuntime().maxMemory() --> " + Runtime.getRuntime().maxMemory());
-        LogUtils.e("Runtime.getRuntime().totalMemory() --> " + Runtime.getRuntime().totalMemory());
+        LogUtils.INSTANCE.e("Runtime.getRuntime().maxMemory() --> " + Runtime.getRuntime().maxMemory());
+        LogUtils.INSTANCE.e("Runtime.getRuntime().totalMemory() --> " + Runtime.getRuntime().totalMemory());
     }
 
 }

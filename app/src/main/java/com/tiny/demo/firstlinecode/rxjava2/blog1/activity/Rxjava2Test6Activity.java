@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tinytongtong.tinyutils.ThreadUtils;
 
 import org.reactivestreams.Subscriber;
@@ -39,13 +39,13 @@ public class Rxjava2Test6Activity extends AppCompatActivity {
         Flowable<Integer> upstream = Flowable.create(new FlowableOnSubscribe<Integer>() {
             @Override
             public void subscribe(FlowableEmitter<Integer> emit) throws Exception {
-                LogUtils.e("emit 1");
+                LogUtils.INSTANCE.e("emit 1");
                 emit.onNext(1);
-                LogUtils.e("emit 2");
+                LogUtils.INSTANCE.e("emit 2");
                 emit.onNext(2);
-                LogUtils.e("emit 3");
+                LogUtils.INSTANCE.e("emit 3");
                 emit.onNext(3);
-                LogUtils.e("complete");
+                LogUtils.INSTANCE.e("complete");
                 emit.onComplete();
             }
         }, BackpressureStrategy.ERROR);
@@ -53,7 +53,7 @@ public class Rxjava2Test6Activity extends AppCompatActivity {
         Subscriber<Integer> downStream = new Subscriber<Integer>() {
             @Override
             public void onSubscribe(Subscription s) {
-                LogUtils.e("onSubscribe");
+                LogUtils.INSTANCE.e("onSubscribe");
                 //缺少这行代码会在onError中抛出异常。
                 /*io.reactivex.exceptions.MissingBackpressureException:
                 create: could not emit value due to lack of requests*/
@@ -62,17 +62,17 @@ public class Rxjava2Test6Activity extends AppCompatActivity {
 
             @Override
             public void onNext(Integer integer) {
-                LogUtils.e("onNext: " + integer);
+                LogUtils.INSTANCE.e("onNext: " + integer);
             }
 
             @Override
             public void onError(Throwable t) {
-                LogUtils.e("onError: " + t.toString());
+                LogUtils.INSTANCE.e("onError: " + t.toString());
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e("onComplete");
+                LogUtils.INSTANCE.e("onComplete");
             }
         };
 
@@ -88,14 +88,14 @@ public class Rxjava2Test6Activity extends AppCompatActivity {
         Flowable<Integer> upstream = Flowable.create(new FlowableOnSubscribe<Integer>() {
             @Override
             public void subscribe(FlowableEmitter<Integer> emit) throws Exception {
-                ThreadUtils.logCurrThreadName("upstream");
-                LogUtils.e("emit 1");
+                ThreadUtils.INSTANCE.logCurrThreadName("upstream");
+                LogUtils.INSTANCE.e("emit 1");
                 emit.onNext(1);
-                LogUtils.e("emit 2");
+                LogUtils.INSTANCE.e("emit 2");
                 emit.onNext(2);
-                LogUtils.e("emit 3");
+                LogUtils.INSTANCE.e("emit 3");
                 emit.onNext(3);
-                LogUtils.e("complete");
+                LogUtils.INSTANCE.e("complete");
                 emit.onComplete();
             }
         }, BackpressureStrategy.ERROR);
@@ -103,24 +103,24 @@ public class Rxjava2Test6Activity extends AppCompatActivity {
         Subscriber<Integer> downStream = new Subscriber<Integer>() {
             @Override
             public void onSubscribe(Subscription s) {
-                LogUtils.e("onSubscribe");
-                ThreadUtils.logCurrThreadName("downStream");
+                LogUtils.INSTANCE.e("onSubscribe");
+                ThreadUtils.INSTANCE.logCurrThreadName("downStream");
 //                s.request(Long.MAX_VALUE);
             }
 
             @Override
             public void onNext(Integer s) {
-                LogUtils.e("onNext: " + s);
+                LogUtils.INSTANCE.e("onNext: " + s);
             }
 
             @Override
             public void onError(Throwable t) {
-                LogUtils.e("onError: " + t.toString());
+                LogUtils.INSTANCE.e("onError: " + t.toString());
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e("onComplete");
+                LogUtils.INSTANCE.e("onComplete");
             }
         };
 
@@ -169,14 +169,14 @@ public class Rxjava2Test6Activity extends AppCompatActivity {
         Flowable.create(new FlowableOnSubscribe<Integer>() {
             @Override
             public void subscribe(FlowableEmitter<Integer> emit) throws Exception {
-                ThreadUtils.logCurrThreadName("upstream");
-                LogUtils.e("emit 1");
+                ThreadUtils.INSTANCE.logCurrThreadName("upstream");
+                LogUtils.INSTANCE.e("emit 1");
                 emit.onNext(1);
-                LogUtils.e("emit 2");
+                LogUtils.INSTANCE.e("emit 2");
                 emit.onNext(2);
-                LogUtils.e("emit 3");
+                LogUtils.INSTANCE.e("emit 3");
                 emit.onNext(3);
-                LogUtils.e("complete");
+                LogUtils.INSTANCE.e("complete");
                 emit.onComplete();
             }
         }, BackpressureStrategy.ERROR)
@@ -185,24 +185,24 @@ public class Rxjava2Test6Activity extends AppCompatActivity {
                 .subscribe(new Subscriber<Integer>() {
                     @Override
                     public void onSubscribe(Subscription s) {
-                        ThreadUtils.logCurrThreadName("downstream");
-                        LogUtils.e("onSubscribe");
+                        ThreadUtils.INSTANCE.logCurrThreadName("downstream");
+                        LogUtils.INSTANCE.e("onSubscribe");
                         subscription = s;
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        LogUtils.e("onNext: " + integer);
+                        LogUtils.INSTANCE.e("onNext: " + integer);
                     }
 
                     @Override
                     public void onError(Throwable t) {
-                        LogUtils.e("onError： " + t);
+                        LogUtils.INSTANCE.e("onError： " + t);
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e("onComplete");
+                        LogUtils.INSTANCE.e("onComplete");
                     }
                 });
     }
@@ -224,7 +224,7 @@ public class Rxjava2Test6Activity extends AppCompatActivity {
             @Override
             public void subscribe(FlowableEmitter<Integer> e) throws Exception {
                 for (int j = 0; j < 129; j++) {
-                    LogUtils.e("emit " + j);
+                    LogUtils.INSTANCE.e("emit " + j);
                     e.onNext(j);
                 }
             }
@@ -234,22 +234,22 @@ public class Rxjava2Test6Activity extends AppCompatActivity {
                 .subscribe(new Subscriber<Integer>() {
                     @Override
                     public void onSubscribe(Subscription s) {
-                        LogUtils.e("onSubscribe");
+                        LogUtils.INSTANCE.e("onSubscribe");
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        LogUtils.e("onNext:" + integer);
+                        LogUtils.INSTANCE.e("onNext:" + integer);
                     }
 
                     @Override
                     public void onError(Throwable t) {
-                        LogUtils.e("onError:" + t);
+                        LogUtils.INSTANCE.e("onError:" + t);
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e("onComplete");
+                        LogUtils.INSTANCE.e("onComplete");
                     }
                 });
     }

@@ -54,10 +54,10 @@ public class SingletonActivity extends BaseActivity {
     public void onBtnSingletonSafeDCLClicked() {
         //进程名称
         String processName = ProcessUtil.getProcessNameByCtx(this, Process.myPid());
-        LogUtils.e(TAG, "processName000:" + processName);
+        LogUtils.INSTANCE.e(TAG, "processName000:" + processName);
         SafeDoubleCheckedLocking.getInstance().addValue();
         SafeDoubleCheckedLocking.getInstance().addValue();
-        LogUtils.e(TAG, "SafeDoubleCheckedLocking.getInstance().getValue()111:" + SafeDoubleCheckedLocking.getInstance().getValue());
+        LogUtils.INSTANCE.e(TAG, "SafeDoubleCheckedLocking.getInstance().getValue()111:" + SafeDoubleCheckedLocking.getInstance().getValue());
 
         startActivity(new Intent(this, SingletonOtherProcessTestActivity.class));
     }
@@ -66,10 +66,10 @@ public class SingletonActivity extends BaseActivity {
     public void onBtnSingletonStaticInnerClassClicked() {
         //进程名称
         String processName = ProcessUtil.getProcessNameByCtx(this, Process.myPid());
-        LogUtils.e(TAG, "processName111:" + processName);
+        LogUtils.INSTANCE.e(TAG, "processName111:" + processName);
         InstanceFactory.getInstance().addValue();
         InstanceFactory.getInstance().addValue();
-        LogUtils.e(TAG, "InstanceFactory.getInstance().getValue()111:" + InstanceFactory.getInstance().getValue());
+        LogUtils.INSTANCE.e(TAG, "InstanceFactory.getInstance().getValue()111:" + InstanceFactory.getInstance().getValue());
 
         startActivity(new Intent(this, SingletonOtherProcessTestActivity.class));
     }

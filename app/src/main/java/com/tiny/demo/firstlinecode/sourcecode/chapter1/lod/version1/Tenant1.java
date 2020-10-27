@@ -1,6 +1,6 @@
 package com.tiny.demo.firstlinecode.sourcecode.chapter1.lod.version1;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ public class Tenant1 {
         List<Room1> room1s = mediator1.getAllRooms();
         for (Room1 r : room1s) {
             if (isSuitable(r)) {
-                LogUtils.e("租到房间啦！ --> " + r);
+                LogUtils.INSTANCE.e("租到房间啦！ --> " + r);
             }
         }
     }

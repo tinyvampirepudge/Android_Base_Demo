@@ -17,7 +17,7 @@ import com.tiny.demo.firstlinecode.sourcecode.chapter1.imageloader.imageloader3.
 import com.tiny.demo.firstlinecode.sourcecode.chapter1.imageloader.imageloader3.version2.ImageCache;
 import com.tiny.demo.firstlinecode.sourcecode.chapter1.imageloader.imageloader3.version2.ImageLoader31;
 import com.tiny.demo.firstlinecode.sourcecode.chapter1.imageloader.imageloader3.version2.MemoryCache;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -55,7 +55,7 @@ public class ImageLoaderActivity extends BaseActivity {
         }
 
         if (TextUtils.isEmpty(type)) {
-            LogUtils.e("type传递为空，取得默认值。");
+            LogUtils.INSTANCE.e("type传递为空，取得默认值。");
             type = TYPE1;
         }
 

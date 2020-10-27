@@ -7,7 +7,7 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.RemoteException;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.kfysts.chapter02.aidl.Book;
 
 import java.util.ArrayList;
@@ -40,14 +40,14 @@ public class BookManagerManualService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        LogUtils.e(TAG, "远程服务启动");
+        LogUtils.INSTANCE.e(TAG, "远程服务启动");
         mBookList.add(new Book(1, "book1"));
         mBookList.add(new Book(2, "book2"));
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        LogUtils.e(TAG, "onStartCommand");
+        LogUtils.INSTANCE.e(TAG, "onStartCommand");
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -59,12 +59,12 @@ public class BookManagerManualService extends Service {
     @Override
     public void unbindService(ServiceConnection conn) {
         super.unbindService(conn);
-        LogUtils.e(TAG, "unbindService");
+        LogUtils.INSTANCE.e(TAG, "unbindService");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        LogUtils.e(TAG, "远程服务销毁");
+        LogUtils.INSTANCE.e(TAG, "远程服务销毁");
     }
 }

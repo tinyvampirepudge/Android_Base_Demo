@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.util.List;
 
@@ -39,7 +39,7 @@ public class PageTransformerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        LogUtils.e("instantiateItem");
+        LogUtils.INSTANCE.e("instantiateItem");
         int actualPos = position % list.size();
         if (list.get(actualPos).getParent() != null) {
             ((ViewPager) list.get(actualPos).getParent()).removeView(list.get(actualPos));
@@ -50,7 +50,7 @@ public class PageTransformerAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        LogUtils.e("destroyItem");
+        LogUtils.INSTANCE.e("destroyItem");
         TextView iv = (TextView) object;
         container.removeView(iv);
     }

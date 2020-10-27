@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 
 import com.tinytongtong.tinyutils.ThreadUtils;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc:    IntentService和Service的区别
@@ -23,26 +23,26 @@ public class TestIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
-        LogUtils.e(TAG, "IntentService onHandleIntent");
-        ThreadUtils.logCurrThreadName(TAG);
-        LogUtils.e("IntentService 开始睡眠");
+        LogUtils.INSTANCE.e(TAG, "IntentService onHandleIntent");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG);
+        LogUtils.INSTANCE.e("IntentService 开始睡眠");
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        LogUtils.e("IntentService 睡眠结束");
+        LogUtils.INSTANCE.e("IntentService 睡眠结束");
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        LogUtils.e(TAG, "IntentService onCreate");
+        LogUtils.INSTANCE.e(TAG, "IntentService onCreate");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        LogUtils.e(TAG, "IntentService onDestroy");
+        LogUtils.INSTANCE.e(TAG, "IntentService onDestroy");
     }
 }

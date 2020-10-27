@@ -5,7 +5,7 @@ import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.lang.ref.WeakReference;
 
@@ -46,11 +46,11 @@ public class MyLoopViewPager extends ViewPager {
 
         @Override
         public void run() {
-            LogUtils.e("run");
+            LogUtils.INSTANCE.e("run");
             ViewPager viewPager = mReference.get();
             if (viewPager != null && running && canRun) {
                 int currPos = viewPager.getCurrentItem();
-                LogUtils.e("currPos --> " + currPos);
+                LogUtils.INSTANCE.e("currPos --> " + currPos);
                 viewPager.setCurrentItem(currPos + 1, true);
                 viewPager.postDelayed(autoPollTask, TIME_AUTO_POLL);
             }
@@ -59,7 +59,7 @@ public class MyLoopViewPager extends ViewPager {
 
     //开启:如果正在运行,先停止->再开启
     public void start() {
-        LogUtils.e("start");
+        LogUtils.INSTANCE.e("start");
         if (running)
             stop();
         canRun = true;

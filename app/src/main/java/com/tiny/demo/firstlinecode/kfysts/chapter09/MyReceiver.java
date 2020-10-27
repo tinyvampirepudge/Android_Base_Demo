@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc: 广播接收者典型实现
@@ -18,7 +18,7 @@ public class MyReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         // onReceive函数不能做耗时的事情，参考值：10s以内。
-        LogUtils.e(TAG, "on receive action=" + intent.getAction());
+        LogUtils.INSTANCE.e(TAG, "on receive action=" + intent.getAction());
         String action = intent.getAction();
         // do some works
     }

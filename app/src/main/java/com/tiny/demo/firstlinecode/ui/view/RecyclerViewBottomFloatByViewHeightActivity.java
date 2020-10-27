@@ -64,11 +64,11 @@ public class RecyclerViewBottomFloatByViewHeightActivity extends BaseActivity {
 
             // 获取RecyclerView控件高度
             int recyclerViewHeight = recyclerView.getHeight();
-            LogUtils.e(TAG, "recyclerViewHeight: " + recyclerViewHeight);
+            LogUtils.INSTANCE.e(TAG, "recyclerViewHeight: " + recyclerViewHeight);
 
             // 获取recyclerView的内容高度
             int recyclerViewRealHeight = recyclerView.computeVerticalScrollRange();
-            LogUtils.e(TAG, "recyclerViewRealHeight: " + recyclerViewRealHeight);
+            LogUtils.INSTANCE.e(TAG, "recyclerViewRealHeight: " + recyclerViewRealHeight);
 
             // 根据剩余空间确定是否需要显示吸底的图表底部
             if (recyclerViewHeight < recyclerViewRealHeight) {

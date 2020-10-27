@@ -28,7 +28,7 @@ import com.tiny.demo.firstlinecode.parser.plist.domain.Dict;
 import com.tiny.demo.firstlinecode.parser.plist.domain.PList;
 import com.tiny.demo.firstlinecode.parser.plist.domain.PListObject;
 import com.tiny.demo.firstlinecode.parser.plist.domain.Real;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -83,7 +83,7 @@ public class ActivityParser extends BaseActivity {
             if (loadSuccess && mProvinceMap != null && mProvinceMap.size() > 0 && mProvinceMapList != null && mProvinceMapList.size() > 0) {
                 showSelectLocationDialog();
             } else {
-                LogUtils.e("省市数据加载失败。");
+                LogUtils.INSTANCE.e("省市数据加载失败。");
             }
         });
 
@@ -114,7 +114,7 @@ public class ActivityParser extends BaseActivity {
                 sb.append(new java.lang.String(buf, 0, len, "UTF-8"));
             }
             is.close();
-            LogUtils.e("sb.toString() --> " + sb.toString());
+            LogUtils.INSTANCE.e("sb.toString() --> " + sb.toString());
             if (!TextUtils.isEmpty(sb.toString())) {
                 mProvinceMap = new Gson().fromJson(
                         sb.toString(), new TypeToken<HashMap<String, List<CityListBean>>>() {
@@ -131,7 +131,7 @@ public class ActivityParser extends BaseActivity {
                     java.lang.String provinceName = "";
                     if (value != null && value.size() > 0) {
                         provinceName = value.get(0).province;
-                        LogUtils.e(provinceName);
+                        LogUtils.INSTANCE.e(provinceName);
                     }
                     mProvinceMap.put(key, provinceName);
                 }
@@ -144,12 +144,12 @@ public class ActivityParser extends BaseActivity {
                     }
                 });
                 for (Map.Entry<String, String> mapping : mProvinceMapList) {
-                    LogUtils.e(mapping.getKey() + ":" + mapping.getValue());
+                    LogUtils.INSTANCE.e(mapping.getKey() + ":" + mapping.getValue());
                 }
                 loadSuccess = true;
             }
         } catch (IOException e) {
-            LogUtils.e("json文件读取失败");
+            LogUtils.INSTANCE.e("json文件读取失败");
             e.printStackTrace();
         }
     }
@@ -214,13 +214,13 @@ public class ActivityParser extends BaseActivity {
                     String key = "";
                     if (mProvinceMapList != null && mProvinceMapList.size() > pos[0]) {
                         key = mProvinceMapList.get(pos[0]).getKey();
-                        LogUtils.e("ok select province --> " + mProvinceMapList.get(pos[0]).getValue());
+                        LogUtils.INSTANCE.e("ok select province --> " + mProvinceMapList.get(pos[0]).getValue());
                         pString = mProvinceMapList.get(pos[0]).getValue();
                     }
                     if (!TextUtils.isEmpty(key) && mProvinceMap != null && mProvinceMap.size() > 0) {
                         List<CityListBean> list = mProvinceMap.get(key);
                         if (list != null && list.size() > pos[1]) {
-                            LogUtils.e("ok select city --> " + list.get(pos[1]).name);
+                            LogUtils.INSTANCE.e("ok select city --> " + list.get(pos[1]).name);
                             cString = list.get(pos[1]).name;
                             cId = list.get(pos[1]).id;
                         }
@@ -304,7 +304,7 @@ public class ActivityParser extends BaseActivity {
 
                 String provinceName = province.keySet().iterator().next();
                 // 打印省份
-                LogUtils.e("省份为:" + provinceName);
+                LogUtils.INSTANCE.e("省份为:" + provinceName);
 
                 Dict cityRoot = (Dict) province.get(provinceName);
 
@@ -314,12 +314,12 @@ public class ActivityParser extends BaseActivity {
                     Dict city = (Dict) cities.get(String.valueOf(j));
                     String cityName = city.getConfigMap().keySet().iterator().next();
                     // 打印城市
-                    LogUtils.e("城市为:" + cityName);
+                    LogUtils.INSTANCE.e("城市为:" + cityName);
                     Array districts = city.getConfigurationArray(cityName);
                     for (int k = 0; k < districts.size(); k++) {
                         com.tiny.demo.firstlinecode.parser.plist.domain.String district = (com.tiny.demo.firstlinecode.parser.plist.domain.String) districts.get(k);
                         // 打印地区
-                        LogUtils.e("地区为:" + district.getValue());
+                        LogUtils.INSTANCE.e("地区为:" + district.getValue());
                     }
                 }
             }
@@ -349,7 +349,7 @@ public class ActivityParser extends BaseActivity {
             //获取array
             Array root = (Array) actualPList.getRootElement();
             if (!root.isEmpty()) {
-                LogUtils.e("root.size() --> " + root.size());
+                LogUtils.INSTANCE.e("root.size() --> " + root.size());
                 for (int j = 0; j < root.size(); j++) {
                     ProvinceBean provinceBean = new ProvinceBean();
                     Dict province = (Dict) root.get(j);
@@ -358,19 +358,19 @@ public class ActivityParser extends BaseActivity {
                         Iterator<Map.Entry<String, PListObject>> i = map.entrySet().iterator();
                         while (i != null && i.hasNext()) {
                             Map.Entry<String, PListObject> entry = i.next();
-                            LogUtils.e("entry.getKey() --> " + entry.getKey());
+                            LogUtils.INSTANCE.e("entry.getKey() --> " + entry.getKey());
                             switch (entry.getKey()) {
                                 case "State"://String
-                                    LogUtils.e("State Value --> "
+                                    LogUtils.INSTANCE.e("State Value --> "
                                             + ((com.tiny.demo.firstlinecode.parser.plist.domain.String) entry.getValue()).getValue());
                                     provinceBean.state = ((com.tiny.demo.firstlinecode.parser.plist.domain.String) entry.getValue()).getValue();
                                     break;
                                 case "Cities"://array
-                                    LogUtils.e("Cities Value --> " + entry.getValue());
+                                    LogUtils.INSTANCE.e("Cities Value --> " + entry.getValue());
                                     Array cityArray = (Array) entry.getValue();
                                     provinceBean.cities = new ArrayList<CityBean>();
                                     if (!cityArray.isEmpty()) {
-                                        LogUtils.e("cityArray.size() --> " + cityArray.size());
+                                        LogUtils.INSTANCE.e("cityArray.size() --> " + cityArray.size());
                                         for (int m = 0; m < cityArray.size(); m++) {
                                             CityBean cityBean = new CityBean();
                                             Dict city = (Dict) cityArray.get(m);
@@ -379,21 +379,21 @@ public class ActivityParser extends BaseActivity {
                                             while (iCity != null && iCity.hasNext()) {
                                                 Map.Entry<String, PListObject> entryCity = iCity.next();
                                                 String key = entryCity.getKey();
-                                                LogUtils.e("key --> " + key);
+                                                LogUtils.INSTANCE.e("key --> " + key);
                                                 switch (key) {
                                                     case "city"://String
                                                         String valueCity = ((com.tiny.demo.firstlinecode.parser.plist.domain.String) entryCity.getValue()).getValue();
-                                                        LogUtils.e("valueCity --> " + valueCity);
+                                                        LogUtils.INSTANCE.e("valueCity --> " + valueCity);
                                                         cityBean.city = valueCity;
                                                         break;
                                                     case "lat"://real
                                                         float valueLat = ((Real) entryCity.getValue()).getValue();
-                                                        LogUtils.e("valueLat --> " + valueLat);
+                                                        LogUtils.INSTANCE.e("valueLat --> " + valueLat);
                                                         cityBean.lat = String.valueOf(valueLat);
                                                         break;
                                                     case "lon"://real
                                                         float valueLon = ((Real) entryCity.getValue()).getValue();
-                                                        LogUtils.e("valueLon --> " + valueLon);
+                                                        LogUtils.INSTANCE.e("valueLon --> " + valueLon);
                                                         cityBean.lon = String.valueOf(valueLon);
                                                         break;
                                                     default:
@@ -413,11 +413,11 @@ public class ActivityParser extends BaseActivity {
                 }
 
                 for (int j = 0; j < provinceList.size(); j++) {
-                    LogUtils.e("provinceList.get(j).state --> " + provinceList.get(j).state);
-                    LogUtils.e("provinceList.get(j).cities --> " + provinceList.get(j).cities);
+                    LogUtils.INSTANCE.e("provinceList.get(j).state --> " + provinceList.get(j).state);
+                    LogUtils.INSTANCE.e("provinceList.get(j).cities --> " + provinceList.get(j).cities);
                 }
             } else {
-                LogUtils.e("root -- null");
+                LogUtils.INSTANCE.e("root -- null");
             }
         }).start();
     }

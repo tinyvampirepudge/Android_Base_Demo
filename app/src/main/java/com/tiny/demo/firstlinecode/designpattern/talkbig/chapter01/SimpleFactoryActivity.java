@@ -4,7 +4,7 @@ import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -45,7 +45,7 @@ public class SimpleFactoryActivity extends BaseActivity {
         Operation operation = SimpleOperationFactory.createOperate("+");
         operation.setNumberA(100);
         operation.setNumberB(100);
-        LogUtils.e(operation.getNumberA() + " + " + operation.getNumberB() + " = " + operation.getResult());
+        LogUtils.INSTANCE.e(operation.getNumberA() + " + " + operation.getNumberB() + " = " + operation.getResult());
     }
 
     @OnClick(R.id.btn_operate_sub)
@@ -53,7 +53,7 @@ public class SimpleFactoryActivity extends BaseActivity {
         Operation operation = SimpleOperationFactory.createOperate("-");
         operation.setNumberA(100);
         operation.setNumberB(1000);
-        LogUtils.e(operation.getNumberA() + " + " + operation.getNumberB() + " = " + operation.getResult());
+        LogUtils.INSTANCE.e(operation.getNumberA() + " + " + operation.getNumberB() + " = " + operation.getResult());
     }
 
     @OnClick(R.id.btn_operate_mul)
@@ -61,7 +61,7 @@ public class SimpleFactoryActivity extends BaseActivity {
         Operation operation = SimpleOperationFactory.createOperate("*");
         operation.setNumberA(100);
         operation.setNumberB(100);
-        LogUtils.e(operation.getNumberA() + " + " + operation.getNumberB() + " = " + operation.getResult());
+        LogUtils.INSTANCE.e(operation.getNumberA() + " + " + operation.getNumberB() + " = " + operation.getResult());
     }
 
     @OnClick(R.id.btn_operate_div)
@@ -69,6 +69,6 @@ public class SimpleFactoryActivity extends BaseActivity {
         Operation operation = SimpleOperationFactory.createOperate("/");
         operation.setNumberA(10);
         operation.setNumberB(100);
-        LogUtils.e(operation.getNumberA() + " + " + operation.getNumberB() + " = " + operation.getResult());
+        LogUtils.INSTANCE.e(operation.getNumberA() + " + " + operation.getNumberB() + " = " + operation.getResult());
     }
 }

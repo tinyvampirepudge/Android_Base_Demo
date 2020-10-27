@@ -4,7 +4,7 @@ import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.javareference.singleton.DataSourceEnum;
 import com.tiny.demo.firstlinecode.javareference.singleton.Singleton;
 
@@ -45,8 +45,8 @@ public class SingletonActivity extends BaseActivity {
 
     @OnClick(R.id.btn_singleton_enum)
     public void onViewEnumClicked() {
-        LogUtils.e("" + DataSourceEnum.DATASOURCE.getConnection().hashCode());
-        LogUtils.e("" + DataSourceEnum.DATASOURCE.getConnection().hashCode());
-        LogUtils.e("" + DataSourceEnum.DATASOURCE.getConnection().hashCode());
+        LogUtils.INSTANCE.e("" + DataSourceEnum.DATASOURCE.getConnection().hashCode());
+        LogUtils.INSTANCE.e("" + DataSourceEnum.DATASOURCE.getConnection().hashCode());
+        LogUtils.INSTANCE.e("" + DataSourceEnum.DATASOURCE.getConnection().hashCode());
     }
 }

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -57,7 +57,7 @@ public class Rxjava2Test15Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Boolean>() {
                     @Override
                     public void accept(Boolean aBoolean) throws Exception {
-                        LogUtils.e(TAG, "all accept:" + aBoolean);
+                        LogUtils.INSTANCE.e(TAG, "all accept:" + aBoolean);
                     }
                 });
         /**
@@ -81,7 +81,7 @@ public class Rxjava2Test15Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtils.e(TAG, "takeWhile accept:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "takeWhile accept:" + integer);
                     }
                 });
         /**
@@ -106,7 +106,7 @@ public class Rxjava2Test15Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtils.e(TAG, "skipWhile accept:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "skipWhile accept:" + integer);
                     }
                 });
         /**
@@ -131,7 +131,7 @@ public class Rxjava2Test15Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtils.e(TAG, "takeUntil accept:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "takeUntil accept:" + integer);
                     }
                 });
         /**
@@ -154,22 +154,22 @@ public class Rxjava2Test15Activity extends AppCompatActivity {
                 .subscribe(new Observer<Long>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e(TAG, "onSubscribe");
+                        LogUtils.INSTANCE.e(TAG, "onSubscribe");
                     }
 
                     @Override
                     public void onNext(Long integer) {
-                        LogUtils.e(TAG, "onNext:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "onNext:" + integer);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e(TAG, "onError:" + e.getMessage());
+                        LogUtils.INSTANCE.e(TAG, "onError:" + e.getMessage());
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e(TAG, "onComplete");
+                        LogUtils.INSTANCE.e(TAG, "onComplete");
                     }
                 });
         /**
@@ -190,7 +190,7 @@ public class Rxjava2Test15Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Boolean>() {
                     @Override
                     public void accept(Boolean aBoolean) throws Exception {
-                        LogUtils.e(TAG, "sequenceEqual accept:" + aBoolean);
+                        LogUtils.INSTANCE.e(TAG, "sequenceEqual accept:" + aBoolean);
                     }
                 });
         /**
@@ -209,7 +209,7 @@ public class Rxjava2Test15Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Boolean>() {
                     @Override
                     public void accept(Boolean aBoolean) throws Exception {
-                        LogUtils.e(TAG, "contains accept:" + aBoolean);
+                        LogUtils.INSTANCE.e(TAG, "contains accept:" + aBoolean);
                     }
                 });
         /**
@@ -233,7 +233,7 @@ public class Rxjava2Test15Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Boolean>() {
                     @Override
                     public void accept(Boolean aBoolean) throws Exception {
-                        LogUtils.e(TAG, "isEmpty accept:" + aBoolean);
+                        LogUtils.INSTANCE.e(TAG, "isEmpty accept:" + aBoolean);
                     }
                 });
         /**
@@ -256,7 +256,7 @@ public class Rxjava2Test15Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Long>() {
                     @Override
                     public void accept(Long aLong) throws Exception {
-                        LogUtils.e(TAG, "amb accept:" + aLong);
+                        LogUtils.INSTANCE.e(TAG, "amb accept:" + aLong);
                     }
                 });
         /**
@@ -284,7 +284,7 @@ public class Rxjava2Test15Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtils.e(TAG, "defaultIfEmpty accept:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "defaultIfEmpty accept:" + integer);
                     }
                 });
         /**

@@ -19,7 +19,7 @@ import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.customview.pickerview.LoopListener;
 import com.tiny.demo.firstlinecode.customview.pickerview.LoopView;
 import com.tiny.demo.firstlinecode.common.utils.DateUtils;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -293,7 +293,7 @@ public class DatePickerDialog implements View.OnClickListener {
 
     private void getValidYears() {
         if (maxYear < minYear) {
-            LogUtils.e(TAG, "DatePickerDialog Exception: maxYear < minYear");
+            LogUtils.INSTANCE.e(TAG, "DatePickerDialog Exception: maxYear < minYear");
             return;
         }
         yearCount = maxYear - minYear;

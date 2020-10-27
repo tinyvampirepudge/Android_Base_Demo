@@ -4,7 +4,7 @@ import android.view.View;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 public class DragActivity5 extends BaseActivity {
 
@@ -18,7 +18,7 @@ public class DragActivity5 extends BaseActivity {
         findViewById(R.id.view_drager_layout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LogUtils.e("view_drager_layout clicked");
+                LogUtils.INSTANCE.e("view_drager_layout clicked");
             }
         });
     }

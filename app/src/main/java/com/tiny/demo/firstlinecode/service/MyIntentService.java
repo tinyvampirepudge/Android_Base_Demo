@@ -4,7 +4,7 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.content.Context;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * An {@link IntentService} subclass for handling asynchronous task requests in
@@ -80,9 +80,9 @@ public class MyIntentService extends IntentService {
     private void handleActionFoo(String param1, String param2) {
         // Handle action Foo
 //        throw new UnsupportedOperationException("Not yet implemented");
-        LogUtils.e("MyIntentService handleActionFoo");
-        LogUtils.e("Current Thread id is --> " + Thread.currentThread().getId());
-        LogUtils.e("Current Thread name is --> " + Thread.currentThread().getName());
+        LogUtils.INSTANCE.e("MyIntentService handleActionFoo");
+        LogUtils.INSTANCE.e("Current Thread id is --> " + Thread.currentThread().getId());
+        LogUtils.INSTANCE.e("Current Thread name is --> " + Thread.currentThread().getName());
     }
 
     /**
@@ -92,12 +92,12 @@ public class MyIntentService extends IntentService {
     private void handleActionBaz(String param1, String param2) {
         // Handle action Baz
 //        throw new UnsupportedOperationException("Not yet implemented");
-        LogUtils.e("MyIntentService handleActionBaz");
+        LogUtils.INSTANCE.e("MyIntentService handleActionBaz");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        LogUtils.e("MyIntentService onDestroy");
+        LogUtils.INSTANCE.e("MyIntentService onDestroy");
     }
 }

@@ -143,7 +143,7 @@ public abstract class BaseDialog extends AlertDialog {
         } else if (widthRatio > 1) {
             widthRatio = 1;
         }
-        int width = (int) (ScreenUtils.getScreenW(mContext) * widthRatio);
+        int width = (int) (ScreenUtils.INSTANCE.getScreenW(mContext) * widthRatio);
         window.setLayout(width, ViewGroup.LayoutParams.WRAP_CONTENT);
     }
 

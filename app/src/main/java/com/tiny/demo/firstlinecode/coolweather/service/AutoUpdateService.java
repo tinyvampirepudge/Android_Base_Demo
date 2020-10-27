@@ -13,7 +13,7 @@ import android.text.TextUtils;
 import com.tiny.demo.firstlinecode.coolweather.gson.WeatherInfo;
 import com.tiny.demo.firstlinecode.coolweather.util.HttpUtil;
 import com.tiny.demo.firstlinecode.coolweather.util.Utility;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.io.IOException;
 
@@ -34,7 +34,7 @@ public class AutoUpdateService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        LogUtils.e("AutoUpdateService onStartCommand");
+        LogUtils.INSTANCE.e("AutoUpdateService onStartCommand");
         //获取数据并缓存起来
         updateWeather();
         updateBingPic();
@@ -72,7 +72,7 @@ public class AutoUpdateService extends Service {
                     String responseText = response.body().string();
                     WeatherInfo weatherInfo1 = Utility.handleWeatherResponse(responseText);
                     if (weatherInfo1 != null && "ok".equals(weatherInfo1.status)) {
-                        LogUtils.e("AutoUpdateService responseText --> " + responseText);
+                        LogUtils.INSTANCE.e("AutoUpdateService responseText --> " + responseText);
                         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(AutoUpdateService.this).edit();
                         editor.putString("weather", responseText);
                         editor.apply();

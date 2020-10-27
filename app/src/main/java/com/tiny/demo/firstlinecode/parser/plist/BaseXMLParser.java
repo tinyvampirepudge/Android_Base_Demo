@@ -12,7 +12,7 @@
  */
 package com.tiny.demo.firstlinecode.parser.plist;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -96,12 +96,12 @@ public abstract class BaseXMLParser {
         try {
             sp = spf.newSAXParser();
         } catch (ParserConfigurationException e) {
-            LogUtils.e(
+            LogUtils.INSTANCE.e(
                     stringer.newBuilder().append(TAG).append("#parse")
                             .toString(), "ParserConfigurationException");
             e.printStackTrace();
         } catch (SAXException e) {
-            LogUtils.e(
+            LogUtils.INSTANCE.e(
                     stringer.newBuilder().append(TAG).append("#parse")
                             .toString(), "SAXException");
             e.printStackTrace();
@@ -120,17 +120,17 @@ public abstract class BaseXMLParser {
             // register a handler for callbacks and parse the file
             sp.parse(inSrc, getHandler());
         } catch (SAXException e) {
-            LogUtils.e(
+            LogUtils.INSTANCE.e(
                     stringer.newBuilder().append(TAG).append("#parse")
                             .toString(), "SAXException");
             e.printStackTrace();
         } catch (IOException e) {
-            LogUtils.e(
+            LogUtils.INSTANCE.e(
                     stringer.newBuilder().append(TAG).append("#parse")
                             .toString(), "IOException");
             e.printStackTrace();
         }
-        LogUtils.d(stringer.newBuilder().append(TAG).append("#parse").toString(),
+        LogUtils.INSTANCE.d(stringer.newBuilder().append(TAG).append("#parse").toString(),
                 "done parsing xml");
     }
 

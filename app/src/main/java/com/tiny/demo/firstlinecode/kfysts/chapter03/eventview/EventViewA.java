@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * @Description: 继承自View
@@ -40,17 +40,17 @@ public class EventViewA extends View {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        LogUtils.e(TAG, "dispatchTouchEvent ");
+        LogUtils.INSTANCE.e(TAG, "dispatchTouchEvent ");
         boolean result = super.dispatchTouchEvent(event);
-        LogUtils.e(TAG, "dispatchTouchEvent result:" + result);
+        LogUtils.INSTANCE.e(TAG, "dispatchTouchEvent result:" + result);
         return result;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        LogUtils.e(TAG, "onTouchEvent ");
+        LogUtils.INSTANCE.e(TAG, "onTouchEvent ");
         boolean result = super.onTouchEvent(event);
-        LogUtils.e(TAG, "onTouchEvent result:" + result);
+        LogUtils.INSTANCE.e(TAG, "onTouchEvent result:" + result);
         return result;
     }
 }

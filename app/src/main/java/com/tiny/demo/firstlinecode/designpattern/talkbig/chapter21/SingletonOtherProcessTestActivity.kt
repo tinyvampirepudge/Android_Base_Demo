@@ -1,13 +1,13 @@
 package com.tiny.demo.firstlinecode.designpattern.talkbig.chapter21
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Process
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.tiny.demo.firstlinecode.R
 import com.tiny.demo.firstlinecode.common.utils.ProcessUtil
 import com.tinytongtong.tinyutils.LogUtils
-import com.tinytongtong.tinyutils.ThreadUtils
+
 
 /**
  * @Description: 单例模式测试，其他进程

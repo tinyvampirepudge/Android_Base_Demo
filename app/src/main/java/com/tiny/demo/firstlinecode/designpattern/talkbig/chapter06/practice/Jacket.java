@@ -1,6 +1,6 @@
 package com.tiny.demo.firstlinecode.designpattern.talkbig.chapter06.practice;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc:
@@ -12,6 +12,6 @@ public class Jacket extends Clothes {
     @Override
     public void show() {
         super.show();
-        LogUtils.e("穿上衣。\n");
+        LogUtils.INSTANCE.e("穿上衣。\n");
     }
 }

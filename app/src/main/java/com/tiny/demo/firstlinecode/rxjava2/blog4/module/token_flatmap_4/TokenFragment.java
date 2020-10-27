@@ -66,14 +66,14 @@ public class TokenFragment extends BaseRxFragment {
                 .subscribe(new Consumer<FakeThing>() {
                     @Override
                     public void accept(FakeThing fakeThing) throws Exception {
-                        ThreadUtils.logCurrThreadName("onNext");
+                        ThreadUtils.INSTANCE.logCurrThreadName("onNext");
                         swipeRefreshLayout.setRefreshing(false);
                         tokenTv.setText(getString(R.string.got_data, fakeThing.id, fakeThing.name));
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
-                        ThreadUtils.logCurrThreadName("onError");
+                        ThreadUtils.INSTANCE.logCurrThreadName("onError");
                         swipeRefreshLayout.setRefreshing(false);
                         ToastUtils.showSingleToast(getString(R.string.loading_failed));
                     }

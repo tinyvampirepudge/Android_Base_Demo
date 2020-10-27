@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -56,20 +56,20 @@ public class AndroidKfystsChapter10Activity extends AppCompatActivity {
     @OnClick(R.id.btn_test2)
     public void onBtnTest2Clicked() {
         mBooleanThreadLocal.set(true);
-        LogUtils.e(TAG, "[Thread#main]mBooleanThreadLocal=" + mBooleanThreadLocal.get());
+        LogUtils.INSTANCE.e(TAG, "[Thread#main]mBooleanThreadLocal=" + mBooleanThreadLocal.get());
 
         new Thread("Thread#1") {
             @Override
             public void run() {
                 mBooleanThreadLocal.set(false);
-                LogUtils.e(TAG, "[Thread#1]mBooleanThreadLocal=" + mBooleanThreadLocal.get());
+                LogUtils.INSTANCE.e(TAG, "[Thread#1]mBooleanThreadLocal=" + mBooleanThreadLocal.get());
             }
         }.start();
 
         new Thread("Thread#2") {
             @Override
             public void run() {
-                LogUtils.e(TAG, "[Thread#2]=" + mBooleanThreadLocal.get());
+                LogUtils.INSTANCE.e(TAG, "[Thread#2]=" + mBooleanThreadLocal.get());
             }
         }.start();
     }

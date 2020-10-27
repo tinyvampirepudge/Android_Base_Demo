@@ -11,7 +11,7 @@ import android.os.Process;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.ProcessUtil;
 import com.tinytongtong.tinyutils.ThreadUtils;
 
@@ -89,9 +89,9 @@ public class BookContentProvider extends ContentProvider {
     public boolean onCreate() {
         //进程名称
         String processName = ProcessUtil.getProcessNameByCtx(getContext(), Process.myPid());
-        ThreadUtils.logCurrThreadName(TAG + " processName:" + processName);
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG + " processName:" + processName);
         //主线程
-        ThreadUtils.logCurrThreadName(TAG + " onCreate");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG + " onCreate");
         mContext = getContext();
         //ContentProvider创建时，初始化数据库。注意：这里仅仅是为了演示，实际使用中不推荐在主线程中进行耗时的数据库操作
         initProvider();
@@ -114,7 +114,7 @@ public class BookContentProvider extends ContentProvider {
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
         // 运行在Binder线程中。
         // ContentProvider query: sub Thread,name --> Binder:5991_2
-        ThreadUtils.logCurrThreadName(TAG + " query");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG + " query");
         String table = getTableName(uri);
         if (table == null) {
             throw new IllegalArgumentException("Unsupported URI: " + uri);
@@ -126,14 +126,14 @@ public class BookContentProvider extends ContentProvider {
     @Nullable
     @Override
     public String getType(@NonNull Uri uri) {
-        LogUtils.e(TAG, "getType");
+        LogUtils.INSTANCE.e(TAG, "getType");
         return null;
     }
 
     @Nullable
     @Override
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
-        LogUtils.e(TAG, "insert");
+        LogUtils.INSTANCE.e(TAG, "insert");
         String table = getTableName(uri);
         if (table == null) {
             throw new IllegalArgumentException("Unsupported Uri: " + uri);
@@ -146,7 +146,7 @@ public class BookContentProvider extends ContentProvider {
 
     @Override
     public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
-        LogUtils.e(TAG, "delete");
+        LogUtils.INSTANCE.e(TAG, "delete");
         String table = getTableName(uri);
         if (table == null) {
             throw new IllegalArgumentException("Unsupported Uri: " + uri);
@@ -160,7 +160,7 @@ public class BookContentProvider extends ContentProvider {
 
     @Override
     public int update(@NonNull Uri uri, @Nullable ContentValues values, @Nullable String selection, @Nullable String[] selectionArgs) {
-        LogUtils.e(TAG, "update");
+        LogUtils.INSTANCE.e(TAG, "update");
         String table = getTableName(uri);
         if (table == null) {
             throw new IllegalArgumentException("Unsupported Uri: " + uri);

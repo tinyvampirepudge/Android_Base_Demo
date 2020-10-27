@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,12 +43,12 @@ public class IntentServiceTestActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_test_1:
-                LogUtils.e("普通Service");
+                LogUtils.INSTANCE.e("普通Service");
                 Intent intent1 = new Intent(this, TestService.class);
                 startService(intent1);
                 break;
             case R.id.btn_test_2:
-                LogUtils.e("IntentService");
+                LogUtils.INSTANCE.e("IntentService");
                 for (int j = 0; j < 20; j++) {
                     Intent intent2 = new Intent(this, TestIntentService.class);
                     startService(intent2);

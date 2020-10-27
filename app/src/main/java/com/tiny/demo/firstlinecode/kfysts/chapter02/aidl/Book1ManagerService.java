@@ -10,7 +10,7 @@ import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tinytongtong.tinyutils.ThreadUtils;
 
 import java.util.List;
@@ -54,7 +54,7 @@ public class Book1ManagerService extends Service {
             mListeners.register(listener);
             //服务端的Binder线程池
             //registerListener: sub Thread,name --> Binder:6824_2
-            ThreadUtils.logCurrThreadName(TAG + " registerListener");
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " registerListener");
         }
 
         @Override
@@ -62,7 +62,7 @@ public class Book1ManagerService extends Service {
             //服务端的Binder线程池
             //sub Thread,name --> Binder:6824_3
             mListeners.unregister(listener);
-            ThreadUtils.logCurrThreadName(TAG + " unregisterListener");
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " unregisterListener");
         }
 
         @Override
@@ -90,8 +90,8 @@ public class Book1ManagerService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        LogUtils.e(TAG, "远程服务开启");
-        ThreadUtils.logCurrThreadName(TAG + " onCreate");
+        LogUtils.INSTANCE.e(TAG, "远程服务开启");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG + " onCreate");
         mBookList.add(new Book(1, "Android"));
         mBookList.add(new Book(2, "Ios"));
         new Thread(new ServiceWorker()).start();
@@ -111,21 +111,21 @@ public class Book1ManagerService extends Service {
     @Override
     public void onDestroy() {
         mIsServiceDestroyed.set(true);
-        LogUtils.e(TAG, "远程服务销毁");
+        LogUtils.INSTANCE.e(TAG, "远程服务销毁");
         super.onDestroy();
     }
 
     private void onNewBookArrived(Book book) throws RemoteException {
         // new 出来的工作线程
         //sub Thread,name --> Thread-3
-        ThreadUtils.logCurrThreadName(TAG + " onNewBookArrived");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG + " onNewBookArrived");
         mBookList.add(book);
         int N = mListeners.beginBroadcast();
-        LogUtils.e(TAG, "onNewBookArrived, notify listeners:" + N);
+        LogUtils.INSTANCE.e(TAG, "onNewBookArrived, notify listeners:" + N);
         for (int j = 0; j < N; j++) {
             IOnNewBookArrivedListener listener = mListeners.getBroadcastItem(j);
             if (null != listener) {
-                LogUtils.e(TAG, "onNewBokArrived, notify listener:" + listener);
+                LogUtils.INSTANCE.e(TAG, "onNewBokArrived, notify listener:" + listener);
                 listener.onNewBookArrived(book);
             }
         }

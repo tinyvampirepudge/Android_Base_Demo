@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 public class ActivityStackCActivity extends AppCompatActivity {
 
@@ -12,6 +12,6 @@ public class ActivityStackCActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stack_c);
-        LogUtils.e("ActivityStackCActivity", "onCreate");
+        LogUtils.INSTANCE.e("ActivityStackCActivity", "onCreate");
     }
 }

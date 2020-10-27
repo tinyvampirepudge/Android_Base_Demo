@@ -47,7 +47,7 @@ public class OnNewIntentActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        LogUtils.e(TAG, "onCreate");
+        LogUtils.INSTANCE.e(TAG, "onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_on_new_intent);
         ButterKnife.bind(this);
@@ -56,43 +56,43 @@ public class OnNewIntentActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        LogUtils.e(TAG, "onStart");
+        LogUtils.INSTANCE.e(TAG, "onStart");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        LogUtils.e(TAG, "onResume");
+        LogUtils.INSTANCE.e(TAG, "onResume");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        LogUtils.e(TAG, "onRestart");
+        LogUtils.INSTANCE.e(TAG, "onRestart");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        LogUtils.e(TAG, "onPause");
+        LogUtils.INSTANCE.e(TAG, "onPause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        LogUtils.e(TAG, "onStop");
+        LogUtils.INSTANCE.e(TAG, "onStop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        LogUtils.e(TAG, "onDestroy");
+        LogUtils.INSTANCE.e(TAG, "onDestroy");
     }
 
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        LogUtils.e(TAG, "onNewIntent");
+        LogUtils.INSTANCE.e(TAG, "onNewIntent");
     }
 
     @OnClick(R.id.btn_test_01)

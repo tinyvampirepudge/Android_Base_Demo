@@ -12,7 +12,7 @@
  */
 package com.tiny.demo.firstlinecode.parser.plist.domain;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -88,7 +88,7 @@ public class Date extends PListObject implements
 			try {
 				this.date = iso8601Format.parse(val);
 			} catch (ParseException e) {
-				LogUtils.e(TAG, new StringBuilder("#setValue - error parsing val=")
+				LogUtils.INSTANCE.e(TAG, new StringBuilder("#setValue - error parsing val=")
 						.append(val).toString(), e);
 			}
 		} else {

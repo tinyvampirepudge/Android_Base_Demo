@@ -1,6 +1,6 @@
 package com.tiny.demo.firstlinecode.thinkinjava.annotation.blog;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.lang.reflect.Field;
 
@@ -23,19 +23,19 @@ public class CustomUtils {
             if (field.isAnnotationPresent(Name.class)) {
                 Name arg0 = field.getAnnotation(Name.class);
                 name = name + arg0.value();
-                LogUtils.e(tag, "name = " + name);
+                LogUtils.INSTANCE.e(tag, "name = " + name);
             }
             if (field.isAnnotationPresent(Gender.class)) {
                 Gender arg0 = field.getAnnotation(Gender.class);
                 gender = gender + arg0.gender().toString();
-                LogUtils.e(tag, "gender = " + gender);
+                LogUtils.INSTANCE.e(tag, "gender = " + gender);
             }
             if (field.isAnnotationPresent(Profile.class)) {
                 Profile arg0 = field.getAnnotation(Profile.class);
                 profile = "[id=" + arg0.id() + ",height="
                         + arg0.height() + ",nativePlace="
                         + arg0.nativePlace() + "]";
-                LogUtils.e(tag, "profile = " + profile);
+                LogUtils.INSTANCE.e(tag, "profile = " + profile);
             }
         }
     }

@@ -10,7 +10,7 @@ import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.brvah.adapter.ItemClickAdapter;
 import com.tiny.demo.firstlinecode.brvah.entity.ClickEntity;
 import com.tiny.demo.firstlinecode.common.interfaces.OnTitleBarClick;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 import com.tiny.demo.firstlinecode.common.view.TitleBarLayout;
 
@@ -52,20 +52,20 @@ public class ItemClickActivity extends BaseActivity {
         initAdapter();
 
         adapter.setOnItemClickListener((adapter, view, position) -> {
-            LogUtils.e(TAG, "onItemClick");
+            LogUtils.INSTANCE.e(TAG, "onItemClick");
             ToastUtils.showSingleToast("onItemClick: " + position);
         });
         adapter.setOnItemLongClickListener((adapter, view, position) -> {
-            LogUtils.d(TAG, "onItemLongClick");
+            LogUtils.INSTANCE.d(TAG, "onItemLongClick");
             ToastUtils.showSingleToast("onItemLongClick: " + position);
             return true;
         });
         adapter.setOnItemChildClickListener((adapter, view, position) -> {
-            LogUtils.d(TAG, "onItemChildClick");
+            LogUtils.INSTANCE.d(TAG, "onItemChildClick");
             ToastUtils.showSingleToast("onItemChildClick: " + position);
         });
         adapter.setOnItemChildLongClickListener((adapter, view, position) -> {
-            LogUtils.d(TAG, "onItemChildLongClick");
+            LogUtils.INSTANCE.d(TAG, "onItemChildLongClick");
             ToastUtils.showSingleToast("onItemChildLongClick: " + position);
             return true;
         });

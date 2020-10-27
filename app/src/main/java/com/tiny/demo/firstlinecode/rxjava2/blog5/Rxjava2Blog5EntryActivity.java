@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.jakewharton.rxbinding2.view.RxView;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.util.concurrent.TimeUnit;
 
@@ -67,7 +67,7 @@ public class Rxjava2Blog5EntryActivity extends AppCompatActivity {
         btnTest1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LogUtils.e("我被点击了");
+                LogUtils.INSTANCE.e("我被点击了");
             }
         });
 
@@ -82,7 +82,7 @@ public class Rxjava2Blog5EntryActivity extends AppCompatActivity {
                 .subscribe(new Consumer<Object>() {
                     @Override
                     public void accept(Object o) throws Exception {
-                        LogUtils.e("button clicked");
+                        LogUtils.INSTANCE.e("button clicked");
                     }
                 });
 
@@ -105,7 +105,7 @@ public class Rxjava2Blog5EntryActivity extends AppCompatActivity {
         Disposable disposable1 = observable.subscribe(new Consumer<Object>() {
             @Override
             public void accept(Object o) throws Exception {
-                LogUtils.e("第一次");
+                LogUtils.INSTANCE.e("第一次");
             }
         });
         CompositeDisposable mCompositeSubscription = new CompositeDisposable();
@@ -114,7 +114,7 @@ public class Rxjava2Blog5EntryActivity extends AppCompatActivity {
         Disposable disposable2 = observable.subscribe(new Consumer<Object>() {
             @Override
             public void accept(Object o) throws Exception {
-                LogUtils.e("第二次");
+                LogUtils.INSTANCE.e("第二次");
             }
         });
 

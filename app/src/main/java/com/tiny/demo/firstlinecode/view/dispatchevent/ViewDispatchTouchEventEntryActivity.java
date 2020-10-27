@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tinytongtong.tinyutils.ScreenUtils;
 import com.tiny.demo.firstlinecode.view.dispatchevent.scrollview.HorizontalScrollviewDispatchTouchEventActivity;
 import com.tiny.demo.firstlinecode.view.dispatchevent.summary.ViewDispatchTouchEventTestActivity;

@@ -72,6 +72,6 @@ public class ScreenAdaptiveEntryActivity extends AppCompatActivity {
         tv5.setText(String.format(Locale.getDefault(), "scaledDensity: %.2fpx", scaledDensity));
         tv6.setText(String.format(Locale.getDefault(), "screenSize: %.2finch", screenSize));
 
-        tv7.setText(ScreenUtils.getDisplayMetricsInfo(this));
+        tv7.setText(ScreenUtils.INSTANCE.getDisplayMetricsInfo(this));
     }
 }

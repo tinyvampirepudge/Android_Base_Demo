@@ -130,7 +130,7 @@ public class DialogUtils {
         if (setAnim) {
             window.setWindowAnimations(R.style.animation_dialog);
         }
-        int width = (int) (ScreenUtils.getScreenW(context) * widthRatio);
+        int width = (int) (ScreenUtils.INSTANCE.getScreenW(context) * widthRatio);
         window.setLayout(width, ViewGroup.LayoutParams.WRAP_CONTENT);
     }
 
@@ -187,7 +187,7 @@ public class DialogUtils {
         window.setGravity(Gravity.CENTER);
         window.setContentView(viewDeleteStock);
         window.setWindowAnimations(R.style.animation_dialog);
-        int width = (int) (ScreenUtils.getScreenW(mContext) * 5 / 6f);
+        int width = (int) (ScreenUtils.INSTANCE.getScreenW(mContext) * 5 / 6f);
         window.setLayout(width, ViewGroup.LayoutParams.WRAP_CONTENT);
     }
 }

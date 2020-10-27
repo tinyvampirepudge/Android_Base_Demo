@@ -24,9 +24,9 @@ public class CustomNotificationListenerService extends NotificationListenerServi
     @Override
     public void onNotificationPosted(StatusBarNotification sbn) {
         super.onNotificationPosted(sbn);
-        LogUtils.e(TAG, "onNotificationPosted");
+        LogUtils.INSTANCE.e(TAG, "onNotificationPosted");
         String sbnPkgName = sbn.getPackageName();
-        LogUtils.e(TAG, sbnPkgName);
+        LogUtils.INSTANCE.e(TAG, sbnPkgName);
         // 如果该通知的包名不是微信，那么 pass 掉
         if (!"com.tencent.mm".equals(sbn.getPackageName())) {
             return;
@@ -46,7 +46,7 @@ public class CustomNotificationListenerService extends NotificationListenerServi
     @Override
     public void onNotificationRemoved(StatusBarNotification sbn) {
         super.onNotificationRemoved(sbn);
-        LogUtils.e(TAG, "onNotificationRemoved");
+        LogUtils.INSTANCE.e(TAG, "onNotificationRemoved");
     }
 
     /**
@@ -55,6 +55,6 @@ public class CustomNotificationListenerService extends NotificationListenerServi
     @Override
     public void onListenerConnected() {
         super.onListenerConnected();
-        LogUtils.e(TAG, "onListenerConnected");
+        LogUtils.INSTANCE.e(TAG, "onListenerConnected");
     }
 }

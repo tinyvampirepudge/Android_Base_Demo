@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.javareference.copy.entity.CloneClass6;
 import com.tiny.demo.firstlinecode.javareference.copy.entity.CloneClass7;
 import com.tiny.demo.firstlinecode.javareference.copy.entity.CloneClass8;
@@ -65,15 +65,15 @@ public class JavaCloneActivity3 extends BaseActivity {
         mapDeepClone = (HashMap<String, String>) mapSource.clone();
         //hash shadow clone
         mapShadowClone.putAll(mapSource);
-        LogUtils.e("mapSource.hashCode() --> " + mapSource.hashCode());
-        LogUtils.e("mapDeepClone.hashCode() --> " + mapDeepClone.hashCode());
-        LogUtils.e("mapShadowClone.hashCode() --> " + mapShadowClone.hashCode());
+        LogUtils.INSTANCE.e("mapSource.hashCode() --> " + mapSource.hashCode());
+        LogUtils.INSTANCE.e("mapDeepClone.hashCode() --> " + mapDeepClone.hashCode());
+        LogUtils.INSTANCE.e("mapShadowClone.hashCode() --> " + mapShadowClone.hashCode());
         mapSource.put("1", "2");
         mapDeepClone.put("4", "5");
         mapShadowClone.put("7", "8");
-        LogUtils.e("mapSource.toString() --> " + mapSource.toString());
-        LogUtils.e("mapDeepClone.toString() --> " + mapDeepClone.toString());
-        LogUtils.e("mapShadowClone.toString() --> " + mapShadowClone.toString());
+        LogUtils.INSTANCE.e("mapSource.toString() --> " + mapSource.toString());
+        LogUtils.INSTANCE.e("mapDeepClone.toString() --> " + mapDeepClone.toString());
+        LogUtils.INSTANCE.e("mapShadowClone.toString() --> " + mapShadowClone.toString());
     }
 
     @Override

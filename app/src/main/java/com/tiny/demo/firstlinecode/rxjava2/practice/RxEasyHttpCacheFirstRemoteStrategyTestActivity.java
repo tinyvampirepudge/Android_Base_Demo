@@ -69,22 +69,22 @@ public class RxEasyHttpCacheFirstRemoteStrategyTestActivity extends AppCompatAct
             @Override
             protected void onStart() {
                 super.onStart();
-                LogUtils.e(TAG, "onBtnSendRequestSuccessClicked onStart");
+                LogUtils.INSTANCE.e(TAG, "onBtnSendRequestSuccessClicked onStart");
             }
 
             @Override
             public void onNext(String s) {
-                LogUtils.e(TAG, "onBtnSendRequestSuccessClicked onNext s:" + s);
+                LogUtils.INSTANCE.e(TAG, "onBtnSendRequestSuccessClicked onNext s:" + s);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e(TAG, "onBtnSendRequestSuccessClicked onError e:" + e.getMessage());
+                LogUtils.INSTANCE.e(TAG, "onBtnSendRequestSuccessClicked onError e:" + e.getMessage());
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e(TAG, "onBtnSendRequestSuccessClicked onComplete");
+                LogUtils.INSTANCE.e(TAG, "onBtnSendRequestSuccessClicked onComplete");
             }
         });
     }
@@ -103,22 +103,22 @@ public class RxEasyHttpCacheFirstRemoteStrategyTestActivity extends AppCompatAct
             @Override
             protected void onStart() {
                 super.onStart();
-                LogUtils.e(TAG, "onBtnSendRequestSuccessClicked onStart");
+                LogUtils.INSTANCE.e(TAG, "onBtnSendRequestSuccessClicked onStart");
             }
 
             @Override
             public void onNext(String s) {
-                LogUtils.e(TAG, "onBtnSendRequestSuccessClicked onNext s:" + s);
+                LogUtils.INSTANCE.e(TAG, "onBtnSendRequestSuccessClicked onNext s:" + s);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e(TAG, "onBtnSendRequestSuccessClicked onError e:" + e.getMessage());
+                LogUtils.INSTANCE.e(TAG, "onBtnSendRequestSuccessClicked onError e:" + e.getMessage());
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e(TAG, "onBtnSendRequestSuccessClicked onComplete");
+                LogUtils.INSTANCE.e(TAG, "onBtnSendRequestSuccessClicked onComplete");
             }
         });
     }
@@ -127,7 +127,7 @@ public class RxEasyHttpCacheFirstRemoteStrategyTestActivity extends AppCompatAct
         return stream.map(new Function<String, String>() {
             @Override
             public String apply(String s) throws Exception {
-                LogUtils.e(TAG, "解析数据");
+                LogUtils.INSTANCE.e(TAG, "解析数据");
                 return s + "111";
             }
         })
@@ -193,20 +193,20 @@ public class RxEasyHttpCacheFirstRemoteStrategyTestActivity extends AppCompatAct
                         .map(new Function<String, String>() {
                             @Override
                             public String apply(String s) throws Exception {
-                                LogUtils.e(TAG, "校验返回码是否为200");
+                                LogUtils.INSTANCE.e(TAG, "校验返回码是否为200");
                                 return s + "222";
                             }
                         })
                         .doOnSubscribe(new Consumer<Disposable>() {
                             @Override
                             public void accept(@NonNull Disposable disposable) throws Exception {
-                                LogUtils.i(TAG, "+++doOnSubscribe+++" + disposable.isDisposed());
+                                LogUtils.INSTANCE.i(TAG, "+++doOnSubscribe+++" + disposable.isDisposed());
                             }
                         })
                         .doFinally(new Action() {
                             @Override
                             public void run() throws Exception {
-                                LogUtils.i(TAG, "+++doFinally+++");
+                                LogUtils.INSTANCE.i(TAG, "+++doFinally+++");
                             }
                         })
                         .onErrorResumeNext(new Function<Throwable, ObservableSource<String>>() {
@@ -261,7 +261,7 @@ public class RxEasyHttpCacheFirstRemoteStrategyTestActivity extends AppCompatAct
                                 }).onErrorReturn(new Function<Throwable, String>() {
                                     @Override
                                     public String apply(@NonNull Throwable throwable) throws Exception {
-                                        LogUtils.e(TAG, "save status => " + throwable);
+                                        LogUtils.INSTANCE.e(TAG, "save status => " + throwable);
                                         return "loadRemote onErrorReturn";
                                     }
                                 });

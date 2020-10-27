@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
@@ -59,22 +59,22 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e(TAG, "onSubscribe");
+                        LogUtils.INSTANCE.e(TAG, "onSubscribe");
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        LogUtils.e(TAG, "onNext:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "onNext:" + integer);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e(TAG, "onError:" + e.toString());
+                        LogUtils.INSTANCE.e(TAG, "onError:" + e.toString());
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e(TAG, "onComplete");
+                        LogUtils.INSTANCE.e(TAG, "onComplete");
                     }
                 });
     }
@@ -93,22 +93,22 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e(TAG, "onSubscribe");
+                        LogUtils.INSTANCE.e(TAG, "onSubscribe");
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        LogUtils.e(TAG, "onNext:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "onNext:" + integer);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e(TAG, "onError:" + e.toString());
+                        LogUtils.INSTANCE.e(TAG, "onError:" + e.toString());
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e(TAG, "onComplete");
+                        LogUtils.INSTANCE.e(TAG, "onComplete");
                     }
                 });
     }
@@ -134,22 +134,22 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
         ).subscribe(new Observer<String>() {
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.e(TAG, "onSubscribe");
+                LogUtils.INSTANCE.e(TAG, "onSubscribe");
             }
 
             @Override
             public void onNext(String s) {
-                LogUtils.e(TAG, "onNext:" + s);
+                LogUtils.INSTANCE.e(TAG, "onNext:" + s);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e(TAG, "onError:" + e.toString());
+                LogUtils.INSTANCE.e(TAG, "onError:" + e.toString());
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e(TAG, "onComplete");
+                LogUtils.INSTANCE.e(TAG, "onComplete");
             }
         });
     }
@@ -181,22 +181,22 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
         ).subscribe(new Observer<Integer>() {
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.e(TAG, "onSubscribe");
+                LogUtils.INSTANCE.e(TAG, "onSubscribe");
             }
 
             @Override
             public void onNext(Integer integer) {
-                LogUtils.e(TAG, "onNext:" + integer);
+                LogUtils.INSTANCE.e(TAG, "onNext:" + integer);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e(TAG, "onError:" + e.toString());
+                LogUtils.INSTANCE.e(TAG, "onError:" + e.toString());
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e(TAG, "onComplete");
+                LogUtils.INSTANCE.e(TAG, "onComplete");
             }
         });
         /**
@@ -223,22 +223,22 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
         ).subscribe(new Observer<Integer>() {
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.e(TAG, "onSubscribe");
+                LogUtils.INSTANCE.e(TAG, "onSubscribe");
             }
 
             @Override
             public void onNext(Integer integer) {
-                LogUtils.e(TAG, "onNext:" + integer);
+                LogUtils.INSTANCE.e(TAG, "onNext:" + integer);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e(TAG, "onError:" + e.toString());
+                LogUtils.INSTANCE.e(TAG, "onError:" + e.toString());
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e(TAG, "onComplete");
+                LogUtils.INSTANCE.e(TAG, "onComplete");
             }
         });
     }
@@ -265,22 +265,22 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
         ).subscribe(new Observer<Integer>() {
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.e(TAG, "onSubscribe");
+                LogUtils.INSTANCE.e(TAG, "onSubscribe");
             }
 
             @Override
             public void onNext(Integer integer) {
-                LogUtils.e(TAG, "onNext:" + integer);
+                LogUtils.INSTANCE.e(TAG, "onNext:" + integer);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e(TAG, "onError:" + e.toString());
+                LogUtils.INSTANCE.e(TAG, "onError:" + e.toString());
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e(TAG, "onComplete");
+                LogUtils.INSTANCE.e(TAG, "onComplete");
             }
         });
     }
@@ -298,7 +298,7 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
                             @Override
                             public String apply(Long aLong) throws Exception {
                                 String s1 = "A" + aLong;
-                                LogUtils.e(TAG, "A发送的事件" + s1);
+                                LogUtils.INSTANCE.e(TAG, "A发送的事件" + s1);
                                 return s1;
                             }
                         }),
@@ -307,7 +307,7 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
                             @Override
                             public String apply(Long aLong) throws Exception {
                                 String s2 = "B" + aLong;
-                                LogUtils.e(TAG, "B发送的事件" + s2);
+                                LogUtils.INSTANCE.e(TAG, "B发送的事件" + s2);
                                 return s2;
                             }
                         }),
@@ -320,22 +320,22 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
                 }).subscribe(new Observer<String>() {
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.e(TAG, "onSubscribe");
+                LogUtils.INSTANCE.e(TAG, "onSubscribe");
             }
 
             @Override
             public void onNext(String s) {
-                LogUtils.e(TAG, "onNext:" + s);
+                LogUtils.INSTANCE.e(TAG, "onNext:" + s);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e(TAG, "onError:" + e.toString());
+                LogUtils.INSTANCE.e(TAG, "onError:" + e.toString());
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e(TAG, "onComplete");
+                LogUtils.INSTANCE.e(TAG, "onComplete");
             }
         });
 
@@ -379,7 +379,7 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
                             @Override
                             public String apply(Long aLong) throws Exception {
                                 String s1 = "A" + aLong;
-                                LogUtils.e(TAG, "A发送的事件:" + s1);
+                                LogUtils.INSTANCE.e(TAG, "A发送的事件:" + s1);
                                 return s1;
                             }
                         }),
@@ -388,7 +388,7 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
                             @Override
                             public String apply(Long aLong) throws Exception {
                                 String s2 = "B" + aLong;
-                                LogUtils.e(TAG, "B发送的的事件:" + s2);
+                                LogUtils.INSTANCE.e(TAG, "B发送的的事件:" + s2);
                                 return s2;
                             }
                         }),
@@ -400,22 +400,22 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
                 }).subscribe(new Observer<String>() {
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.e(TAG, "onSubscribe");
+                LogUtils.INSTANCE.e(TAG, "onSubscribe");
             }
 
             @Override
             public void onNext(String s) {
-                LogUtils.e(TAG, "onNext:" + s);
+                LogUtils.INSTANCE.e(TAG, "onNext:" + s);
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e(TAG, "onError:" + e.toString());
+                LogUtils.INSTANCE.e(TAG, "onError:" + e.toString());
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e(TAG, "onComplete");
+                LogUtils.INSTANCE.e(TAG, "onComplete");
             }
         });
 
@@ -464,15 +464,15 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
                     @Override
                     public Integer apply(Integer integer, Integer integer2) throws Exception {
                         int res = integer + integer2;
-                        LogUtils.e(TAG, "integer:" + integer);
-                        LogUtils.e(TAG, "integer2:" + integer2);
-                        LogUtils.e(TAG, "res:" + res);
+                        LogUtils.INSTANCE.e(TAG, "integer:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "integer2:" + integer2);
+                        LogUtils.INSTANCE.e(TAG, "res:" + res);
                         return res;
                     }
                 }).subscribe(new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) throws Exception {
-                LogUtils.e(TAG, "accept:" + integer);
+                LogUtils.INSTANCE.e(TAG, "accept:" + integer);
             }
         });
     }
@@ -498,7 +498,7 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
                 .subscribe(new Consumer<ArrayList<Integer>>() {
                     @Override
                     public void accept(ArrayList<Integer> integers) throws Exception {
-                        LogUtils.e(TAG, "accept:" + integers);
+                        LogUtils.INSTANCE.e(TAG, "accept:" + integers);
                     }
                 });
     }
@@ -515,7 +515,7 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtils.e(TAG, "accept:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "accept:" + integer);
                     }
                 });
     }
@@ -530,7 +530,7 @@ public class Rxjava2Test12Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Long>() {
                     @Override
                     public void accept(Long aLong) throws Exception {
-                        LogUtils.e(TAG, "accept:" + aLong);
+                        LogUtils.INSTANCE.e(TAG, "accept:" + aLong);
                     }
                 });
     }

@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.rxjava2.blog1.Api;
 import com.tiny.demo.firstlinecode.rxjava2.blog1.RetrofitProvider;
 
@@ -65,12 +65,12 @@ public class Rxjava2Test3Activity extends AppCompatActivity {
 //                .subscribe(new Consumer<RegisterRequest>() {
 //                    @Override
 //                    public void accept(RegisterRequest registerRequest) throws Exception {
-//                        LogUtils.e("注册成功");
+//                        LogUtils.INSTANCE.e("注册成功");
 //                    }
 //                }, new Consumer<Throwable>() {
 //                    @Override
 //                    public void accept(Throwable throwable) throws Exception {
-//                        LogUtils.e("注册失败");
+//                        LogUtils.INSTANCE.e("注册失败");
 //                    }
 //                });
 //
@@ -81,12 +81,12 @@ public class Rxjava2Test3Activity extends AppCompatActivity {
 //                .subscribe(new Consumer<LoginResponse>() {
 //                    @Override
 //                    public void accept(LoginResponse loginResponse) throws Exception {
-//                        LogUtils.e("登录成功");
+//                        LogUtils.INSTANCE.e("登录成功");
 //                    }
 //                }, new Consumer<Throwable>() {
 //                    @Override
 //                    public void accept(Throwable throwable) throws Exception {
-//                        LogUtils.e("登录失败");
+//                        LogUtils.INSTANCE.e("登录失败");
 //                    }
 //                });
     }
@@ -118,7 +118,7 @@ public class Rxjava2Test3Activity extends AppCompatActivity {
                 .subscribe(new Consumer<String>() {
                     @Override
                     public void accept(String s) throws Exception {
-                        LogUtils.e(s);
+                        LogUtils.INSTANCE.e(s);
                     }
                 });
     }
@@ -151,7 +151,7 @@ public class Rxjava2Test3Activity extends AppCompatActivity {
             @Override
 
             public void accept(String s) throws Exception {
-                LogUtils.e("accept s --> " + s);
+                LogUtils.INSTANCE.e("accept s --> " + s);
             }
         });
     }
@@ -180,7 +180,7 @@ public class Rxjava2Test3Activity extends AppCompatActivity {
         }).subscribe(new Consumer<String>() {
             @Override
             public void accept(String s) throws Exception {
-                LogUtils.e("concatMap accept --> " + s);
+                LogUtils.INSTANCE.e("concatMap accept --> " + s);
             }
         });
     }

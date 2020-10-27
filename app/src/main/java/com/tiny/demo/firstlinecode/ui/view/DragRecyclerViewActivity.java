@@ -15,7 +15,7 @@ import com.tiny.demo.firstlinecode.common.constant.ResponseCode;
 import com.tiny.demo.firstlinecode.common.interfaces.OnTitleBarClick;
 import com.tiny.demo.firstlinecode.common.utils.DeviceInfo;
 import com.tiny.demo.firstlinecode.common.utils.ListUtils;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 import com.tiny.demo.firstlinecode.common.view.TitleBarLayout;
 import com.tiny.demo.firstlinecode.stetho.httphelper.UrlConfig;
@@ -239,7 +239,7 @@ public class DragRecyclerViewActivity extends BaseActivity implements OptionalRe
             }
         }
         for (StockEditBean bean : stockList) {
-            LogUtils.e(bean.toString());
+            LogUtils.INSTANCE.e(bean.toString());
         }
         return stockEditList;
     }

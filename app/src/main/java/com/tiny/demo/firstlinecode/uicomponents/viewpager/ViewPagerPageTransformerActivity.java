@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
-import com.tiny.demo.firstlinecode.uicomponents.viewpager.loop.LoopViewPagerActivity;
 import com.tiny.demo.firstlinecode.uicomponents.viewpager.pagetransformer.ScaleDownPageTransformer;
 
 import java.util.ArrayList;
@@ -105,7 +104,6 @@ public class ViewPagerPageTransformerActivity extends BaseActivity {
         int finalJ = j;
         tv.setOnClickListener(v -> {
             ToastUtils.showSingleToast("第" + (finalJ + 1) + "个View被点击了");
-            startActivity(new Intent(mContext, LoopViewPagerActivity.class));
         });
         return tv;
     }

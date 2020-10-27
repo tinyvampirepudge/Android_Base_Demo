@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -120,9 +120,9 @@ public class XmlParseActivity extends BaseActivity {
                     //完成解析某个节点
                     case XmlPullParser.END_TAG:
                         if ("app".equals(nodeName)) {
-                            LogUtils.d("id --> " + id);
-                            LogUtils.d("name --> " + name);
-                            LogUtils.d("version --> " + version);
+                            LogUtils.INSTANCE.d("id --> " + id);
+                            LogUtils.INSTANCE.d("name --> " + name);
+                            LogUtils.INSTANCE.d("version --> " + version);
                         }
                         break;
                     default:

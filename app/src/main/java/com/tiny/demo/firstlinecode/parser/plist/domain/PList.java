@@ -14,7 +14,7 @@ package com.tiny.demo.firstlinecode.parser.plist.domain;
 
 import com.tiny.demo.firstlinecode.parser.plist.Constants;
 import com.tiny.demo.firstlinecode.parser.plist.Stringer;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.util.Stack;
 
@@ -91,7 +91,7 @@ public class PList {
      */
     private void attachPListObjToDictParent(PListObject obj,
                                             java.lang.String key) {
-        LogUtils.d(stringer.newBuilder().append(TAG)
+        LogUtils.INSTANCE.d(stringer.newBuilder().append(TAG)
                         .append("#attachPListObjToDictParent").toString(),
                 stringer.newBuilder().append("key|obj-type|obj: ").append(key)
                         .append(Constants.PIPE).append(obj.getType())
@@ -109,7 +109,7 @@ public class PList {
      */
     private void attachPListObjToArrayParent(Stack<PListObject> stack,
                                              PListObject obj) {
-        LogUtils.e(stringer.newBuilder().append(TAG)
+        LogUtils.INSTANCE.e(stringer.newBuilder().append(TAG)
                         .append("#attachPListObjToArrayParent").toString(),
                 stringer.newBuilder().append("obj-type|obj: ")
                         .append(Constants.PIPE).append(obj.getType())

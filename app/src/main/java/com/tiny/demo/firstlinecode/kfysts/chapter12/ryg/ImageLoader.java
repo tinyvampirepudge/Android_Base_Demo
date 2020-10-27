@@ -14,7 +14,7 @@ import android.util.LruCache;
 import android.widget.ImageView;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.MyUtils;
 
 import java.io.BufferedInputStream;
@@ -127,7 +127,7 @@ public class ImageLoader {
             if (uri.equals(result.uri)) {
                 imageView.setImageBitmap(result.bitmap);
             } else {
-                LogUtils.w(TAG, "set image bitmap, but url has changed, ignored!");
+                LogUtils.INSTANCE.w("set image bitmap, but url has changed, ignored!");
             }
         }
     };
@@ -203,7 +203,7 @@ public class ImageLoader {
      * imageView and bitmap.
      * NOTE THAT: should run in UI Thread
      *
-     * @param uri   http url
+     * @param uri       http url
      * @param imageView bitmap's bind object
      */
     public void bindBitmap(final String uri, final ImageView imageView) {
@@ -257,7 +257,7 @@ public class ImageLoader {
         //第一步从内存加载
         Bitmap bitmap = loadBitmapFromMemCache(uri);
         if (bitmap != null) {
-            LogUtils.d(TAG, "loadBitmapFromMemCache,url:" + uri);
+            LogUtils.INSTANCE.d(TAG, "loadBitmapFromMemCache,url:" + uri);
             return bitmap;
         }
 
@@ -265,18 +265,18 @@ public class ImageLoader {
             //第二步从磁盘加载
             bitmap = loadBitmapFromDiskCache(uri, reqWidth, reqHeight);
             if (bitmap != null) {
-                LogUtils.d(TAG, "loadBitmapFromDiskCache,url:" + uri);
+                LogUtils.INSTANCE.d(TAG, "loadBitmapFromDiskCache,url:" + uri);
                 return bitmap;
             }
             //第三步从网络加载。
             bitmap = loadBitmapFromHttp(uri, reqWidth, reqHeight);
-            LogUtils.d(TAG, "loadBitmapFromHttp,url:" + uri);
+            LogUtils.INSTANCE.d(TAG, "loadBitmapFromHttp,url:" + uri);
         } catch (IOException e) {
             e.printStackTrace();
         }
         //第四步，从网络直接下载。
         if (bitmap == null && !mIsDiskLruCacheCreated) {
-            LogUtils.w(TAG, "encounter error, DiskLruCache is not created.");
+            LogUtils.INSTANCE.w("encounter error, DiskLruCache is not created.");
             bitmap = downloadBitmapFromUrl(uri);
         }
         return bitmap;
@@ -336,7 +336,7 @@ public class ImageLoader {
     private Bitmap loadBitmapFromDiskCache(String url, int reqWidth,
                                            int reqHeight) throws IOException {
         if (Looper.myLooper() == Looper.getMainLooper()) {
-            LogUtils.w(TAG, "load bitmap from UI Thread, it's not recommended!");
+            LogUtils.INSTANCE.w("load bitmap from UI Thread, it's not recommended!");
         }
         if (mDiskLruCache == null) {
             return null;
@@ -382,7 +382,7 @@ public class ImageLoader {
             }
             return true;
         } catch (IOException e) {
-            LogUtils.e(TAG, "downloadBitmap failed." + e);
+            LogUtils.INSTANCE.e(TAG, "downloadBitmap failed." + e);
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
@@ -410,7 +410,7 @@ public class ImageLoader {
                     IO_BUFFER_SIZE);
             bitmap = BitmapFactory.decodeStream(in);
         } catch (IOException e) {
-            LogUtils.e(TAG, "Error in downloadBitmap: " + e);
+            LogUtils.INSTANCE.e(TAG, "Error in downloadBitmap: " + e);
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();

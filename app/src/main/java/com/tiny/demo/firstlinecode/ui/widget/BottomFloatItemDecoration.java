@@ -67,28 +67,28 @@ public class BottomFloatItemDecoration extends RecyclerView.ItemDecoration {
         int relativeLastPosition = childCount - 1;
         View childView = parent.getChildAt(relativeLastPosition);
         if (childView == null) {
-            LogUtils.e(TAG, "childView == null");
+            LogUtils.INSTANCE.e(TAG, "childView == null");
             return;
         }
 
         // 如果不足一屏，就不用绘制
         if (childView.getBottom() < parent.getHeight()) {
-            LogUtils.e(TAG, "childView.getBottom() < parent.getHeight()");
+            LogUtils.INSTANCE.e(TAG, "childView.getBottom() < parent.getHeight()");
             return;
         }
 
         final int left = parent.getPaddingLeft();
         final int right = parent.getWidth() - parent.getPaddingRight();
 
-        LogUtils.e(TAG, "childView.getTop():" + childView.getTop());
-        LogUtils.e(TAG, "childView.getBottom():" + childView.getBottom());
-        LogUtils.e(TAG, "parent.getHeight():" + parent.getHeight());
+        LogUtils.INSTANCE.e(TAG, "childView.getTop():" + childView.getTop());
+        LogUtils.INSTANCE.e(TAG, "childView.getBottom():" + childView.getBottom());
+        LogUtils.INSTANCE.e(TAG, "parent.getHeight():" + parent.getHeight());
 
         int top = childView.getTop();
 
         // 设置偏移量
         int offset = parent.getHeight() - childView.getTop();
-        LogUtils.e(TAG, "offset:" + offset);
+        LogUtils.INSTANCE.e(TAG, "offset:" + offset);
 
         // 绘制View，通过生成Bitmap来完成。
         View bottomView = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_rv_bottom_footer, parent, false);

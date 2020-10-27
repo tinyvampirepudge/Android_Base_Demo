@@ -8,7 +8,7 @@ import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc: BinderPool线程池
@@ -36,22 +36,22 @@ public class BinderPoolActivity extends AppCompatActivity {
         binderPool = BinderPool.getInstance(BinderPoolActivity.this);
         IBinder securityBinder = binderPool.queryBinder(BinderPool.BINDER_SECURITY_CODE);
         ISecurityCenter mSecurityCenter = SecurityCenterImpl.asInterface(securityBinder);
-        LogUtils.e(TAG, "visit ISecurityCenter");
+        LogUtils.INSTANCE.e(TAG, "visit ISecurityCenter");
         String msg = "hello,world-安卓";
-        LogUtils.e(TAG, "content:" + msg);
+        LogUtils.INSTANCE.e(TAG, "content:" + msg);
         try {
             String password = mSecurityCenter.encrypt(msg);
-            LogUtils.e(TAG, "encrypt:" + password);
-            LogUtils.e(TAG, "decrypt:" + mSecurityCenter.decrypt(password));
+            LogUtils.INSTANCE.e(TAG, "encrypt:" + password);
+            LogUtils.INSTANCE.e(TAG, "decrypt:" + mSecurityCenter.decrypt(password));
         } catch (RemoteException e) {
             e.printStackTrace();
         }
 
-        LogUtils.e(TAG, "visit ICompute");
+        LogUtils.INSTANCE.e(TAG, "visit ICompute");
         IBinder computeBinder = binderPool.queryBinder(BinderPool.BINDER_COMPUTE);
         ICompute mCompute = ComputeImpl.asInterface(computeBinder);
         try {
-            LogUtils.e(TAG, "3 + 5 = " + mCompute.add(3, 5));
+            LogUtils.INSTANCE.e(TAG, "3 + 5 = " + mCompute.add(3, 5));
         } catch (RemoteException e) {
             e.printStackTrace();
         }

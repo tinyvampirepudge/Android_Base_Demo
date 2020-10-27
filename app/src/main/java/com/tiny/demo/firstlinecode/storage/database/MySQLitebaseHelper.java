@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Created by 87959 on 2017/3/28.
@@ -33,14 +33,14 @@ public class MySQLitebaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        LogUtils.e("MySQLitebaseHelper onCreate");
+        LogUtils.INSTANCE.e("MySQLitebaseHelper onCreate");
         db.execSQL(CREATE_BOOK);
         db.execSQL(CREATE_CATEGORY);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        LogUtils.e("MySQLitebaseHelper onUpgrade");
+        LogUtils.INSTANCE.e("MySQLitebaseHelper onUpgrade");
         db.execSQL("drop table if exists Book");
         db.execSQL("drop table if exists Category");
         onCreate(db);

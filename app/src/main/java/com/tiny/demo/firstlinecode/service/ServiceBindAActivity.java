@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,18 +41,18 @@ public class ServiceBindAActivity extends AppCompatActivity {
     private ServiceConnection conn = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            LogUtils.e(TAG, "onServiceConnected");
+            LogUtils.INSTANCE.e(TAG, "onServiceConnected");
             TestTwoService.TestTwoBinder binder = (TestTwoService.TestTwoBinder) service;
             testTwoService = binder.getService();
             int num = testTwoService.getRandomNumber();
-            LogUtils.e(TAG, "num --> " + num);
+            LogUtils.INSTANCE.e(TAG, "num --> " + num);
             isBind = true;
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
             isBind = false;
-            LogUtils.e(TAG, "onServiceDisconnected");
+            LogUtils.INSTANCE.e(TAG, "onServiceDisconnected");
         }
     };
 
@@ -95,6 +95,6 @@ public class ServiceBindAActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        LogUtils.e(TAG, "ActivityA onDestroy");
+        LogUtils.INSTANCE.e(TAG, "ActivityA onDestroy");
     }
 }

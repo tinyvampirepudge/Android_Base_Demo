@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc:    用于测试VelocityTracker
@@ -37,8 +37,8 @@ public class TestButton extends android.support.v7.widget.AppCompatTextView {
         velocityTracker.computeCurrentVelocity(1000);
         int xVelocity = (int) velocityTracker.getXVelocity();
         int yVelocity = (int) velocityTracker.getYVelocity();
-        LogUtils.e("xVelocity --> " + xVelocity);
-        LogUtils.e("yVelocity --> " + yVelocity);
+        LogUtils.INSTANCE.e("xVelocity --> " + xVelocity);
+        LogUtils.INSTANCE.e("yVelocity --> " + yVelocity);
         //使用完毕需要回收
         velocityTracker.clear();
         velocityTracker.recycle();

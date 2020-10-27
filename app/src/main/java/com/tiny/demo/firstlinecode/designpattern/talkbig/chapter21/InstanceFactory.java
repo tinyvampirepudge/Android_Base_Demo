@@ -12,7 +12,7 @@ public class InstanceFactory {
     public static final String TAG = InstanceFactory.class.getSimpleName();
 
     private InstanceFactory() {
-        LogUtils.e(TAG, "InstanceFactory constructor");
+        LogUtils.INSTANCE.e(TAG, "InstanceFactory constructor");
     }
 
     private static class InstanceHolder {

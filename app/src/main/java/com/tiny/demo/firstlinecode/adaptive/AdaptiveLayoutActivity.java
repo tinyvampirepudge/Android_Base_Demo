@@ -2,7 +2,7 @@ package com.tiny.demo.firstlinecode.adaptive;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * @Description: 布局适配
@@ -34,9 +34,9 @@ public class AdaptiveLayoutActivity extends BaseActivity {
         }
 
         if (mTwoPane){
-            LogUtils.e("这个是大屏");
+            LogUtils.INSTANCE.e("这个是大屏");
         }else{
-            LogUtils.e("这个是小屏");
+            LogUtils.INSTANCE.e("这个是小屏");
         }
     }
 

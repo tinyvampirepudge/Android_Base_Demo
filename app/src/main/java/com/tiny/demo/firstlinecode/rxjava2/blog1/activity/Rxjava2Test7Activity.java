@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
@@ -39,7 +39,7 @@ public class Rxjava2Test7Activity extends AppCompatActivity {
             @Override
             public void subscribe(FlowableEmitter<Integer> e) throws Exception {
                 for (int j = 0; j < 1000; j++) {
-                    LogUtils.e("emit " + j);
+                    LogUtils.INSTANCE.e("emit " + j);
                     e.onNext(j);
                 }
             }
@@ -49,22 +49,22 @@ public class Rxjava2Test7Activity extends AppCompatActivity {
                 .subscribe(new Subscriber<Integer>() {
                     @Override
                     public void onSubscribe(Subscription s) {
-                        LogUtils.e("onSubscribe");
+                        LogUtils.INSTANCE.e("onSubscribe");
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        LogUtils.e("onNext: " + integer);
+                        LogUtils.INSTANCE.e("onNext: " + integer);
                     }
 
                     @Override
                     public void onError(Throwable t) {
-                        LogUtils.e("Throwable: " + t);
+                        LogUtils.INSTANCE.e("Throwable: " + t);
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e("onComplete");
+                        LogUtils.INSTANCE.e("onComplete");
                     }
                 });
     }
@@ -90,23 +90,23 @@ public class Rxjava2Test7Activity extends AppCompatActivity {
                 .subscribe(new Subscriber<Integer>() {
                     @Override
                     public void onSubscribe(Subscription s) {
-                        LogUtils.e("onSubscribe");
+                        LogUtils.INSTANCE.e("onSubscribe");
                         subscription = s;
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        LogUtils.e("onNext:" + integer);
+                        LogUtils.INSTANCE.e("onNext:" + integer);
                     }
 
                     @Override
                     public void onError(Throwable t) {
-                        LogUtils.e("onError:" + t);
+                        LogUtils.INSTANCE.e("onError:" + t);
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e("onComplete");
+                        LogUtils.INSTANCE.e("onComplete");
                     }
                 });
     }
@@ -133,23 +133,23 @@ public class Rxjava2Test7Activity extends AppCompatActivity {
                 .subscribe(new Subscriber<Integer>() {
                     @Override
                     public void onSubscribe(Subscription s) {
-                        LogUtils.e("onSubscribe");
+                        LogUtils.INSTANCE.e("onSubscribe");
                         subscription1 = s;
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        LogUtils.e("onNext:" + integer);
+                        LogUtils.INSTANCE.e("onNext:" + integer);
                     }
 
                     @Override
                     public void onError(Throwable t) {
-                        LogUtils.e("onError:" + t);
+                        LogUtils.INSTANCE.e("onError:" + t);
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e("onComplete");
+                        LogUtils.INSTANCE.e("onComplete");
                     }
                 });
     }
@@ -169,24 +169,24 @@ public class Rxjava2Test7Activity extends AppCompatActivity {
                 .subscribe(new Subscriber<Long>() {
                     @Override
                     public void onSubscribe(Subscription s) {
-                        LogUtils.e("onSubscribe");
+                        LogUtils.INSTANCE.e("onSubscribe");
                         subscription3 = s;
                         subscription3.request(Long.MAX_VALUE);
                     }
 
                     @Override
                     public void onNext(Long aLong) {
-                        LogUtils.e("onNext:" + aLong);
+                        LogUtils.INSTANCE.e("onNext:" + aLong);
                     }
 
                     @Override
                     public void onError(Throwable t) {
-                        LogUtils.e("onError:" + t);
+                        LogUtils.INSTANCE.e("onError:" + t);
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e("onComplete");
+                        LogUtils.INSTANCE.e("onComplete");
                     }
                 });
     }

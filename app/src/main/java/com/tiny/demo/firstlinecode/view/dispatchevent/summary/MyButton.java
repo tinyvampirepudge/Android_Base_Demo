@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.Button;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Created by wangjianzhou@qding.me on 2017/6/21.
@@ -39,13 +39,13 @@ public class MyButton extends Button {
         int action = event.getAction();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-                LogUtils.e(TAG + " dispatchTouchEvent ACTION_DOWN");
+                LogUtils.INSTANCE.e(TAG + " dispatchTouchEvent ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-                LogUtils.e(TAG + " dispatchTouchEvent ACTION_MOVE");
+                LogUtils.INSTANCE.e(TAG + " dispatchTouchEvent ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
-                LogUtils.e(TAG + " dispatchTouchEvent ACTION_UP");
+                LogUtils.INSTANCE.e(TAG + " dispatchTouchEvent ACTION_UP");
                 break;
             default:
                 break;
@@ -58,13 +58,13 @@ public class MyButton extends Button {
         int action = event.getAction();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-                LogUtils.e(TAG + " onTouchEvent ACTION_DOWN");
+                LogUtils.INSTANCE.e(TAG + " onTouchEvent ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-                LogUtils.e(TAG + " onTouchEvent ACTION_MOVE");
+                LogUtils.INSTANCE.e(TAG + " onTouchEvent ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
-                LogUtils.e(TAG + " onTouchEvent ACTION_UP");
+                LogUtils.INSTANCE.e(TAG + " onTouchEvent ACTION_UP");
                 break;
             default:
                 break;

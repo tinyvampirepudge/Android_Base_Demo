@@ -14,7 +14,7 @@ package com.tiny.demo.firstlinecode.parser.plist;
 
 import com.tiny.demo.firstlinecode.parser.plist.domain.PList;
 import com.tiny.demo.firstlinecode.parser.plist.domain.PListObject;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -149,7 +149,7 @@ public class PListXMLHandler extends DefaultHandler2 {
     @Override
     public void startElement(String uri, String localName,
                              String qName, Attributes attributes) throws SAXException {
-        LogUtils.d(stringer.newBuilder().append(TAG).append("#startElement")
+        LogUtils.INSTANCE.d(stringer.newBuilder().append(TAG).append("#startElement")
                         .toString(),
                 stringer.newBuilder()
                         .append("Start Element lname|uri|attr.length :")
@@ -190,7 +190,7 @@ public class PListXMLHandler extends DefaultHandler2 {
     @Override
     public void characters(char[] ch, int start, int length)
             throws SAXException {
-        LogUtils.d(stringer.newBuilder().append(TAG).append("#characters")
+        LogUtils.INSTANCE.d(stringer.newBuilder().append(TAG).append("#characters")
                         .toString(),
                 stringer.newBuilder().append(ch).append(Constants.PIPE)
                         .append(start).append(Constants.PIPE).append(length)
@@ -207,7 +207,7 @@ public class PListXMLHandler extends DefaultHandler2 {
     @Override
     public void endElement(String uri, String localName,
                            String qName) throws SAXException {
-        LogUtils.d(stringer.newBuilder().append(TAG).append("#endElement")
+        LogUtils.INSTANCE.d(stringer.newBuilder().append(TAG).append("#endElement")
                         .toString(),
                 stringer.newBuilder().append("localName|qName|uri|tempVal: ")
                         .append(localName).append(Constants.PIPE).append(qName)

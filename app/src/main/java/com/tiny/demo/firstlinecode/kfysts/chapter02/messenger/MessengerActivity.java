@@ -17,7 +17,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 
 import butterknife.BindView;
@@ -58,7 +58,7 @@ public class MessengerActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MessengerService.MSG_FROM_SERVER:
-                    LogUtils.e(TAG, "Receive msg from Service:" + msg.getData().get("reply"));
+                    LogUtils.INSTANCE.e(TAG, "Receive msg from Service:" + msg.getData().get("reply"));
                     break;
                 default:
                     super.handleMessage(msg);
@@ -72,7 +72,7 @@ public class MessengerActivity extends AppCompatActivity {
     private ServiceConnection conn = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            LogUtils.e(TAG, "onServiceConnected");
+            LogUtils.INSTANCE.e(TAG, "onServiceConnected");
             mService = new Messenger(service);
             tvCallback.setText("Attached.");
 
@@ -106,7 +106,7 @@ public class MessengerActivity extends AppCompatActivity {
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            LogUtils.e(TAG, "onServiceDisconnected");
+            LogUtils.INSTANCE.e(TAG, "onServiceDisconnected");
             // This is called when the connection with the service has been
             // unexpectedly disconnected -- that is, its process crashed.
             mService = null;
@@ -139,7 +139,7 @@ public class MessengerActivity extends AppCompatActivity {
         intent.setPackage("com.tiny.demo.firstlinecode");
 
         boolean bindResult = bindService(intent, conn, Service.BIND_AUTO_CREATE);
-        LogUtils.e(TAG, "bindResult --> " + bindResult);
+        LogUtils.INSTANCE.e(TAG, "bindResult --> " + bindResult);
         mIsBound = true;
         tvCallback.setText("Binding.");
     }

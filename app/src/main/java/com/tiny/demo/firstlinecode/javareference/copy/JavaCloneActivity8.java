@@ -66,7 +66,7 @@ public class JavaCloneActivity8 extends BaseActivity {
 
         txtObject.setText(sbSource.toString());
 
-        ObjectSerializableDeepCopyBean objectTarget = DeepCopyUtils.deepCopyObject(objectSource);
+        ObjectSerializableDeepCopyBean objectTarget = DeepCopyUtils.INSTANCE.deepCopyObject(objectSource);
 
         objectTarget.setAge(123456);
         objectTarget.getList().get(0).setListName("啊哈哈哈哈");
@@ -93,7 +93,7 @@ public class JavaCloneActivity8 extends BaseActivity {
 
         txtList.setText(sbSource.toString());
 
-        List<ObjectSerializableDeepCopyBean> listTarget = DeepCopyUtils.deepCopyObject(listSource);
+        List<ObjectSerializableDeepCopyBean> listTarget = DeepCopyUtils.INSTANCE.deepCopyObject(listSource);
 
         ObjectSerializableDeepCopyBean listItemTarget = listTarget.get(1);
         listItemTarget.setAge(123456);
@@ -121,7 +121,7 @@ public class JavaCloneActivity8 extends BaseActivity {
 
         txtMap.setText(sbSource.toString());
 
-        Map<String, ObjectSerializableDeepCopyBean> mapTarget = DeepCopyUtils.deepCopyObject(mapSource);
+        Map<String, ObjectSerializableDeepCopyBean> mapTarget = DeepCopyUtils.INSTANCE.deepCopyObject(mapSource);
 
         ObjectSerializableDeepCopyBean listItemTarget = mapTarget.get("aaa0");
         listItemTarget.setAge(123456);
@@ -150,7 +150,7 @@ public class JavaCloneActivity8 extends BaseActivity {
 
         txtArray.setText(sbSource.toString());
 
-        ObjectSerializableDeepCopyBean[] arrayTarget = DeepCopyUtils.deepCopyObject(arraySource);
+        ObjectSerializableDeepCopyBean[] arrayTarget = DeepCopyUtils.INSTANCE.deepCopyObject(arraySource);
 
         ObjectSerializableDeepCopyBean listItemTarget = arrayTarget[2];
         listItemTarget.setAge(123456);

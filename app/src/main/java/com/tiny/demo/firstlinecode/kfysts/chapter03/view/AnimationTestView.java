@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 import com.nineoldandroids.view.ViewHelper;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc:
@@ -41,7 +41,7 @@ public class AnimationTestView extends AppCompatTextView {
             case MotionEvent.ACTION_MOVE:
                 int deltaX = x - mLastX;
                 int deltaY = y - mLastY;
-                LogUtils.e("move, deltaX:" + deltaX + " deltaY:" + deltaY);
+                LogUtils.INSTANCE.e("move, deltaX:" + deltaX + " deltaY:" + deltaY);
                 int translationX = (int) (ViewHelper.getTranslationX(this) + deltaX);
                 int translationY = (int) (ViewHelper.getTranslationY(this) + deltaY);
                 ViewHelper.setTranslationX(this, translationX);

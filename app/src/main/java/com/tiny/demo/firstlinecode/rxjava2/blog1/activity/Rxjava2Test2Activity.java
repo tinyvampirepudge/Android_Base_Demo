@@ -6,7 +6,7 @@ import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.common.bean.ResBean;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.rxjava2.blog1.myretrofit.MyApi;
 import com.tiny.demo.firstlinecode.rxjava2.blog1.myretrofit.MyRetrofitClient;
 import com.tiny.demo.firstlinecode.rxjava2.blog1.myretrofit.bean.KingRegionBean;
@@ -60,8 +60,8 @@ public class Rxjava2Test2Activity extends AppCompatActivity {
         Observable<Integer> observable = Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> e) throws Exception {
-                ThreadUtils.logCurrThreadName("Observable thread");
-                LogUtils.e("e.onNext(1)");
+                ThreadUtils.INSTANCE.logCurrThreadName("Observable thread");
+                LogUtils.INSTANCE.e("e.onNext(1)");
                 e.onNext(1);
             }
         });
@@ -69,8 +69,8 @@ public class Rxjava2Test2Activity extends AppCompatActivity {
         Consumer<Integer> consumer = new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) throws Exception {
-                ThreadUtils.logCurrThreadName("onNext thread");
-                LogUtils.e("onNext --> " + integer);
+                ThreadUtils.INSTANCE.logCurrThreadName("onNext thread");
+                LogUtils.INSTANCE.e("onNext --> " + integer);
             }
         };
 
@@ -83,8 +83,8 @@ public class Rxjava2Test2Activity extends AppCompatActivity {
         Observable<Integer> observable = Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> e) throws Exception {
-                ThreadUtils.logCurrThreadName("Observable thread");
-                LogUtils.e("e.onNext(2)");
+                ThreadUtils.INSTANCE.logCurrThreadName("Observable thread");
+                LogUtils.INSTANCE.e("e.onNext(2)");
                 e.onNext(2);
             }
         });
@@ -92,8 +92,8 @@ public class Rxjava2Test2Activity extends AppCompatActivity {
         Consumer<Integer> consumer = new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) throws Exception {
-                ThreadUtils.logCurrThreadName("onNext thread");
-                LogUtils.e("onNext --> " + integer);
+                ThreadUtils.INSTANCE.logCurrThreadName("onNext thread");
+                LogUtils.INSTANCE.e("onNext --> " + integer);
             }
         };
 
@@ -113,8 +113,8 @@ public class Rxjava2Test2Activity extends AppCompatActivity {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> e) throws Exception {
-                ThreadUtils.logCurrThreadName("Observable thread");
-                LogUtils.e("e.onNext(3)");
+                ThreadUtils.INSTANCE.logCurrThreadName("Observable thread");
+                LogUtils.INSTANCE.e("e.onNext(3)");
                 e.onNext(3);
             }
         }).subscribeOn(Schedulers.newThread())
@@ -124,8 +124,8 @@ public class Rxjava2Test2Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        ThreadUtils.logCurrThreadName("onNext thread");
-                        LogUtils.e("onNext --> " + integer);
+                        ThreadUtils.INSTANCE.logCurrThreadName("onNext thread");
+                        LogUtils.INSTANCE.e("onNext --> " + integer);
                     }
                 });
         /**
@@ -150,8 +150,8 @@ public class Rxjava2Test2Activity extends AppCompatActivity {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> e) throws Exception {
-                ThreadUtils.logCurrThreadName("Observable thread");
-                LogUtils.e("e.onNext(4)");
+                ThreadUtils.INSTANCE.logCurrThreadName("Observable thread");
+                LogUtils.INSTANCE.e("e.onNext(4)");
                 e.onNext(4);
             }
         }).subscribeOn(Schedulers.io())
@@ -159,31 +159,31 @@ public class Rxjava2Test2Activity extends AppCompatActivity {
                 .doOnNext(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtils.e("doOnNext --> " + integer);
-                        ThreadUtils.logCurrThreadName("After observeOn(AndroidSchedulers.mainThread())");
+                        LogUtils.INSTANCE.e("doOnNext --> " + integer);
+                        ThreadUtils.INSTANCE.logCurrThreadName("After observeOn(AndroidSchedulers.mainThread())");
                     }
                 })
                 .observeOn(Schedulers.io())
                 .doOnNext(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtils.e("doOnNext --> " + integer);
-                        ThreadUtils.logCurrThreadName("After observeOn(Schedulers.io())");
+                        LogUtils.INSTANCE.e("doOnNext --> " + integer);
+                        ThreadUtils.INSTANCE.logCurrThreadName("After observeOn(Schedulers.io())");
                     }
                 })
                 .observeOn(Schedulers.newThread())
                 .doOnNext(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtils.e("doOnNext --> " + integer);
-                        ThreadUtils.logCurrThreadName("After observeOn(Schedulers.newThread())");
+                        LogUtils.INSTANCE.e("doOnNext --> " + integer);
+                        ThreadUtils.INSTANCE.logCurrThreadName("After observeOn(Schedulers.newThread())");
                     }
                 })
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        ThreadUtils.logCurrThreadName("accept thread");
-                        LogUtils.e("onNext --> " + integer);
+                        ThreadUtils.INSTANCE.logCurrThreadName("accept thread");
+                        LogUtils.INSTANCE.e("onNext --> " + integer);
                     }
                 });
         /**
@@ -217,23 +217,23 @@ public class Rxjava2Test2Activity extends AppCompatActivity {
                     @Override
                     public void onSubscribe(Disposable d) {
                         //回调执行之前时调用
-                        ThreadUtils.logCurrThreadName("onSubscribe");
+                        ThreadUtils.INSTANCE.logCurrThreadName("onSubscribe");
                     }
 
                     @Override
                     public void onNext(ResBean<KingRegionBean> value) {
-                        ThreadUtils.logCurrThreadName("onNext");
+                        ThreadUtils.INSTANCE.logCurrThreadName("onNext");
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        ThreadUtils.logCurrThreadName("onError");
+                        ThreadUtils.INSTANCE.logCurrThreadName("onError");
                     }
 
                     @Override
                     public void onComplete() {
                         //回调执行完成之后调用
-                        ThreadUtils.logCurrThreadName("onComplete");
+                        ThreadUtils.INSTANCE.logCurrThreadName("onComplete");
                     }
                 });
     }
@@ -264,23 +264,23 @@ public class Rxjava2Test2Activity extends AppCompatActivity {
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e("onSubscribe");
+                        LogUtils.INSTANCE.e("onSubscribe");
                         disposable = d;
                     }
 
                     @Override
                     public void onNext(Integer value) {
-                        LogUtils.e("onNext --> " + value);
+                        LogUtils.INSTANCE.e("onNext --> " + value);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e("onError");
+                        LogUtils.INSTANCE.e("onError");
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e("onComplete");
+                        LogUtils.INSTANCE.e("onComplete");
                     }
                 });
     }
@@ -311,23 +311,23 @@ public class Rxjava2Test2Activity extends AppCompatActivity {
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e("Integer onSubscribe");
+                        LogUtils.INSTANCE.e("Integer onSubscribe");
                         compositeDisposable.add(d);
                     }
 
                     @Override
                     public void onNext(Integer value) {
-                        LogUtils.e("Integer onNext --> " + value);
+                        LogUtils.INSTANCE.e("Integer onNext --> " + value);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e("Integer onError");
+                        LogUtils.INSTANCE.e("Integer onError");
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e("Integer onComplete");
+                        LogUtils.INSTANCE.e("Integer onComplete");
                     }
                 });
 
@@ -344,23 +344,23 @@ public class Rxjava2Test2Activity extends AppCompatActivity {
                 .subscribe(new Observer<String>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e("String onSubscribe");
+                        LogUtils.INSTANCE.e("String onSubscribe");
                         compositeDisposable.add(d);
                     }
 
                     @Override
                     public void onNext(String value) {
-                        LogUtils.e("String onNext --> " + value);
+                        LogUtils.INSTANCE.e("String onNext --> " + value);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e("String onError");
+                        LogUtils.INSTANCE.e("String onError");
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e("String onComplete");
+                        LogUtils.INSTANCE.e("String onComplete");
                     }
                 });
     }
@@ -370,23 +370,23 @@ public class Rxjava2Test2Activity extends AppCompatActivity {
         readAllUsers().subscribe(new Observer<List<User>>() {
             @Override
             public void onSubscribe(Disposable d) {
-                ThreadUtils.logCurrThreadName("onSubscribe");
+                ThreadUtils.INSTANCE.logCurrThreadName("onSubscribe");
             }
 
             @Override
             public void onNext(List<User> value) {
-                ThreadUtils.logCurrThreadName("onNext");
-                LogUtils.e("onNext value --> " + value);
+                ThreadUtils.INSTANCE.logCurrThreadName("onNext");
+                LogUtils.INSTANCE.e("onNext value --> " + value);
             }
 
             @Override
             public void onError(Throwable e) {
-                ThreadUtils.logCurrThreadName("onError");
+                ThreadUtils.INSTANCE.logCurrThreadName("onError");
             }
 
             @Override
             public void onComplete() {
-                ThreadUtils.logCurrThreadName("onComplete");
+                ThreadUtils.INSTANCE.logCurrThreadName("onComplete");
             }
         });
     }
@@ -396,7 +396,7 @@ public class Rxjava2Test2Activity extends AppCompatActivity {
         return Observable.create(new ObservableOnSubscribe<List<User>>() {
             @Override
             public void subscribe(ObservableEmitter<List<User>> e) throws Exception {
-                ThreadUtils.logCurrThreadName("readAllUsers");
+                ThreadUtils.INSTANCE.logCurrThreadName("readAllUsers");
                 List<User> userList = GreenDaoHelper.getDaoSession().getUserDao().loadAll();
                 e.onNext(userList);
                 e.onComplete();
@@ -409,7 +409,7 @@ public class Rxjava2Test2Activity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        LogUtils.e("onDestroy");
+        LogUtils.INSTANCE.e("onDestroy");
         if (disposable != null) {
             disposable.dispose();
         }

@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tinytongtong.tinyutils.ThreadUtils;
 
 import java.util.List;
@@ -55,7 +55,7 @@ public class Book1ManagerActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MESSAGE_MSG_BOOK_ARRIVED:
-                    LogUtils.e(TAG, "receive new book:" + msg.obj);
+                    LogUtils.INSTANCE.e(TAG, "receive new book:" + msg.obj);
                     break;
                 default:
                     break;
@@ -66,22 +66,22 @@ public class Book1ManagerActivity extends AppCompatActivity {
     private ServiceConnection conn1 = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            LogUtils.e(TAG, "onServiceConnected");
-            ThreadUtils.logCurrThreadName(TAG + " conn1 onServiceConnected");
+            LogUtils.INSTANCE.e(TAG, "onServiceConnected");
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " conn1 onServiceConnected");
             IBook1Manager bookManager = IBook1Manager.Stub.asInterface(service);
             try {
                 mRemoteBook1Manager1 = bookManager;
                 List<Book> list = bookManager.getBookList();
-                LogUtils.e(TAG, "query book list, list type:" + list.getClass().getCanonicalName());
-                LogUtils.e(TAG, "query book list:" + list.toString());
+                LogUtils.INSTANCE.e(TAG, "query book list, list type:" + list.getClass().getCanonicalName());
+                LogUtils.INSTANCE.e(TAG, "query book list:" + list.toString());
 
                 Book newBook = new Book(3, "Android进阶");
                 bookManager.addBook(newBook);
-                LogUtils.e(TAG, "newBook:" + newBook);
+                LogUtils.INSTANCE.e(TAG, "newBook:" + newBook);
                 List<Book> newList = bookManager.getBookList();
-                LogUtils.e(TAG, "query new book list:" + newList.toString());
+                LogUtils.INSTANCE.e(TAG, "query new book list:" + newList.toString());
                 bookManager.registerListener(iOnNewBookArrivedListener1);
-                LogUtils.e(TAG, "register iOnNewBookArrivedListener1 --> " + iOnNewBookArrivedListener1);
+                LogUtils.INSTANCE.e(TAG, "register iOnNewBookArrivedListener1 --> " + iOnNewBookArrivedListener1);
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
@@ -89,8 +89,8 @@ public class Book1ManagerActivity extends AppCompatActivity {
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            LogUtils.e(TAG, "onServiceDisconnected");
-            ThreadUtils.logCurrThreadName(TAG + " conn1 onServiceDisconnected");
+            LogUtils.INSTANCE.e(TAG, "onServiceDisconnected");
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " conn1 onServiceDisconnected");
             mRemoteBook1Manager1 = null;
         }
     };
@@ -98,21 +98,21 @@ public class Book1ManagerActivity extends AppCompatActivity {
     private ServiceConnection conn2 = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            LogUtils.e(TAG, "onServiceConnected");
+            LogUtils.INSTANCE.e(TAG, "onServiceConnected");
             //主线程
-            ThreadUtils.logCurrThreadName(TAG + " conn2 onServiceDisconnected");
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " conn2 onServiceDisconnected");
             IBook1Manager bookManager = IBook1Manager.Stub.asInterface(service);
             try {
                 mRemoteBook1Manager2 = bookManager;
                 List<Book> list = bookManager.getBookList();
-                LogUtils.e(TAG, "query book list, list type:" + list.getClass().getCanonicalName());
-                LogUtils.e(TAG, "query book list:" + list.toString());
+                LogUtils.INSTANCE.e(TAG, "query book list, list type:" + list.getClass().getCanonicalName());
+                LogUtils.INSTANCE.e(TAG, "query book list:" + list.toString());
 
                 Book newBook = new Book(3, "IOS进阶");
                 bookManager.addBook(newBook);
-                LogUtils.e(TAG, "newBook:" + newBook);
+                LogUtils.INSTANCE.e(TAG, "newBook:" + newBook);
                 List<Book> newList = bookManager.getBookList();
-                LogUtils.e(TAG, "query new book list:" + newList.toString());
+                LogUtils.INSTANCE.e(TAG, "query new book list:" + newList.toString());
                 bookManager.registerListener(iOnNewBookArrivedListener2);
             } catch (RemoteException e) {
                 e.printStackTrace();
@@ -121,9 +121,9 @@ public class Book1ManagerActivity extends AppCompatActivity {
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            LogUtils.e(TAG, "onServiceDisconnected");
+            LogUtils.INSTANCE.e(TAG, "onServiceDisconnected");
             //主线程
-            ThreadUtils.logCurrThreadName(TAG + " conn2 onServiceDisconnected");
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " conn2 onServiceDisconnected");
             mRemoteBook1Manager2 = null;
         }
     };
@@ -142,7 +142,7 @@ public class Book1ManagerActivity extends AppCompatActivity {
             mHandler.obtainMessage(MESSAGE_MSG_BOOK_ARRIVED, newBook).sendToTarget();
             //客户端的Binder线程池
             //sub Thread,name --> Binder:6670_3
-            ThreadUtils.logCurrThreadName(TAG + " iOnNewBookArrivedListener1");
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " iOnNewBookArrivedListener1");
         }
     };
     private IOnNewBookArrivedListener iOnNewBookArrivedListener2 = new IOnNewBookArrivedListener.Stub() {
@@ -151,7 +151,7 @@ public class Book1ManagerActivity extends AppCompatActivity {
             mHandler.obtainMessage(MESSAGE_MSG_BOOK_ARRIVED, newBook).sendToTarget();
             //客户端的Binder线程池
             //sub Thread,name --> Binder:6670_3
-            ThreadUtils.logCurrThreadName(TAG + " iOnNewBookArrivedListener2");
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " iOnNewBookArrivedListener2");
         }
     };
 
@@ -167,14 +167,14 @@ public class Book1ManagerActivity extends AppCompatActivity {
         intent.setAction("com.tiny.demo.firstlinecode.AIDL.Book1ManagerService");
         intent.setPackage("com.tiny.demo.firstlinecode");
         boolean bindResult = bindService(intent, conn1, Context.BIND_AUTO_CREATE);
-        LogUtils.e(TAG, "bindResult --> " + bindResult);
+        LogUtils.INSTANCE.e(TAG, "bindResult --> " + bindResult);
     }
 
     private void unbindService1() {
         if (mRemoteBook1Manager1 != null) {
             if (mRemoteBook1Manager1.asBinder().isBinderAlive()) {
                 try {
-                    LogUtils.e(TAG, "unregister listener:" + iOnNewBookArrivedListener1);
+                    LogUtils.INSTANCE.e(TAG, "unregister listener:" + iOnNewBookArrivedListener1);
                     mRemoteBook1Manager1.unregisterListener(iOnNewBookArrivedListener1);
                 } catch (RemoteException e) {
                     e.printStackTrace();
@@ -189,14 +189,14 @@ public class Book1ManagerActivity extends AppCompatActivity {
         intent.setAction("com.tiny.demo.firstlinecode.AIDL.Book1ManagerService");
         intent.setPackage("com.tiny.demo.firstlinecode");
         boolean bindResult = bindService(intent, conn2, Context.BIND_AUTO_CREATE);
-        LogUtils.e(TAG, "bindResult --> " + bindResult);
+        LogUtils.INSTANCE.e(TAG, "bindResult --> " + bindResult);
     }
 
     private void unbindService2() {
         if (mRemoteBook1Manager2 != null) {
             if (mRemoteBook1Manager2.asBinder().isBinderAlive()) {
                 try {
-                    LogUtils.e(TAG, "unregister listener:" + iOnNewBookArrivedListener2);
+                    LogUtils.INSTANCE.e(TAG, "unregister listener:" + iOnNewBookArrivedListener2);
                     mRemoteBook1Manager2.unregisterListener(iOnNewBookArrivedListener2);
                 } catch (RemoteException e) {
                     e.printStackTrace();

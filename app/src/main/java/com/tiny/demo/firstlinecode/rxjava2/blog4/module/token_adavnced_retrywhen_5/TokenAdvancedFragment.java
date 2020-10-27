@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 import com.tiny.demo.firstlinecode.rxjava2.BaseRxFragment;
 import com.tiny.demo.firstlinecode.rxjava2.blog4.model.FakeThing;
@@ -70,7 +70,7 @@ public class TokenAdvancedFragment extends BaseRxFragment {
                 .flatMap(new Function<Integer, ObservableSource<FakeThing>>() {
                     @Override
                     public ObservableSource<FakeThing> apply(Integer integer) throws Exception {
-                        LogUtils.e("cachedFakeToken.token == null:" + (cachedFakeToken.token == null));
+                        LogUtils.INSTANCE.e("cachedFakeToken.token == null:" + (cachedFakeToken.token == null));
                         return cachedFakeToken.token == null
                                 ? Observable.error(new NullPointerException("Token is null!"))
                                 : fakeApi.getFakeData(cachedFakeToken);
@@ -88,19 +88,19 @@ public class TokenAdvancedFragment extends BaseRxFragment {
                             @Override
                             public ObservableSource<?> apply(Throwable throwable) throws Exception {
                                 if (throwable instanceof IllegalArgumentException || throwable instanceof NullPointerException) {
-                                    LogUtils.e("ours throwable:" + throwable.toString());
+                                    LogUtils.INSTANCE.e("ours throwable:" + throwable.toString());
                                     return fakeApi.getFakeToken("fake_auth_code")
                                             .doOnNext(new Consumer<FakeToken>() {
                                                 @Override
                                                 public void accept(FakeToken fakeToken) throws Exception {
-                                                    LogUtils.e("doOnNext");
+                                                    LogUtils.INSTANCE.e("doOnNext");
                                                     tokenUpdated = true;
                                                     cachedFakeToken.token = fakeToken.token;
                                                     cachedFakeToken.expired = fakeToken.expired;
                                                 }
                                             });
                                 }
-                                LogUtils.e("others throwable:" + throwable.toString());
+                                LogUtils.INSTANCE.e("others throwable:" + throwable.toString());
                                 return Observable.error(throwable);
                             }
                         });
@@ -111,7 +111,7 @@ public class TokenAdvancedFragment extends BaseRxFragment {
                 .subscribe(new Consumer<FakeThing>() {
                     @Override
                     public void accept(FakeThing fakeThing) throws Exception {
-                        LogUtils.e("onNext");
+                        LogUtils.INSTANCE.e("onNext");
                         swipeRefreshLayout.setRefreshing(false);
                         String token = cachedFakeToken.token;
                         if (tokenUpdated) {
@@ -122,7 +122,7 @@ public class TokenAdvancedFragment extends BaseRxFragment {
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
-                        LogUtils.e("onError:" + throwable.toString());
+                        LogUtils.INSTANCE.e("onError:" + throwable.toString());
                         swipeRefreshLayout.setRefreshing(false);
                         ToastUtils.showSingleToast(getString(R.string.loading_failed));
                     }

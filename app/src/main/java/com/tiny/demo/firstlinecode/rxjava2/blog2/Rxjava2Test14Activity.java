@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.util.concurrent.TimeUnit;
 
@@ -57,22 +57,22 @@ public class Rxjava2Test14Activity extends AppCompatActivity {
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e(TAG, "onSubscribe");
+                        LogUtils.INSTANCE.e(TAG, "onSubscribe");
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        LogUtils.e(TAG, "onNext:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "onNext:" + integer);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e(TAG, "onError:" + e.getMessage());
+                        LogUtils.INSTANCE.e(TAG, "onError:" + e.getMessage());
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e(TAG, "onComplete");
+                        LogUtils.INSTANCE.e(TAG, "onComplete");
                     }
                 });
 
@@ -98,22 +98,22 @@ public class Rxjava2Test14Activity extends AppCompatActivity {
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e(TAG, "onSubscribe");
+                        LogUtils.INSTANCE.e(TAG, "onSubscribe");
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        LogUtils.e(TAG, "onNext:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "onNext:" + integer);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e(TAG, "onError:" + e.getMessage());
+                        LogUtils.INSTANCE.e(TAG, "onError:" + e.getMessage());
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e(TAG, "onComplete");
+                        LogUtils.INSTANCE.e(TAG, "onComplete");
                     }
                 });
     }
@@ -128,22 +128,22 @@ public class Rxjava2Test14Activity extends AppCompatActivity {
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e(TAG, "onSubscribe");
+                        LogUtils.INSTANCE.e(TAG, "onSubscribe");
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        LogUtils.e(TAG, "onNext:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "onNext:" + integer);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e(TAG, "onError:" + e.getMessage());
+                        LogUtils.INSTANCE.e(TAG, "onError:" + e.getMessage());
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e(TAG, "onComplete");
+                        LogUtils.INSTANCE.e(TAG, "onComplete");
                     }
                 });
         /**
@@ -166,22 +166,22 @@ public class Rxjava2Test14Activity extends AppCompatActivity {
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e(TAG, "onSubscribe");
+                        LogUtils.INSTANCE.e(TAG, "onSubscribe");
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        LogUtils.e(TAG, "onNext:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "onNext:" + integer);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e(TAG, "onError:" + e.getMessage());
+                        LogUtils.INSTANCE.e(TAG, "onError:" + e.getMessage());
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e(TAG, "onComplete");
+                        LogUtils.INSTANCE.e(TAG, "onComplete");
                     }
                 });
         /**
@@ -206,22 +206,22 @@ public class Rxjava2Test14Activity extends AppCompatActivity {
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e(TAG, "onSubscribe");
+                        LogUtils.INSTANCE.e(TAG, "onSubscribe");
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        LogUtils.e(TAG, "onNext:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "onNext:" + integer);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e(TAG, "onError:" + e.getMessage());
+                        LogUtils.INSTANCE.e(TAG, "onError:" + e.getMessage());
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e(TAG, "onComplete");
+                        LogUtils.INSTANCE.e(TAG, "onComplete");
                     }
                 });
         /**
@@ -246,22 +246,22 @@ public class Rxjava2Test14Activity extends AppCompatActivity {
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e(TAG, "onSubscribe");
+                        LogUtils.INSTANCE.e(TAG, "onSubscribe");
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        LogUtils.e(TAG, "onNext:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "onNext:" + integer);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e(TAG, "onError:" + e.getMessage());
+                        LogUtils.INSTANCE.e(TAG, "onError:" + e.getMessage());
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e(TAG, "onComplete");
+                        LogUtils.INSTANCE.e(TAG, "onComplete");
                     }
                 });
 
@@ -293,22 +293,22 @@ public class Rxjava2Test14Activity extends AppCompatActivity {
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e(TAG, "onSubscribe");
+                        LogUtils.INSTANCE.e(TAG, "onSubscribe");
                     }
 
                     @Override
                     public void onNext(Integer integer) {
-                        LogUtils.e(TAG, "onNext:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "onNext:" + integer);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e(TAG, "onError:" + e.getMessage());
+                        LogUtils.INSTANCE.e(TAG, "onError:" + e.getMessage());
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e(TAG, "onComplete");
+                        LogUtils.INSTANCE.e(TAG, "onComplete");
                     }
                 });
         /**
@@ -330,7 +330,7 @@ public class Rxjava2Test14Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtils.e(TAG, "firstElement accept:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "firstElement accept:" + integer);
                     }
                 });
         /**
@@ -349,7 +349,7 @@ public class Rxjava2Test14Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtils.e(TAG, "lastElement accept:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "lastElement accept:" + integer);
                     }
                 });
         /**
@@ -369,7 +369,7 @@ public class Rxjava2Test14Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtils.e(TAG, "elementAt accept:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "elementAt accept:" + integer);
                     }
                 });
     }
@@ -381,7 +381,7 @@ public class Rxjava2Test14Activity extends AppCompatActivity {
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        LogUtils.e(TAG, "elementAtOrError accept:" + integer);
+                        LogUtils.INSTANCE.e(TAG, "elementAtOrError accept:" + integer);
                     }
                 });
     }

@@ -80,19 +80,19 @@ public class RecyclerViewDividerItemDecorationActivity extends BaseActivity {
 
         recyclerView.post(() -> {
             // 获取屏幕可用高度，包含可用的navigationBar高度。
-            int screenHeight = ScreenUtils.getScreenH(mContext);
-            LogUtils.e(TAG, "screenHeight: " + screenHeight);
+            int screenHeight = ScreenUtils.INSTANCE.getScreenH(mContext);
+            LogUtils.INSTANCE.e(TAG, "screenHeight: " + screenHeight);
 
             // 获取statusBar高度
             int statusBarHeight = AppUtils.getStatusBarHeight(mContext);
-            LogUtils.e(TAG, "statusBarHeight: " + statusBarHeight);
+            LogUtils.INSTANCE.e(TAG, "statusBarHeight: " + statusBarHeight);
 
             // 获取recyclerView可滚动的高度
             int recyclerViewRealHeight = recyclerView.computeVerticalScrollRange();
-            LogUtils.e(TAG, "recyclerViewRealHeight: " + recyclerViewRealHeight);
+            LogUtils.INSTANCE.e(TAG, "recyclerViewRealHeight: " + recyclerViewRealHeight);
 
             float leftHeight = screenHeight - recyclerViewRealHeight - statusBarHeight;
-            LogUtils.e(TAG, "leftHeight: " + leftHeight);
+            LogUtils.INSTANCE.e(TAG, "leftHeight: " + leftHeight);
 
         });
     }

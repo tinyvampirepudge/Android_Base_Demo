@@ -1,6 +1,6 @@
 package com.tiny.demo.firstlinecode.designpattern.talkbig.chapter06.practice;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc:
@@ -17,6 +17,6 @@ public class ConcretePerson extends Person {
 
     @Override
     public void show() {
-        LogUtils.e(name +"开始穿衣服了：\n");
+        LogUtils.INSTANCE.e(name +"开始穿衣服了：\n");
     }
 }

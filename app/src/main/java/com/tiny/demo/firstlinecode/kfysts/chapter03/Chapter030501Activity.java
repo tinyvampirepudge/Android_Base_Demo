@@ -46,8 +46,8 @@ public class Chapter030501Activity extends AppCompatActivity {
 
     private void initView() {
         LayoutInflater inflater = getLayoutInflater();
-        int screenWidth = ScreenUtils.getScreenW(Chapter030501Activity.this);
-        int screenHeight = ScreenUtils.getScreenH(Chapter030501Activity.this);
+        int screenWidth = ScreenUtils.INSTANCE.getScreenW(Chapter030501Activity.this);
+        int screenHeight = ScreenUtils.INSTANCE.getScreenH(Chapter030501Activity.this);
         for (int j = 0; j < 3; j++) {
             ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.layout_listview, mListContainer, false);
             layout.getLayoutParams().width = screenWidth;

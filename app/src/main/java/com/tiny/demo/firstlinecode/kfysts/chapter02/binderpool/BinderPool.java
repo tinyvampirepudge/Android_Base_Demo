@@ -8,7 +8,7 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.RemoteException;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -101,7 +101,7 @@ public class BinderPool {
     private IBinder.DeathRecipient mBinderPoolDeathRecipient = new IBinder.DeathRecipient() {
         @Override
         public void binderDied() {
-            LogUtils.e(TAG, "binder died.");
+            LogUtils.INSTANCE.e(TAG, "binder died.");
             mBinderPool.asBinder().unlinkToDeath(mBinderPoolDeathRecipient, 0);
             mBinderPool = null;
             // 异常重连

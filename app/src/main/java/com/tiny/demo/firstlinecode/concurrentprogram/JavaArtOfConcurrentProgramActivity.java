@@ -22,7 +22,7 @@ public class JavaArtOfConcurrentProgramActivity extends AppCompatActivity {
         Intent starter = new Intent(context, JavaArtOfConcurrentProgramActivity.class);
         context.startActivity(starter);
 
-        LogUtils.eFullMsg("tag","result");
+        LogUtils.INSTANCE.eFullMsg("tag","result");
     }
 
     @Override

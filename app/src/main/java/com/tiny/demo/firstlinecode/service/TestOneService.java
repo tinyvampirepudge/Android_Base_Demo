@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 
 import com.tinytongtong.tinyutils.ThreadUtils;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 
 public class TestOneService extends Service {
@@ -13,13 +13,13 @@ public class TestOneService extends Service {
     private int count = 0;
 
 //    public TestOneService() {
-//        LogUtils.e(TAG, "TestOneService Constructor");
-//        ThreadUtils.logCurrThreadName(TAG);
+//        LogUtils.INSTANCE.e(TAG, "TestOneService Constructor");
+//        ThreadUtils.INSTANCE.logCurrThreadName(TAG);
 //    }
 
     @Override
     public IBinder onBind(Intent intent) {
-        LogUtils.e(TAG, "onBind");
+        LogUtils.INSTANCE.e(TAG, "onBind");
         // TODO: Return the communication channel to the service.
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -27,24 +27,24 @@ public class TestOneService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        LogUtils.e(TAG, "onCreate");
-        ThreadUtils.logCurrThreadName(TAG);
+        LogUtils.INSTANCE.e(TAG, "onCreate");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG);
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         ToastUtils.showSingleToast("onStartCommand");
-        LogUtils.e(TAG, "onStartCommand");
-        LogUtils.e(TAG, "count --> " + count++);
-        ThreadUtils.logCurrThreadName(TAG);
-        LogUtils.e(TAG, "startId --> " + startId);
+        LogUtils.INSTANCE.e(TAG, "onStartCommand");
+        LogUtils.INSTANCE.e(TAG, "count --> " + count++);
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG);
+        LogUtils.INSTANCE.e(TAG, "startId --> " + startId);
         return super.onStartCommand(intent, flags, startId);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        LogUtils.e(TAG, "onDestroy");
-        ThreadUtils.logCurrThreadName(TAG);
+        LogUtils.INSTANCE.e(TAG, "onDestroy");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG);
     }
 }

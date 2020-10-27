@@ -29,8 +29,8 @@ public class ServiceStartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_start);
 
-        ThreadUtils.logCurrThreadName(TAG);
-        LogUtils.e(TAG, "before startService");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG);
+        LogUtils.INSTANCE.e(TAG, "before startService");
         //连续启动Service
         Intent intentOne = new Intent(this, TestOneService.class);
         startService(intentOne);
@@ -47,6 +47,6 @@ public class ServiceStartActivity extends AppCompatActivity {
         Intent intentFive = new Intent(this, TestOneService.class);
         startService(intentFive);
         stopService(intentFive);
-        LogUtils.e(TAG, "after startService");
+        LogUtils.INSTANCE.e(TAG, "after startService");
     }
 }

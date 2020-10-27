@@ -26,7 +26,7 @@ import com.tiny.demo.firstlinecode.bitmap.BitmapActivity;
 import com.tiny.demo.firstlinecode.broadcastreceiver.BroadcastReceiverActivity;
 import com.tiny.demo.firstlinecode.brvah.BaseRecyclerViewAdapterHelperActivity;
 import com.tiny.demo.firstlinecode.camera.CameraAlbumActivity;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.MapUtils;
 import com.tiny.demo.firstlinecode.concurrentprogram.JavaArtOfConcurrentProgramActivity;
 import com.tiny.demo.firstlinecode.coolweather.CoolWeatherActivity;
@@ -94,7 +94,7 @@ public class MainActivity extends BaseActivity
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
             Date date = sdf.parse("2019-12-12");
-            LogUtils.e("date.getTime()  --> " + date.getTime());
+            LogUtils.INSTANCE.e("date.getTime()  --> " + date.getTime());
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -121,11 +121,11 @@ public class MainActivity extends BaseActivity
         params.put("233", "432");
         params.put("234", "432");
 
-        LogUtils.e("map1.size() --> " + params1.size());
-        LogUtils.e("map2.size() --> " + params2.size());
+        LogUtils.INSTANCE.e("map1.size() --> " + params1.size());
+        LogUtils.INSTANCE.e("map2.size() --> " + params2.size());
 
-        LogUtils.e("equal --> " + MapUtils.compareMapsEqual(params1, params2));
-        LogUtils.e("equal --> " + params1.equals(params2));
+        LogUtils.INSTANCE.e("equal --> " + MapUtils.compareMapsEqual(params1, params2));
+        LogUtils.INSTANCE.e("equal --> " + params1.equals(params2));
 
     }
 
@@ -381,7 +381,7 @@ public class MainActivity extends BaseActivity
 
     @Override
     protected void initViewData() {
-        LogUtils.buddha();
+
     }
 
     //双击退出

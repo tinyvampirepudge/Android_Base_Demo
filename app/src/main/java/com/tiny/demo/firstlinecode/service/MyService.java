@@ -17,7 +17,7 @@ import android.support.v4.app.NotificationCompat;
 
 import com.tiny.demo.firstlinecode.MainActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import static android.support.v4.app.NotificationCompat.PRIORITY_MIN;
 
@@ -26,11 +26,11 @@ public class MyService extends Service {
 
     class DownloadBinder extends Binder {
         public void startDownload() {
-            LogUtils.e("DownloadBinder startDownload");
+            LogUtils.INSTANCE.e("DownloadBinder startDownload");
         }
 
         public int getProgress() {
-            LogUtils.e("DownloadBinder getProgress");
+            LogUtils.INSTANCE.e("DownloadBinder getProgress");
             return 0;
         }
 
@@ -42,7 +42,7 @@ public class MyService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         // Return the communication channel to the service.
-        LogUtils.e("MyService onBind");
+        LogUtils.INSTANCE.e("MyService onBind");
 //        throw new UnsupportedOperationException("Not yet implemented");
         return mBinder;
     }
@@ -50,7 +50,7 @@ public class MyService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        LogUtils.e("MyService onCreate");
+        LogUtils.INSTANCE.e("MyService onCreate");
         //前台服务
         Intent intent = new Intent(this, MainActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
@@ -99,7 +99,7 @@ public class MyService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        LogUtils.e("MyService onStartCommand");
+        LogUtils.INSTANCE.e("MyService onStartCommand");
         // 关闭自己
 //        new Thread(() -> stopSelf()).start();
         return super.onStartCommand(intent, flags, startId);
@@ -108,6 +108,6 @@ public class MyService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        LogUtils.e("MyService onDestroy");
+        LogUtils.INSTANCE.e("MyService onDestroy");
     }
 }

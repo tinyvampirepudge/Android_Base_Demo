@@ -14,7 +14,7 @@ import android.view.View;
 import com.tiny.demo.firstlinecode.activity.activity_stack_manager.ActivityCollector;
 import com.tiny.demo.firstlinecode.broadcastreceiver.LoginActivity;
 import com.tiny.demo.firstlinecode.common.utils.AppUtils;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.util.concurrent.TimeUnit;
 
@@ -46,7 +46,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(contentView);
         ButterKnife.bind(this);
         mContext = this;
-        LogUtils.e("class name --> " + getClass().getSimpleName());
+        LogUtils.INSTANCE.e("class name --> " + getClass().getSimpleName());
         ActivityCollector.addActivity(this);
         buildContentView();
         contentView.postDelayed(() -> initViewData(), 300);
@@ -59,23 +59,23 @@ public abstract class BaseActivity extends AppCompatActivity {
                     @Override
                     public void onSubscribe(Disposable d) {
                         disposable = d;
-                        LogUtils.e(TAG, "onSubscribe");
+                        LogUtils.INSTANCE.e(TAG, "onSubscribe");
                     }
 
                     @Override
                     public void onNext(Long aLong) {
                         Boolean result = AppUtils.isAppInBackgroundInternal(mContext,"com.tiny.demo.firstlinecode");
-                        LogUtils.e(TAG,"onNext 是否运行在后台："+result);
+                        LogUtils.INSTANCE.e(TAG,"onNext 是否运行在后台："+result);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e(TAG, "onError:" + e.toString());
+                        LogUtils.INSTANCE.e(TAG, "onError:" + e.toString());
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e(TAG, "onComplete");
+                        LogUtils.INSTANCE.e(TAG, "onComplete");
                     }
                 });
     }

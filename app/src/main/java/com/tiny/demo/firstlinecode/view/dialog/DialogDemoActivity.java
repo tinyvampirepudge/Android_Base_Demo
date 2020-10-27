@@ -111,7 +111,7 @@ public class DialogDemoActivity extends BaseActivity implements NoticeDialogFrag
 //        WindowManager.LayoutParams params = window.getAttributes();
 //        params.gravity = Gravity.CENTER;
 //        params.alpha = 1.0f;
-//        params.width = (int) (ScreenUtils.getScreenW(mContext) * 0.8f);
+//        params.width = (int) (ScreenUtils.INSTANCE.getScreenW(mContext) * 0.8f);
 //        params.height = ScreenUtils.dip2px(mContext, 500f);
 //        window.setAttributes(params);
     }

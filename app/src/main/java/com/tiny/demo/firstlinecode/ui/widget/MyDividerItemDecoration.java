@@ -32,7 +32,7 @@ public class MyDividerItemDecoration extends RecyclerView.ItemDecoration {
     @Override
     public void onDraw(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         super.onDraw(c, parent, state);
-        LogUtils.e(TAG, "onDraw");
+        LogUtils.INSTANCE.e(TAG, "onDraw");
         final int left = parent.getLeft();
         final int right = parent.getRight();
         final int childCount = parent.getChildCount();
@@ -47,13 +47,13 @@ public class MyDividerItemDecoration extends RecyclerView.ItemDecoration {
     @Override
     public void onDrawOver(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         super.onDrawOver(c, parent, state);
-        LogUtils.e(TAG, "onDrawOver");
+        LogUtils.INSTANCE.e(TAG, "onDrawOver");
     }
 
     @Override
     public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         super.getItemOffsets(outRect, view, parent, state);
-        LogUtils.e(TAG, "getItemOffsets");
+        LogUtils.INSTANCE.e(TAG, "getItemOffsets");
         int position = parent.getChildAdapterPosition(view);
 //        if (position != 0) {
             //第一个item预留空间

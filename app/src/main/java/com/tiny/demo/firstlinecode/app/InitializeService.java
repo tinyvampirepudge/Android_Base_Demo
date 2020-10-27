@@ -105,6 +105,6 @@ public class InitializeService extends IntentService {
      * 初始化app
      */
     private void handleActionInitApp() {
-        ThreadUtils.logCurrThreadName("init application in IntentService");
+        ThreadUtils.INSTANCE.logCurrThreadName("init application in IntentService");
     }
 }

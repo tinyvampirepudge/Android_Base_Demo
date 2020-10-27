@@ -6,7 +6,7 @@ import android.os.Binder;
 import android.os.IBinder;
 
 import com.tinytongtong.tinyutils.ThreadUtils;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.common.utils.ToastUtils;
 
 import java.util.Random;
@@ -21,7 +21,7 @@ public class TestTwoService extends Service {
     public static final String TAG = "ServiceBind";
 
 //    public TestTwoService() {
-//        LogUtils.e(TAG, "TestTwoService");
+//        LogUtils.INSTANCE.e(TAG, "TestTwoService");
 //    }
 
     //client 可以通过Binder获取Service实例
@@ -38,39 +38,39 @@ public class TestTwoService extends Service {
 
     @Override
     public void onCreate() {
-        LogUtils.e(TAG, "onCreate");
-        ThreadUtils.logCurrThreadName(TAG);
+        LogUtils.INSTANCE.e(TAG, "onCreate");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG);
         super.onCreate();
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        LogUtils.e(TAG, "onStartCommand");
-        ThreadUtils.logCurrThreadName(TAG);
+        LogUtils.INSTANCE.e(TAG, "onStartCommand");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG);
 //        return super.onStartCommand(intent, flags, startId);
         return START_NOT_STICKY;
     }
 
     @Override
     public IBinder onBind(Intent intent) {
-        LogUtils.e(TAG, "onBind");
+        LogUtils.INSTANCE.e(TAG, "onBind");
         ToastUtils.showSingleToast("onBind");
-        ThreadUtils.logCurrThreadName(TAG);
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG);
         return binder;
     }
 
     @Override
     public boolean onUnbind(Intent intent) {
-        LogUtils.e(TAG, "onUnbind");
-        LogUtils.e(TAG, "from --> " + intent.getStringExtra("from"));
-        ThreadUtils.logCurrThreadName(TAG);
+        LogUtils.INSTANCE.e(TAG, "onUnbind");
+        LogUtils.INSTANCE.e(TAG, "from --> " + intent.getStringExtra("from"));
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG);
         return super.onUnbind(intent);
     }
 
     @Override
     public void onDestroy() {
-        LogUtils.e(TAG, "onDestroy");
-        ThreadUtils.logCurrThreadName(TAG);
+        LogUtils.INSTANCE.e(TAG, "onDestroy");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG);
         super.onDestroy();
     }
 

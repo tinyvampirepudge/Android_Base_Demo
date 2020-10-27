@@ -1,6 +1,6 @@
 package com.tiny.demo.firstlinecode.designpattern.talkbig.chapter06.official;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc:
@@ -13,10 +13,10 @@ public class ConcreteDecoratorB extends Decorator {
     public void Operate() {
         super.Operate();
         addedBehavior();
-        LogUtils.e("具体装饰对象B的操作");
+        LogUtils.INSTANCE.e("具体装饰对象B的操作");
     }
 
     private void addedBehavior() {
-        LogUtils.e(getClass().getSimpleName() + " --> addedBehavior()");
+        LogUtils.INSTANCE.e(getClass().getSimpleName() + " --> addedBehavior()");
     }
 }

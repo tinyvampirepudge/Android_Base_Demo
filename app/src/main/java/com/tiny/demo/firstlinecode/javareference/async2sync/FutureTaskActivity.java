@@ -54,16 +54,16 @@ public class FutureTaskActivity extends AppCompatActivity {
     @OnClick(R.id.btn_java_callable_future)
     public void onBtnJavaCallableFutureClicked() {
         // Callable + Future + ExecutorService
-        ThreadUtils.logCurrThreadName(TAG + "  main start");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG + "  main start");
         ExecutorService executorService = Executors.newCachedThreadPool();
         CustomCallable task = new CustomCallable();
         Future<Integer> result = executorService.submit(task);
         executorService.shutdown();
 
-        ThreadUtils.logCurrThreadName(TAG + "  main 111");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG + "  main 111");
 
         try {
-            LogUtils.e(TAG, "task执行结果:" + result.get());
+            LogUtils.INSTANCE.e(TAG, "task执行结果:" + result.get());
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -71,25 +71,25 @@ public class FutureTaskActivity extends AppCompatActivity {
         }
 
         for (int i = 0; i < 10; i++) {
-            ThreadUtils.logCurrThreadName(TAG + "  main 222:" + i);
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + "  main 222:" + i);
         }
 
-        ThreadUtils.logCurrThreadName(TAG + "  main 主线程任务执行完毕");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG + "  main 主线程任务执行完毕");
     }
 
     class CustomCallable implements Callable<Integer> {
 
         @Override
         public Integer call() throws Exception {
-            LogUtils.e(TAG, "在子线程进行计算");
-            ThreadUtils.logCurrThreadName(TAG + " Task start");
+            LogUtils.INSTANCE.e(TAG, "在子线程进行计算");
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " Task start");
             int sum = 0;
             for (int i = 0; i < 10; i++) {
                 Thread.sleep(100);
                 sum += i;
-                ThreadUtils.logCurrThreadName(TAG + " Task sum:" + sum);
+                ThreadUtils.INSTANCE.logCurrThreadName(TAG + " Task sum:" + sum);
             }
-            ThreadUtils.logCurrThreadName(TAG + " Task end");
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " Task end");
             return sum;
         }
     }
@@ -97,17 +97,17 @@ public class FutureTaskActivity extends AppCompatActivity {
     @OnClick(R.id.btn_java_callable_futureTask)
     public void onBtnJavaCallableFutureTaskClicked() {
         // Callable + FutureTask + ExecutorService
-        ThreadUtils.logCurrThreadName(TAG + "  main start");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG + "  main start");
         ExecutorService executorService = Executors.newCachedThreadPool();
         CustomCallable task = new CustomCallable();
         FutureTask<Integer> futureTask = new FutureTask<>(task);
         executorService.submit(futureTask);
         executorService.shutdown();
 
-        ThreadUtils.logCurrThreadName(TAG + "  main 111");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG + "  main 111");
 
         try {
-            LogUtils.e(TAG, "task执行结果:" + futureTask.get());
+            LogUtils.INSTANCE.e(TAG, "task执行结果:" + futureTask.get());
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -115,25 +115,25 @@ public class FutureTaskActivity extends AppCompatActivity {
         }
 
         for (int i = 0; i < 10; i++) {
-            ThreadUtils.logCurrThreadName(TAG + "  main 222:" + i);
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + "  main 222:" + i);
         }
 
-        ThreadUtils.logCurrThreadName(TAG + "  main 主线程任务执行完毕");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG + "  main 主线程任务执行完毕");
     }
 
     @OnClick(R.id.btn_java_callable_futureTask1)
     public void onViewClicked() {
         // Callable + FutureTask + Thread
-        ThreadUtils.logCurrThreadName(TAG + "  main start");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG + "  main start");
         CustomCallable task = new CustomCallable();
         FutureTask<Integer> futureTask = new FutureTask<>(task);
         Thread thread = new Thread(futureTask);
         thread.start();
 
-        ThreadUtils.logCurrThreadName(TAG + "  main 111");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG + "  main 111");
 
         try {
-            LogUtils.e(TAG, "task执行结果:" + futureTask.get());
+            LogUtils.INSTANCE.e(TAG, "task执行结果:" + futureTask.get());
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -141,9 +141,9 @@ public class FutureTaskActivity extends AppCompatActivity {
         }
 
         for (int i = 0; i < 10; i++) {
-            ThreadUtils.logCurrThreadName(TAG + "  main 222:" + i);
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + "  main 222:" + i);
         }
 
-        ThreadUtils.logCurrThreadName(TAG + "  main 主线程任务执行完毕");
+        ThreadUtils.INSTANCE.logCurrThreadName(TAG + "  main 主线程任务执行完毕");
     }
 }

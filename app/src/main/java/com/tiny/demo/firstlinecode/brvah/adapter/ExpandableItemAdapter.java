@@ -9,7 +9,7 @@ import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.brvah.entity.Level0Item;
 import com.tiny.demo.firstlinecode.brvah.entity.Level1Item;
 import com.tiny.demo.firstlinecode.brvah.entity.Person;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.util.List;
 
@@ -59,7 +59,7 @@ public class ExpandableItemAdapter extends BaseMultiItemQuickAdapter<MultiItemEn
                         .setImageResource(R.id.iv, lv0.isExpanded() ? R.drawable.arrow_b : R.drawable.arrow_r);
                 holder.itemView.setOnClickListener(v -> {
                     int pos = holder.getAdapterPosition();
-                    LogUtils.e(TAG, "Level 0 item pos: " + pos);
+                    LogUtils.INSTANCE.e(TAG, "Level 0 item pos: " + pos);
                     if (lv0.isExpanded()) {
                         collapse(pos);
                     } else {

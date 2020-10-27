@@ -11,7 +11,7 @@ import android.widget.ScrollView;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -33,7 +33,7 @@ public class ServiceActivity extends BaseActivity {
     private ServiceConnection connection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            LogUtils.e("ServiceConnection onServiceConnected");
+            LogUtils.INSTANCE.e("ServiceConnection onServiceConnected");
             downloadBinder = (MyService.DownloadBinder) service;
             downloadBinder.startDownload();
             downloadBinder.getProgress();
@@ -41,7 +41,7 @@ public class ServiceActivity extends BaseActivity {
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            LogUtils.e("ServiceConnection onServiceDisconnected");
+            LogUtils.INSTANCE.e("ServiceConnection onServiceDisconnected");
         }
     };
 
@@ -87,8 +87,8 @@ public class ServiceActivity extends BaseActivity {
                 break;
             case R.id.btn_start_intent_service:
                 //打印当前线程的id
-                LogUtils.e("Main Thread id is --> " + Thread.currentThread().getId());
-                LogUtils.e("Main Thread id name --> " + Thread.currentThread().getName());
+                LogUtils.INSTANCE.e("Main Thread id is --> " + Thread.currentThread().getId());
+                LogUtils.INSTANCE.e("Main Thread id name --> " + Thread.currentThread().getName());
                 MyIntentService.startActionFoo(mContext, "hello", "world");
                 break;
             case R.id.btn_start_download:

@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 public class LocalBroadcastActivity extends BaseActivity {
 
@@ -57,7 +57,7 @@ public class LocalBroadcastActivity extends BaseActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             Toast.makeText(mContext, "receive Local BroadCast", Toast.LENGTH_SHORT).show();
-            LogUtils.e("local --> " + intent.getStringExtra("local"));
+            LogUtils.INSTANCE.e("local --> " + intent.getStringExtra("local"));
         }
     }
 }

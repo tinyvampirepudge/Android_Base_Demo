@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 public class Chapter02ThirdActivity extends AppCompatActivity {
     public static void actionStart(Context context) {
@@ -18,6 +18,6 @@ public class Chapter02ThirdActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chapter02_third);
-        LogUtils.e("MultipleProcessActivity Third", "sUserId --> " + MultipleProcessActivity.sUserId);
+        LogUtils.INSTANCE.e("MultipleProcessActivity Third", "sUserId --> " + MultipleProcessActivity.sUserId);
     }
 }

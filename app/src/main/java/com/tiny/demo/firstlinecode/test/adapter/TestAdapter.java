@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.util.List;
 
@@ -44,13 +44,13 @@ public class TestAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (null == convertView) {
-            LogUtils.e("null == convertView pos --> " + position);
+            LogUtils.INSTANCE.e("null == convertView pos --> " + position);
             convertView = LayoutInflater.from(mContext).inflate(R.layout.adapter_test_lv, null);
             viewHolder = new ViewHolder();
             viewHolder.txt = (TextView) convertView.findViewById(R.id.txt);
             convertView.setTag(viewHolder);
         } else {
-            LogUtils.e("else pos --> " + position);
+            LogUtils.INSTANCE.e("else pos --> " + position);
             viewHolder = (ViewHolder) convertView.getTag();
         }
         viewHolder.txt.setText(strs.get(position));

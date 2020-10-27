@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,7 +38,7 @@ public class Chapter0304Activity extends AppCompatActivity {
         setContentView(R.layout.activity_chapter0304);
         ButterKnife.bind(this);
         View view = getLayoutInflater().inflate(R.layout.activity_chapter0304, null);
-        LogUtils.e("view --> " + view);
+        LogUtils.INSTANCE.e("view --> " + view);
 
         getDecorView();
     }
@@ -48,7 +48,7 @@ public class Chapter0304Activity extends AppCompatActivity {
      */
     private void getDecorView() {
         View rootView = ((ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content)).getChildAt(0);
-        LogUtils.e("rootView --> " + rootView);
+        LogUtils.INSTANCE.e("rootView --> " + rootView);
         rootView.setBackgroundColor(ContextCompat.getColor(Chapter0304Activity.this, R.color.gray_color));
     }
 

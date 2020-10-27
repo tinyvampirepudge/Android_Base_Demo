@@ -14,7 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tinytongtong.tinyutils.ThreadUtils;
 
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;
@@ -130,7 +130,7 @@ public class AndroidKfystsChapter11Activity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            LogUtils.e(TAG, result + " execute finish at " + sdf.format(new Date()));
+            LogUtils.INSTANCE.e(TAG, result + " execute finish at " + sdf.format(new Date()));
             btnTest2.setText(result);
         }
     }
@@ -144,7 +144,7 @@ public class AndroidKfystsChapter11Activity extends AppCompatActivity {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
-                ThreadUtils.logCurrThreadName();
+                ThreadUtils.INSTANCE.logCurrThreadName();
             }
         };
         handlerMain.sendEmptyMessage(1);
@@ -162,7 +162,7 @@ public class AndroidKfystsChapter11Activity extends AppCompatActivity {
                     @Override
                     public void handleMessage(Message msg) {
                         super.handleMessage(msg);
-                        ThreadUtils.logCurrThreadName();
+                        ThreadUtils.INSTANCE.logCurrThreadName();
                     }
                 };
             }
@@ -193,10 +193,10 @@ public class AndroidKfystsChapter11Activity extends AppCompatActivity {
     Runnable command = new Runnable() {
         @Override
         public void run() {
-            LogUtils.e("command run() start");
-            ThreadUtils.logCurrThreadName();
+            LogUtils.INSTANCE.e("command run() start");
+            ThreadUtils.INSTANCE.logCurrThreadName();
             SystemClock.sleep(2000);
-            LogUtils.e("command run() end");
+            LogUtils.INSTANCE.e("command run() end");
         }
     };
 
@@ -238,17 +238,17 @@ public class AndroidKfystsChapter11Activity extends AppCompatActivity {
         @Override
         protected void onHandleIntent(@Nullable Intent intent) {
             String action = intent.getStringExtra("task_action");
-            LogUtils.e(TAG, "receive task :" + action);
+            LogUtils.INSTANCE.e(TAG, "receive task :" + action);
             SystemClock.sleep(3000);
-            LogUtils.e(TAG, "finish task :" + action);
+            LogUtils.INSTANCE.e(TAG, "finish task :" + action);
             if ("com.tinytongtong.task1".equals(action)) {
-                LogUtils.e(TAG, "handle task: " + action);
+                LogUtils.INSTANCE.e(TAG, "handle task: " + action);
             }
         }
 
         @Override
         public void onDestroy() {
-            LogUtils.e(TAG, "service destroyed!");
+            LogUtils.INSTANCE.e(TAG, "service destroyed!");
             super.onDestroy();
         }
     }

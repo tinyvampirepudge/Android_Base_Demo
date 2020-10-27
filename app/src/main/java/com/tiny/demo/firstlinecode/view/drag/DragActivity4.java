@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,7 +26,7 @@ public class DragActivity4 extends BaseActivity {
         findViewById(R.id.view_drag_helper).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LogUtils.e("view_drag_helper1");
+                LogUtils.INSTANCE.e("view_drag_helper1");
             }
         });
     }
@@ -38,6 +38,6 @@ public class DragActivity4 extends BaseActivity {
 
     @OnClick(R.id.view_drag_helper)
     public void onViewClicked() {
-//        LogUtils.e("view_drag_helper");
+//        LogUtils.INSTANCE.e("view_drag_helper");
     }
 }

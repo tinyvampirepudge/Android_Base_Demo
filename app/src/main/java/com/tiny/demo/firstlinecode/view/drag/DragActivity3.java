@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,11 +35,11 @@ public class DragActivity3 extends BaseActivity {
 
     @OnClick(R.id.txt_drag_view_group)
     public void onTxtDragViewGroupClicked() {
-        LogUtils.e("view clicked");
+        LogUtils.INSTANCE.e("view clicked");
     }
 
     @OnClick(R.id.drag_view_group)
     public void onDragViewGroupClicked() {
-        LogUtils.e("viewGroup clicked");
+        LogUtils.INSTANCE.e("viewGroup clicked");
     }
 }

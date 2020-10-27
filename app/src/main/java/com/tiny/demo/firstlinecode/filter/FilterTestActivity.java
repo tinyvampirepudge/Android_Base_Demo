@@ -117,7 +117,7 @@ public class FilterTestActivity extends BaseActivity {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             //运行在子线程
-            ThreadUtils.logCurrThreadName("performFiltering");
+            ThreadUtils.INSTANCE.logCurrThreadName("performFiltering");
             String constraintStr = constraint.toString().toLowerCase(Locale.getDefault());
             FilterResults results = new FilterResults();
             if (constraint != null && constraint.toString().length() > 0) {
@@ -144,7 +144,7 @@ public class FilterTestActivity extends BaseActivity {
 
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            ThreadUtils.logCurrThreadName("publishResults");
+            ThreadUtils.INSTANCE.logCurrThreadName("publishResults");
             List<FilterBean> filtered = (List<FilterBean>) results.values;
             // sort array and extract sections in background Thread
             synchronized (this) {

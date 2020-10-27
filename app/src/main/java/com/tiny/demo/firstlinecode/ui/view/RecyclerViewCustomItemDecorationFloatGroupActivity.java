@@ -85,7 +85,7 @@ public class RecyclerViewCustomItemDecorationFloatGroupActivity extends BaseActi
                 .setDivideColor(Color.parseColor("#EE96BC"))            //分割线颜色
                 .setDivideHeight(ScreenUtils.dip2px(this, 2))     //分割线高度 (默认没有分割线)
                 .setGroupTextColor(Color.BLACK)                                    //字体颜色 （默认）
-                .setGroupTextSize(ScreenUtils.sp2px(this, 15))    //字体大小
+                .setGroupTextSize(ScreenUtils.INSTANCE.sp2px(this, 15))    //字体大小
                 .setTextSideMargin(ScreenUtils.dip2px(this, 10))  // 边距   靠左时为左边距  靠右时为右边距
                 //.setHeaderCount(2)                                             // header数量（默认0）
                 .setOnClickListener(new OnGroupClickListener() {                   //点击事件，返回当前分组下的第一个item的position
@@ -137,19 +137,19 @@ public class RecyclerViewCustomItemDecorationFloatGroupActivity extends BaseActi
 
         recyclerView.post(() -> {
             // 获取屏幕可用高度，包含可用的navigationBar高度。
-            int screenHeight = ScreenUtils.getScreenH(mContext);
-            LogUtils.e(TAG, "screenHeight: " + screenHeight);
+            int screenHeight = ScreenUtils.INSTANCE.getScreenH(mContext);
+            LogUtils.INSTANCE.e(TAG, "screenHeight: " + screenHeight);
 
             // 获取statusBar高度
             int statusBarHeight = AppUtils.getStatusBarHeight(mContext);
-            LogUtils.e(TAG, "statusBarHeight: " + statusBarHeight);
+            LogUtils.INSTANCE.e(TAG, "statusBarHeight: " + statusBarHeight);
 
             // 获取recyclerView可滚动的高度
             int recyclerViewRealHeight = recyclerView.computeVerticalScrollRange();
-            LogUtils.e(TAG, "recyclerViewRealHeight: " + recyclerViewRealHeight);
+            LogUtils.INSTANCE.e(TAG, "recyclerViewRealHeight: " + recyclerViewRealHeight);
 
             float leftHeight = screenHeight - recyclerViewRealHeight - statusBarHeight;
-            LogUtils.e(TAG, "leftHeight: " + leftHeight);
+            LogUtils.INSTANCE.e(TAG, "leftHeight: " + leftHeight);
 
         });
     }

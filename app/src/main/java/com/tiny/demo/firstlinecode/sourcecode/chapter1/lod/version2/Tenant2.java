@@ -1,6 +1,6 @@
 package com.tiny.demo.firstlinecode.sourcecode.chapter1.lod.version2;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc:    租户
@@ -15,6 +15,6 @@ public class Tenant2 {
     public static final float diffArea = 0.00001f;
 
     public void rentRoom(Mediator2 mediator) {
-        LogUtils.e("租到房啦！ --> " + mediator.rentOut(roomArea, roomPrice).toString());
+        LogUtils.INSTANCE.e("租到房啦！ --> " + mediator.rentOut(roomArea, roomPrice).toString());
     }
 }

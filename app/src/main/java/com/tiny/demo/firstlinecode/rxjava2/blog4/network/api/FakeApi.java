@@ -25,7 +25,7 @@ public class FakeApi {
                 .map(new Function<String, FakeToken>() {
                     @Override
                     public FakeToken apply(String fakeAuth) throws Exception {
-                        ThreadUtils.logCurrThreadName("getFakeToken");
+                        ThreadUtils.INSTANCE.logCurrThreadName("getFakeToken");
                         //Add some random delay to mock the network delay
                         int fakeNetworkTimeCost = random.nextInt(500) + 500;
                         try {
@@ -54,7 +54,7 @@ public class FakeApi {
                 .map(new Function<FakeToken, FakeThing>() {
                     @Override
                     public FakeThing apply(FakeToken fakeToken) throws Exception {
-                        ThreadUtils.logCurrThreadName("getFakeData");
+                        ThreadUtils.INSTANCE.logCurrThreadName("getFakeData");
                         //Add some random delay to mock the network delay
                         int frameNetworkTimeCost = random.nextInt(500) + 500;
                         try {

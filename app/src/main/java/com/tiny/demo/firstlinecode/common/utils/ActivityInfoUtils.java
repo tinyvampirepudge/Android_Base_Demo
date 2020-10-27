@@ -5,6 +5,8 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 
+import com.tinytongtong.tinyutils.LogUtils;
+
 import java.util.List;
 
 /**
@@ -30,9 +32,9 @@ public class ActivityInfoUtils {
         if (cmpName != null) { // 说明系统中存在这个activity
             ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
             List<ActivityManager.RunningTaskInfo> taskInfoList = am.getRunningTasks(20);
-            LogUtils.e(TAG, "taskInfoList.size:" + taskInfoList.size());
+            LogUtils.INSTANCE.e(TAG, "taskInfoList.size:" + taskInfoList.size());
             for (ActivityManager.RunningTaskInfo taskInfo : taskInfoList) {
-                LogUtils.e(TAG, "taskInfo:" + taskInfo.baseActivity);
+                LogUtils.INSTANCE.e(TAG, "taskInfo:" + taskInfo.baseActivity);
                 if (taskInfo.baseActivity.equals(cmpName)) { // 说明它已经启动了
                     result = true;
                     break;

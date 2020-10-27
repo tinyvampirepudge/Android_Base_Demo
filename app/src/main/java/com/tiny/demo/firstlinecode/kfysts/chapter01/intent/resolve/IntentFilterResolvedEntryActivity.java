@@ -10,7 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
+
 
 import java.util.List;
 
@@ -48,10 +49,10 @@ public class IntentFilterResolvedEntryActivity extends AppCompatActivity {
 //        intent.setAction("com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.abc");
         //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
         if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 
@@ -63,10 +64,10 @@ public class IntentFilterResolvedEntryActivity extends AppCompatActivity {
 //        intent.setAction("com.tiny.demo.firstlinecode.kfysts.chapter01.intent.resolve.action.abc");
         //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
         if (getPackageManager().resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 
@@ -79,18 +80,18 @@ public class IntentFilterResolvedEntryActivity extends AppCompatActivity {
         List<ResolveInfo> resolveInfoList = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
         StringBuilder results = new StringBuilder("匹配结果为：\n");
         if (resolveInfoList != null) {
-            LogUtils.e("query success");
+            LogUtils.INSTANCE.e("query success");
             for (int i = 0; i < resolveInfoList.size(); i++) {
                 ResolveInfo resolveInfo = resolveInfoList.get(i);
                 if (resolveInfo != null) {
-                    LogUtils.e("resolveInfo.resolvePackageName: " + resolveInfo.resolvePackageName);
+                    LogUtils.INSTANCE.e("resolveInfo.resolvePackageName: " + resolveInfo.resolvePackageName);
                     results.append("resolveInfo.resolvePackageName: " + resolveInfo.resolvePackageName);
                     results.append("\n");
                     ActivityInfo activityInfo = resolveInfo.activityInfo;
                     if (activityInfo != null) {
-                        LogUtils.e("activityInfo.name:" + activityInfo.name);
-                        LogUtils.e("activityInfo.packageName:" + activityInfo.packageName);
-                        LogUtils.e("activityInfo.launchMode:" + activityInfo.launchMode);
+                        LogUtils.INSTANCE.e("activityInfo.name:" + activityInfo.name);
+                        LogUtils.INSTANCE.e("activityInfo.packageName:" + activityInfo.packageName);
+                        LogUtils.INSTANCE.e("activityInfo.launchMode:" + activityInfo.launchMode);
                         results.append("activityInfo.name: " + activityInfo.name);
                         results.append("\n");
                         results.append("activityInfo.packageName: " + activityInfo.packageName);
@@ -102,7 +103,7 @@ public class IntentFilterResolvedEntryActivity extends AppCompatActivity {
                 results.append("\n");
             }
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
         tvQueryResults.setText(results.toString());
     }

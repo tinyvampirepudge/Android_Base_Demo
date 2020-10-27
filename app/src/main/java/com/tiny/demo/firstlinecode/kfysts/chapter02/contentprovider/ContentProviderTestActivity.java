@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.kfysts.chapter02.User;
 import com.tiny.demo.firstlinecode.kfysts.chapter02.aidl.Book;
 
@@ -71,7 +71,7 @@ public class ContentProviderTestActivity extends AppCompatActivity {
             Book book = new Book();
             book.setBookId(bookCursor.getInt(0));
             book.setBookName(bookCursor.getString(1));
-            LogUtils.e(TAG, "query book:" + book.toString());
+            LogUtils.INSTANCE.e(TAG, "query book:" + book.toString());
         }
         bookCursor.close();
     }
@@ -84,7 +84,7 @@ public class ContentProviderTestActivity extends AppCompatActivity {
             user.setAge(userCursor.getInt(0));
             user.setName(userCursor.getString(1));
             user.setGender(userCursor.getInt(2) == 1);
-            LogUtils.e(TAG, user.toString());
+            LogUtils.INSTANCE.e(TAG, user.toString());
         }
         userCursor.close();
     }

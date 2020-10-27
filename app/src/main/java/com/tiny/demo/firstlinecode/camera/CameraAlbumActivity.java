@@ -146,8 +146,8 @@ public class CameraAlbumActivity extends BaseActivity {
 
     private void showBitmap(ImageView imgPicture, Bitmap bitmap) {
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) imgPicture.getLayoutParams();
-        layoutParams.width = ScreenUtils.getScreenW(mContext);
-        layoutParams.height = (int) (ScreenUtils.getScreenW(mContext) * (bitmap.getHeight() * 1.0f / bitmap.getWidth() * 1.0f));
+        layoutParams.width = ScreenUtils.INSTANCE.getScreenW(mContext);
+        layoutParams.height = (int) (ScreenUtils.INSTANCE.getScreenW(mContext) * (bitmap.getHeight() * 1.0f / bitmap.getWidth() * 1.0f));
         imgPicture.setImageBitmap(bitmap);
     }
 

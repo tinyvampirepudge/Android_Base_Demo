@@ -3,7 +3,7 @@ package com.tiny.demo.firstlinecode.service;
 import android.os.AsyncTask;
 import android.os.Environment;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,7 +53,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
             String downloadUrl = params[0];
             String fileName = downloadUrl.substring(downloadUrl.lastIndexOf("/"));
             String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
-            LogUtils.e("download directory --> " + directory);
+            LogUtils.INSTANCE.e("download directory --> " + directory);
             file = new File(directory + fileName);
             if (file.exists()) {            //继续下载
                 downloadedLength = file.length();

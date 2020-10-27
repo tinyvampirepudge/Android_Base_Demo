@@ -5,7 +5,7 @@ import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,7 +35,7 @@ public class DragActivity1 extends BaseActivity {
 
     @OnClick(R.id.drag_view_view_helper)
     public void onViewClicked() {
-        LogUtils.e("drag_view_view_helper clicked");
+        LogUtils.INSTANCE.e("drag_view_view_helper clicked");
     }
 
     @OnClick(R.id.btn_reset_pos_drag_view)

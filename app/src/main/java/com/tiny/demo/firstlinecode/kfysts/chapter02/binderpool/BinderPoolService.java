@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc: Binder线程池
@@ -24,18 +24,18 @@ public class BinderPoolService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        LogUtils.e(TAG, "onCreate");
+        LogUtils.INSTANCE.e(TAG, "onCreate");
     }
 
     @Override
     public IBinder onBind(Intent intent) {
-        LogUtils.e(TAG, "onBind");
+        LogUtils.INSTANCE.e(TAG, "onBind");
         return mBinderPool;
     }
 
     @Override
     public void onDestroy() {
-        LogUtils.e(TAG, "onDestroy");
+        LogUtils.INSTANCE.e(TAG, "onDestroy");
         super.onDestroy();
     }
 }

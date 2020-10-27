@@ -2,7 +2,7 @@ package com.tiny.demo.firstlinecode.kfysts.chapter11;
 
 import android.os.AsyncTask;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.net.URL;
 
@@ -19,12 +19,12 @@ public class DownloadFileTask extends AsyncTask<URL, Integer, Long> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        LogUtils.e(TAG, "onPreExecute");
+        LogUtils.INSTANCE.e(TAG, "onPreExecute");
     }
 
     @Override
     protected Long doInBackground(URL... urls) {
-        LogUtils.e(TAG, "doInBackground");
+        LogUtils.INSTANCE.e(TAG, "doInBackground");
         int count = urls.length;
         long totalSize = 0;
         for (int j = 0; j < count; j++) {
@@ -46,15 +46,15 @@ public class DownloadFileTask extends AsyncTask<URL, Integer, Long> {
     @Override
     protected void onProgressUpdate(Integer... values) {
         super.onProgressUpdate(values);
-        LogUtils.e(TAG, "onProgressUpdate");
+        LogUtils.INSTANCE.e(TAG, "onProgressUpdate");
         //这里做更新UI的操作
-        LogUtils.e(TAG, "values[0] --> " + values[0]);
+        LogUtils.INSTANCE.e(TAG, "values[0] --> " + values[0]);
     }
 
     @Override
     protected void onPostExecute(Long aLong) {
         super.onPostExecute(aLong);
-        LogUtils.e(TAG, "onPostExecute");
+        LogUtils.INSTANCE.e(TAG, "onPostExecute");
         //执行完毕。
     }
 }

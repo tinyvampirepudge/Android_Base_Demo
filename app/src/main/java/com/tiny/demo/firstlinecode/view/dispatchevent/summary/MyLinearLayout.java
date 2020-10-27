@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Created by wangjianzhou@qding.me on 2017/6/21.
@@ -38,13 +38,13 @@ public class MyLinearLayout extends LinearLayout {
         int action = event.getAction();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-                LogUtils.e(TAG + " dispatchTouchEvent ACTION_DOWN");
+                LogUtils.INSTANCE.e(TAG + " dispatchTouchEvent ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-                LogUtils.e(TAG + " dispatchTouchEvent ACTION_MOVE");
+                LogUtils.INSTANCE.e(TAG + " dispatchTouchEvent ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
-                LogUtils.e(TAG + " dispatchTouchEvent ACTION_UP");
+                LogUtils.INSTANCE.e(TAG + " dispatchTouchEvent ACTION_UP");
                 break;
             default:
                 break;
@@ -57,13 +57,13 @@ public class MyLinearLayout extends LinearLayout {
         int action = ev.getAction();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-                LogUtils.e(TAG + " onInterceptTouchEvent ACTION_DOWN");
+                LogUtils.INSTANCE.e(TAG + " onInterceptTouchEvent ACTION_DOWN");
                 return true;
             case MotionEvent.ACTION_MOVE:
-                LogUtils.e(TAG + " onInterceptTouchEvent ACTION_MOVE");
+                LogUtils.INSTANCE.e(TAG + " onInterceptTouchEvent ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
-                LogUtils.e(TAG + " onInterceptTouchEvent ACTION_UP");
+                LogUtils.INSTANCE.e(TAG + " onInterceptTouchEvent ACTION_UP");
                 break;
             default:
                 break;
@@ -76,13 +76,13 @@ public class MyLinearLayout extends LinearLayout {
         int action = event.getAction();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-                LogUtils.e(TAG + " onTouchEvent ACTION_DOWN");
+                LogUtils.INSTANCE.e(TAG + " onTouchEvent ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-                LogUtils.e(TAG + " onTouchEvent ACTION_MOVE");
+                LogUtils.INSTANCE.e(TAG + " onTouchEvent ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
-                LogUtils.e(TAG + " onTouchEvent ACTION_UP");
+                LogUtils.INSTANCE.e(TAG + " onTouchEvent ACTION_UP");
                 break;
             default:
                 break;

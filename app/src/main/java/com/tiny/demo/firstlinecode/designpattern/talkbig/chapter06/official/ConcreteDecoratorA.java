@@ -1,6 +1,6 @@
 package com.tiny.demo.firstlinecode.designpattern.talkbig.chapter06.official;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc:
@@ -15,6 +15,6 @@ public class ConcreteDecoratorA extends Decorator {
     public void Operate() {
         super.Operate();//首先执行原Component的Operate的功能，再执行本类的功能。
         addedState = "New State";
-        LogUtils.e("具体装饰类A的操作");
+        LogUtils.INSTANCE.e("具体装饰类A的操作");
     }
 }

@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.tinytongtong.tinyutils.ThreadUtils;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,15 +65,15 @@ public class AsyncToSyncActivity extends AppCompatActivity {
         countDownLatch = new CountDownLatch(2);
 
         Runnable Task1 = () -> {
-            LogUtils.e(TAG, "开始执行Task1");
-            ThreadUtils.logCurrThreadName(TAG + " Task1");
+            LogUtils.INSTANCE.e(TAG, "开始执行Task1");
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " Task1");
             try {
                 // 注意这里是await方法，不是wait方法，不要问我为什么，难受。
                 countDownLatch.await();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            LogUtils.e(TAG, "Task1执行完毕");
+            LogUtils.INSTANCE.e(TAG, "Task1执行完毕");
         };
 
         // 创建线程池
@@ -106,14 +106,14 @@ public class AsyncToSyncActivity extends AppCompatActivity {
 
         @Override
         public void run() {
-            LogUtils.e(TAG, "开始执行" + name);
-            ThreadUtils.logCurrThreadName(TAG + " " + name);
+            LogUtils.INSTANCE.e(TAG, "开始执行" + name);
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " " + name);
             try {
                 TimeUnit.SECONDS.sleep(delayTime);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            LogUtils.e(TAG, name + "执行完毕");
+            LogUtils.INSTANCE.e(TAG, name + "执行完毕");
             if (countDownLatch != null) {
                 countDownLatch.countDown();
             }
@@ -126,21 +126,21 @@ public class AsyncToSyncActivity extends AppCompatActivity {
          * CyclicBarrier是一个同步辅助类，它允许一组线程互相等待，直到到达某个公共屏障点 (common barrier point)。
          */
         CyclicBarrier cyclicBarrier = new CyclicBarrier(10, () -> {
-            LogUtils.e(TAG, "所有任务都执行完毕了");
-            ThreadUtils.logCurrThreadName(TAG + " barrierAction");
+            LogUtils.INSTANCE.e(TAG, "所有任务都执行完毕了");
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " barrierAction");
         });
         List<Runnable> runnables = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             int finalI = i;
             Runnable runnable = () -> {
-                LogUtils.e(TAG, "当前是第" + finalI + "个任务，开始执行");
-                ThreadUtils.logCurrThreadName(TAG + " 子任务");
+                LogUtils.INSTANCE.e(TAG, "当前是第" + finalI + "个任务，开始执行");
+                ThreadUtils.INSTANCE.logCurrThreadName(TAG + " 子任务");
                 try {
                     TimeUnit.SECONDS.sleep(finalI);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                LogUtils.e(TAG, "当前是第" + finalI + "个任务，执行完毕");
+                LogUtils.INSTANCE.e(TAG, "当前是第" + finalI + "个任务，执行完毕");
                 try {
                     cyclicBarrier.await();
                 } catch (InterruptedException e) {
@@ -173,12 +173,12 @@ public class AsyncToSyncActivity extends AppCompatActivity {
         Observable registerRequest = Observable.create(new ObservableOnSubscribe<RegisterReqBean>() {
             @Override
             public void subscribe(ObservableEmitter<RegisterReqBean> emitter) throws Exception {
-                LogUtils.e(TAG, "注册请求 registerReqBean:" + registerReqBean);
-                ThreadUtils.logCurrThreadName(TAG + " 注册请求成功");
+                LogUtils.INSTANCE.e(TAG, "注册请求 registerReqBean:" + registerReqBean);
+                ThreadUtils.INSTANCE.logCurrThreadName(TAG + " 注册请求成功");
                 emitter.onNext(registerReqBean);
-                LogUtils.e(TAG, "发送注册请求");
+                LogUtils.INSTANCE.e(TAG, "发送注册请求");
                 emitter.onComplete();
-                LogUtils.e(TAG, "发送注册请求完成");
+                LogUtils.INSTANCE.e(TAG, "发送注册请求完成");
             }
         });
 
@@ -188,9 +188,9 @@ public class AsyncToSyncActivity extends AppCompatActivity {
             public RegisterRespBean apply(RegisterReqBean registerReqBean) throws Exception {
                 RegisterRespBean registerRespBean = new RegisterRespBean(registerReqBean.getName(),
                         registerReqBean.getPwd(), "恭喜您注册成功");
-                LogUtils.e(TAG, "注册响应 registerRespBean:" + registerRespBean);
+                LogUtils.INSTANCE.e(TAG, "注册响应 registerRespBean:" + registerRespBean);
                 TimeUnit.SECONDS.sleep(5);// 模拟网络延迟
-                ThreadUtils.logCurrThreadName(TAG + " 注册响应成功");
+                ThreadUtils.INSTANCE.logCurrThreadName(TAG + " 注册响应成功");
                 return registerRespBean;
             }
         };
@@ -200,8 +200,8 @@ public class AsyncToSyncActivity extends AppCompatActivity {
             @Override
             public LoginReqBean apply(RegisterRespBean registerRespBean) throws Exception {
                 LoginReqBean loginReqBean = new LoginReqBean(registerRespBean.getName() + " 我要登陆", registerRespBean.getPwd());
-                LogUtils.e(TAG, "登录请求 loginReqBean:" + loginReqBean);
-                ThreadUtils.logCurrThreadName(TAG + " 登录请求成功");
+                LogUtils.INSTANCE.e(TAG, "登录请求 loginReqBean:" + loginReqBean);
+                ThreadUtils.INSTANCE.logCurrThreadName(TAG + " 登录请求成功");
                 return loginReqBean;
             }
         };
@@ -212,9 +212,9 @@ public class AsyncToSyncActivity extends AppCompatActivity {
             public LoginRespBean apply(LoginReqBean loginReqBean) throws Exception {
                 LoginRespBean loginRespBean = new LoginRespBean(loginReqBean.getName(),
                         loginReqBean.getPwd(), "恭喜您登录成功");
-                LogUtils.e(TAG, "登录响应 loginRespBean:" + loginRespBean);
+                LogUtils.INSTANCE.e(TAG, "登录响应 loginRespBean:" + loginRespBean);
                 TimeUnit.SECONDS.sleep(5);// 模拟网络延迟
-                ThreadUtils.logCurrThreadName(TAG + " 登录响应成功");
+                ThreadUtils.INSTANCE.logCurrThreadName(TAG + " 登录响应成功");
                 return loginRespBean;
             }
 
@@ -224,23 +224,23 @@ public class AsyncToSyncActivity extends AppCompatActivity {
         Observer<LoginRespBean> resultObserver = new Observer<LoginRespBean>() {
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.e(TAG, "onSubscribe");
+                LogUtils.INSTANCE.e(TAG, "onSubscribe");
             }
 
             @Override
             public void onNext(LoginRespBean loginRespBean) {
-                LogUtils.e(TAG, "onNext 登录成功，可以更新UI了。 loginRespBean:" + loginRespBean);
-                ThreadUtils.logCurrThreadName(TAG + " ");
+                LogUtils.INSTANCE.e(TAG, "onNext 登录成功，可以更新UI了。 loginRespBean:" + loginRespBean);
+                ThreadUtils.INSTANCE.logCurrThreadName(TAG + " ");
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.e(TAG, "onError e:" + e.getMessage());
+                LogUtils.INSTANCE.e(TAG, "onError e:" + e.getMessage());
             }
 
             @Override
             public void onComplete() {
-                LogUtils.e(TAG, "onComplete");
+                LogUtils.INSTANCE.e(TAG, "onComplete");
             }
         };
 
@@ -261,21 +261,21 @@ public class AsyncToSyncActivity extends AppCompatActivity {
          * 等待多个任务完成后再执行，不保证顺序
          */
         Observable o1 = Observable.create((ObservableOnSubscribe<String>) e -> {
-            ThreadUtils.logCurrThreadName(TAG + " Observable1");
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " Observable1");
             TimeUnit.SECONDS.sleep(5);
             e.onNext("第一个Observable");
             e.onComplete();
         }).subscribeOn(Schedulers.newThread());
 
         Observable o2 = Observable.create((ObservableOnSubscribe<String>) e -> {
-            ThreadUtils.logCurrThreadName(TAG + " Observable2");
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " Observable2");
             TimeUnit.SECONDS.sleep(3);
             e.onNext("第二个Observable");
             e.onComplete();
         }).subscribeOn(Schedulers.newThread());
 
         Observable o3 = Observable.create((ObservableOnSubscribe<String>) e -> {
-            ThreadUtils.logCurrThreadName(TAG + " Observable3");
+            ThreadUtils.INSTANCE.logCurrThreadName(TAG + " Observable3");
             TimeUnit.SECONDS.sleep(1);
             e.onNext("第三个Observable");
             e.onComplete();
@@ -289,23 +289,23 @@ public class AsyncToSyncActivity extends AppCompatActivity {
                 .subscribe(new Observer() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e(TAG, "onSubscribe");
+                        LogUtils.INSTANCE.e(TAG, "onSubscribe");
                     }
 
                     @Override
                     public void onNext(Object o) {
-                        LogUtils.e(TAG, "onNext: " + o);
-                        ThreadUtils.logCurrThreadName(TAG + " onNext");
+                        LogUtils.INSTANCE.e(TAG, "onNext: " + o);
+                        ThreadUtils.INSTANCE.logCurrThreadName(TAG + " onNext");
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e(TAG, "onError");
+                        LogUtils.INSTANCE.e(TAG, "onError");
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e(TAG, "onComplete");
+                        LogUtils.INSTANCE.e(TAG, "onComplete");
                     }
                 });
     }

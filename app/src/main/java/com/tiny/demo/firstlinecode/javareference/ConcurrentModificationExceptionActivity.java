@@ -5,7 +5,7 @@ import android.widget.Button;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.javareference.bean.StudentBean;
 
 import java.util.ArrayList;
@@ -69,7 +69,7 @@ public class ConcurrentModificationExceptionActivity extends BaseActivity {
 
     @OnClick(R.id.btn_cme_for)
     public void onBtnCmeForClicked() {
-        LogUtils.e("studentBeanList.toString() --> " + studentBeanList.toString());
+        LogUtils.INSTANCE.e("studentBeanList.toString() --> " + studentBeanList.toString());
         //删除单个的元素，下面两个方法都没有问题。
         for (int j = 0; j < studentBeanList.size(); j++) {
             if (indexDelete == studentBeanList.get(j).getId()) {
@@ -77,24 +77,24 @@ public class ConcurrentModificationExceptionActivity extends BaseActivity {
                 studentBeanList.remove(studentBeanList.get(j));
             }
         }
-        LogUtils.e("studentBeanList.toString() --> " + studentBeanList.toString());
+        LogUtils.INSTANCE.e("studentBeanList.toString() --> " + studentBeanList.toString());
     }
 
     @OnClick(R.id.btn_cme_foreach)
     public void onBtnCmeForeachClicked() {
-        LogUtils.e("studentBeanList.toString() --> " + studentBeanList.toString());
+        LogUtils.INSTANCE.e("studentBeanList.toString() --> " + studentBeanList.toString());
         for (StudentBean bean : studentBeanList) {
             if (indexDelete == bean.getId()) {
                 studentBeanList.remove(bean);//并发修改异常。
             }
         }
-        LogUtils.e("studentBeanList.toString() --> " + studentBeanList.toString());
+        LogUtils.INSTANCE.e("studentBeanList.toString() --> " + studentBeanList.toString());
     }
 
 
     @OnClick(R.id.btn_cme_for_delete)
     public void onViewClicked() {
-        LogUtils.e("studentBeanList.toString() --> " + studentBeanList.toString());
+        LogUtils.INSTANCE.e("studentBeanList.toString() --> " + studentBeanList.toString());
         //这样删除也没问题，不过容易fail fast.
         int deleteIndex = -1;
         for (int j = 0; j < studentBeanList.size(); j++) {
@@ -106,13 +106,13 @@ public class ConcurrentModificationExceptionActivity extends BaseActivity {
         if (-1 != deleteIndex) {
             studentBeanList.remove(deleteIndex);
         }
-        LogUtils.e("studentBeanList.toString() --> " + studentBeanList.toString());
+        LogUtils.INSTANCE.e("studentBeanList.toString() --> " + studentBeanList.toString());
     }
 
     @OnClick(R.id.btn_cme_iterator)
     public void onBtnCmeIteratorClicked() {
         //推荐做法。
-        LogUtils.e("studentBeanList.toString() --> " + studentBeanList.toString());
+        LogUtils.INSTANCE.e("studentBeanList.toString() --> " + studentBeanList.toString());
         Iterator<StudentBean> iterator = studentBeanList.iterator();
         while (iterator.hasNext()) {
             StudentBean bean = iterator.next();
@@ -120,7 +120,7 @@ public class ConcurrentModificationExceptionActivity extends BaseActivity {
                 iterator.remove();
             }
         }
-        LogUtils.e("studentBeanList.toString() --> " + studentBeanList.toString());
+        LogUtils.INSTANCE.e("studentBeanList.toString() --> " + studentBeanList.toString());
     }
 
     @OnClick(R.id.btn_cme_mutil_thread_bug)

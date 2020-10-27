@@ -1,5 +1,7 @@
 package com.tiny.demo.firstlinecode.common.utils;
 
+import com.tinytongtong.tinyutils.LogUtils;
+
 import java.util.Iterator;
 import java.util.Map;
 
@@ -73,7 +75,7 @@ public class MapUtils {
                 Map.Entry entry = (Map.Entry) iter.next();
                 String key = (String) entry.getKey();
                 String val = (String) entry.getValue();
-                LogUtils.d("key --> " + key + ",value --> " + val);
+                LogUtils.INSTANCE.d("key --> " + key + ",value --> " + val);
             }
         }
     }

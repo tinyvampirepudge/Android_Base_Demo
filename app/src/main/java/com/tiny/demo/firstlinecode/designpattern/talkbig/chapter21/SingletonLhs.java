@@ -1,6 +1,6 @@
 package com.tiny.demo.firstlinecode.designpattern.talkbig.chapter21;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * Desc:    懒汉式单例
@@ -27,6 +27,6 @@ public class SingletonLhs {
     }
 
     public void showInfo() {
-        LogUtils.e("instance.toString() --> " + instance.toString());
+        LogUtils.INSTANCE.e("instance.toString() --> " + instance.toString());
     }
 }

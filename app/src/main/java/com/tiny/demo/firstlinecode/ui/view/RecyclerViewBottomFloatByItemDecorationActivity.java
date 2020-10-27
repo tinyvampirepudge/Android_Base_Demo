@@ -41,7 +41,7 @@ public class RecyclerViewBottomFloatByItemDecorationActivity extends BaseActivit
 
     @Override
     protected void buildContentView() {
-        LogUtils.e(TAG, ScreenUtils.getDisplayMetricsInfo(this));
+        LogUtils.INSTANCE.e(TAG, ScreenUtils.INSTANCE.getDisplayMetricsInfo(this));
     }
 
     @Override

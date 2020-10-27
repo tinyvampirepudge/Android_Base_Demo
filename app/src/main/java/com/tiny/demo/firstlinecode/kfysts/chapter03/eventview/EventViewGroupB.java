@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 /**
  * @Description: TODO
@@ -37,25 +37,25 @@ public class EventViewGroupB extends LinearLayout {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        LogUtils.e(TAG, "dispatchTouchEvent ");
+        LogUtils.INSTANCE.e(TAG, "dispatchTouchEvent ");
         boolean result = super.dispatchTouchEvent(event);
-        LogUtils.e(TAG, "dispatchTouchEvent result:" + result);
+        LogUtils.INSTANCE.e(TAG, "dispatchTouchEvent result:" + result);
         return result;
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        LogUtils.e(TAG, "onInterceptTouchEvent ");
+        LogUtils.INSTANCE.e(TAG, "onInterceptTouchEvent ");
         boolean result = super.onInterceptTouchEvent(event);
-        LogUtils.e(TAG, "onInterceptTouchEvent result:" + result);
+        LogUtils.INSTANCE.e(TAG, "onInterceptTouchEvent result:" + result);
         return result;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        LogUtils.e(TAG, "onTouchEvent ");
+        LogUtils.INSTANCE.e(TAG, "onTouchEvent ");
         boolean result = super.onTouchEvent(event);
-        LogUtils.e(TAG, "onTouchEvent result:" + result);
+        LogUtils.INSTANCE.e(TAG, "onTouchEvent result:" + result);
         return result;
     }
 }

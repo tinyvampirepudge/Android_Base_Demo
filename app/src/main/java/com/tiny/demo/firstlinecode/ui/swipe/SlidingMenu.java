@@ -27,7 +27,7 @@ public class SlidingMenu extends HorizontalScrollView {
 
     public SlidingMenu(final Context context, AttributeSet attrs) {
         super(context, attrs);
-        mScreenWidth = ScreenUtils.getScreenW(context);
+        mScreenWidth = ScreenUtils.INSTANCE.getScreenW(context);
         mMenuWidth = (int) (mScreenWidth * radio);
         setOverScrollMode(View.OVER_SCROLL_NEVER);
         setHorizontalScrollBarEnabled(false);

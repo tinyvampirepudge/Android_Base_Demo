@@ -5,7 +5,7 @@ import android.os.PersistableBundle;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 public class Normal2Activity extends BaseActivity {
     private static final String TAG = "Normal2Activity";
@@ -13,7 +13,7 @@ public class Normal2Activity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
-        LogUtils.e(TAG, "onCreate savedInstanceState");
+        LogUtils.INSTANCE.e(TAG, "onCreate savedInstanceState");
     }
 
     @Override
@@ -23,7 +23,7 @@ public class Normal2Activity extends BaseActivity {
 
     @Override
     protected void buildContentView() {
-        LogUtils.e(TAG, "onCreate");
+        LogUtils.INSTANCE.e(TAG, "onCreate");
     }
 
     @Override
@@ -34,37 +34,37 @@ public class Normal2Activity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        LogUtils.e(TAG, "onResume");
+        LogUtils.INSTANCE.e(TAG, "onResume");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        LogUtils.e(TAG, "onStart");
+        LogUtils.INSTANCE.e(TAG, "onStart");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        LogUtils.e(TAG, "onStop");
+        LogUtils.INSTANCE.e(TAG, "onStop");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        LogUtils.e(TAG, "onPause");
+        LogUtils.INSTANCE.e(TAG, "onPause");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        LogUtils.e(TAG, "onDestroy");
+        LogUtils.INSTANCE.e(TAG, "onDestroy");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        LogUtils.e(TAG, "onRestart");
+        LogUtils.INSTANCE.e(TAG, "onRestart");
     }
 
 }

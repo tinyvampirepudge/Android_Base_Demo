@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tiny.demo.firstlinecode.kfysts.chapter02.User;
 
 import java.io.File;
@@ -51,7 +51,7 @@ public class Chapter02FileSharingActivity extends AppCompatActivity {
             try {
                 ois = new ObjectInputStream(new FileInputStream(cahcedFile));
                 user = (User) ois.readObject();
-                LogUtils.e("recover user:" + user);
+                LogUtils.INSTANCE.e("recover user:" + user);
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (ClassNotFoundException e) {

@@ -11,7 +11,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -79,96 +79,96 @@ public class HorizontalScrollviewDispatchTouchEventActivity extends AppCompatAct
 
     @OnClick(R.id.tv1)
     public void onTv1Clicked() {
-        LogUtils.e(TAG, "tv1 clicked");
+        LogUtils.INSTANCE.e(TAG, "tv1 clicked");
     }
 
     @OnClick(R.id.rl1)
     public void onRl1Clicked() {
-        LogUtils.e(TAG, "rl1 clicked");
+        LogUtils.INSTANCE.e(TAG, "rl1 clicked");
     }
 
     @OnClick(R.id.tv2)
     public void onTv2Clicked() {
-        LogUtils.e(TAG, "tv2 clicked");
+        LogUtils.INSTANCE.e(TAG, "tv2 clicked");
     }
 
     @OnClick(R.id.ll2)
     public void onLl2Clicked() {
-        LogUtils.e(TAG, "ll2 clicked");
+        LogUtils.INSTANCE.e(TAG, "ll2 clicked");
     }
 
     @OnClick(R.id.sv2)
     public void onSv2Clicked() {
-        LogUtils.e(TAG, "sv2 clicked");
+        LogUtils.INSTANCE.e(TAG, "sv2 clicked");
     }
 
     @OnClick(R.id.tv21)
     public void onTv21Clicked() {
-        LogUtils.e(TAG, "tv21 clicked");
+        LogUtils.INSTANCE.e(TAG, "tv21 clicked");
     }
 
     @OnClick(R.id.rl2)
     public void onRl2Clicked() {
-        LogUtils.e(TAG, "rl2 clicked");
+        LogUtils.INSTANCE.e(TAG, "rl2 clicked");
     }
 
     @OnClick(R.id.tv3)
     public void onTv3Clicked() {
-        LogUtils.e(TAG, "tv3 clicked");
+        LogUtils.INSTANCE.e(TAG, "tv3 clicked");
     }
 
     @OnClick(R.id.ll3)
     public void onLl3Clicked() {
-        LogUtils.e(TAG, "ll3 clicked");
+        LogUtils.INSTANCE.e(TAG, "ll3 clicked");
     }
 
     @OnClick(R.id.hsv3)
     public void onHsv3Clicked() {
-        LogUtils.e(TAG, "hsv3 clicked");
+        LogUtils.INSTANCE.e(TAG, "hsv3 clicked");
     }
 
     @OnClick(R.id.tv31)
     public void onTv31Clicked() {
-        LogUtils.e(TAG, "tv31 clicked");
+        LogUtils.INSTANCE.e(TAG, "tv31 clicked");
     }
 
     @OnClick(R.id.rl3)
     public void onRl3Clicked() {
-        LogUtils.e(TAG, "rl3 clicked");
+        LogUtils.INSTANCE.e(TAG, "rl3 clicked");
     }
 
     @OnClick(R.id.tv11)
     public void onTv11Clicked() {
-        LogUtils.e(TAG, "tv11 clicked");
+        LogUtils.INSTANCE.e(TAG, "tv11 clicked");
     }
 
     @OnClick(R.id.rl11)
     public void onRl11Clicked() {
-        LogUtils.e(TAG, "rl11 clicked");
+        LogUtils.INSTANCE.e(TAG, "rl11 clicked");
     }
 
     @OnClick(R.id.hsv11)
     public void onHsv11Clicked() {
-        LogUtils.e(TAG, "hsv11 clicked");
+        LogUtils.INSTANCE.e(TAG, "hsv11 clicked");
     }
 
     @OnClick(R.id.tv120)
     public void onTv120Clicked() {
-        LogUtils.e(TAG, "tv120 clicked");
+        LogUtils.INSTANCE.e(TAG, "tv120 clicked");
     }
 
     @OnClick(R.id.hsv12)
     public void onHsv12Clicked() {
-        LogUtils.e(TAG, "hsv12 clicked");
+        LogUtils.INSTANCE.e(TAG, "hsv12 clicked");
     }
 
     @OnClick(R.id.tv121)
     public void onTv121Clicked() {
-        LogUtils.e(TAG, "tv121 clicked");
+        LogUtils.INSTANCE.e(TAG, "tv121 clicked");
     }
 
     @OnClick(R.id.rl12)
     public void onRl12Clicked() {
-        LogUtils.e(TAG, "rl12 clicked");
+        LogUtils.INSTANCE.e(TAG, "rl12 clicked");
     }
 }

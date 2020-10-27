@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 public class StartActivity extends BaseActivity {
     public static void actionStart(Context context, String data1, String data2) {
@@ -37,7 +37,7 @@ public class StartActivity extends BaseActivity {
     protected void buildContentView() {
         String data1 = getIntent().getStringExtra("data1");
         String data2 = getIntent().getStringExtra("data2");
-        LogUtils.e("data1 --> " + data1 + ",data2 --> " + data2);
+        LogUtils.INSTANCE.e("data1 --> " + data1 + ",data2 --> " + data2);
     }
 
     @Override

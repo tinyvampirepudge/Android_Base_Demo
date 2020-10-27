@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -40,10 +40,10 @@ public class ImplicitIntentEntryActivity extends AppCompatActivity {
         intent.setAction("com.tiny.demo.firstlinecode.kfysts.chapter01.intent.implicit.action.a");
         //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
         if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 
@@ -55,10 +55,10 @@ public class ImplicitIntentEntryActivity extends AppCompatActivity {
         intent.setAction("com.tinytongtong.dividerviewdemo.action.a");
         //Category可以不设置，因为一般在AndroidManifest.xml会设置Default，startActivity方法中也会默认添加Default。
         if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 
@@ -101,10 +101,10 @@ public class ImplicitIntentEntryActivity extends AppCompatActivity {
         intent.setAction("com.tiny.demo.firstlinecode.kfysts.chapter01.intent.implicit.action.b");
         intent.addCategory("com.tiny.demo.firstlinecode.kfysts.chapter01.intent.implicit.category.b");
         if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 
@@ -121,10 +121,10 @@ public class ImplicitIntentEntryActivity extends AppCompatActivity {
 
         intent.setDataAndType(Uri.parse("content://maolegemi"), "image/jpeg");
         if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 
@@ -136,10 +136,10 @@ public class ImplicitIntentEntryActivity extends AppCompatActivity {
         //data
         intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/abcdefg"), null);
         if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 
@@ -151,10 +151,10 @@ public class ImplicitIntentEntryActivity extends AppCompatActivity {
         //data
         intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/abcdefg"), "text/plain");
         if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 }

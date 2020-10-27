@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.tiny.demo.firstlinecode.R;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -42,10 +42,10 @@ public class AllowTaskReparentingTestActivity extends AppCompatActivity {
         //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
         intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/abcdefg"), "text/plain");
         if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 
@@ -59,10 +59,10 @@ public class AllowTaskReparentingTestActivity extends AppCompatActivity {
         //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
         intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/猫了个咪"), "text/plain");
         if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 
@@ -76,10 +76,10 @@ public class AllowTaskReparentingTestActivity extends AppCompatActivity {
         //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
         intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/啊哈哈哈哈"), "text/plain");
         if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 
@@ -93,10 +93,10 @@ public class AllowTaskReparentingTestActivity extends AppCompatActivity {
         //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
         intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/阿西吧"), "text/plain");
         if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 
@@ -110,10 +110,10 @@ public class AllowTaskReparentingTestActivity extends AppCompatActivity {
         //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
         intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/阿西吧"), "text/plain");
         if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 
@@ -127,10 +127,10 @@ public class AllowTaskReparentingTestActivity extends AppCompatActivity {
         //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
         intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/阿西吧"), "text/plain");
         if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 
@@ -144,10 +144,10 @@ public class AllowTaskReparentingTestActivity extends AppCompatActivity {
         //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
         intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/阿西吧"), "text/plain");
         if (intent.resolveActivity(getPackageManager()) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 
@@ -161,17 +161,17 @@ public class AllowTaskReparentingTestActivity extends AppCompatActivity {
         //Data在AndroidManifest.xml中可不添加，相应的，在隐式调用时也不用添加。
         intent.setDataAndType(Uri.parse("http://www.tiny.com:8080/阿西吧"), "text/plain");
 //        if (intent.resolveActivity(getPackageManager()) != null) {
-//            LogUtils.e("match success");
+//            LogUtils.INSTANCE.e("match success");
 //            startActivity(intent);
 //        } else {
-//            LogUtils.e("match failure");
+//            LogUtils.INSTANCE.e("match failure");
 //        }
 
         if (getPackageManager().resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY) != null) {
-            LogUtils.e("match success");
+            LogUtils.INSTANCE.e("match success");
             startActivity(intent);
         } else {
-            LogUtils.e("match failure");
+            LogUtils.INSTANCE.e("match failure");
         }
     }
 }

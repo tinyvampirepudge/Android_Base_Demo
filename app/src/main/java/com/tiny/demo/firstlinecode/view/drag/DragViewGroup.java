@@ -6,7 +6,7 @@ import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.widget.RelativeLayout;
 
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 import com.tinytongtong.tinyutils.ScreenUtils;
 
 /**
@@ -76,7 +76,7 @@ public class DragViewGroup extends RelativeLayout {
                     top = bottom - this.getHeight();
                 }
                 this.layout(left, top, right, bottom);//设置控件的新位置
-                LogUtils.e("position:" + left + ", " + top + ", " + right + ", " + bottom);
+                LogUtils.INSTANCE.e("position:" + left + ", " + top + ", " + right + ", " + bottom);
                 lastX = (int) ev.getRawX();//再次将滑动其实位置定位
                 lastY = (int) ev.getRawY();
                 break;

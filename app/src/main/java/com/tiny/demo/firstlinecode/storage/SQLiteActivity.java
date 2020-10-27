@@ -9,7 +9,7 @@ import android.widget.Button;
 import com.tiny.demo.firstlinecode.base.BaseActivity;
 import com.tiny.demo.firstlinecode.R;
 import com.tiny.demo.firstlinecode.storage.database.MySQLitebaseHelper;
-import com.tiny.demo.firstlinecode.common.utils.LogUtils;
+import com.tinytongtong.tinyutils.LogUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -107,12 +107,12 @@ public class SQLiteActivity extends BaseActivity {
                         String author = cursor.getString(cursor.getColumnIndex("author"));
                         int pages = cursor.getInt(cursor.getColumnIndex("pages"));
                         double price = cursor.getDouble(cursor.getColumnIndex("price"));
-                        LogUtils.e("book id is --> " + id);
-                        LogUtils.e("book name is --> " + name);
-                        LogUtils.e("book author is --> " + author);
-                        LogUtils.e("book pages is --> " + pages);
-                        LogUtils.e("book price is --> " + price);
-                        LogUtils.e("------------------------------");
+                        LogUtils.INSTANCE.e("book id is --> " + id);
+                        LogUtils.INSTANCE.e("book name is --> " + name);
+                        LogUtils.INSTANCE.e("book author is --> " + author);
+                        LogUtils.INSTANCE.e("book pages is --> " + pages);
+                        LogUtils.INSTANCE.e("book price is --> " + price);
+                        LogUtils.INSTANCE.e("------------------------------");
                     } while (cursor.moveToNext());
                 }
                 cursor.close();
@@ -132,12 +132,12 @@ public class SQLiteActivity extends BaseActivity {
                 String author = cursor.getString(cursor.getColumnIndex("author"));
                 int pages = cursor.getInt(cursor.getColumnIndex("pages"));
                 double price = cursor.getDouble(cursor.getColumnIndex("price"));
-                LogUtils.e("book id is --> " + id);
-                LogUtils.e("book name is --> " + name);
-                LogUtils.e("book author is --> " + author);
-                LogUtils.e("book pages is --> " + pages);
-                LogUtils.e("book price is --> " + price);
-                LogUtils.e("------------------------------");
+                LogUtils.INSTANCE.e("book id is --> " + id);
+                LogUtils.INSTANCE.e("book name is --> " + name);
+                LogUtils.INSTANCE.e("book author is --> " + author);
+                LogUtils.INSTANCE.e("book pages is --> " + pages);
+                LogUtils.INSTANCE.e("book price is --> " + price);
+                LogUtils.INSTANCE.e("------------------------------");
             } while (cursor.moveToNext());
         }
         cursor.close();
